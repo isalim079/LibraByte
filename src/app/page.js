@@ -5,6 +5,7 @@ export default function Home() {
     <div>
       <h1 className='text-3xl text-center'>LibraByte</h1>
       <p>This will be your home page</p>
+      <p>nishat</p>
     </div>
   )
 }
