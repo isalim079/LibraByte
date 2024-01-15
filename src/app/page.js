@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <h1 className='text-3xl text-center'>LibraByte</h1>
       <p> Salim page</p>
-      <p>This is development Brunch</p>
+      <p>This is development</p>
     </div>
   )
 }
