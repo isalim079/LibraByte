@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <h1 className='text-3xl text-center'>LibraByte</h1>
-      <p>This is development brunch</p>
+      <p>This is development Brunch</p>
     </div>
   )
 }
