@@ -8,7 +8,7 @@ export default function Home() {
       <p> Salim page</p>
       <p>This is development Brunch</p>
       <p>This will be your home page</p>
-      <p>nishat</p>
+      <p>nishat tasnim</p>
     </div>
   )
 }
