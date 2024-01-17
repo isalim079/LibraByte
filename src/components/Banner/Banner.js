@@ -1,7 +1,4 @@
 "use client"
-import Image from "next/image";
-
-import book from "@/assets/book.png"
 import BannerSwipe from "./BannerSwipe";
 const Banner = () => {
     return (

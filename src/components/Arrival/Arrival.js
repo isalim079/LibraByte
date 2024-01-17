@@ -7,7 +7,7 @@ const Arrival = () => {
         <div className="mx-8 md:mx-20 lg:mx-[140px] my-36">
             <h1 className="text-4xl lg:text-5xl text-center font-semibold mb-10 lg:mb-24">New Arrival</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-                <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-[#EFEDE1] shadow-xl">
+                <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-[#EFEDE1] dark:bg-transparent shadow-xl">
                     <figure className="px-6 pt-6">
                         <img src="https://i.ibb.co/TbkjVgH/Rectangle-20.png" alt="Shoes" className="rounded-xl" />
                     </figure>
