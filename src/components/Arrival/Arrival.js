@@ -4,7 +4,7 @@ import img1 from "@/assets/Rectangle 20.png"
 
 const Arrival = () => {
     return (
-        <div className="mx-8 md:mx-20 lg:mx-[140px]">
+        <div className="mx-8 md:mx-20 lg:mx-[140px] my-36">
             <h1 className="text-4xl lg:text-5xl text-center font-semibold mb-10 lg:mb-24">New Arrival</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="card md:w-80 lg:w-96 bg-[#EFEDE1] shadow-xl">
