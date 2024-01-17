@@ -1,14 +1,48 @@
 "use client";
 
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import logo from "@/assets/logo/LibraByte.png";
 import Image from "next/image";
+import {
+    IoIosArrowDropdownCircle,
+    IoIosArrowDropupCircle,
+} from "react-icons/io";
 
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+    // theme
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    );
+
+    const [themeDropdown, setThemeDropDown] = useState(false);
+
+    const handleThemeToggle = (e) => {
+        const clickedItem = e.target;
+        console.log(clickedItem.innerText);
+        if (clickedItem.innerText === "Light") {
+            setTheme("light");
+        }
+        if (clickedItem.innerText === "Dark") {
+            setTheme("dark");
+        }
+        if (clickedItem.innerText === "Retro") {
+            setTheme("retro");
+        }
+        if (clickedItem.innerText === "CupCake") {
+            setTheme("cupcake");
+        }
+    };
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
+
     // menu toggle
     const [menuToggle, setMenuToggle] = useState(false);
 
@@ -19,6 +53,9 @@ const Navbar = () => {
     const isActiveLink = (href) => {
         return pathname === href;
     };
+
+    // menu white color on dark bg
+    const navMenus = theme === "dark" ? "white" : "#333D2E";
 
     // Navbar items
     const navLinks = (
@@ -32,9 +69,9 @@ const Navbar = () => {
                             ? "underline"
                             : "",
                         ["textDecorationColor"]: isActiveLink("/")
-                            ? "#333D2E"
+                            ? `${navMenus}`
                             : "",
-                        ["color"]: menuToggle ? "white" : "#333D2E",
+                        ["color"]: menuToggle ? "white" : `${navMenus}`,
                     }}
                 >
                     Home
@@ -51,9 +88,9 @@ const Navbar = () => {
                             ? "underline"
                             : "",
                         ["textDecorationColor"]: isActiveLink("/blog")
-                            ? "#333D2E"
+                            ? `${navMenus}`
                             : "",
-                        ["color"]: menuToggle ? "white" : "#333D2E",
+                        ["color"]: menuToggle ? "white" : `${navMenus}`,
                     }}
                 >
                     Blog
@@ -70,9 +107,9 @@ const Navbar = () => {
                             ? "underline"
                             : "",
                         ["textDecorationColor"]: isActiveLink("/aboutUs")
-                            ? "#333D2E"
+                            ? `${navMenus}`
                             : "",
-                        ["color"]: menuToggle ? "white" : "#333D2E",
+                        ["color"]: menuToggle ? "white" : `${navMenus}`,
                     }}
                 >
                     About Us
@@ -81,7 +118,11 @@ const Navbar = () => {
         </>
     );
 
-    return (<div className="py-5 font-poppins bg-lightWhite drop-shadow-lg">
+    // delete bg of nav
+    const navBg = theme === "light" ? "bg-lightWhite" : "";
+
+    return (
+        <div className={`py-5 font-poppins ${navBg} drop-shadow-lg`}>
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
                 <div className="flex w-full justify-between items-center md:px-10 px-3 md:p-0 ">
@@ -131,19 +172,57 @@ const Navbar = () => {
                 </div>
 
                 {/* Login section */}
-                <div className="flex">
+                <div className="flex items-center gap-4">
                     <div>
                         <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
                             Sign In
                         </button>
                     </div>
-                    {/* <div className="ml-3">
+
+                    {/* <div className="">
                         <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Up</button>
                     </div> */}
+
+                    {/* theme dropdown */}
+                    <div>
+                        <div className="relative flex flex-col items-center rounded-md">
+                            <button
+                                className="bg-oliveGreen text-white px-3 py-2 flex items-center justify-between text-sm rounded-md tracking-wider gap-2"
+                                onClick={() => setThemeDropDown(!themeDropdown)}
+                            >
+                                Themes
+                                {themeDropdown ? (
+                                    <IoIosArrowDropupCircle />
+                                ) : (
+                                    <IoIosArrowDropdownCircle />
+                                )}
+                            </button>
+                            {themeDropdown ? (
+                                <div
+                                    onClick={handleThemeToggle}
+                                    className="bg-oliveGreen absolute text-white list-none p-6 rounded-md top-12 space-y-2 z-30 cursor-pointer"
+                                >
+                                    <li name="item1">
+                                        <a>Light</a>
+                                    </li>
+                                    <li name="item2">
+                                        <a>Dark</a>
+                                    </li>
+                                    <li name="item3">
+                                        <a>Retro</a>
+                                    </li>
+                                    <li name="item4">
+                                        <a>CupCake</a>
+                                    </li>
+                                </div>
+                            ) : (
+                                ""
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
     );
 };
 
