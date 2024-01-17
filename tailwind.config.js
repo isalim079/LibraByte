@@ -14,6 +14,10 @@ module.exports = {
       },
       fontFamily: {
         "poppins": "'Poppins', sans-serif"
+      },
+      colors: {
+        "oliveGreen": "#333D2E",
+        "lightWhite": "#EFEDE1",
       }
     },
   },
