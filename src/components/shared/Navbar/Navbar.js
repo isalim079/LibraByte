@@ -81,8 +81,7 @@ const Navbar = () => {
         </>
     );
 
-    return (
-        <div className="py-5 font-poppins">
+    return (<div className="py-5 font-poppins bg-lightWhite drop-shadow-lg">
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
                 <div className="flex w-full justify-between items-center md:px-10 px-3 md:p-0 ">
@@ -144,6 +143,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
+        
     );
 };
 
