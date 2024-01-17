@@ -13,6 +13,7 @@ import {
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+    
     // theme
     const [theme, setTheme] = useState("light");
 
