@@ -55,7 +55,7 @@ const Navbar = () => {
     };
 
     // menu white color on dark bg
-    const navMenus = theme === "dark" ? "white" : "#333D2E";
+    const navMenus = theme === "dark" ? "#EFEDE1" : "#333D2E";
 
     // Navbar items
     const navLinks = (
@@ -146,6 +146,7 @@ const Navbar = () => {
                                     <div className="space-y-4 text-xs list-none flex flex-col justify-center items-center h-full">
                                         {navLinks}
                                     </div>
+                                    <div></div>
                                 </div>
                             ) : (
                                 ""
@@ -155,6 +156,44 @@ const Navbar = () => {
 
                     <div className="">
                         <Image src={logo} width={100} height={100} alt="logo" />
+                    </div>
+
+                    {/* theme section */}
+                    <div>
+                        <div className="relative flex flex-col items-center rounded-md">
+                            <button
+                                className="bg-oliveGreen text-lightWhite px-3 py-2 flex items-center justify-between text-xs rounded-md  gap-2"
+                                onClick={() => setThemeDropDown(!themeDropdown)}
+                            >
+                                Themes
+                                {themeDropdown ? (
+                                    <IoIosArrowDropupCircle />
+                                ) : (
+                                    <IoIosArrowDropdownCircle />
+                                )}
+                            </button>
+                            {themeDropdown ? (
+                                <div
+                                    onClick={handleThemeToggle}
+                                    className="bg-oliveGreen absolute text-white list-none p-6 rounded-md top-12 space-y-2 z-30 cursor-pointer text-xs"
+                                >
+                                    <li name="item1">
+                                        <a>Light</a>
+                                    </li>
+                                    <li name="item2">
+                                        <a>Dark</a>
+                                    </li>
+                                    <li name="item3">
+                                        <a>Retro</a>
+                                    </li>
+                                    <li name="item4">
+                                        <a>CupCake</a>
+                                    </li>
+                                </div>
+                            ) : (
+                                ""
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
