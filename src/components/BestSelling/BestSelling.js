@@ -1,5 +1,8 @@
+
 import { HiOutlineExternalLink } from "react-icons/hi";
 import BooksCard from "./BooksCard";
+
+
 
 const BestSelling = () => {
     return (
@@ -15,13 +18,14 @@ const BestSelling = () => {
 
             {/* best books card  */}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                <BooksCard></BooksCard>
-                <BooksCard></BooksCard>
-                <BooksCard></BooksCard>
-                <BooksCard></BooksCard>
-              
-            </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                    <BooksCard></BooksCard>
+                    <BooksCard></BooksCard>
+                    <BooksCard></BooksCard>
+                    <BooksCard></BooksCard>
+
+                </div>
+      
         </div>
     );
 };
