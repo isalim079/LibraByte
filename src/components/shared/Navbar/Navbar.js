@@ -83,10 +83,9 @@ const Navbar = () => {
 
     return (
         <div className="py-5 font-poppins">
-
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
-                <div className="flex w-full justify-between items-center md:px-10 px-3 md:p-0">
+                <div className="flex w-full justify-between items-center md:px-10 px-3 md:p-0 ">
                     <div className="">
                         <button
                             className=" text-3xl "
@@ -103,7 +102,7 @@ const Navbar = () => {
                             onClick={() => setMenuToggle(!menuToggle)}
                         >
                             {menuToggle ? (
-                                <div className="h-[380px] bg-[#333D2E] rounded-md">
+                                <div className="h-[380px] bg-[#333D2E] backdrop-blur-xl rounded-md">
                                     <div className="space-y-4 text-xs list-none flex flex-col justify-center items-center h-full">
                                         {navLinks}
                                     </div>
@@ -121,8 +120,7 @@ const Navbar = () => {
             </div>
 
             {/* Max width section/ PC view section */}
-            <div className="lg:flex justify-between items-center max-w-screen-xl mx-auto hidden">
-
+            <div className="lg:flex justify-between items-center max-w-screen-xl mx-auto hidden lg:px-10">
                 {/* Logo */}
                 <div className="">
                     <Image src={logo} width={100} height={100} alt="logo" />
@@ -135,8 +133,10 @@ const Navbar = () => {
 
                 {/* Login section */}
                 <div className="flex">
-                    <div >
-                        <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign In</button>
+                    <div>
+                        <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
+                            Sign In
+                        </button>
                     </div>
                     {/* <div className="ml-3">
                         <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Up</button>
