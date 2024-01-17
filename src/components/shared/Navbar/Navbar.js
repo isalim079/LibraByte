@@ -9,7 +9,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-
     // menu toggle
     const [menuToggle, setMenuToggle] = useState(false);
 
@@ -20,8 +19,6 @@ const Navbar = () => {
     const isActiveLink = (href) => {
         return pathname === href;
     };
-
-
 
     // Navbar items
     const navLinks = (
@@ -37,7 +34,7 @@ const Navbar = () => {
                         ["textDecorationColor"]: isActiveLink("/")
                             ? "#333D2E"
                             : "",
-                        ["color"]: isActiveLink("/") ? (menuToggle ? "white" : "#333D2E") : "black",
+                        ["color"]: menuToggle ? "white" : "#333D2E",
                     }}
                 >
                     Home
@@ -56,7 +53,7 @@ const Navbar = () => {
                         ["textDecorationColor"]: isActiveLink("/blog")
                             ? "#333D2E"
                             : "",
-                        ["color"]: isActiveLink("/blog") ? "#333D2E" : "black",
+                        ["color"]: menuToggle ? "white" : "#333D2E",
                     }}
                 >
                     Blog
@@ -75,9 +72,7 @@ const Navbar = () => {
                         ["textDecorationColor"]: isActiveLink("/aboutUs")
                             ? "#333D2E"
                             : "",
-                        ["color"]: isActiveLink("/aboutUs")
-                            ? "#333D2E"
-                            : "black",
+                        ["color"]: menuToggle ? "white" : "#333D2E",
                     }}
                 >
                     About Us
@@ -85,8 +80,6 @@ const Navbar = () => {
             </li>
         </>
     );
-
-
 
     return (
         <div className="py-5 font-poppins">
@@ -120,7 +113,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="">
-                    <Image src={logo} width={100} height={100} alt="logo" />
+                        <Image src={logo} width={100} height={100} alt="logo" />
                     </div>
                 </div>
             </div>
