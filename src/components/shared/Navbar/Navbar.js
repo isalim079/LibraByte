@@ -86,7 +86,7 @@ const Navbar = () => {
 
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
-                <div className="flex w-full justify-between items-center px-3 md:p-0">
+                <div className="flex w-full justify-between items-center md:px-10 px-3 md:p-0">
                     <div className="">
                         <button
                             className=" text-3xl "
@@ -99,12 +99,12 @@ const Navbar = () => {
                             )}
                         </button>
                         <div
-                            className="absolute top-1/3 left-1/3"
+                            className="absolute  w-full pl-14 pr-20 mt-8 pb-10 "
                             onClick={() => setMenuToggle(!menuToggle)}
                         >
                             {menuToggle ? (
-                                <div className="p-6 bg-[#333D2E]">
-                                    <div className="space-y-4 text-xs list-none">
+                                <div className="h-[380px] bg-[#333D2E] rounded-md">
+                                    <div className="space-y-4 text-xs list-none flex flex-col justify-center items-center h-full">
                                         {navLinks}
                                     </div>
                                 </div>
