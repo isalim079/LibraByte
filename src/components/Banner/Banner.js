@@ -1,5 +1,5 @@
-import Image from "next/image";
-import book from "@/assets/book.png"
+"use client"
+import BannerSwipe from "./BannerSwipe";
 const Banner = () => {
     return (
         <div className="overflow-hidden">
@@ -19,16 +19,17 @@ const Banner = () => {
 
 
 
-                        <button class=" bg-[#333D2E] rounded-lg px-12 py-4 text-white btn btn-xs sm:btn-sm md:btn-md lg:btn-lg relative -top-5 ">Explore</button>
+                        <button className=" bg-[#333D2E] rounded-lg px-12 py-4 text-white btn   relative -top-5 ">Explore</button>
 
                     </div>
-                    <div >
-                        <Image
+                    <div className="relative">
+                        <BannerSwipe/>
+                        {/* <Image className="relative"
                             src={book}
                             width={800}
                             height={500}
                             alt="top news"
-                        />
+                        /> */}
                         {/* <img src="https://i.ibb.co/b5ZHR9h/Untitled-1-1.png" className="relative " /> */}
                     </div>
                 </div>
