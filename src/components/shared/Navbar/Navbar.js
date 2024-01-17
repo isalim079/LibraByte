@@ -14,15 +14,13 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     // theme
-    const [theme, setTheme] = useState(
-        localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
-    );
+    const [theme, setTheme] = useState("light");
 
     const [themeDropdown, setThemeDropDown] = useState(false);
 
     const handleThemeToggle = (e) => {
         const clickedItem = e.target;
-        console.log(clickedItem.innerText);
+        // console.log(clickedItem.innerText);
         if (clickedItem.innerText === "Light") {
             setTheme("light");
         }
