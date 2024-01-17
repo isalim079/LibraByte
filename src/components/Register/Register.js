@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 
 const Register = () => {
 
-
+    // import react hook form
     const {
         register,
         handleSubmit,
@@ -14,7 +14,14 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = async (data) => { console.log(data) }
+    // on submit hook form
+    const onSubmit = async (data) => {
+        console.log(data)
+        const name = data.name;
+        const email = data.email;
+        const password = data.password;
+
+    }
 
 
 
