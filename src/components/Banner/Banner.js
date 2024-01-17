@@ -22,8 +22,8 @@ const Banner = () => {
                         <button class=" bg-[#333D2E] rounded-lg px-12 py-4 text-white btn btn-xs sm:btn-sm md:btn-md lg:btn-lg relative -top-5 ">Explore</button>
 
                     </div>
-                    <div className="relative">
-                        <Image className="relative"
+                    <div >
+                        <Image
                             src={book}
                             width={800}
                             height={500}
