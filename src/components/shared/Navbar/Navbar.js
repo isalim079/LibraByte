@@ -83,6 +83,8 @@ const Navbar = () => {
 
     return (
         <div className="py-5 font-poppins">
+
+            {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
                 <div className="flex w-full justify-between items-center px-3 md:p-0">
                     <div className="">
@@ -117,12 +119,28 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Max width section/ PC view section */}
             <div className="lg:flex justify-between items-center max-w-screen-xl mx-auto hidden">
+
+                {/* Logo */}
                 <div className="">
                     <Image src={logo} width={100} height={100} alt="logo" />
                 </div>
+
+                {/* Navigation */}
                 <div className="flex list-none space-x-7 text-base font-semibold">
                     {navLinks}
+                </div>
+
+                {/* Login section */}
+                <div className="flex">
+                    <div >
+                        <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign In</button>
+                    </div>
+                    {/* <div className="ml-3">
+                        <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Up</button>
+                    </div> */}
                 </div>
             </div>
         </div>
