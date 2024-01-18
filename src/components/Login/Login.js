@@ -4,12 +4,16 @@ import { AuthContext } from '@/app/Context/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import Link from 'next/link';
 import React, { useContext } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 const Login = () => {
 
+
+    const router = useRouter();
     // import google popup function from context api
-    const { googleLogInPopup } = useContext(AuthContext)
+    const { googleLogInPopup, passwordLogIn } = useContext(AuthContext)
 
     const {
         register,
@@ -23,6 +27,20 @@ const Login = () => {
         const password = data.password;
 
         console.log(email, password)
+        passwordLogIn(email, password)
+            .then(res => {
+                console.log(res)
+                toast.success("Login Successful")
+                reset()
+                router.push('/');
+            })
+            .catch(err => {
+                console.log(err)
+                const errorCode = err.code;
+                const errorMessage = err.message
+                console.log(errorCode, errorMessage.split("/"));
+                toast.error(`${errorMessage.split("/")[1]}`);
+            })
     }
 
 
@@ -30,6 +48,19 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     const handleGoogle = () => {
         googleLogInPopup(provider)
+            .then(res => {
+                console.log(res)
+                toast.success("Login Successful")
+                reset()
+                router.push('/');
+            })
+            .catch(err => {
+                console.log(err)
+                const errorCode = err.code;
+                const errorMessage = err.message
+                console.log(errorCode, errorMessage.split("/"));
+                toast.error(`${errorMessage.split("/")[1]}`);
+            })
     }
 
     return (

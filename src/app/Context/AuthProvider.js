@@ -1,7 +1,7 @@
 'use client';
 
 import { auth } from '@/firebase/firebase';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 
 export const AuthContext = createContext()
@@ -27,6 +27,25 @@ const AuthProvider = ({ children }) => {
     }
 
 
+    // update user function
+    const handleUpdateUser = (name, image) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: image
+        })
+    }
+
+    // password  login
+    const passwordLogIn = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    // sign out function
+    const logOut = () => {
+        setLoading(true)
+        return signOut(auth)
+    }
+
     // Watching users while state changing
     useEffect(() => {
         const unSubs = onAuthStateChanged(auth, currentUser => {
@@ -42,7 +61,10 @@ const AuthProvider = ({ children }) => {
     // passing data through context api
     const contextData = {
         googleLogInPopup,
-        registerUser
+        registerUser,
+        handleUpdateUser,
+        passwordLogIn,
+        logOut
     }
 
     return (
