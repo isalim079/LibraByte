@@ -7,7 +7,7 @@ import Footer from "@/components/Footer/Footer";
 export default function Home() {
   return (
     <div>
-       <Banner></Banner> 
+      <Banner></Banner>
       <BestSelling></BestSelling>
       <FeatureSection />
       <Arrival />
