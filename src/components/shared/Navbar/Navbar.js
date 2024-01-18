@@ -238,7 +238,7 @@ const Navbar = () => {
                             {themeDropdown ? (
                                 <div
                                     onClick={handleThemeToggle}
-                                    className="bg-oliveGreen absolute text-white list-none p-6 rounded-md top-12 space-y-2 z-30 cursor-pointer"
+                                    className="bg-oliveGreen absolute text-white list-none p-6 rounded-md top-12 space-y-2 z-50 cursor-pointer"
                                 >
                                     <li name="item1">
                                         <a>Light</a>
