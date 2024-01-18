@@ -1,10 +1,19 @@
 'use client';
 
+import axios from 'axios';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { AuthContext } from '@/app/Context/AuthProvider';
 
 const Register = () => {
+
+    const router = useRouter();
+
+
+    const { registerUser, handleUpdateUser } = useContext(AuthContext)
 
     // import react hook form
     const {
@@ -14,13 +23,46 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
+    // image hosting api
+    const image_hosting_key = "a4ccb3a63f667b950886af818162e9e1";
+    const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+
     // on submit hook form
     const onSubmit = async (data) => {
         console.log(data)
         const name = data.name;
         const email = data.email;
         const password = data.password;
+        const imageFile = { image: data.image[0] }
+        console.log(data.image)
 
+        const res = await axios.post(image_hosting_api, imageFile, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+        console.log(res.data.data.display_url)
+        const img = res.data.data.display_url;
+
+        if (res.data.success) {
+            registerUser(email, password)
+                .then(res => {
+                    handleUpdateUser(name, img)
+                        .then(res => {
+                            reset()
+                            toast.success("Register Successful")
+                            router.push('/');
+                        })
+
+                })
+                .catch((err) => {
+                    console.log(err)
+                    const errorCode = err.code;
+                    const errorMessage = err.message
+                    console.log(errorCode, errorMessage.split("/"));
+                    toast.error(`${errorMessage.split("/")[1]}`);
+                });
+        }
     }
 
 
