@@ -5,16 +5,14 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import logo from "@/assets/logo/LibraByte.png";
 import Image from "next/image";
-import {
-    IoIosArrowDropdownCircle,
-    IoIosArrowDropupCircle,
-} from "react-icons/io";
+// import {
+//     IoIosArrowDropdownCircle,
+//     IoIosArrowDropupCircle,
+// } from "react-icons/io";
 
 import { usePathname } from "next/navigation";
 
-
 const Navbar = () => {
-
     // theme
     const [theme, setTheme] = useState("light");
 
@@ -65,13 +63,13 @@ const Navbar = () => {
                     href="/"
                     style={{
                         ["fontWeight"]: isActiveLink("/") ? "bold" : "normal",
-                        ["textDecoration"]: isActiveLink("/")
-                            ? "underline"
-                            : "",
+                        // ["textDecoration"]: isActiveLink("/")
+                        //     ? "underline"
+                        //     : "",
                         ["textDecorationColor"]: isActiveLink("/")
                             ? `${navMenus}`
                             : "",
-                        ["color"]: menuToggle ? "white" : `${navMenus}`,
+                        ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
                     }}
                 >
                     Home
@@ -84,13 +82,13 @@ const Navbar = () => {
                         ["fontWeight"]: isActiveLink("/blog")
                             ? "bold"
                             : "normal",
-                        ["textDecoration"]: isActiveLink("/blog")
-                            ? "underline"
-                            : "",
+                        // ["textDecoration"]: isActiveLink("/blog")
+                        //     ? "underline"
+                        //     : "",
                         ["textDecorationColor"]: isActiveLink("/blog")
                             ? `${navMenus}`
                             : "",
-                        ["color"]: menuToggle ? "white" : `${navMenus}`,
+                        ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
                     }}
                 >
                     Blog
@@ -103,13 +101,13 @@ const Navbar = () => {
                         ["fontWeight"]: isActiveLink("/aboutUs")
                             ? "bold"
                             : "normal",
-                        ["textDecoration"]: isActiveLink("/aboutUs")
-                            ? "underline"
-                            : "",
+                        // ["textDecoration"]: isActiveLink("/aboutUs")
+                        //     ? "underline"
+                        //     : "",
                         ["textDecorationColor"]: isActiveLink("/aboutUs")
                             ? `${navMenus}`
                             : "",
-                        ["color"]: menuToggle ? "white" : `${navMenus}`,
+                        ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
                     }}
                 >
                     About Us
@@ -121,20 +119,24 @@ const Navbar = () => {
     // delete bg of nav
     // const navBg = theme === "light" ? "bg-lightWhite" : "bg-slate-900";
 
+    const navBg =
+        theme === "light"
+            ? "bg-lightWhite"
+            : theme === "dark"
+            ? "bg-slate-900"
+            : theme === "cupcake"
+            ? "bg-[#FAF7F5]"
+            : theme === "retro"
+            ? "bg-[#ECE2CA]"
+            : "bg-lightWhite";
 
-    const navBg = 
-    theme === "light" ? "bg-lightWhite" :
-    theme === "dark" ? "bg-slate-900" :
-    theme === "cupcake" ? "bg-[#FAF7F5]" :
-    theme === "retro" ? "bg-[#ECE2CA]" : "bg-lightWhite"
 
-  
 
     return (
         <div className={`py-5 font-poppins ${navBg} drop-shadow-lg`}>
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
-                <div className="flex w-full justify-between items-center md:px-10 px-3 md:p-0 ">
+                <div className="flex w-full  justify-between items-center md:px-10 px-3 md:p-0 ">
                     <div className="">
                         <button
                             className=" text-3xl "
@@ -147,12 +149,12 @@ const Navbar = () => {
                             )}
                         </button>
                         <div
-                            className="absolute  w-full pl-14 pr-20 mt-8 pb-10 "
+                            className="absolute  w-full pl-14 pr-20 mt-8 pb-10 z-0"
                             onClick={() => setMenuToggle(!menuToggle)}
                         >
                             {menuToggle ? (
-                                <div className="h-[380px] bg-[#333D2E] backdrop-blur-xl rounded-md">
-                                    <div className="space-y-4 text-xs list-none flex flex-col justify-center items-center h-full">
+                                <div className="h-[300px] bg-slate-100/95 rounded-md">
+                                    <div className="space-y-4 text-normal list-none flex flex-col justify-center items-center h-full">
                                         {navLinks}
                                     </div>
                                     <div></div>
@@ -168,7 +170,7 @@ const Navbar = () => {
                     </div>
 
                     {/* theme section */}
-                    <div>
+                    {/* <div>
                         <div className="relative flex flex-col items-center rounded-md">
                             <button
                                 className="bg-oliveGreen text-lightWhite px-3 py-2 flex items-center justify-between text-xs rounded-md  gap-2"
@@ -203,12 +205,20 @@ const Navbar = () => {
                                 ""
                             )}
                         </div>
+                    </div> */}
+                <div>
+                        <Link href={"/login"}>
+                            <button className="bg-[#333D2E] text-white py-2 px-3 text-xs rounded-md">
+                                Sign In
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
 
             {/* Max width section/ PC view section */}
             <div className="lg:flex justify-between items-center max-w-screen-xl mx-auto hidden ">
+
                 {/* Logo */}
                 <div className="">
                     <Image src={logo} width={100} height={100} alt="logo" />
@@ -222,7 +232,7 @@ const Navbar = () => {
                 {/* Login section */}
                 <div className="flex items-center gap-4">
                     <div>
-                        <Link href={'/login'}>
+                        <Link href={"/login"}>
                             <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
                                 Sign In
                             </button>
@@ -234,7 +244,7 @@ const Navbar = () => {
                     </div> */}
 
                     {/* theme dropdown */}
-                    <div>
+                    {/* <div>
                         <div className="relative flex flex-col items-center rounded-md">
                             <button
                                 className="bg-oliveGreen text-white px-3 py-2 flex items-center justify-between text-sm rounded-md tracking-wider gap-2"
@@ -269,7 +279,7 @@ const Navbar = () => {
                                 ""
                             )}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
