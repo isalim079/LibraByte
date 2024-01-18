@@ -12,8 +12,9 @@ import {
 
 import { usePathname } from "next/navigation";
 
+
 const Navbar = () => {
-    
+
     // theme
     const [theme, setTheme] = useState("light");
 
@@ -118,7 +119,16 @@ const Navbar = () => {
     );
 
     // delete bg of nav
-    const navBg = theme === "light" ? "bg-lightWhite" : "";
+    // const navBg = theme === "light" ? "bg-lightWhite" : "bg-slate-900";
+
+
+    const navBg = 
+    theme === "light" ? "bg-lightWhite" :
+    theme === "dark" ? "bg-slate-900" :
+    theme === "cupcake" ? "bg-[#FAF7F5]" :
+    theme === "retro" ? "bg-[#ECE2CA]" : "bg-lightWhite"
+
+  
 
     return (
         <div className={`py-5 font-poppins ${navBg} drop-shadow-lg`}>
@@ -174,7 +184,7 @@ const Navbar = () => {
                             {themeDropdown ? (
                                 <div
                                     onClick={handleThemeToggle}
-                                    className="bg-oliveGreen absolute text-white list-none p-6 rounded-md top-12 space-y-2 z-30 cursor-pointer text-xs"
+                                    className="bg-oliveGreen absolute text-white list-none p-6 rounded-md top-12 space-y-2 z-50 cursor-pointer text-xs"
                                 >
                                     <li name="item1">
                                         <a>Light</a>
@@ -198,7 +208,7 @@ const Navbar = () => {
             </div>
 
             {/* Max width section/ PC view section */}
-            <div className="lg:flex justify-between items-center max-w-screen-xl mx-auto hidden lg:px-10">
+            <div className="lg:flex justify-between items-center max-w-screen-xl mx-auto hidden ">
                 {/* Logo */}
                 <div className="">
                     <Image src={logo} width={100} height={100} alt="logo" />
@@ -212,9 +222,11 @@ const Navbar = () => {
                 {/* Login section */}
                 <div className="flex items-center gap-4">
                     <div>
-                        <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
-                            Sign In
-                        </button>
+                        <Link href={'/login'}>
+                            <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
+                                Sign In
+                            </button>
+                        </Link>
                     </div>
 
                     {/* <div className="">
@@ -238,7 +250,7 @@ const Navbar = () => {
                             {themeDropdown ? (
                                 <div
                                     onClick={handleThemeToggle}
-                                    className="bg-oliveGreen absolute text-white list-none p-6 rounded-md top-12 space-y-2 z-30 cursor-pointer"
+                                    className="bg-oliveGreen absolute text-white list-none p-6 rounded-md top-12 space-y-2 z-50 cursor-pointer"
                                 >
                                     <li name="item1">
                                         <a>Light</a>
