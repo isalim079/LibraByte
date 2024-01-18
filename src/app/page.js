@@ -8,9 +8,7 @@ import Subscribe from "@/components/Subscribe/Subscribe";
 export default function Home() {
   return (
     <div>
- 
-      <h1 className='text-3xl text-center'>LibraByte</h1>
-      <Banner></Banner> 
+       <Banner></Banner> 
       <BestSelling></BestSelling>
       <FeatureSection />
       <Arrival />
