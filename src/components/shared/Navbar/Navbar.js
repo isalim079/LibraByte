@@ -13,7 +13,7 @@ import {
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-    
+
     // theme
     const [theme, setTheme] = useState("light");
 
@@ -212,9 +212,11 @@ const Navbar = () => {
                 {/* Login section */}
                 <div className="flex items-center gap-4">
                     <div>
-                        <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
-                            Sign In
-                        </button>
+                        <Link href={'/login'}>
+                            <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
+                                Sign In
+                            </button>
+                        </Link>
                     </div>
 
                     {/* <div className="">
