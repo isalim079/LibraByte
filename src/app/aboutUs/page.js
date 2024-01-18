@@ -1,9 +1,10 @@
+import Vision from '@/components/Vision/Vision';
 import React from 'react';
 
 const AboutUs = () => {
     return (
         <div>
-            This is about page
+            <Vision></Vision>
         </div>
     );
 };
