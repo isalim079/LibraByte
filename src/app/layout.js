@@ -1,8 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "./Context/AuthProvider";
+<<<<<<< HEAD
+import { Toaster } from "react-hot-toast";
+=======
 import Navbar from "@/components/Shared/Navbar/Navbar";
 import Footer from "@/components/Shared/Footer/Footer";
+>>>>>>> cd2100eb6475ef97588a6758580c4b901d914bf2
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +28,7 @@ export default function RootLayout({ children }) {
                         <Footer />
                     </div>
                 </AuthProvider>
+                <Toaster />
             </body>
         </html>
     );
