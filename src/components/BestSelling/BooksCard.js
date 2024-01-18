@@ -21,7 +21,7 @@ const BooksCard = () => {
                         <IoMdStar></IoMdStar>
                     </p>
                     <div className="card-actions">
-                        <button className="btn btn-wide max-w-[175px] bg-[#333D2E] text-white">View More</button>
+                        <button className="btn btn-wide max-w-[175px] bg-[#333D2E] hover:bg-darkOliveGreen text-white">View More</button>
                     </div>
                 </div>
             </div>
