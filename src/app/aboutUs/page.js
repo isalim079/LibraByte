@@ -1,9 +1,12 @@
+import Vision from '@/components/Vision/Vision';
+import AboutBanner from '@/components/AboutUS/AboutBanner';
 import React from 'react';
 
 const AboutUs = () => {
     return (
         <div>
-            This is about page
+            <Vision></Vision>
+            <AboutBanner></AboutBanner>
         </div>
     );
 };
