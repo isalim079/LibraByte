@@ -10,8 +10,8 @@ const BooksCard = () => {
                     <img src="https://i.ibb.co/C8sHzRx/best-books.png" alt="books" className="rounded-lg" />
                 </figure>
                 <div className="card-body items-center text-center">
-                    <h2 className="card-title">Book Name1</h2>
-                    <p>Book Name By Author</p>
+                    <h2 className="card-title text-oliveGreen">Book Name1</h2>
+                    <p className="text-oliveGreen">Book Name By Author</p>
 
                     <p className="flex gap-1 text-orange-400 mb-1">
                         <IoMdStar></IoMdStar>
