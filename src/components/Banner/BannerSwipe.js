@@ -20,57 +20,57 @@ import { EffectCards } from 'swiper/modules';
         modules={[EffectCards]}
         className="mySwiper"
       >
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src="https://i.ibb.co/HnhDZ22/the-vacation-house.jpg"
                             width={800}
                             height={500}
                             alt="top news"
                         /></SwiperSlide>
                         
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src="https://i.ibb.co/x56XSBb/Dead.jpg"
                             width={800}
                             height={500}
                             alt="top news"
                         /></SwiperSlide>
                        
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src=" https://i.ibb.co/DfTQDLF/Familia.jpg"
                             width={800}
                             height={500}
                             alt="top news"
                         /></SwiperSlide>
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src="https://i.ibb.co/VLNnRmP/Dragons.jpg"
                             width={800}
                             height={500}
                             alt="top news"
                         /></SwiperSlide>
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src="https://i.ibb.co/MnPbs95/Deep-fried.jpg"
                             width={800}
                             height={500}
                             alt="top news"
                         /></SwiperSlide>
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src="https://i.ibb.co/gDBxZ5D/Every-Time.jpg"
                             width={800}
                             height={500}
                             alt="top news"
                         /></SwiperSlide>
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src="https://i.ibb.co/jrQp7yY/Money.jpg"
                             width={800}
                             height={500}
                             alt="top news"
                         /></SwiperSlide>
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src="https://i.ibb.co/2v5nPNh/ikigai.jpg"
                             width={800}
                             height={500}
                             alt="top news"
                         /></SwiperSlide>
-        <SwiperSlide><Image className="relative"
+        <SwiperSlide><Image className=""
                             src="https://i.ibb.co/K9zjGGH/Betrayal.jpg"
                             width={800}
                             height={500}
