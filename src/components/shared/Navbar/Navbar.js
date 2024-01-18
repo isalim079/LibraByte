@@ -136,7 +136,7 @@ const Navbar = () => {
         <div className={`py-5 font-poppins ${navBg} drop-shadow-lg`}>
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
-                <div className="flex w-full justify-between items-center md:px-10 px-3 md:p-0 ">
+                <div className="flex w-full  justify-between items-center md:px-10 px-3 md:p-0 ">
                     <div className="">
                         <button
                             className=" text-3xl "
@@ -206,6 +206,13 @@ const Navbar = () => {
                             )}
                         </div>
                     </div> */}
+                <div>
+                        <Link href={"/login"}>
+                            <button className="bg-[#333D2E] text-white py-2 px-3 text-xs rounded-md">
+                                Sign In
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
 
