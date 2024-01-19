@@ -5,8 +5,8 @@ import React from 'react';
 const AboutUs = () => {
     return (
         <div>
-            <Vision></Vision>
             <AboutBanner></AboutBanner>
+            <Vision></Vision>
         </div>
     );
 };

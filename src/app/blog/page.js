@@ -1,7 +1,7 @@
 "use client"
 
 import Lottie from "lottie-react";
-import comingSoon from "@/assets/lottieAnimation/comingSoon.json"
+import comingSoon from "@/assets/New folder/comingSoon.json"
 
 
 const Blog = () => {

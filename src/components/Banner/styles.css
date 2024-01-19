@@ -1,5 +1,5 @@
 #app { height: 100% }
-html,
+/* html,
 body {
   position: relative;
   height: 100%;
@@ -27,7 +27,7 @@ html,
 body {
   position: relative;
   height: 100%;
-}
+} */
 
 #app {
   display: flex;

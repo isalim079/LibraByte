@@ -134,6 +134,8 @@ const Navbar = () => {
 
     return (
         <div className={`py-5 font-poppins ${navBg} drop-shadow-lg`}>
+
+
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
                 <div className="flex w-full  justify-between items-center md:px-10 px-3 md:p-0 ">

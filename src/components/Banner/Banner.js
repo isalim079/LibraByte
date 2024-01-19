@@ -22,7 +22,7 @@ const Banner = () => {
 </div>
 
                     </div>
-                    <div className="relative">
+                    <div className="">
                         <BannerSwipe/>
                         {/* <Image className="relative"
                             src={book}
