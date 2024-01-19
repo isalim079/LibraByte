@@ -1,39 +1,39 @@
-#app { height: 100% }
+/* #app { height: 100% }
 html,
 body {
   position: relative;
   height: 100%;
-}
+} */
 
-body {
+/* body {
   background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
   padding: 0;
-}
+} */
 
-body {
+/* body {
   background: #fff;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
   padding: 0;
-}
+} */
 
-html,
+/* html,
 body {
   position: relative;
   height: 100%;
-}
+} */
 
-#app {
+/* #app {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .swiper {
   width: 340px;
@@ -48,6 +48,7 @@ body {
   font-size: 22px;
   font-weight: bold;
   color: #fff;
+
 }
 
 .swiper-slide:nth-child(1n) {
