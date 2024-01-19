@@ -4,7 +4,7 @@ const AboutBanner = () => {
     return (
         <div>
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col-reverse lg:flex-row-reverse -z-10">
                     <img src="https://i.ibb.co/xHNdd0V/vecteezy-web-developer-and-seo-optimization.jpg" className="md:max-w-lg rounded-md" />
                     <div>
                         <h1 className="text-5xl font-bold">Explore More About Our Dedicated Team!</h1>
