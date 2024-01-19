@@ -1,11 +1,11 @@
 
 const OurValues = () => {
     return (
-        <div className="mx-8 md:mx-28 xl:mx-10 lg:mx-[140px]">
-            <h1 className="text-4xl lg:text-5xl text-center font-semibold">Our Values</h1>
+        <div className="mx-8 md:mx-28 lg:mx-[140px]">
+            <h1 className="text-4xl text-center font-semibold">Our Values</h1>
             <h6 className="text-lg text-center my-4">Empowering Connections: Our Guiding Principles</h6>
             {/* <div className="divider divider-neutral w-96 md:w-72 lg:w-96 mx-auto my-2"></div> */}
-            <div className="my-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div className="w-96 md:w-72 lg:w-96">
                     <img src="https://i.ibb.co/mRQL6sF/brainstorming-1319789.png" alt="Shoes" className="skeleton w-40 h-40 p-10 rounded-full mx-auto bg-[#EFEDE1]" />
                     <div className="text-center">
