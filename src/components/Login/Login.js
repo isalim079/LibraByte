@@ -66,7 +66,7 @@ const Login = () => {
     return (
         <section className="py-10">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div className="relative -z-10 max-w-md mx-auto ">
+                <div className=" max-w-md mx-auto ">
                     <div className="overflow-hidden  rounded-md shadow-md">
                         <div className="px-4 py-6 sm:px-8 sm:py-7">
                             <h2 className="text-2xl font-bold text-center ">Welcome to LibraByte</h2>

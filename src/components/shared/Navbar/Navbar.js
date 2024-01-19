@@ -148,7 +148,7 @@ const Navbar = () => {
                             )}
                         </button>
                         <div
-                            className={`absolute w-[280px] pl-6 pr-12 mt-8`}
+                            className={`absolute w-[280px] pl-6 pr-12 mt-8 z-50`}
                             
                             onClick={() => setMenuToggle(!menuToggle)}
                         >
