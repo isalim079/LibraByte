@@ -12,7 +12,7 @@ const Vision = () => {
            <div className="grid grid-cols-1 gap-3 ml-8 md:ml-6  md:grid-cols-3 lg:grid-cols-4 lg:ml-6 my-6 items-center ">
             <div className=" card justify-center items-center card-body w-56 h-52 bg-white p-5">
             <Image className=" w-16"
-                       src=" https://i.ibb.co/S0rpCnw/global-975645.png"
+                       src="https://i.ibb.co/S0rpCnw/global-975645.png"
                        width={800}
                        height={500}
                        alt="top news"
@@ -21,7 +21,7 @@ const Vision = () => {
             </div>
             <div className="card justify-center items-center card-body w-56 h-52 bg-white p-5">
             <Image className=" w-16"
-                       src=" https://i.ibb.co/tzy1sFs/puzzle-5827084.png"
+                       src="https://i.ibb.co/tzy1sFs/puzzle-5827084.png"
                        width={800}
                        height={500}
                        alt="top news"
@@ -30,7 +30,7 @@ const Vision = () => {
             </div>
             <div className="card justify-center items-center card-body w-56 h-52 bg-white p-5">
             <Image className=" w-16"
-                       src=" https://i.ibb.co/1mM4vVB/happy-5066806.png"
+                       src="https://i.ibb.co/1mM4vVB/happy-5066806.png"
                        width={800}
                        height={500}
                        alt="top news"
