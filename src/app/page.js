@@ -7,7 +7,9 @@ import BestAuthor from "@/components/BestAuthor/BestAuthor";
 export default function Home() {
   return (
     <div className="overflow-hidden">
+      <div>
       <Banner></Banner>
+      </div>
       <BestSelling></BestSelling>
       <BestAuthor />
       <FeatureSection />
