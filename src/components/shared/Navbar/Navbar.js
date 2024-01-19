@@ -12,34 +12,35 @@ import Image from "next/image";
 
 import { usePathname } from "next/navigation";
 
+
 const Navbar = () => {
     // theme
     const [theme, setTheme] = useState("light");
 
-    const [themeDropdown, setThemeDropDown] = useState(false);
+    // const [themeDropdown, setThemeDropDown] = useState(false);
 
-    const handleThemeToggle = (e) => {
-        const clickedItem = e.target;
-        // console.log(clickedItem.innerText);
-        if (clickedItem.innerText === "Light") {
-            setTheme("light");
-        }
-        if (clickedItem.innerText === "Dark") {
-            setTheme("dark");
-        }
-        if (clickedItem.innerText === "Retro") {
-            setTheme("retro");
-        }
-        if (clickedItem.innerText === "CupCake") {
-            setTheme("cupcake");
-        }
-    };
+    // const handleThemeToggle = (e) => {
+    //     const clickedItem = e.target;
+    //     // console.log(clickedItem.innerText);
+    //     if (clickedItem.innerText === "Light") {
+    //         setTheme("light");
+    //     }
+    //     if (clickedItem.innerText === "Dark") {
+    //         setTheme("dark");
+    //     }
+    //     if (clickedItem.innerText === "Retro") {
+    //         setTheme("retro");
+    //     }
+    //     if (clickedItem.innerText === "CupCake") {
+    //         setTheme("cupcake");
+    //     }
+    // };
 
-    useEffect(() => {
-        localStorage.setItem("theme", theme);
-        const localTheme = localStorage.getItem("theme");
-        document.querySelector("html").setAttribute("data-theme", localTheme);
-    }, [theme]);
+    // useEffect(() => {
+    //     localStorage.setItem("theme", theme);
+    //     const localTheme = localStorage.getItem("theme");
+    //     document.querySelector("html").setAttribute("data-theme", localTheme);
+    // }, [theme]);
 
     // menu toggle
     const [menuToggle, setMenuToggle] = useState(false);
@@ -134,6 +135,7 @@ const Navbar = () => {
 
     return (
         <div className={`py-5 font-poppins ${navBg} drop-shadow-lg`}>
+
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
                 <div className="flex w-full  justify-between items-center md:px-10 px-3 md:p-0 ">
@@ -149,7 +151,8 @@ const Navbar = () => {
                             )}
                         </button>
                         <div
-                            className="absolute  w-full pl-14 pr-20 mt-8 pb-10 z-0"
+                            className="absolute  w-full pl-14 pr-20 mt-8 pb-10"
+                            id="navPopup"
                             onClick={() => setMenuToggle(!menuToggle)}
                         >
                             {menuToggle ? (
@@ -166,7 +169,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="">
-                        <Image src={logo} width={100} height={100} alt="logo" />
+                        <a href="/"><Image src={logo} width={100} height={100} alt="logo" /></a>
                     </div>
 
                     {/* theme section */}
@@ -221,7 +224,7 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <div className="">
-                    <Image src={logo} width={100} height={100} alt="logo" />
+                    <a href="/"><Image src={logo} width={100} height={100} alt="logo" /></a>
                 </div>
 
                 {/* Navigation */}
