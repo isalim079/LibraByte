@@ -43,7 +43,7 @@ const BannerSwipe = () => {
                 <SwiperSlide>
                     <Image
                         className=""
-                        src=" https://i.ibb.co/DfTQDLF/Familia.jpg"
+                        src="https://i.ibb.co/DfTQDLF/Familia.jpg"
                         width={800}
                         height={500}
                         alt="top news"
