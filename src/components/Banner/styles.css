@@ -36,9 +36,8 @@ body {
 } */
 
 .swiper {
-  width: 240px;
-  height: 320px;
-
+  width: 340px;
+  height: 460px;
 }
 
 .swiper-slide {
@@ -91,10 +90,9 @@ body {
 .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
 }
-
-@media only screen and (max-width: 720px){
+@media screen and (max-width: 425px){
   .swiper {
-    width: 180px;
-    height: 260px;
+    width: 240px;
+    height: 340px;
   }
 }
