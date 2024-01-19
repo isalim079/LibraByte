@@ -3,6 +3,7 @@ import Arrival from "@/components/Arrival/Arrival";
 import BestSelling from "@/components/BestSelling/BestSelling";
 import FeatureSection from "@/components/FeatureSection/FeatureSection";
 import BestAuthor from "@/components/BestAuthor/BestAuthor";
+import Subscribe from "@/components/Subscribe/Subscribe";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <BestAuthor />
       <FeatureSection />
       <Arrival />
+      <Subscribe />
     </div>
   )
 }
