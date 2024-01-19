@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { AuthContext } from '@/app/Context/AuthProvider';
+import logo from "@/assets/logo/LibraByte.png";
+import Image from 'next/image';
 
 const Register = () => {
 
@@ -74,8 +76,10 @@ const Register = () => {
                 <div className=" max-w-md mx-auto ">
                     <div className="overflow-hidden  rounded-md shadow-md">
                         <div className="px-4 py-6 sm:px-8 sm:py-7">
-                            <h2 className="text-3xl font-bold text-center ">Welcome to LibraByte</h2>
-
+                            <div className=' flex items-center justify-center mb-3'>
+                                <Image src={logo} width={100} height={100} alt="logo" />
+                            </div>
+                            <h2 className="text-2xl font-bold text-center ">Welcome to LibraByte</h2>
                             <p className="text-base  text-center text-gray-600 mt-2">Already have an account? <Link href={'/login'} className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline">Login here</Link></p>
                             <form onSubmit={handleSubmit(onSubmit)} className='mt-8'>
                                 <div className="space-y-5">
