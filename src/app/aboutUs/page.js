@@ -8,6 +8,7 @@ const AboutUs = () => {
         <div>
             <AboutBanner></AboutBanner>
             <Vision></Vision>
+            <OurValues></OurValues>
         </div>
     );
 };
