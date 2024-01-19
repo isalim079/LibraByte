@@ -1,13 +1,13 @@
 "use client"
 
 import Lottie from "lottie-react";
-import comingSoon from "@/assets/lottieAnimation/comingSoon.json"
+import comingSoon from "@/assets/New folder/comingSoon.json"
 
 
 const Blog = () => {
     return (
-        <div className="flex justify-center items-center">
-            <Lottie animationData={comingSoon} loop={true} className="w-96 h-screen"/>
+        <div className="flex justify-center items-center h-screen">
+            <Lottie animationData={comingSoon} loop={true} className="w-80"/>
         </div>
     );
 };
