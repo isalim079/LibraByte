@@ -1,7 +1,7 @@
 "use client";
 
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import logo from "@/assets/logo/LibraByte.png";
 import Image from "next/image";
@@ -11,8 +11,13 @@ import Image from "next/image";
 // } from "react-icons/io";
 
 import { usePathname } from "next/navigation";
+import { AuthContext } from "@/app/Context/AuthProvider";
 
 const Navbar = () => {
+
+    const {user} = useContext(AuthContext)
+    console.log(user);
+
     // theme
     const [theme, setTheme] = useState("light");
 
