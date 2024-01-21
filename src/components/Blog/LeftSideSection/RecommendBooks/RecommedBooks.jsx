@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 
 const RecommendBooks = () => {
     return (
-        <div className="mt-8 bg-lightWhite drop-shadow-lg p-8">
+        <div className="mt-8 bg-lightWhite drop-shadow-lg p-8 rounded-md">
             <div>
                 <h3 className="text-2xl font-bold text-oliveGreen">
                     Recommended for you!
