@@ -11,7 +11,8 @@ const AuthProvider = ({ children }) => {
     // loading while creating account and login
     const [loading, setLoading] = useState(true)
     // checking is user logged in or not
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
+    // console.log(user?.email);
 
 
     // google login function
@@ -72,7 +73,9 @@ const AuthProvider = ({ children }) => {
         handleUpdateUser,
         passwordLogIn,
         passwordReset,
-        logOut
+        logOut,
+        user,
+        loading
     }
 
     return (

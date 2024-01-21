@@ -1,7 +1,7 @@
 "use client";
 
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import logo from "@/assets/logo/LibraByte.png";
 import Image from "next/image";
@@ -11,8 +11,13 @@ import Image from "next/image";
 // } from "react-icons/io";
 
 import { usePathname } from "next/navigation";
+import { AuthContext } from "@/app/Context/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    // console.log(user);
+
     // theme
     const [theme, setTheme] = useState("light");
 
@@ -116,6 +121,18 @@ const Navbar = () => {
         </>
     );
 
+    // logout section
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                toast.success("you have logged out successfully");
+            })
+            .catch((error) => {
+                console.log(error.code);
+                console.log(error.message);
+            });
+    };
+
     // delete bg of nav
     // const navBg = theme === "light" ? "bg-lightWhite" : "bg-slate-900";
 
@@ -149,7 +166,6 @@ const Navbar = () => {
                         </button>
                         <div
                             className={`absolute w-[280px] pl-6 pr-12 mt-8 z-50`}
-                            
                             onClick={() => setMenuToggle(!menuToggle)}
                         >
                             {menuToggle ? (
@@ -275,11 +291,22 @@ const Navbar = () => {
                 {/* Login section */}
                 <div className="flex items-center gap-4">
                     <div>
-                        <Link href={"/login"}>
-                            <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
-                                Sign In
-                            </button>
-                        </Link>
+                        {user ? (
+                            <div>
+                                <button onClick={handleSignOut} className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Out</button>
+                            </div>
+                        ) : (
+                            <div>
+                                
+                                    {" "}
+                                    <Link href={"/login"}>
+                                        <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
+                                            Sign In
+                                        </button>
+                                    </Link>
+                                
+                            </div>
+                        )}
                     </div>
 
                     {/* <div className="">
