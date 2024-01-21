@@ -16,7 +16,7 @@ const Blog = () => {
                 </div>
 
                 {/* Middle section */}
-                <div className="border border-black"><MiddleSideSection /></div>
+                <div className=""><MiddleSideSection /></div>
 
                 {/* Right section */}
                 <div className="border border-black">port section 2</div>
