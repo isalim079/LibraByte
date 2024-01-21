@@ -16,30 +16,30 @@ const Navbar = () => {
     // theme
     const [theme, setTheme] = useState("light");
 
-    const [themeDropdown, setThemeDropDown] = useState(false);
+    // const [themeDropdown, setThemeDropDown] = useState(false);
 
-    const handleThemeToggle = (e) => {
-        const clickedItem = e.target;
-        // console.log(clickedItem.innerText);
-        if (clickedItem.innerText === "Light") {
-            setTheme("light");
-        }
-        if (clickedItem.innerText === "Dark") {
-            setTheme("dark");
-        }
-        if (clickedItem.innerText === "Retro") {
-            setTheme("retro");
-        }
-        if (clickedItem.innerText === "CupCake") {
-            setTheme("cupcake");
-        }
-    };
+    // const handleThemeToggle = (e) => {
+    //     const clickedItem = e.target;
+    //     // console.log(clickedItem.innerText);
+    //     if (clickedItem.innerText === "Light") {
+    //         setTheme("light");
+    //     }
+    //     if (clickedItem.innerText === "Dark") {
+    //         setTheme("dark");
+    //     }
+    //     if (clickedItem.innerText === "Retro") {
+    //         setTheme("retro");
+    //     }
+    //     if (clickedItem.innerText === "CupCake") {
+    //         setTheme("cupcake");
+    //     }
+    // };
 
-    useEffect(() => {
-        localStorage.setItem("theme", theme);
-        const localTheme = localStorage.getItem("theme");
-        document.querySelector("html").setAttribute("data-theme", localTheme);
-    }, [theme]);
+    // useEffect(() => {
+    //     localStorage.setItem("theme", theme);
+    //     const localTheme = localStorage.getItem("theme");
+    //     document.querySelector("html").setAttribute("data-theme", localTheme);
+    // }, [theme]);
 
     // menu toggle
     const [menuToggle, setMenuToggle] = useState(false);
@@ -130,8 +130,6 @@ const Navbar = () => {
             ? "bg-[#ECE2CA]"
             : "bg-lightWhite";
 
-
-
     return (
         <div className={`py-5 font-poppins ${navBg} drop-shadow-lg`}>
 
@@ -139,6 +137,7 @@ const Navbar = () => {
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
                 <div className="flex w-full  justify-between items-center md:px-10 px-3 md:p-0 ">
+                    {/* previous */}
                     <div className="">
                         <button
                             className=" text-3xl "
@@ -151,11 +150,12 @@ const Navbar = () => {
                             )}
                         </button>
                         <div
-                            className="absolute  w-full pl-14 pr-20 mt-8 pb-10 z-0"
+                            className={`absolute w-[280px] pl-6 pr-12 mt-8 z-50`}
+                            
                             onClick={() => setMenuToggle(!menuToggle)}
                         >
                             {menuToggle ? (
-                                <div className="h-[300px] bg-slate-100/95 rounded-md">
+                                <div className="h-[250px] bg-slate-100/95 rounded-md">
                                     <div className="space-y-4 text-normal list-none flex flex-col justify-center items-center h-full">
                                         {navLinks}
                                     </div>
@@ -167,8 +167,50 @@ const Navbar = () => {
                         </div>
                     </div>
 
+                    {/* 1 solution */}
+
+                    {/* 2 solution */}
+
+                    {/* <div className="">
+                        <div className="dropdown">
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                className="btn btn-ghost btn-circle"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h16M4 18h7"
+                                    />
+                                </svg>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content mt-3 z-[999] p-2 shadow bg-base-100 rounded-box w-52"
+                            >
+                                {navLinks}
+                            </ul>
+                        </div>
+                    </div> */}
+
                     <div className="">
-                        <Image src={logo} width={100} height={100} alt="logo" />
+                        <a href="/">
+                            <Image
+                                src={logo}
+                                width={100}
+                                height={100}
+                                alt="logo"
+                            />
+                        </a>
                     </div>
 
                     {/* theme section */}
@@ -208,7 +250,7 @@ const Navbar = () => {
                             )}
                         </div>
                     </div> */}
-                <div>
+                    <div>
                         <Link href={"/login"}>
                             <button className="bg-[#333D2E] text-white py-2 px-3 text-xs rounded-md">
                                 Sign In
@@ -220,10 +262,11 @@ const Navbar = () => {
 
             {/* Max width section/ PC view section */}
             <div className="lg:flex justify-between items-center max-w-screen-xl mx-auto hidden ">
-
                 {/* Logo */}
                 <div className="">
-                    <Image src={logo} width={100} height={100} alt="logo" />
+                    <a href="/">
+                        <Image src={logo} width={100} height={100} alt="logo" />
+                    </a>
                 </div>
 
                 {/* Navigation */}
