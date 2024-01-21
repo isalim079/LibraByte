@@ -35,7 +35,7 @@ const BlogPost = () => {
                                 </div>
                                 <div className="border border-oliveGreen mt-1 mb-3"></div>
                                 <h4 className="font-semibold">{blogPost?.bookName}</h4>
-                                <p>{blogPost?.bookReview}</p>
+                                <p className="text-justify text-textLightWhite">{blogPost?.bookReview}</p>
                             </div>
                             <div className="mt-3 flex gap-3 justify-end">
                             <IoIosHeartEmpty className="text-2xl" />
