@@ -18,7 +18,7 @@
   
   .swiper {
     /* width: 100%; */
-    /* height: 100%; */
+    height: 420px;
   }
  
   #bestSellingSwiper {
@@ -36,6 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 430px;
   }
   
   /* .swiper-slide img {
@@ -44,4 +45,12 @@
     height: 100%;
     object-fit: cover;
   } */
+
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+}
+
+
   

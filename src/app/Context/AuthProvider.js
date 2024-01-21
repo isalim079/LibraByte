@@ -1,7 +1,7 @@
 'use client';
 
 import { auth } from '@/firebase/firebase';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 
 export const AuthContext = createContext()
@@ -13,8 +13,8 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
 
     // checking is user logged in or not
-
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
+    // console.log(user?.email);
 
 
     // google login function
@@ -74,7 +74,9 @@ const AuthProvider = ({ children }) => {
         registerUser,
         handleUpdateUser,
         passwordLogIn,
-        logOut
+        logOut,
+        user,
+        loading
     }
 
     return (

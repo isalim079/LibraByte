@@ -7,13 +7,16 @@ import React, { useContext } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import logo from "@/assets/logo/LibraByte.png";
+import Image from 'next/image';
+
 
 const Login = () => {
 
 
     const router = useRouter();
     // import google popup function from context api
-    const { googleLogInPopup, passwordLogIn } = useContext(AuthContext)
+    const { googleLogInPopup, passwordLogIn, user } = useContext(AuthContext)
 
     const {
         register,
@@ -50,7 +53,7 @@ const Login = () => {
         googleLogInPopup(provider)
             .then(res => {
                 console.log(res)
-                toast.success("Login Successful")
+                toast.success(`Hey, ${res?.user?.displayName}! Welcome back`)
                 reset()
                 router.push('/');
             })
@@ -69,6 +72,9 @@ const Login = () => {
                 <div className=" max-w-md mx-auto ">
                     <div className="overflow-hidden  rounded-md shadow-md">
                         <div className="px-4 py-6 sm:px-8 sm:py-7">
+                            <div className=' flex items-center justify-center mb-3'>
+                                <Image src={logo} width={100} height={100} alt="logo" />
+                            </div>
                             <h2 className="text-2xl font-bold text-center ">Welcome to LibraByte</h2>
                             <p className="mt-2 text-base text-center text-gray-600">Don’t have an account? <Link
                                 href={'/register'} className="font-medium  text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline ">Sign up</Link></p>
