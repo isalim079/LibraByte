@@ -1,6 +1,6 @@
 const Categories = () => {
     return (
-        <div className="mt-8 bg-lightWhite p-8 rounded-md">
+        <div className="mt-8 bg-lightWhite p-8 rounded-md drop-shadow-lg">
             <div>
                 <h2 className="text-2xl font-semibold text-oliveGreen">
                     Categories

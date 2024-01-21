@@ -20,7 +20,7 @@ const TopPost = () => {
     // console.log(topPostInfo);
 
     return (
-        <div className="mt-8 bg-lightWhite p-8 rounded-md">
+        <div className="mt-8 bg-lightWhite p-8 rounded-md h-[500px] overflow-y-auto drop-shadow-lg">
             <div>
                 <h2 className="text-2xl font-semibold text-oliveGreen">
                     Top Post
@@ -28,33 +28,29 @@ const TopPost = () => {
                 <div className="border-2 border-oliveGreen w-32 mt-1 mb-5"></div>
             </div>
             <div className="list-none">
-                <div>
+                <div className="">
                     {topPostInfo.map((topPost, index) => (
                         <div key={index}>
-                            <div>
-                                <div className="flex items-center space-x-6">
-                                    <Image
-                                        className="rounded-full h-[50px]"
-                                        src={topPost?.image}
-                                        width={50}
-                                        height={100}
-                                        alt="image"
-                                    ></Image>
-                                    <p className="font-semibold">
-                                        {topPost?.name}
-                                    </p>
-                                </div>
-                                <div className="mt-4 mb-10">
-                                    <h3 className="text-lg font-semibold">
-                                        {topPost?.blogPostTitle}
-                                    </h3>
-
-                                    <p className="text-justify mt-1 text-textLightWhite">
-                                        {topPost?.description}
-                                    </p>
-                                </div>
-                                <span className="divider"></span>
+                            <div className="flex items-center space-x-6">
+                                <Image
+                                    className="rounded-full h-[50px]"
+                                    src={topPost?.image}
+                                    width={50}
+                                    height={100}
+                                    alt="image"
+                                ></Image>
+                                <p className="font-semibold">{topPost?.name}</p>
                             </div>
+                            <div className="mt-4 mb-10">
+                                <h3 className="text-lg font-semibold">
+                                    {topPost?.blogPostTitle}
+                                </h3>
+
+                                <p className="text-justify mt-1 text-textLightWhite">
+                                    {topPost?.description}
+                                </p>
+                            </div>
+                            <span className="divider"></span>
                         </div>
                     ))}
                 </div>

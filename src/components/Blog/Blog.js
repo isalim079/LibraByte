@@ -4,7 +4,7 @@ import LeftSideSection from "./LeftSideSection/LeftSideSection";
 
 const Blog = () => {
     return (
-        <div className="max-w-screen-xl mx-auto mt-10">
+        <div className="max-w-screen-xl mx-auto mt-10 mb-10">
 
             {/* Full blog container */}
             <div className="grid grid-cols-3 gap-10">
