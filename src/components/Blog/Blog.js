@@ -2,6 +2,7 @@
 
 import LeftSideSection from "./LeftSideSection/LeftSideSection";
 import MiddleSideSection from "./MiddleSideSection/MiddleSideSection";
+import RightSideSection from "./RightSideSection/RightSideSection";
 
 const Blog = () => {
     return (
@@ -16,10 +17,14 @@ const Blog = () => {
                 </div>
 
                 {/* Middle section */}
-                <div className=""><MiddleSideSection /></div>
+                <div className="">
+                    <MiddleSideSection />
+                </div>
 
                 {/* Right section */}
-                <div className="border border-black">port section 2</div>
+                <div className="">
+                    <RightSideSection />
+                </div>
             </div>
         </div>
     );

@@ -20,7 +20,7 @@ const AuthorImage = () => {
         <div className="mt-8 p-8 bg-lightWhite rounded-md drop-shadow-lg">
             <div>
                 <h3 className="text-2xl font-semibold text-oliveGreen">Contact</h3>
-                <div className="border-2 border-oliveGreen w-[148px] mt-1 mb-5"></div>
+                <div className="border-2 border-oliveGreen w-[95px] mt-1 mb-5"></div>
             </div>
             <Swiper
                 effect={"flip"}
