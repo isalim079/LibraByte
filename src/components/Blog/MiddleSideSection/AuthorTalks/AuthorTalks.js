@@ -27,7 +27,7 @@ const AuthorTalks = () => {
     );
 
     return (
-        <div className="mt-8 p-8 bg-lightWhite rounded-md drop-shadow-lg overflow-y-auto h-[1310px]">
+        <div className="mt-8 p-8 bg-lightWhite rounded-md drop-shadow-lg overflow-y-auto h-[920px]">
             {/* title section */}
             <div>
                 <h1 className="text-2xl font-semibold text-oliveGreen">

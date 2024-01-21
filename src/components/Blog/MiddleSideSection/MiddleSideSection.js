@@ -1,3 +1,4 @@
+import AuthorImage from "./AuthorImage/AuthorImage";
 import AuthorTalks from "./AuthorTalks/AuthorTalks";
 import PostField from "./PostField/PostField";
 
@@ -7,6 +8,7 @@ const MiddleSideSection = () => {
         <div>
             <PostField />
             <AuthorTalks />
+            <AuthorImage />
         </div>
     );
 };
