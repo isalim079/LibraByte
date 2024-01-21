@@ -18,6 +18,8 @@ module.exports = {
       colors: {
         "oliveGreen": "#333D2E",
         "lightWhite": "#EFEDE1",
+        "textLightWhite": "#878783",
+        "darkLightWhite": "#CDCCC3",
         "darkOliveGreen": "#101B0C",
       }
     },

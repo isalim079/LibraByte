@@ -16,7 +16,7 @@ const Login = () => {
 
     const router = useRouter();
     // import google popup function from context api
-    const { googleLogInPopup, passwordLogIn } = useContext(AuthContext)
+    const { googleLogInPopup, passwordLogIn, user } = useContext(AuthContext)
 
     const {
         register,
@@ -53,7 +53,7 @@ const Login = () => {
         googleLogInPopup(provider)
             .then(res => {
                 console.log(res)
-                toast.success("Login Successful")
+                toast.success(`Hey, ${res?.user?.displayName}! Welcome back`)
                 reset()
                 router.push('/');
             })
