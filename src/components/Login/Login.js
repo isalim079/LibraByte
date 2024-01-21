@@ -3,7 +3,7 @@
 import { AuthContext } from '@/app/Context/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -12,11 +12,11 @@ import Image from 'next/image';
 
 
 const Login = () => {
-
+    const [email, setEmail] = useState('')
 
     const router = useRouter();
     // import google popup function from context api
-    const { googleLogInPopup, passwordLogIn } = useContext(AuthContext)
+    const { googleLogInPopup, passwordLogIn, passwordReset } = useContext(AuthContext)
 
     const {
         register,
@@ -66,6 +66,29 @@ const Login = () => {
             })
     }
 
+
+    // reset function
+
+    const handleReset = (e) => {
+        e.preventDefault();
+        console.log(email)
+        passwordReset(email)
+            .then(res => {
+                // console.log(document.getElementById('my_modal_5'))
+                document.getElementById('my_modal_5').close()
+                toast.success("Sent Reset Link")
+                setEmail('')
+
+            })
+            .catch(err => {
+                console.log(err)
+                const errorCode = err.code;
+                const errorMessage = err.message
+                console.log(errorCode, errorMessage.split("/"));
+                toast.error(`${errorMessage.split("/")[1]}`);
+            })
+    }
+
     return (
         <section className="py-10">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -84,6 +107,7 @@ const Login = () => {
                                     <div>
                                         <label className="text-base font-medium text-gray-900"> Email address </label>
                                         <div className="mt-2.5">
+
                                             <input
                                                 type="email"
                                                 {...register("email", { required: true })}
@@ -98,7 +122,36 @@ const Login = () => {
                                         <div className="flex items-center justify-between">
                                             <label className="text-base font-medium text-gray-900"> Password </label>
 
-                                            <a href="#" title="" className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </a>
+                                            <button className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700" onClick={() => document.getElementById('my_modal_5').showModal()}> Forgot password? </button>
+                                            <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                                                <div className="modal-box">
+                                                    <div className="mt-2.5">
+                                                        <button onClick={() => document.getElementById('my_modal_5').close()} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                        <div className=' flex items-center justify-center mb-3'>
+                                                            <Image src={logo} width={100} height={100} alt="logo" />
+                                                        </div>
+                                                        <p className='text-sm mb-3'>
+                                                            Please enter your email address and click "Send". If your email already appears in our database, you will receive an email with instructions on how to log in to your account.
+                                                        </p>
+
+                                                    </div>
+                                                    <div className="">
+                                                        <input
+                                                            onChange={e => { setEmail(e.target.value) }}
+                                                            type="email"
+                                                            placeholder="Enter email to get password reset"
+                                                            className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                                                        />
+                                                        <div>
+                                                            <button type="button" onClick={handleReset} className="btn bg-oliveGreen text-white mt-2">
+                                                                Submit
+                                                            </button>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </dialog>
                                         </div>
                                         <div className="mt-2.5">
                                             <input
