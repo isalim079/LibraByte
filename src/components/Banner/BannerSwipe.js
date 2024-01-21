@@ -8,7 +8,7 @@ import "swiper/css/effect-cards";
 import Image from "next/image";
 
 import book from "@/assets/book.png";
-import "./styles.css";
+import "./styles.css"
 
 // import required modules
 import { EffectCards } from "swiper/modules";
