@@ -6,7 +6,7 @@ import BannerBody from "./BannerBody";
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
 
 
-const TopBanner = async () => {
+const TopBanner = () => {
     const [topBanner, setTopBanner] = useState([]);
     const [currentCardImage, setCurrentCardImage] = useState(0);
 
@@ -54,7 +54,7 @@ const TopBanner = async () => {
     };
 
     return (
-        <div className="mb-20 md:mb-0">
+        <div className="mb-20 md:mb-14">
             <div className="relative">
                 <div
                     style={backgroundImageStyle}
