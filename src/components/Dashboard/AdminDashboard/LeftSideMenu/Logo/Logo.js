@@ -14,6 +14,7 @@ const Logo = () => {
                                 className='mb-5'
                             />
                         </a>
+                        {/* <hr className="border-[#c8c19e] md:mt-9"></hr> */}
                     </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import HeaderText from "./HeaderText/HeaderText";
+import Overview from "./Overview/Overview";
 import Searchbar from "./SearchBar/Searchbar";
 
 
@@ -12,6 +13,9 @@ const RightSideContent = () => {
 
             {/* header text component  */}
             <HeaderText></HeaderText>
+
+            {/* Dashboard Overview  */}
+            <Overview></Overview>
 
 
         </div>

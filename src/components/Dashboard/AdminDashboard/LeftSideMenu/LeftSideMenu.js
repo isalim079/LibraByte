@@ -7,7 +7,6 @@ const LeftSideMenu = () => {
         <div className='bg-[#EFEDE1]  p-10'>
 
                 <Logo></Logo>
-                
                 <AdminMenu></AdminMenu>
 
         </div>
