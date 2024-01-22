@@ -5,7 +5,7 @@ import { IoMdStar } from "react-icons/io";
 const BooksCard = () => {
     return (
         <div>
-            <div className="card  bg-base-300 shadow-sm">
+            <div className="card  bg-base-300 shadow-sm ">
                 <figure className="px-10 pt-10">
                     <img src="https://i.ibb.co/C8sHzRx/best-books.png" alt="books" className="rounded-lg" />
                 </figure>
