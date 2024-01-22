@@ -66,13 +66,13 @@ const TopBanner = async () => {
                 <div className="flex justify-center items-center">
                     <button
                         onClick={handlePreviousClick}
-                        className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 mr-4"
+                        className="bg-transparent border hover:bg-lightWhite hover:text-oliveGreen text-white px-4 py-2 mr-4"
                     >
                         <MdOutlineNavigateBefore></MdOutlineNavigateBefore>
                     </button>
                     <button
                         onClick={handleNextClick}
-                        className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2"
+                        className="bg-transparent border hover:bg-lightWhite hover:text-oliveGreen text-white px-4 py-2"
                     >
                         <MdOutlineNavigateNext></MdOutlineNavigateNext>
                     </button>
