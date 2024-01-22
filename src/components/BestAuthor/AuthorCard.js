@@ -13,10 +13,10 @@ const BooksCardAuthor = () => {
                     <h2 className="card-title text-lightWhite">J.K. Rowling</h2>
                     <p className="text-white">Fantasy</p>
 
-                   
-                    
-                        <button className="btn btn-wide rounded-full max-w-full bg-lightWhite  text-oliveGreen">All Books</button>
-                    
+
+
+                    <button className="btn btn-wide rounded-full max-w-full bg-lightWhite  text-oliveGreen">All Books</button>
+
                 </div>
             </div>
         </div>

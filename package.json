@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "@tanstack/react-query": "^5.17.19",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "axios": "^1.6.5",
