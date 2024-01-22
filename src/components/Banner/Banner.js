@@ -2,9 +2,9 @@
 import BannerSwipe from "./BannerSwipe";
 const Banner = () => {
     return (
-        <div className="overflow-hidden">
-            <section className="flex  min-h-[600px]  w-full items-center justify-center bg-[#EFEDE1]  py-5">
-                <div className="flex w-full  gap-10 lg:flex-row flex-col items-center justify-between lg:px-[140px] md:px-[80px] px-8">
+        <div className="overflow-hidden mt-[56px]">
+            <section className="flex min-h-[600px]  w-full items-center justify-center bg-[#EFEDE1]  py-5">
+                <div className="flex w-full  gap-10 lg:flex-row-reverse flex-col items-center justify-between lg:px-[140px] md:px-[80px] px-8">
                     <div className="max-w-lg md:space-y-6 sm:space-y-5 space-y-4 pb-5 ">
                         <h1 className="lg:text-5xl sm:text-4xl text-3xl font-bold leading-tight text-[#312B21] text-center lg:text-left">
                             Your Gateway to Literary Exploration and Knowledge{" "}
