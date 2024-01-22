@@ -1,39 +1,52 @@
 "use client";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useState } from 'react';
+import ApexCharts  from 'react-apexcharts'
+
+
 
 const AnalyticsChart = () => {
 
-    const data = [
-        {name: "G1", value: 200},
-        {name: "G2", value: 300},
-        {name: "G3", value: 400},
-        {name: "G4", value: 500},
-        {name: "G5", value: 600},
-    ];
+    const [state, setState] = useState({
+        series: [{
+            name: 'series1',
+            data: [31, 40, 28, 51, 42, 109, 100]
+        }, {
+            name: 'series2',
+            data: [11, 32, 45, 32, 34, 52, 41]
+        }],
+        options: {
+            chart: {
+                height: 350,
+                type: 'area'
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'datetime',
+                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+        },
+    })
+
+
 
     return (
-        <div>
-            <ResponsiveContainer width="100%" height="100%">
-                <LineChart
-                    width={500}
-                    height={300}
-                    data={data}
-                    margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line type="monotone" dataKey="value" stroke="#8884d8" activeDot={{ r: 8 }} />
-                    {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
-                </LineChart>
-            </ResponsiveContainer>
+        <div className='hidden lg:block'>
+            <ApexCharts
+                options={state.options}
+                series={state.series}
+                type='area'
+                width={700}
+            />
         </div>
     );
 };
