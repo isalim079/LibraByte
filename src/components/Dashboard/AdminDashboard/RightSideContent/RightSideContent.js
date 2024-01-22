@@ -1,3 +1,4 @@
+import Analytics from "./Analytics/Analytics";
 import HeaderText from "./HeaderText/HeaderText";
 import Overview from "./Overview/Overview";
 import Searchbar from "./SearchBar/Searchbar";
@@ -16,6 +17,9 @@ const RightSideContent = () => {
 
             {/* Dashboard Overview  */}
             <Overview></Overview>
+
+            {/* Website Analytics  */}
+            <Analytics></Analytics>
 
 
         </div>
