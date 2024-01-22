@@ -2,21 +2,21 @@
 
 const BannerBody = ({bannerDetails}) => {
 
-    console.log(bannerDetails);
+    // console.log(bannerDetails);
 
     // const { bookName, image, description } = bannerDetails;
     // console.log(bannerDetails?.bookName);
 
     return (
-        <div className="max-w-screen-xl mx-auto pt-20">
-            <div className="flex justify-between items-center">
+        <div className="max-w-screen-xl mx-auto md:pt-20 p-3 lg:p-0">
+            <div className="flex md:flex-row flex-col justify-between items-center">
                 <div>
-                    <h1 className="text-white font-bebas text-8xl">{bannerDetails?.bookName}</h1>
-                    <p className="text-white w-96 text-base font-montserrat">
+                    <h1 className="text-white font-semibold text-2xl lg:text-8xl">{bannerDetails?.bookName}</h1>
+                    <p className="text-white md:w-96 text-justify md:text-base font-montserrat text-sm">
                         {bannerDetails?.description}
                     </p>
                 </div>
-                <div className="w-96 h-[500px]  bg-base-100 shadow-xl relative">
+                <div className="lg:w-96 md:w-[220px] w-[130px] border border-white md:h-[330px] lg:h-[500px] h-[200px]  bg-base-100 shadow-xl -z-30 relative mt-4 md:mt-0">
                     <figure>
                         <img
                             className="absolute border border-red  h-full border-none"

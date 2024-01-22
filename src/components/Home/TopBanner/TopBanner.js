@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import BannerBody from "./BannerBody";
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
 
+
 const TopBanner = async () => {
     const [topBanner, setTopBanner] = useState([]);
     const [currentCardImage, setCurrentCardImage] = useState(0);
@@ -43,20 +44,21 @@ const TopBanner = async () => {
     // console.log(currentCard);
 
     const backgroundImageStyle = {
-        backgroundImage: `url(${currentCard?.image})`,
-        height: "900px",
+        backgroundImage: `url(${currentCard?.bgImage})`,
+        // height: "650px",
         backgroundSize: "cover",
         position: "absolute",
         width: "100%",
         backgroundColor: "rgba(0,0,0,0.9)",
+
     };
 
     return (
-        <div className="">
+        <div className="mb-20 md:mb-0">
             <div className="relative">
                 <div
                     style={backgroundImageStyle}
-                    className="absolute top-0 bottom-0 brightness-[40%] -z-50"
+                    className="absolute top-0 bottom-0 brightness-[40%] -z-50 lg:h-[650px] md:h-[510px] h-[450px] "
                 ></div>
             </div>
             <div>
