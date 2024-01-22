@@ -1,0 +1,24 @@
+@media only screen and (max-width: 321px){
+    #textArea {
+        width: 230px;
+        height: 120px;
+    }
+}
+@media only screen and (min-width: 322px) and ( max-width: 376px){
+    #textArea {
+        width: 285px;
+        height: 120px;
+    }
+}
+@media only screen and (min-width: 377px) and ( max-width: 426px){
+    #textArea {
+        width: 340px;
+        height: 120px;
+    }
+}
+@media only screen and (min-width: 427px) and ( max-width: 769px){
+    #textArea {
+        width: 680px;
+        height: 120px;
+    }
+}

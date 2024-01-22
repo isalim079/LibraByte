@@ -140,15 +140,17 @@ const Navbar = () => {
         theme === "light"
             ? "bg-lightWhite"
             : theme === "dark"
-            ? "bg-slate-900"
-            : theme === "cupcake"
-            ? "bg-[#FAF7F5]"
-            : theme === "retro"
-            ? "bg-[#ECE2CA]"
-            : "bg-lightWhite";
+                ? "bg-slate-900"
+                : theme === "cupcake"
+                    ? "bg-[#FAF7F5]"
+                    : theme === "retro"
+                        ? "bg-[#ECE2CA]"
+                        : "bg-lightWhite";
 
     return (
         <div className={`py-5 font-poppins ${navBg} drop-shadow-lg`}>
+
+
             {/* Toggle section/ Mobile view section */}
             <div className="lg:hidden">
                 <div className="flex w-full  justify-between items-center md:px-10 px-3 md:p-0 ">
@@ -269,6 +271,7 @@ const Navbar = () => {
                             <button className="bg-[#333D2E] text-white py-2 px-3 text-xs rounded-md">
                                 Sign In
                             </button>
+
                         </Link>
                     </div>
                 </div>
@@ -297,14 +300,17 @@ const Navbar = () => {
                             </div>
                         ) : (
                             <div>
-                                
-                                    {" "}
-                                    <Link href={"/login"}>
-                                        <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
-                                            Sign In
-                                        </button>
-                                    </Link>
-                                
+
+                                {" "}
+                                <Link href={"/login"}>
+                                    <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
+                                        Sign In
+                                    </button>
+                                    <button className="bg-red-500 text-white py-2 ml-2 px-3 text-sm rounded-md">
+                                        Subscribe
+                                    </button>
+                                </Link>
+
                             </div>
                         )}
                     </div>
