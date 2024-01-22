@@ -1,7 +1,7 @@
 'use client';
 
 import { auth } from '@/firebase/firebase';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 
 export const AuthContext = createContext()
@@ -41,6 +41,13 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    // Password reset function
+
+    const passwordReset = (email) => {
+        setLoading(true);
+        return sendPasswordResetEmail(auth, email)
+    }
+
     // sign out function
     const logOut = () => {
         setLoading(true)
@@ -65,6 +72,7 @@ const AuthProvider = ({ children }) => {
         registerUser,
         handleUpdateUser,
         passwordLogIn,
+        passwordReset,
         logOut,
         user,
         loading
