@@ -9,11 +9,12 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import logo from "@/assets/logo/LibraByte.png";
 import Image from 'next/image';
+import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
 
 
 const Login = () => {
     const [email, setEmail] = useState('')
-
+    const axiosPublic = useAxiosPublic();
     const router = useRouter();
     // import google popup function from context api
     const { googleLogInPopup, passwordLogIn, passwordReset, user } = useContext(AuthContext)
@@ -52,10 +53,19 @@ const Login = () => {
     const handleGoogle = () => {
         googleLogInPopup(provider)
             .then(res => {
-                console.log(res)
-                toast.success(`Hey, ${res?.user?.displayName}! Welcome back`)
-                reset()
-                router.push('/');
+                const user = {
+                    name: res.user.displayName,
+                    email: res.user.email,
+                    role: "user",
+                    subscription: "free"
+                }
+                // server post request
+                axiosPublic.post('/users/v1', user)
+                    .then(res => {
+                        toast.success(`Hey, ${res?.user?.displayName}! Welcome back`)
+                        reset()
+                        router.push('/');
+                    })
             })
             .catch(err => {
                 console.log(err)
