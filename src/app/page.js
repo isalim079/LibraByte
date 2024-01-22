@@ -12,8 +12,8 @@ export default function Home() {
     return (
         <div className="overflow-hidden">
             <Navbar />
-            {/* <TopBanner /> */}
-            <Banner />
+            <TopBanner />
+            {/* <Banner /> */}
             <BestSelling />
             <BestAuthor />
             <FeatureSection />
