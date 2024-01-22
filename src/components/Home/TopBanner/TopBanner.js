@@ -35,8 +35,8 @@ const TopBanner = async () => {
     };
 
     const handleNextClick = () => {
-        setCurrentCardImage((nextImage) =>
-            nextImage === topBanner.length - 1 ? 0 : nextImage + 1
+        setCurrentCardImage((prevImage) =>
+            prevImage === topBanner.length - 1 ? 0 : prevImage + 1
         );
     };
 
