@@ -1,12 +1,14 @@
+import AdminMenu from "./AdminMenu/AdminMenu";
 import Logo from "./Logo/Logo";
 
 
 const LeftSideMenu = () => {
     return (
-        <div className='bg-[#EFEDE1] text-white p-10'>
+        <div className='bg-[#EFEDE1]  p-10'>
 
                 <Logo></Logo>
                 
+                <AdminMenu></AdminMenu>
 
         </div>
     );
