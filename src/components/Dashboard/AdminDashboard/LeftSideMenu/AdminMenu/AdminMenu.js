@@ -5,11 +5,14 @@ import { SlCalender } from "react-icons/sl";
 import { FaUser } from "react-icons/fa6";
 import { MdReportProblem } from "react-icons/md";
 import { IoSettingsSharp } from "react-icons/io5";
+import Link from "next/link";
 
 const AdminMenu = () => {
     return (
         <div>
             {/* <h1 className='md:mt-11 text-[17px]'>Dashboard home</h1> */}
+
+
 
             <div className="list-none md:mt-16">
 
@@ -23,9 +26,9 @@ const AdminMenu = () => {
                 {/* divider */}
                 <div className="divider my-2"></div>
                 <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-darkLightWhite hover:py-2 hover:px-3 hover:rounded-md">
-                    <div className="flex items-center gap-2">
+                    <Link href="dashboard/users" className="flex items-center gap-2">
                         <FaUser className="text-xl" /> Users
-                    </div>
+                    </Link>
                 </li>
 
                 {/* divider */}
@@ -71,7 +74,9 @@ const AdminMenu = () => {
                 </li>
 
 
-            </div>
+             </div> 
+
+
         </div>
     );
 };
