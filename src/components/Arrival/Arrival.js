@@ -1,11 +1,21 @@
-
+"use client"
 import Image from "next/image";
 import img1 from "@/assets/Rectangle 20.png"
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 const Arrival = () => {
     return (
-        <div className="mx-8 md:mx-20 lg:mx-[140px] my-36">
-            <h1 className="text-4xl lg:text-5xl text-center font-semibold mb-10 lg:mb-24">New Arrival</h1>
+        <div className="bg-lightWhite py-10 sm:py-20 px-4 sm:px-0">
+            <div className="max-w-screen-xl mx-auto">
+            <div className=" flex justify-between flex-col md:flex-row items-center mb-10 ">
+                    <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
+                        New Arrival
+                    </h1>
+                    <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
+                        View All{" "}
+                        <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
+                    </button>
+                </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                 <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-[#EFEDE1]  shadow-xl">
                     <figure className="px-6 pt-6">
@@ -75,6 +85,7 @@ const Arrival = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

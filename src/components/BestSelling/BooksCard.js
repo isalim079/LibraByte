@@ -1,17 +1,15 @@
 import { IoMdStar } from "react-icons/io";
 
-
-
-const BooksCard = () => {
+const BooksCard = ({ book }) => {
     return (
         <div>
-            <div className="card  bg-base-300 shadow-sm">
-                <figure className="px-10 pt-10">
-                    <img src="https://i.ibb.co/C8sHzRx/best-books.png" alt="books" className="rounded-lg" />
+            <div className=" w-60 bg-lightWhite drop-shadow-lg ">
+                <figure className="h-64">
+                    <img src={book?.image} alt="books" className="" />
                 </figure>
                 <div className="card-body items-center text-center">
-                    <h2 className="card-title text-oliveGreen">Book Name1</h2>
-                    <p className="text-oliveGreen">Book Name By Author</p>
+                    <h2 className=" text-oliveGreen">{book?.name}</h2>
+                    {/* <p className="text-oliveGreen">{book?.author}</p> */}
 
                     <p className="flex gap-1 text-orange-400 mb-1">
                         <IoMdStar></IoMdStar>
@@ -21,7 +19,9 @@ const BooksCard = () => {
                         <IoMdStar></IoMdStar>
                     </p>
                     <div className="card-actions">
-                        <button className="btn btn-wide max-w-[175px] bg-[#333D2E] hover:bg-darkOliveGreen text-white">View More</button>
+                        <button className="btn btn-wide max-w-[175px] bg-[#333D2E] hover:bg-darkOliveGreen text-white">
+                            View More
+                        </button>
                     </div>
                 </div>
             </div>
