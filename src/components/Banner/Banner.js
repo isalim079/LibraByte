@@ -3,13 +3,14 @@
 import BannerSwiper from "./BannerSwiper";
 const Banner = () => {
     return (
-        <div className="overflow-hidden  pb-10">
+        <div className="overflow-hidden">
+            {/* <div className="border-2 border-textLightWhite "></div> */}
             <section className="flex  min-h-[600px]  w-full items-center justify-center  bg-[#EFEDE1]  py-5">
                 <div className="flex w-full  gap-10 lg:flex-row flex-col items-center justify-between lg:px-[140px] md:px-[80px] px-8">
-                    <div className="max-w-lg w-5/12 md:space-y-6 sm:space-y-5 space-y-4 pb-5 ">
-                        <h1 className="lg:text-5xl sm:text-4xl text-3xl font-bold leading-tight text-[#312B21] text-center lg:text-left">
+                    <div className="max-w-lg md:w-5/12 -mb-24 sm:pb-5 ">
+                        <h1 className="lg:text-5xl sm:text-4xl text-xl font-bold leading-tight text-[#312B21] text-center lg:text-left">
                             Your Gateway to Literary Exploration and Knowledge{" "}
-                            <span className="relative -top-6 left-[220px] md:left-[480px] lg:left-[360px] hidden lg:block ">
+                            <span className="relative -top-9 left-[220px] md:left-[480px] lg:left-[390px] hidden lg:block ">
                                 <svg
                                     width="44"
                                     height="41"
@@ -48,7 +49,7 @@ const Banner = () => {
 
                         <div className="flex justify-center items-center lg:justify-start">
                             {" "}
-                            <button className=" bg-[#333D2E] rounded-lg px-12 py-4 text-white btn top-2 lg:-top-5  ">
+                            <button className=" bg-[#333D2E] rounded-lg px-12 py-4 text-white btn top-2 lg:-top-5  mt-2 md:mt-0">
                                 Explore More
                             </button>
                         </div>

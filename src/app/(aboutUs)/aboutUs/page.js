@@ -7,6 +7,7 @@ import Faq from '@/components/AboutUsPage/FAQ/Faq';
 const AboutUs = () => {
     return (
         <div>
+            
             <Vision></Vision>
             <OurValues></OurValues>
             <Faq />

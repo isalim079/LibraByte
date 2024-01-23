@@ -9,10 +9,12 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '@/app/Context/AuthProvider';
 import logo from "@/assets/logo/LibraByte.png";
 import Image from 'next/image';
+import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
 
 const Register = () => {
 
     const router = useRouter();
+    const axiosPublic = useAxiosPublic();
 
 
     const { registerUser, handleUpdateUser } = useContext(AuthContext)
@@ -51,9 +53,21 @@ const Register = () => {
                 .then(res => {
                     handleUpdateUser(name, img)
                         .then(res => {
-                            reset()
-                            toast.success("Register Successful")
-                            router.push('/');
+                            const user = {
+                                name: name,
+                                email: email,
+                                role: "user",
+                                subscription: "free"
+                            }
+                            // server post request
+                            axiosPublic.post('/users/v1', user)
+                                .then(res => {
+                                    console.log(res)
+                                    reset()
+                                    toast.success("Register Successful")
+                                    router.push('/');
+                                })
+
                         })
 
                 })

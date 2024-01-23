@@ -1,6 +1,7 @@
 'use client';
 
 import { auth } from '@/firebase/firebase';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 
@@ -87,9 +88,13 @@ const AuthProvider = ({ children }) => {
         loading
     }
 
+    const queryClient = new QueryClient()
+
     return (
         <AuthContext.Provider value={contextData}>
-            {children}
+            <QueryClientProvider client={queryClient}>
+                {children}
+            </QueryClientProvider>
         </AuthContext.Provider>
     );
 };

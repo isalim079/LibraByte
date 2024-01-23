@@ -21,6 +21,7 @@
     justify-content: center;
     align-items: center;
     /* height: 430px; */
+    background: transparent;
   }
   
   /* .swiper-slide img {
@@ -40,4 +41,15 @@
 .swiper-android .swiper-slide, .swiper-ios .swiper-slide, .swiper-wrapper {
   transform: translate3d(0px, 0, 0);
   height: 550px;
+}
+
+@media only screen and (max-width: 426px){
+  .swiper-pagination-bullet {
+    display: none;
+  }
+
+  #swipeText{
+    display: block;
+  }
+ 
 }
