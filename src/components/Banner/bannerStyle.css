@@ -52,3 +52,7 @@
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
+
+@media only screen and (max-width: 426px){
+  
+}

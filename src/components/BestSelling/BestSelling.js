@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import "./styles.css";
+import "./bestSellingStyles.css";
 
 // import required modules
 import { Pagination } from "swiper/modules";
@@ -58,8 +58,8 @@ const BestSelling = () => {
             {/* <div className="border-2 border-textLightWhite mb-10"></div> */}
                 {/* Title  */}
 
-                <div className=" flex justify-between items-center lg:px-8">
-                    <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold">
+                <div className=" flex justify-between items-center lg:px-8 md:pb-10 md:flex-row flex-col">
+                    <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
                         Best Of Best
                     </h1>
                     <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
@@ -88,6 +88,7 @@ const BestSelling = () => {
                         ))}
                     </div>
                 </Swiper>
+                <p id="swipeText" className="text-center font-semibold -mt-6 hidden">swipe</p>
             </div>
         </div>
     );
