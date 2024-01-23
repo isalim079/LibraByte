@@ -36,14 +36,15 @@ const BestAuthor = () => {
     };
 
     return (
-        <div className="md:p-[80px] lg:p-[140px]  p-8 bg-lightWhite">
+        <div className="bg-lightWhite ">
+            <div className="max-w-screen-xl mx-auto pt-8">
             {/* Title  */}
 
-            <div className=" flex justify-between items-center pb-20">
-                <h1 className="lg:text-5xl md:text-3xl text-2xl font-semibold">
+            <div className=" flex justify-between items-center">
+                <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold">
                 Best Author
                 </h1>
-                <button className="flex justify-between items-center gap-x-2 lg:text-xl md:text-lg text-lg">
+                <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
                     View All{" "}
                     <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
                 </button>
@@ -82,6 +83,7 @@ const BestAuthor = () => {
                     <BooksCardAuthor></BooksCardAuthor>
                 </SwiperSlide>
             </Swiper>
+        </div>
         </div>
     );
 };
