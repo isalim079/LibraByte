@@ -3,7 +3,7 @@ import React from 'react';
 
 const EventCard = () => {
     return (
-        <div className='bg-[#17203F] text-white rounded-md p-4'>
+        <div className='bg-[#17203F] text-white drop-shadow-lg rounded-md p-4'>
 
             <div className='flex justify-between items-center md:gap-1'>
 

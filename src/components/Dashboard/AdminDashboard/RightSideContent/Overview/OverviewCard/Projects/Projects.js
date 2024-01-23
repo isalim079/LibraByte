@@ -3,7 +3,7 @@ import React from 'react';
 
 const Projects = () => {
     return (
-        <div className='bg-white rounded-md p-4'>
+        <div className='bg-white drop-shadow-md rounded-md p-4'>
 
         <div className='flex justify-between items-center'>
 
