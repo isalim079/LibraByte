@@ -1,6 +1,8 @@
 'use client';
 
 import { auth } from '@/firebase/firebase';
+import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 
@@ -11,6 +13,8 @@ const AuthProvider = ({ children }) => {
     // loading while creating account and login
 
     const [loading, setLoading] = useState(true)
+
+    const axiosPublic = useAxiosPublic();
 
     // checking is user logged in or not
     const [user, setUser] = useState(null);
@@ -66,16 +70,30 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubs = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
-            setLoading(false)
+            if (currentUser) {
+                const user = { email: currentUser.email }
+                axiosPublic.post('/jwt/v1', user)
+                    .then(res => {
+
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token)
+                            setLoading(false)
+                        }
+                    })
+            } else {
+                localStorage.removeItem('access-token')
+                setLoading(true)
+            }
+
         })
         return () => {
             unSubs();
         }
-    }, [])
+    }, [user, axiosPublic])
 
 
     // passing data through context api
-    
+
     const contextData = {
         googleLogInPopup,
         registerUser,
@@ -87,9 +105,13 @@ const AuthProvider = ({ children }) => {
         loading
     }
 
+    const queryClient = new QueryClient()
+
     return (
         <AuthContext.Provider value={contextData}>
-            {children}
+            <QueryClientProvider client={queryClient}>
+                {children}
+            </QueryClientProvider>
         </AuthContext.Provider>
     );
 };

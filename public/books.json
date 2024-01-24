@@ -1,0 +1,246 @@
+[
+    {
+        "id": 101,
+        "name": "The Da Vinci Code",
+        "category": "Mystery",
+        "author": "Dan Brown",
+        "image": "https://i.ibb.co/p2BG6zF/p159678-p-v8-av.jpg",
+        "rating": 4
+    },
+    {
+        "id": 102,
+        "name": "Gone Girl",
+        "category": "Mystery",
+        "author": "Gillian Flynn",
+        "image": "https://i.ibb.co/xHzNGzs/4c61372c2a8bdadae20b5f03d33c7893.jpg",
+        "rating": 4
+    },
+    {
+        "id": 103,
+        "name": "Sherlock Holmes",
+        "category": "Mystery",
+        "author": "Arthur Conan Doyle",
+        "image": "https://i.ibb.co/drKvh0f/bf-Oa-LDKfx-Jut-QBLgm-OXKz0w20hy-TI3-R02b6sy-GLR.jpg",
+        "rating": 5
+    },
+    {
+        "id": 104,
+        "name": "The Girl with the Dragon Tattoo",
+        "category": "Mystery",
+        "author": "Stieg Larsson",
+        "image": "https://i.ibb.co/R2rnNjL/9781849162883-uk.jpg",
+        "rating": 5
+    },
+    {
+        "id": 105,
+        "name": "Inferno",
+        "category": "Mystery",
+        "author": "Dan Brown",
+        "image": "https://i.ibb.co/PGJqGgx/81-Kjb-Tgd-SL-AC-UF1000-1000-QL80.jpg",
+        "rating": 5
+    },
+    {
+        "id": 106,
+        "name": "Big Little Lies",
+        "category": "Mystery",
+        "author": "Liane Moriarty",
+        "image": "https://i.ibb.co/rGGpQhs/9781405916370.jpg",
+        "rating": 4
+    },
+
+    {
+        "id": 201,
+        "name": "Dune",
+        "category": "Sci-Fi",
+        "author": "Frank Herbert",
+        "image": "https://i.ibb.co/0MN3TXS/44767458.jpg",
+        "rating": 5
+    },
+    {
+        "id": 202,
+        "name": "Ender's Game",
+        "category": "Sci-Fi",
+        "author": "Orson Scott Card",
+        "image": "https://i.ibb.co/Rg7ps5q/81c2-Rdl-TXL-AC-UF1000-1000-QL80.jpg",
+        "rating": 5
+    },
+    {
+        "id": 203,
+        "name": "The Hunger Games",
+        "category": "Sci-Fi",
+        "author": "Suzanne Collins",
+        "image": "https://i.ibb.co/pXXYtQf/41tqz-W6k-O7-S.jpg",
+        "rating": 5
+    },
+    {
+        "id": 204,
+        "name": "Neuromancer",
+        "category": "Sci-Fi",
+        "author": "William Gibson",
+        "image": "https://i.ibb.co/T1kXmhj/81p-IICZO2-PL-AC-UF1000-1000-QL80.jpg",
+        "rating": 5
+    },
+    {
+        "id": 205,
+        "name": "Snow Crash",
+        "category": "Sci-Fi",
+        "author": "Neal Stephenson",
+        "image": "https://i.ibb.co/QPLgcnK/51j-IKWSHQEL.jpg",
+        "rating": 5
+    },
+    {
+        "id": 206,
+        "name": "The Martian",
+        "category": "Sci-Fi",
+        "author": "Andy Weir",
+        "image": "https://i.ibb.co/SvrFjcN/18007564.jpg",
+        "rating": 5
+    },
+
+    {
+        "id": 301,
+        "name": "The Hobbit",
+        "category": "Fantasy",
+        "author": "J.R.R. Tolkien",
+        "image": "https://i.ibb.co/CzWSgpK/the-hobbit-flat-cover.jpg",
+        "rating": 5
+    },
+    {
+        "id": 302,
+        "name": "Harry Potter and the Sorcerer's Stone",
+        "category": "Fantasy",
+        "author": "J.K. Rowling",
+        "image": "https://i.ibb.co/qmCypqB/Philosoper-s-Stone-New-UK-Cover.webp",
+        "rating": 5
+    },
+    {
+        "id": 303,
+        "name": "A Game of Thrones",
+        "category": "Fantasy",
+        "author": "George R.R. Martin",
+        "image": "https://i.ibb.co/rZxh8bT/714-Exofe-KJL-AC-UF1000-1000-QL80.jpg",
+        "rating": 5
+    },
+    {
+        "id": 304,
+        "name": "The Name of the Wind",
+        "category": "Fantasy",
+        "author": "Patrick Rothfuss",
+        "image": "https://i.ibb.co/WBtZjNw/611i-KJa7a-L-AC-UF894-1000-QL80.jpg",
+        "rating": 5
+    },
+    {
+        "id": 305,
+        "name": "The Lion, the Witch and the Wardrobe",
+        "category": "Fantasy",
+        "author": "C.S. Lewis",
+        "image": "https://i.ibb.co/yV44HGF/81r-Jm9qk3-HL-AC-UF894-1000-QL80.jpg",
+        "rating": 3
+    },
+    {
+        "id": 306,
+        "name": "Mistborn: The Final Empire",
+        "category": "Fantasy",
+        "author": "Brandon Sanderson",
+        "image": "https://i.ibb.co/4NgGSRs/68428.jpg",
+        "rating": 5
+    },
+
+    {
+        "id": 401,
+        "name": "The Book Thief",
+        "category": "Fiction",
+        "author": "Markus Zusak",
+        "image": "https://i.ibb.co/tpLyzm4/8bb699eb40d839446e354e6fef36bcc1.jpg",
+        "rating": 3
+    },
+    {
+        "id": 402,
+        "name": "All the Light We Cannot See",
+        "category": "Fiction",
+        "author": "Anthony Doerr",
+        "image": "https://i.ibb.co/GtmMbWk/All-the-Light-We-Cannot-See-Doerr-novel.jpg",
+        "rating": 2
+    },
+    {
+        "id": 403,
+        "name": "The Nightingale",
+        "category": "Fiction",
+        "author": "Kristin Hannah",
+        "image": "https://i.ibb.co/v3J2xGg/6474511e112a244f7ca01d9573cb4054.jpg",
+        "rating": 5
+    },
+    {
+        "id": 404,
+        "name": "The Pillars of the Earth",
+        "category": "Fiction",
+        "author": "Ken Follett",
+        "image": "https://i.ibb.co/T1RS5sS/91-UN5-Yl-y8-L-AC-UF1000-1000-QL80.jpg",
+        "rating": 3
+    },
+    {
+        "id": 405,
+        "name": "The Tattooist of Auschwitz",
+        "category": "Fiction",
+        "author": "Heather Morris",
+        "image": "https://i.ibb.co/BsKmVhW/71s-BTlovkr-L-AC-UF894-1000-QL80.jpg",
+        "rating": 5
+    },
+    {
+        "id": 406,
+        "name": "The Other Boleyn Girl",
+        "category": "Fiction",
+        "author": "Philippa Gregory",
+        "image": "https://i.ibb.co/Kxsbwnf/91-AJp-FYPFEL-AC-UF1000-1000-QL80.jpg",
+        "rating": 4
+    },
+
+    {
+        "id": 501,
+        "name": "The 7 Habits of Highly Effective People",
+        "category": "Self-Help",
+        "author": "Stephen R. Covey",
+        "image": "https://i.ibb.co/VWfYT1Z/fee940080bb953f6348e9bcfd8b8e79d.jpg",
+        "rating": 5
+    },
+    {
+        "id": 502,
+        "name": "Atomic Habits",
+        "category": "Self-Help",
+        "author": "James Clear",
+        "image": "https://i.ibb.co/9G0gpL4/download.jpg",
+        "rating": 5
+    },
+    {
+        "id": 503,
+        "name": "You Are a Badass",
+        "category": "Self-Help",
+        "author": "Jen Sincero",
+        "image": "https://i.ibb.co/tCwzxMd/61q-Gd-Foga-VL-AC-UF894-1000-QL80.jpg",
+        "rating": 4
+    },
+    {
+        "id": 504,
+        "name": "How to Win Friends and Influence People",
+        "category": "Self-Help",
+        "author": "Dale Carnegie",
+        "image": "https://i.ibb.co/MZqTbn5/s-l1600.jpg",
+        "rating": 3
+    },
+    {
+        "id": 505,
+        "name": "Mindset: The New Psychology of Success",
+        "category": "Self-Help",
+        "author": "Carol S. Dweck",
+        "image": "https://i.ibb.co/jyTtmRb/5d6a4b4de4e4-133576.jpg",
+        "rating": 4
+    },
+    {
+        "id": 506,
+        "name": "The Power of Now",
+        "category": "Self-Help",
+        "author": "Eckhart Tolle",
+        "image": "https://i.ibb.co/BzJkQKM/TPON-Cover-LG.jpg",
+        "rating": 5
+    }
+]

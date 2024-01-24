@@ -25,7 +25,6 @@
 
 
 import { useContext, useEffect, useState } from "react";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
