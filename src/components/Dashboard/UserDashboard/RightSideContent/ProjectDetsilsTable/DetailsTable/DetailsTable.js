@@ -8,11 +8,11 @@ const DetailsTable = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className='bg-lightWhite'>
+                        <tr className='bg-lightWhite drop-shadow-lg rounded'>
 
                             <th>Author Name</th>
                             <th>Book Name</th>
-                            <th>Project Type</th>
+                            <th>Book Type</th>
                             <th>Project Status</th>
                         </tr>
                     </thead>
@@ -43,7 +43,7 @@ const DetailsTable = () => {
                             </td>
                             <td>কাব্যগ্রন্থ</td>
                             <th>
-                                <button className="btn bg-green-300 px-2 py-1 btn-xs">Accept</button>
+                                <button className="btn bg-green-300 px-2 py-1 btn-xs drop-shadow-sm">Manage Book</button>
                             </th>
                         </tr>
                         {/* row 2 */}
@@ -72,7 +72,7 @@ const DetailsTable = () => {
                             </td>
                             <td>কাব্যগ্রন্থ</td>
                             <th>
-                                <button className="btn bg-green-300 px-2 py-1 btn-xs">Accept</button>
+                                <button className="btn bg-green-300 px-2 py-1 btn-xs drop-shadow-sm">Manage Book</button>
                             </th>
                         </tr>
 

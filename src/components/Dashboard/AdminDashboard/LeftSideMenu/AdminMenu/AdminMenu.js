@@ -17,16 +17,16 @@ const AdminMenu = () => {
             <div className="list-none md:mt-16">
 
                 {/* categories */}
-                <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-darkLightWhite hover:py-2 hover:px-3 hover:rounded-md">
-                    <div className="flex items-center gap-2">
+                <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                    <div className="flex px-2 py-2 items-center gap-2">
                         <FaHome className="text-xl" /> Dashboard
                     </div>
                 </li>
 
                 {/* divider */}
                 <div className="divider my-2"></div>
-                <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-darkLightWhite hover:py-2 hover:px-3 hover:rounded-md">
-                    <Link href="dashboard/users" className="flex items-center gap-2">
+                <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                    <Link href="dashboard/users" className="flex px-2 py-2 items-center gap-2">
                         <FaUser className="text-xl" /> Users
                     </Link>
                 </li>
@@ -34,32 +34,32 @@ const AdminMenu = () => {
                 {/* divider */}
                 <div className="divider my-2"></div>
 
-                <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-darkLightWhite hover:py-2 hover:px-3 hover:rounded-md">
-                    <div className="flex items-center gap-2">
+                <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                    <div className="flex px-2 py-2 items-center gap-2">
                         <SiPolymerproject className="text-xl" /> Projects
                     </div>
                 </li>
 
                 {/* divider */}
                 <div className="divider my-2"></div>
-                <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-darkLightWhite hover:py-2 hover:px-3 hover:rounded-md">
-                    <div className="flex items-center gap-2">
+                <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                    <div className="flex px-2 py-2 items-center gap-2">
                         <BiSolidMessage className="text-xl" /> Message
                     </div>
                 </li>
 
                 {/* divider */}
                 <div className="divider my-2"></div>
-                <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-darkLightWhite hover:py-2 hover:px-3 hover:rounded-md">
-                    <div className="flex items-center gap-2">
+                <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                    <div className="flex px-2 py-2 items-center gap-2">
                         <SlCalender className="text-xl" /> Events
                     </div>
                 </li>
 
                 {/* divider */}
                 <div className="divider my-2"></div>
-                <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-darkLightWhite hover:py-2 hover:px-3 hover:rounded-md">
-                    <div className="flex items-center gap-2">
+                <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                    <div className="flex px-2 py-2 items-center gap-2">
                         <MdReportProblem className="text-xl" /> Reports
                     </div>
                 </li>
@@ -67,8 +67,8 @@ const AdminMenu = () => {
                 {/* divider */}
                 <div className="divider my-2"></div>
                 
-                <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-darkLightWhite hover:py-2 hover:px-3 hover:rounded-md">
-                    <div className="flex items-center gap-2">
+                <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                    <div className="flex px-2 py-2 items-center gap-2">
                         <IoSettingsSharp className="text-xl" /> Settings
                     </div>
                 </li>
