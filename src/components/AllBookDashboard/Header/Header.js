@@ -2,10 +2,10 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <div className="drop-shadow-md px-5 py-2  bg-lightWhite ">
                 <div className=" flex justify-between items-center gap-2">
-                    <div className="form-control">
+                    <div className="form-control ">
                         <input type="text" placeholder="Search your favourite books" className="input input-bordered w-24 md:w-auto" />
                     </div>
                     <div className=" flex justify-center items-center">

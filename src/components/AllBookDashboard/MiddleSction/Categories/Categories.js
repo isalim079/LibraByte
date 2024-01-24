@@ -34,13 +34,13 @@ const Categories = () => {
     setFilteredBooks(filteredBooksData);
   }, [books, selectedCategory]);
   return (
-    <div className='bg-lightWhite rounded-md drop-shadow-lg my-5 p-3'>
+    <div className='bg-lightWhite rounded-md drop-shadow-lg my-5 p-3 w-auto h-[300px] overflow-y-auto  md:h-auto '>
       <div className="mt-3">
-        <h2 className="text-2xl font-semibold mb-5">Categories</h2>
+        <h2 className="text-lg lg:text-2xl font-semibold mb-5">Categories</h2>
         <Tabs>
-          <TabList className="flex gap-3">
+          <TabList className="grid grid-cols-3  lg:grid-cols-5 gap-3  text-sm">
             <Tab
-              className={`bg-slate-100 border-none p-2 rounded-xl hover:bg-slate-500 ${
+              className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
                 selectedCategory === 'Mystery' ? 'bg-slate-500' : ''
               }`}
               onClick={() => handleCategoryChange('Mystery')}
@@ -48,7 +48,7 @@ const Categories = () => {
               Mystery
             </Tab>
             <Tab
-              className={`bg-slate-100 border-none p-2 rounded-xl hover:bg-slate-500 ${
+              className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
                 selectedCategory === 'Sci-Fi' ? 'bg-slate-500' : ''
               }`}
               onClick={() => handleCategoryChange('Sci-Fi')}
@@ -56,7 +56,7 @@ const Categories = () => {
               Sci-Fi
             </Tab>
             <Tab
-              className={`bg-slate-100 border-none p-2 rounded-xl hover:bg-slate-500 ${
+              className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
                 selectedCategory === 'Fantasy' ? 'bg-slate-500' : ''
               }`}
               onClick={() => handleCategoryChange('Fantasy')}
@@ -64,7 +64,7 @@ const Categories = () => {
               Fantasy
             </Tab>
             <Tab
-              className={`bg-slate-100 border-none p-2 rounded-xl hover:bg-slate-500 ${
+              className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
                 selectedCategory === 'Fiction' ? 'bg-slate-500' : ''
               }`}
               onClick={() => handleCategoryChange('Fiction')}
@@ -72,7 +72,7 @@ const Categories = () => {
               Fiction
             </Tab>
             <Tab
-              className={`bg-slate-100 border-none p-2 rounded-xl hover:bg-slate-500 ${
+              className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
                 selectedCategory === 'Self-Help' ? 'bg-slate-500' : ''
               }`}
               onClick={() => handleCategoryChange('Self-Help')}
@@ -80,7 +80,7 @@ const Categories = () => {
               Self-Help
             </Tab>
           </TabList>
-          <div className='grid grid-cols-5 justify-center my-5 gap-2 '>
+          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center my-5 gap-2 '>
           {filteredBooks?.map((book) =><div key={book.id}>
                   <div className='bg-lightWhite shadow-md rounded-md mx-auto h-[380px] flex flex-col items-center'>
                     <Image className="w-[175px] h-[250px] rounded-t-md" src={book.image} width={150} height={200} alt="book_image"/>

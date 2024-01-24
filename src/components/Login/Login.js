@@ -47,22 +47,26 @@ const Login = () => {
             })
     }
 
-
+    console.log(user)
     // google popup login
     const provider = new GoogleAuthProvider();
     const handleGoogle = () => {
         googleLogInPopup(provider)
             .then(res => {
-                const user = {
+                const userData = {
                     name: res.user.displayName,
                     email: res.user.email,
                     role: "user",
                     subscription: "free"
                 }
                 // server post request
-                axiosPublic.post('/users/v1', user)
+                axiosPublic.post('/users/v1', userData)
                     .then(res => {
-                        toast.success(`Hey, ${res?.user?.displayName}! Welcome back`)
+                        if (res.data.insertedId === null) {
+                            toast.success(`Welcome back`)
+                        } else {
+                            toast.success(`Welcome to LibraByte`)
+                        }
                         reset()
                         router.push('/');
                     })

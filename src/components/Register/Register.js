@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -10,8 +10,11 @@ import { AuthContext } from '@/app/Context/AuthProvider';
 import logo from "@/assets/logo/LibraByte.png";
 import Image from 'next/image';
 import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
+import RegisterLoading from './RegisterLoading';
 
 const Register = () => {
+
+    const [loading, setLoading] = useState(false)
 
     const router = useRouter();
     const axiosPublic = useAxiosPublic();
@@ -33,6 +36,7 @@ const Register = () => {
 
     // on submit hook form
     const onSubmit = async (data) => {
+        setLoading(true)
         console.log(data)
         const name = data.name;
         const email = data.email;
@@ -53,15 +57,16 @@ const Register = () => {
                 .then(res => {
                     handleUpdateUser(name, img)
                         .then(res => {
-                            const user = {
+                            const userData = {
                                 name: name,
                                 email: email,
                                 role: "user",
                                 subscription: "free"
                             }
                             // server post request
-                            axiosPublic.post('/users/v1', user)
+                            axiosPublic.post('/users/v1', userData)
                                 .then(res => {
+                                    setLoading(false)
                                     console.log(res)
                                     reset()
                                     toast.success("Register Successful")
@@ -180,7 +185,7 @@ const Register = () => {
 
                                     <div>
                                         <button type="submit" className="inline-flex items-center justify-center w-full py-4 text-white font-semibold  transition-all duration-200 bg-oliveGreen b  rounded-md   ">
-                                            Create account
+                                            {loading ? <RegisterLoading /> : "Create Account"}
                                         </button>
                                     </div>
 
