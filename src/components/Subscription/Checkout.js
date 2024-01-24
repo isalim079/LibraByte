@@ -23,15 +23,16 @@
 
 
 
-
+"use client";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import useAxiosSecure from "@/lib/hooks/useAxiosSecure";
+import { AuthContext } from "@/app/Context/AuthProvider";
+import { usePathname } from "next/navigation";
 
 
-const CheckoutForm = ({item}) => {
+const CheckoutForm = () => {
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('')
     const [transactionId, setTransactionId] = useState('');
@@ -39,8 +40,7 @@ const CheckoutForm = ({item}) => {
     const elements = useElements();
     const axiosSecure = useAxiosSecure();
     const { user } = useContext(AuthContext);
-    const navigate = useNavigate();
-    console.log(item);
+    const navigate = usePathname();
    
     const totalPrice = 5000;
 

@@ -19,8 +19,10 @@ const Subscription = () => {
                         <div className="flex py-2"><FaCheck className="font-extrabold pt-1 text-2xl"/><p className="pl-2">Borrow each books for maximum 1 month</p></div>
                         <div className="flex py-2"><FaCheck className="font-extrabold pt-1 text-xl"/><p className="pl-2">Borrowed book limit 15 per month</p></div>
                     </ul>
-                    <Elements stripe={stripePromise}><Checkout></Checkout></Elements>
-                    
+
+                    {/* to be solved */}
+                    {/* <Checkout stripe={stripePromise}></Checkout> */}
+
                     <button className=" p-3 hover:p-2 hover:text-lg font-bold my-6 mx-8 md:mx-4 lg:mx-8 xl:mx-7 border-lightWhite hover:text-oliveGreen border-2 rounded-tl-xl rounded-br-xl text-base bg-oliveGreen hover:bg-lightWhite text-white w-72 md:w-72 lg:w-80 xl:w-64 2xl:w-64 transition-all duration-300" >Checkout</button>
 
                 </div>
