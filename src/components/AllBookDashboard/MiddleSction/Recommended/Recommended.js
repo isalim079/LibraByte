@@ -27,21 +27,21 @@ const Recommended = () => {
   };
 
   return (
-    <div className="bg-lightWhite rounded-md drop-shadow-lg p-3">
-      <div className="flex justify-between items-center p-2">
-        <h2 className="text-2xl font-semibold">Recommended</h2>
+    <div className="bg-lightWhite rounded-md drop-shadow-lg p-3 w-auto h-[300px] overflow-y-auto  md:h-auto ">
+      <div className="flex flex-col lg:flex-row justify-center md:justify-between  items-center  p-0 lg:p-2">
+        <h2 className="text-lg lg:text-2xl font-semibold">Recommended</h2>
         {!showAll && books.length > initialDisplayCount && (
-          <button className="btn mr-3 bg-white" onClick={handleSeeAllClick}>
+          <button className="btn mr-0 mb-2 md:mr-3 bg-[#333D2E] text-white" onClick={handleSeeAllClick}>
             See All
           </button>
         )}
         {showAll && (
-          <button className="btn mr-3 bg-white" onClick={handleSeeLessClick}>
+          <button className="btn mr-0 mb-2 md:mr-3 bg-[#333D2E] text-white" onClick={handleSeeLessClick}>
             See Less
           </button>
         )}
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-2">
+      <div className="grid justify-center md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1   gap-2">
         {books
           .slice(0, showAll ? books.length : initialDisplayCount)
           .map((book) => (
