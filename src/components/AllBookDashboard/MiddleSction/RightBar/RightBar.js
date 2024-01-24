@@ -2,7 +2,7 @@ import Image from "next/image";
 import { IoIosBookmarks, IoMdStar } from "react-icons/io";
 const RightBar = () => {
     return (
-        <div>
+        <div className="">
             <div className="flex  justify-center bg-[#333D2E] h-[1070px] rounded-br-lg p-5 ">
                 <div className="  w-[200px] h-[350px] mt-8 ">
                     <Image
