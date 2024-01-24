@@ -3,7 +3,7 @@ import React from 'react';
 
 const AllBookLatout = ({children}) => {
     return (
-        <div>
+        <div className='overflow-x-hidden'>
           <Sidebar>
             {children}
           </Sidebar>

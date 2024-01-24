@@ -1,17 +1,16 @@
-
 import Logo from "./Logo/Logo";
-import AdminMenu from "./AdminMenu/AdminMenu";
+import UserMenu from "./UserMenu/UserMenu";
 
 
-const LeftSideMenu = () => {
+const LeftSideUserMenu = () => {
     return (
         <div className='bg-[#EFEDE1]  p-10 min-h-screen'>
 
                 <Logo></Logo>
-                <AdminMenu></AdminMenu>
+                <UserMenu></UserMenu>
 
         </div>
     );
 };
 
-export default LeftSideMenu;
+export default LeftSideUserMenu;

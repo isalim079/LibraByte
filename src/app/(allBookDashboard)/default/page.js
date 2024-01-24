@@ -4,7 +4,7 @@ import React from 'react';
 
 const Default = () => {
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <main className='bg-slate-100 '>
         <Header/>
         <div >
