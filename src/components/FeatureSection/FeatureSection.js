@@ -146,7 +146,7 @@ const FeatureSection = () => {
                     </div>
 
                     {/* noble */}
-                    <div className="sm:col-span-3  bg-[#597E52] lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 drop-shadow-lg hover:bg-[#486742]">
+                    <div className="col-span-3 sm:col-span-3  bg-[#597E52] lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 drop-shadow-lg hover:bg-[#486742]">
                         <div className="flex justify-center items-center px-2.5  md:p-2 md:pb-0.5 lg:pb-5 ">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +165,7 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
+                        <h1 className=" sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
                             Noble
                         </h1>
                     </div>
