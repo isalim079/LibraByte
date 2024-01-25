@@ -1,9 +1,12 @@
 "use client";
 import { FaCheck } from "react-icons/fa";
-import { Checkout } from "./Checkout";
+import  {Elements}  from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutForm from "./CheckoutForm";
 
 const Subscription = () => {
-    
+    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+
     return (
         <div className="bg-slate-100">
             <div className="max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-xl mx-auto py-16 ">
@@ -21,8 +24,9 @@ const Subscription = () => {
                     </ul>
 
                     {/* to be solved */}
-                    {/* <Checkout stripe={stripePromise}></Checkout> */}
-
+                    <Elements stripe={stripePromise}>
+                                    <CheckoutForm></CheckoutForm>
+                                </Elements>
                     <button className=" p-3 hover:p-2 hover:text-lg font-bold my-6 mx-8 md:mx-4 lg:mx-8 xl:mx-7 border-lightWhite hover:text-oliveGreen border-2 rounded-tl-xl rounded-br-xl text-base bg-oliveGreen hover:bg-lightWhite text-white w-72 md:w-72 lg:w-80 xl:w-64 2xl:w-64 transition-all duration-300" >Checkout</button>
 
                 </div>
