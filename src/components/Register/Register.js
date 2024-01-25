@@ -57,11 +57,13 @@ const Register = () => {
                 .then(res => {
                     handleUpdateUser(name, img)
                         .then(res => {
+                            const date = new Date()
                             const userData = {
                                 name: name,
                                 email: email,
                                 role: "user",
-                                subscription: "free"
+                                subscription: "free",
+                                date: date,
                             }
                             // server post request
                             axiosPublic.post('/users/v1', userData)
