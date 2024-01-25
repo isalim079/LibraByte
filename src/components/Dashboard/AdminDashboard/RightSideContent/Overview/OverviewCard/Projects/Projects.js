@@ -1,7 +1,12 @@
+import { allBooks } from '@/components/utils/AllBooks/allBooks';
 import Image from 'next/image';
 import React from 'react';
 
-const Projects = () => {
+const Projects = async () => {
+
+    // get all books data by all book api 
+    const allBook = await allBooks();
+
     return (
         <div className='bg-white drop-shadow-md rounded-md p-4'>
 
@@ -11,7 +16,7 @@ const Projects = () => {
                 <h3 className='text-xl font-semibold'>All Books</h3>
 
                 <div className='flex py-1 items-center gap-1 lg:gap-3'>
-                    <h2 className='font-bold md:text-xl'>205</h2>
+                    <h2 className='font-bold md:text-xl'>{allBook.length}</h2>
                     <span className='text-[#68B8A1] font-bold text-[13px]'>+11.92%</span>
                 </div>
 

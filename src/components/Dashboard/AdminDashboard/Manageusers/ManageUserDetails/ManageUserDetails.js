@@ -24,15 +24,15 @@ const ManageUserDetails = async () => {
                     <tbody>
 
                         {
-                            allUsers.map(user => <>
+                            allUsers.map((user, idx) => <>
                                 <tr key={user._id}>
-                                    <th>1</th>
-                                    <td>{user.name}</td>
-                                    <td>{user.email}</td>
+                                    <th>{idx + 1}</th>
+                                    <td>{user?.name}</td>
+                                    <td>{user?.email}</td>
                                     <td><AiOutlineMail className="text-xl"></AiOutlineMail> </td>
-                                    <td>29/01/2024</td>
-                                    <td>{user.subscription}</td>
-                                    <td>{user.role}</td>
+                                    <td>{user?.date}</td>
+                                    <td>{user?.subscription}</td>
+                                    <td>{user?.role}</td>
                                     <td>
                                         <button className="btn bg-green-200 md:px-2 md:py-1 btn-xs mr-1">Make Admin</button>
                                         <button className="btn bg-red-400 md:px-2 md:py-1 hover:bg-red-600 hover:text-white  btn-xs">Delete</button>
