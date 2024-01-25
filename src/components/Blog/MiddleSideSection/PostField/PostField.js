@@ -1,15 +1,25 @@
 "use client"
 
 import { AuthContext } from "@/app/Context/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./postFields.css"
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+import toast from "react-hot-toast";
+import { useQuery } from "@tanstack/react-query";
+import useBlogPost from "@/lib/hooks/useBlogPost";
 
 const PostField = () => { 
 
     const {user} = useContext(AuthContext)
     const axiosPublic = useAxiosPublic()
     // console.log(user?.photoURL);
+
+    const [, refetch] = useBlogPost()
+
+    
+    // console.log(blogPost);
+
+    const [blogPostData, setBlogPostData] = useState()
 
     const handlePost = async (e) => {
         e.preventDefault()
@@ -27,12 +37,32 @@ const PostField = () => {
         axiosPublic.post("/blogPost/v1", blogPostData)
         .then(res => {
             console.log(res.data);
+            if(res.data) {
+                toast.success("your post updated")
+                refetch()
+                e.target.reset()
+            }
         })
         .catch(error => {
             console.log(error);
         })
 
     }
+
+
+        // const { data = [], refetch } = useQuery({
+        //     queryKey: ['blogPostData'],
+        //     queryFn: async () => {
+        //         const result = await axiosPublic.get("/blogPost/v1")
+        //         return result.data
+        //         // setBlogPostData(result.data)
+        //     },
+            
+        //   })
+
+        //   console.log(data);
+
+    
 
     return (
         <div className="p-8 bg-lightWhite drop-shadow-lg rounded-md">

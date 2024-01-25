@@ -2,6 +2,7 @@
 import Image from "next/image";
 import img1 from "@/assets/Rectangle 20.png"
 import { HiOutlineExternalLink } from "react-icons/hi";
+import Link from "next/link";
 
 const Arrival = () => {
     return (
@@ -11,10 +12,10 @@ const Arrival = () => {
                     <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
                         New Arrival
                     </h1>
-                    <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
+                    <Link href={'/'}><button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
                         View All{" "}
                         <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
-                    </button>
+                    </button></Link>
                 </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                 <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-[#EFEDE1]  shadow-xl">
