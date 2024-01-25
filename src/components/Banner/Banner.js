@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 // import BannerSwipe from "./BannerSwipe";
 import BannerSwiper from "./BannerSwiper";
 const Banner = () => {
@@ -49,9 +50,9 @@ const Banner = () => {
 
                         <div className="flex justify-center items-center lg:justify-start">
                             {" "}
-                            <button className=" bg-[#333D2E] rounded-lg px-12 py-4 text-white btn top-2 lg:-top-5  mt-2 md:mt-0">
+                            <Link href="/allBooks"><button className=" bg-[#333D2E] rounded-lg px-12 py-4 text-white btn top-2 lg:-top-5  mt-2 md:mt-0">
                                 Explore More
-                            </button>
+                            </button></Link>
                         </div>
                     </div>
                     <div className="pb-10 w-7/12">

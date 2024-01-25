@@ -8,7 +8,7 @@ const TopBooks = () => {
 
     useEffect(() => {
         axios
-          .get("/books.json")
+          .get("https://y-kappa-sage.vercel.app/books")
           .then((res) => {
             setBooks(res.data);
           })
