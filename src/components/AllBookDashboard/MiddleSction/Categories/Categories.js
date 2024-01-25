@@ -12,7 +12,7 @@ const Categories = () => {
 
   useEffect(() => {
     axios
-      .get("/books.json")
+      .get("https://y-kappa-sage.vercel.app/books")
       .then((res) => {
         setBooks(res.data);
       })

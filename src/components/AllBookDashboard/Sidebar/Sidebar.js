@@ -46,7 +46,7 @@ const Sidebar = ({ children }) => {
             </a>
           </div>
           <span className='border-b-[1px] border-gray-200 w-full p-2'></span>
-          <Link href='/default'>
+          <Link href='/allBooks'>
             <div className=' hover:bg-stone-300 cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600'>
               <FaHome size={20} /> <p className={`text-sm origin-left duration-200 ${!open && "hidden"}`}>Discover</p>
             </div>
@@ -68,7 +68,7 @@ const Sidebar = ({ children }) => {
           </Link>
           <span className='border-b-[1px] border-gray-200 w-full p-2'></span>
           <button>
-            <div onClick={handleSignOut} className=' hover:bg-stone-300 cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600'>
+            <div onClick={user ? handleSignOut : () => toast.error("You are not logged in")} className=' hover:bg-stone-300 cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600'>
               <TbLogout2 size={20} /> <p className={`text-sm origin-left duration-200 ${!open && "hidden"}`}>Logout</p>
             </div>
           </button>
