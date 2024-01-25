@@ -18,7 +18,7 @@ const Arrival = () => {
                     </button></Link>
                 </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-                <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-[#EFEDE1]  shadow-xl">
+                <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-slate-100  shadow-xl">
                     <figure className="px-6 pt-6">
                         <img src="https://i.ibb.co/TbkjVgH/Rectangle-20.png" alt="Shoes" className="rounded-xl" />
                     </figure>
@@ -62,7 +62,7 @@ const Arrival = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card md:w-72 lg:w-80 xl:w-96 bg-[#EFEDE1] shadow-xl">
+                <div className="card md:w-72 lg:w-80 xl:w-96 bg-white shadow-xl">
                     <figure className="px-6 pt-6">
                         <img src="https://i.ibb.co/TbkjVgH/Rectangle-20.png" alt="Shoes" className="rounded-xl" />
                     </figure>

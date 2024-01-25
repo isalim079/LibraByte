@@ -295,8 +295,14 @@ const Navbar = () => {
                 <div className="flex items-center gap-4">
                     <div>
                         {user ? (
+                            // <div>
+                            //     <button onClick={handleSignOut} className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Out</button>
+                            // </div>
                             <div>
-                                <button onClick={handleSignOut} className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Out</button>
+                                <Link href={"/dashboard"}><button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Dashboard</button></Link>
+                                <button className="bg-red-500 text-white py-2 ml-2 px-3 text-sm rounded-md">
+                                        Subscribe
+                                    </button>
                             </div>
                         ) : (
                             <div>

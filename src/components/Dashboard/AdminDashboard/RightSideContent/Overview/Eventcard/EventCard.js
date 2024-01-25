@@ -8,7 +8,7 @@ const EventCard = () => {
             <div className='flex justify-between items-center md:gap-1'>
 
                 <div>
-                    <h3 className=''>Todays Event</h3>
+                    <h3 className=''>Subscriber</h3>
 
                     {/* <div className='flex py-1 items-center gap-3'>
                         <h2 className='font-bold md:text-xl'>103</h2>
