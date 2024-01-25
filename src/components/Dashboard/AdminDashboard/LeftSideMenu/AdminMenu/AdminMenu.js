@@ -35,9 +35,9 @@ const AdminMenu = () => {
                 <div className="divider my-2"></div>
 
                 <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
-                    <div className="flex px-2 py-2 items-center gap-2">
-                        <SiPolymerproject className="text-xl" /> Projects
-                    </div>
+                    <Link href="dashboard/manage-book" className="flex px-2 py-2 items-center gap-2">
+                        <SiPolymerproject className="text-md" /> Manage Book
+                    </Link>
                 </li>
 
                 {/* divider */}

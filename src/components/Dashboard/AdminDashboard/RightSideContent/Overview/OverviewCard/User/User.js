@@ -1,7 +1,11 @@
+import { getAllUsers } from '@/components/utils/ManageUser/getAllUsers';
 import Image from 'next/image';
-import React from 'react';
 
-const User = () => {
+
+const User = async () => {
+
+    const allUsers = await getAllUsers();
+
     return (
         <div className='bg-white drop-shadow-md rounded-md p-4'>
 
@@ -11,7 +15,7 @@ const User = () => {
                     <h3 className='text-xl font-semibold'>Users</h3>
 
                     <div className='flex py-1 items-center gap-3'>
-                        <h2 className='font-bold md:text-xl'>103</h2>
+                        <h2 className='font-bold md:text-xl'>{allUsers.length}</h2>
                         <span className='text-[#68B8A1] font-bold text-[13px]'>+5.2%</span>
                     </div>
 
