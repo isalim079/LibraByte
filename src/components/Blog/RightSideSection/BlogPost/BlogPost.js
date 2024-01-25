@@ -16,6 +16,12 @@ const BlogPost = () => {
     return (
         <div className="p-8 h-[1672px] overflow-y-auto">
             <div>
+                <h2 className="text-2xl font-semibold text-oliveGreen">
+                    All Post
+                </h2>
+                <div className="border-2 border-oliveGreen w-[90px] mt-1 mb-5"></div>
+            </div>
+            <div>
                 {blogPost.map((blogPost) => (
                     <div
                         key={blogPost?.name}
