@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HiOutlineExternalLink } from "react-icons/hi";
 
 const FeatureSection = () => {
@@ -10,10 +11,13 @@ const FeatureSection = () => {
                     <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
                         Feature Category
                     </h1>
-                    <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
-                        View All{" "}
-                        <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
-                    </button>
+                    <Link href="/categories">
+                        {" "}
+                        <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
+                            View All{" "}
+                            <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
+                        </button>
+                    </Link>
                 </div>
 
                 {/* Grid Content - Row 1 */}
@@ -38,9 +42,11 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <h1 className="font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center">
-                            Science Fiction
-                        </h1>
+                        <Link href={"/allBooks"}>
+                            <h1 className="font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center">
+                                Science Fiction
+                            </h1>
+                        </Link>
                     </div>
 
                     <div className="sm:col-span-4 bg-[#597E52] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 hover:bg-[#486742]">
@@ -86,9 +92,11 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl lg:pt-5 md:pt-3 pt-0 text-center">
-                            Horror
-                        </h1>
+                        <Link href={"/allBooks"}>
+                            <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl lg:pt-5 md:pt-3 pt-0 text-center">
+                                Horror
+                            </h1>
+                        </Link>
                     </div>
                 </div>
 
@@ -96,7 +104,7 @@ const FeatureSection = () => {
 
                 {/* thriller */}
                 <div className=" grid grid-cols-2 sm:grid-cols-12 lg:gap-10 md:gap-4 gap-2">
-                <div className="p-4 sm:col-span-5 bg-[#597E52] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 sm:p-0.5 hover:bg-[#486742]">
+                    <div className="p-4 sm:col-span-5 bg-[#597E52] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 sm:p-0.5 hover:bg-[#486742]">
                         <div className="flex justify-center items-center px-5  md:p-2 md:pb-0.5 lg:pb-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -115,9 +123,11 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
-                            Thriller
-                        </h1>
+                        <Link href={"/allBooks"}>
+                            <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
+                                Thriller
+                            </h1>
+                        </Link>
                     </div>
 
                     {/* comics */}
@@ -140,9 +150,11 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-oliveGreen">
-                            Comics
-                        </h1>
+                        <Link href={"/allBooks"}>
+                            <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-oliveGreen">
+                                Comics
+                            </h1>
+                        </Link>
                     </div>
 
                     {/* noble */}
@@ -165,9 +177,11 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <h1 className=" sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
-                            Noble
-                        </h1>
+                        <Link href={"/allBooks"}>
+                            <h1 className=" sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
+                                Noble
+                            </h1>
+                        </Link>
                     </div>
                 </div>
             </div>

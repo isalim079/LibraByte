@@ -17,13 +17,14 @@ import { Pagination } from "swiper/modules";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 const BestSelling = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
         axios
-            .get("/books.json")
+            .get("https://y-kappa-sage.vercel.app/books")
             .then((res) => {
                 setBooks(res.data);
             })
@@ -62,10 +63,10 @@ const BestSelling = () => {
                     <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
                         Best Of Best
                     </h1>
-                    <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
+                   <Link href="/topBooks"> <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
                         View All{" "}
                         <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
-                    </button>
+                    </button></Link>
                 </div>
 
                 {/* best books card  */}

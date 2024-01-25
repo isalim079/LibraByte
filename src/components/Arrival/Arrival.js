@@ -12,7 +12,7 @@ const Arrival = () => {
                     <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
                         New Arrival
                     </h1>
-                    <Link href={'/'}><button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
+                   <Link href="/allBooks"> <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
                         View All{" "}
                         <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
                     </button></Link>
@@ -49,7 +49,6 @@ const Arrival = () => {
                         <h2 className="card-title text-2xl lg:text-3xl ">Company of  One</h2>
                         <p className="my-1 md:my-2 lg:my-4">Company of One by Paul Jarvis explores the idea of building a successful business without chasing growth for its own sake, emphasizing the value of </p>
                         <div className="flex flex-row ">
-                            <button className="text-lg font-medium pr-2">View All</button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <g clip-path="url(#clip0_30_572)">
                                     <path d="M9 5V7H15.59L4 18.59L5.41 20L17 8.41V15H19V5H9Z" fill="#FDFCF7" />
