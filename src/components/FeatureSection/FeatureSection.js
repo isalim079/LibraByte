@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HiOutlineExternalLink } from "react-icons/hi";
 
 const FeatureSection = () => {
@@ -10,10 +11,10 @@ const FeatureSection = () => {
                     <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
                         Feature Category
                     </h1>
-                    <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
+                   <Link href="/categories"> <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
                         View All{" "}
                         <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
-                    </button>
+                    </button></Link>
                 </div>
 
                 {/* Grid Content - Row 1 */}

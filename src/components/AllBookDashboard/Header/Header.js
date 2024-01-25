@@ -1,6 +1,10 @@
-import React from 'react';
-
+"use client"
+import React, { useContext } from 'react';
+import { AuthContext } from "@/app/Context/AuthProvider";
+import { FaUserCircle } from 'react-icons/fa';
 const Header = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <div className='overflow-x-hidden'>
             <div className="drop-shadow-md px-5 py-2  bg-lightWhite ">
@@ -16,12 +20,14 @@ const Header = () => {
                             </div>
                         </button>
                         <div role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <div>{user ?
+                                <img className='rounded-full w-12 h-12' src={user?.photoURL} alt="" />
+                                :
+                                <FaUserCircle className='text-4xl'></FaUserCircle>
+                            }
+
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
