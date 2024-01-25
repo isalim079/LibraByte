@@ -12,8 +12,8 @@ const DetailsTable = () => {
 
                             <th>Author Name</th>
                             <th>Book Name</th>
-                            <th>Project Type</th>
-                            <th>Project Status</th>
+                            <th>Book category</th>
+                            <th>In stock</th>
                         </tr>
                     </thead>
                     <tbody>

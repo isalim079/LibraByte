@@ -8,7 +8,9 @@ const LeftSideSection = () => {
     return (
         <div>
             <Search />
+            <div className="hidden sm:block">
             <Categories />
+            </div>
             <TopPost />
             <RecommendBooks />
         </div>
