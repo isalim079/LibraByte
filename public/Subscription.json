@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "pack": "Premium",
+        "price": 150,
+        "borrow_limit": 5,
+        "return_limit": 30,
+        "book_limit": 15
+    },
+    {
+        "id": 2,
+        "pack": "Basic",
+        "price": 100,
+        "borrow_limit": 4,
+        "return_limit": 21,
+        "book_limit": 12
+    },
+    {
+        "id": 3,
+        "pack": "Starter",
+        "price": 50,
+        "borrow_limit": 3,
+        "return_limit": 14,
+        "book_limit": 8
+    },
+    {
+        "id": 4,
+        "pack": "Small",
+        "price": 10,
+        "borrow_limit": 2,
+        "return_limit": 7,
+        "book_limit": 5
+    }
+      
+      
+]
