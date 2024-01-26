@@ -6,6 +6,7 @@ import Subscribe from "@/components/Subscribe/Subscribe";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
 import TopBanner from "@/components/Home/TopBanner/TopBanner";
+import Subscription from "@/components/Subscription/Subscription";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
             {/* <BestAuthor /> */}
             <FeatureSection />
             <Arrival />
+            <Subscription />
             <Subscribe />
             
             <Footer />

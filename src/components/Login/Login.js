@@ -53,12 +53,16 @@ const Login = () => {
     const handleGoogle = () => {
         googleLogInPopup(provider)
             .then(res => {
+                const date = new Date()
                 const userData = {
                     name: res.user.displayName,
                     email: res.user.email,
                     role: "user",
-                    subscription: "free"
+                    subscription: "free",
+                    date: date
+
                 }
+                console.log(date)
                 // server post request
                 axiosPublic.post('/users/v1', userData)
                     .then(res => {
