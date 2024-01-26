@@ -1,8 +1,8 @@
 "use client";
-
+import { AuthContext } from "@/app/Context/AuthProvider";
 import useAxiosSecure from "@/lib/hooks/useAxiosSecure";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import axios from "axios";
+import { useContext } from "react";
 import toast from "react-hot-toast";
 
 
@@ -10,6 +10,9 @@ export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
   const axiosSecure = useAxiosSecure()
+  const {user} = useContext(AuthContext);
+  // const name = await user?.displayName
+
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -34,9 +37,21 @@ export default function CheckoutForm() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <CardElement />
-      <button type="submit">Submit</button>
+    <form onSubmit={onSubmit} className="mx-8 text-oliveGreen ">
+      <div className="form-control ">
+        <label className="label">
+          <span className="label-text">Name</span>
+        </label>
+        <input type="text" name="name" placeholder={user?.displayName} className="input input-bordered border-oliveGreen w-full max-w-sm" />
+      </div>
+      <div className="form-control ">
+        <label className="label">
+          <span className="label-text">Email</span>
+        </label>
+        <input type="text" name="email" placeholder={user?.email} className="input input-bordered border-oliveGreen w-full max-w-sm" />
+      </div>
+      <CardElement className="text-white pt-8" />
+      <button type="submit" className="mt-6 btn flex justify-end bg-oliveGreen text-base text-lightWhite px-6">Submit</button>
     </form>
   );
 }
