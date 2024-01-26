@@ -8,6 +8,10 @@ import subscriptions from "../../../public/Subscription.json"
 const Subscription = () => {
     const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
+    const handleClose=()=>{
+        document.getElementById(`my-modal-524433`).close()
+    }
+
     return (
         <div className="bg-lightWhite">
             <div className="max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-xl mx-auto py-16 ">
@@ -26,18 +30,18 @@ const Subscription = () => {
                             </ul>
 
                             <button className=" p-3 hover:p-2 hover:text-lg font-bold my-6 mx-8 md:mx-4 lg:mx-8 xl:mx-7 border-lightWhite hover:text-oliveGreen border-2 rounded-tl-xl rounded-br-xl text-base bg-oliveGreen hover:bg-lightWhite text-white w-64 md:w-72 lg:w-80 xl:w-64 2xl:w-64 transition-all duration-300"
-                                onClick={() => document.getElementById(`my-modal-${subscription.id}`).showModal()}
+                                onClick={() => document.getElementById(`my-modal-524433`).showModal()}
                             >Checkout</button>
-                            <dialog id={`my-modal-${subscription.id}`} className="modal modal-bottom sm:modal-middle">
+                            <dialog id={`my-modal-524433`} className="modal modal-bottom sm:modal-middle">
                                 <div className="modal-box">
-                                    <form method="dialog">
-                                        <button className="btn btn-sm btn-circle btn-ghost text-oliveGreen font-extrabold text-2xl absolute right-6 top-6">✕</button>
-                                    </form>
-                                    <form className="my-6">
+                                    <div method="dialog">
+                                        <button onClick={handleClose} className="btn btn-sm btn-circle btn-ghost text-oliveGreen font-extrabold text-2xl absolute right-6 top-6">✕</button>
+                                    </div>
+                                    <div className="my-6">
                                         <Elements stripe={stripePromise}>
                                             <CheckoutForm></CheckoutForm>
-                                        </Elements>                                        
-                                    </form>
+                                        </Elements>
+                                    </div>
                                 </div>
                             </dialog>
                         </div>

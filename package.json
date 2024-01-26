@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
-    "@tanstack/react-query": "^5.17.19",
     "@stripe/react-stripe-js": "^2.4.0",
     "@stripe/stripe-js": "^2.4.0",
+    "@tanstack/react-query": "^5.17.19",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "apexcharts": "^3.45.2",
