@@ -6,7 +6,7 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 
 
-export default function CheckoutForm() {
+export default function CheckoutForm(close) {
   const stripe = useStripe();
   const elements = useElements();
   const axiosSecure = useAxiosSecure()
@@ -28,6 +28,7 @@ export default function CheckoutForm() {
       if (paymentIntent.status === "succeeded") {
         console.log(paymentIntent.id)
         toast.success('Payment successful')
+        document.getElementById(`my-modal-524433`).close()
       }
 
     } catch (error) {
