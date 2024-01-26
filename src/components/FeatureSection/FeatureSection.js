@@ -23,7 +23,8 @@ const FeatureSection = () => {
                 {/* Grid Content - Row 1 */}
 
                 <div className=" grid grid-cols-2 sm:grid-cols-12 lg:gap-10 md:gap-4 gap-2 mb-6">
-                    <div className="sm:col-span-3 bg-[#F1E4C3] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 hover:bg-[#e3d5b2]">
+                    <Link className="sm:col-span-3 bg-[#F1E4C3] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 hover:bg-[#e3d5b2]" href={"/allBooks"}>
+
                         <div className="flex justify-center items-center px-2.5  md:p-2 md:pb-0.5 lg:pb-5 ">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -42,14 +43,13 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <Link href={"/allBooks"}>
-                            <h1 className="font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center">
-                                Science Fiction
-                            </h1>
-                        </Link>
-                    </div>
+                        <h1 className="font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center">
+                            Science Fiction
+                        </h1>
 
-                    <div className="sm:col-span-4 bg-[#597E52] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 hover:bg-[#486742]">
+                    </Link>
+
+                    <Link href={"/allBooks"} className="sm:col-span-4 bg-[#597E52] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 hover:bg-[#486742]">
                         <div className="flex justify-center items-center px-5  md:p-2 md:pb-0.5 lg:pb-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -71,9 +71,9 @@ const FeatureSection = () => {
                         <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
                             Historical Fiction
                         </h1>
-                    </div>
+                    </Link>
 
-                    <div className="col-span-2 p-4 sm:col-span-5 bg-[#F1E4C3] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 sm:p-0.5 hover:hover:bg-[#e3d5b2]">
+                    <Link href={"/allBooks"} className="col-span-2 p-4 sm:col-span-5 bg-[#F1E4C3] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 sm:p-0.5 hover:hover:bg-[#e3d5b2]">
                         <div className="flex justify-center items-center px-8  md:p-2 md:pb-0.5 lg:pb-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -92,18 +92,18 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <Link href={"/allBooks"}>
+                        
                             <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl lg:pt-5 md:pt-3 pt-0 text-center">
                                 Horror
                             </h1>
-                        </Link>
-                    </div>
+                        
+                    </Link>
                 </div>
 
                 {/* Grid Content - Row 2 */}
 
                 {/* thriller */}
-                <div className=" grid grid-cols-2 sm:grid-cols-12 lg:gap-10 md:gap-4 gap-2">
+                <Link href={"/allBooks"} className=" grid grid-cols-2 sm:grid-cols-12 lg:gap-10 md:gap-4 gap-2">
                     <div className="p-4 sm:col-span-5 bg-[#597E52] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 sm:p-0.5 hover:bg-[#486742]">
                         <div className="flex justify-center items-center px-5  md:p-2 md:pb-0.5 lg:pb-5">
                             <svg
@@ -123,15 +123,15 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <Link href={"/allBooks"}>
+                        
                             <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
                                 Thriller
                             </h1>
-                        </Link>
+                        
                     </div>
 
                     {/* comics */}
-                    <div className="sm:col-span-4 bg-[#F1E4C3] drop-shadow-lg  lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 hover:hover:bg-[#e3d5b2]">
+                    <Link href={"/allBooks"} className="sm:col-span-4 bg-[#F1E4C3] drop-shadow-lg  lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 hover:hover:bg-[#e3d5b2]">
                         <div className="flex justify-center items-center px-5  md:p-2 md:pb-0.5 lg:pb-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -150,15 +150,15 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <Link href={"/allBooks"}>
+                      
                             <h1 className="sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-oliveGreen">
                                 Comics
                             </h1>
-                        </Link>
-                    </div>
+                       
+                    </Link>
 
                     {/* noble */}
-                    <div className="col-span-3 sm:col-span-3  bg-[#597E52] lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 drop-shadow-lg hover:bg-[#486742]">
+                    <Link href={"/allBooks"} className="col-span-3 sm:col-span-3  bg-[#597E52] lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 p-4 sm:p-0.5 drop-shadow-lg hover:bg-[#486742]">
                         <div className="flex justify-center items-center px-2.5  md:p-2 md:pb-0.5 lg:pb-5 ">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -177,13 +177,13 @@ const FeatureSection = () => {
                                 />
                             </svg>
                         </div>
-                        <Link href={"/allBooks"}>
+                      
                             <h1 className=" sm:font-medium text-sm md:text-2xl lg:text-3xl  lg:pt-5 md:pt-3 pt-0 text-center text-white">
                                 Noble
                             </h1>
-                        </Link>
-                    </div>
-                </div>
+                        
+                    </Link>
+                </Link>
             </div>
         </div>
     );

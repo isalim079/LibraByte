@@ -1,7 +1,7 @@
 
 const OurValues = () => {
     return (
-        <div className="mx-8 md:mx-28 lg:mx-[180px]">
+        <div className="mx-8 md:mx-28 lg:mx-[180px] my-16">
             <h1 className="text-4xl text-center font-semibold">Our Values</h1>
             <h6 className="md:text-lg text-base text-textLightWhite text-center">Empowering Connections: Our Guiding Principles</h6>
             {/* <div className="divider divider-neutral w-96 md:w-72 lg:w-96 mx-auto my-2"></div> */}

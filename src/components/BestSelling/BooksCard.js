@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IoMdStar } from "react-icons/io";
 
 const BooksCard = ({ book }) => {
@@ -19,9 +20,9 @@ const BooksCard = ({ book }) => {
                         <IoMdStar></IoMdStar>
                     </p>
                     <div className="card-actions">
-                        <button className="btn btn-wide max-w-[175px] bg-[#333D2E] hover:bg-darkOliveGreen text-white">
+                        <Link href={"allBooks"} ><button className="btn btn-wide max-w-[175px] bg-[#333D2E] hover:bg-darkOliveGreen text-white">
                             View More
-                        </button>
+                        </button></Link>
                     </div>
                 </div>
             </div>

@@ -82,7 +82,7 @@ const BestSelling = () => {
                     loop={true}
                 >
                     <div>
-                        {books.map((book) => (
+                        {books.slice(0,5).map((book) => (
                             <SwiperSlide key={book?.id}>
                                 <BooksCard className="" book={book} />
                             </SwiperSlide>
