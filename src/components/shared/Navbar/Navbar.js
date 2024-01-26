@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import logo from "@/assets/logo/LibraByte.png";
 import Image from "next/image";
+
 // import {
 //     IoIosArrowDropdownCircle,
 //     IoIosArrowDropupCircle,
@@ -14,9 +15,9 @@ import { usePathname } from "next/navigation";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import toast from "react-hot-toast";
 import useNavLinks from "./navLInks/useNavLinks";
+import { TbLogout2 } from "react-icons/tb";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
     // console.log(user);
 
     // theme
@@ -56,6 +57,20 @@ const Navbar = () => {
     // passed href as props for pathname
     const isActiveLink = (href) => {
         return pathname === href;
+    };
+
+    const { user, logOut } = useContext(AuthContext);
+
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                toast.success("you have logged out successfully");
+            })
+            .catch((error) => {
+                console.log(error.code);
+                console.log(error.message);
+            });
     };
 
     // menu white color on dark bg
@@ -125,16 +140,16 @@ const Navbar = () => {
     const navLinks = useNavLinks(isActiveLink, pathname, navMenus, menuToggle)
 
     // logout section
-    const handleSignOut = () => {
-        logOut()
-            .then(() => {
-                toast.success("you have logged out successfully");
-            })
-            .catch((error) => {
-                console.log(error.code);
-                console.log(error.message);
-            });
-    };
+    // const handleSignOut = () => {
+    //     logOut()
+    //         .then(() => {
+    //             toast.success("you have logged out successfully");
+    //         })
+    //         .catch((error) => {
+    //             console.log(error.code);
+    //             console.log(error.message);
+    //         });
+    // };
 
     // delete bg of nav
     // const navBg = theme === "light" ? "bg-lightWhite" : "bg-slate-900";
@@ -301,11 +316,16 @@ const Navbar = () => {
                             // <div>
                             //     <button onClick={handleSignOut} className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Out</button>
                             // </div>
-                            <div>
+                            <div className="flex justify-center items-center gap-x-3">
                                 <Link href={"/dashboard"}><button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Dashboard</button></Link>
-                                <button className="bg-red-500 text-white py-2 ml-2 px-3 text-sm rounded-md">
+                                {/* <button className="bg-red-500 text-white py-2 ml-2 px-3 text-sm rounded-md">
                                         Subscribe
-                                    </button>
+                                    </button> */}
+                                <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md ">
+                                    <div onClick={user ? handleSignOut : () => toast.error("You are not logged in")} className='flex justify-center items-center gap-x-2'>
+                                        <TbLogout2 size={20} /> <p className={`text-sm origin-left duration-200  ${!open && "hidden"}`}>Logout</p>
+                                    </div>
+                                </button>
                             </div>
                         ) : (
                             <div>
@@ -315,9 +335,9 @@ const Navbar = () => {
                                     <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
                                         Sign In
                                     </button>
-                                    <button className="bg-red-500 text-white py-2 ml-2 px-3 text-sm rounded-md">
+                                    {/* <button className="bg-red-500 text-white py-2 ml-2 px-3 text-sm rounded-md">
                                         Subscribe
-                                    </button>
+                                    </button> */}
                                 </Link>
 
                             </div>

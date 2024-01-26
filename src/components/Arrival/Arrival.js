@@ -19,15 +19,16 @@ const Arrival = () => {
                 </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                 <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-slate-100  shadow-xl">
-                    <figure className="px-6 pt-6">
-                        <img src="https://i.ibb.co/TbkjVgH/Rectangle-20.png" alt="Shoes" className="rounded-xl" />
+                    <figure className="px-6 pt-6 max-h-[350px] bg-lightWhite mx-5 mt-5 pb-6">
+                        <img src="https://i.ibb.co/rZxh8bT/714-Exofe-KJL-AC-UF1000-1000-QL80.jpg" alt="Shoes" className="rounded-xl max-h-[300px]" />
                     </figure>
                     <div className="card-body text-[#333D2E]">
-                        <h2 className="card-title text-2xl lg:text-3xl ">Company of  One</h2>
-                        <p className="my-1 md:my-2 lg:my-4">Company of One by Paul Jarvis explores the idea of building a successful business without chasing growth for its own sake, emphasizing the value of </p>
+                        <h2 className="card-title text-2xl lg:text-3xl ">A Game of Thrones</h2>
+                        <p className="my-1 md:my-2 lg:my-4">CThe first book in the A Song of Ice and Fire series, a tale of power and intrigue. </p>
                         <div className="flex flex-row ">
-                            <button className="text-lg font-medium pr-2">View All</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <Link href="/allBooks">
+                        <button className="text-lg font-medium pr-2">View All</button>
+                        </Link>                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <g clip-path="url(#clip0_30_584)">
                                     <path d="M9 5V7H15.59L4 18.59L5.41 20L17 8.41V15H19V5H9Z" fill="#333D2E" />
                                 </g>
@@ -41,14 +42,16 @@ const Arrival = () => {
                     </div>
                 </div>
                 <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-[#333D2E] shadow-xl">
-                    <figure className="px-6 pt-6">
-                        <img src="https://i.ibb.co/TbkjVgH/Rectangle-20.png" alt="Shoes" className="rounded-xl" />
-                        {/* <Image href={img1} width={500} height={300} alt="arrival" className="rounded-xl"/> */}
+                <figure className="px-6 pt-6 max-h-[350px] bg-slate-100 mx-5 mt-5 pb-6">
+                        <img src="https://i.ibb.co/tpLyzm4/8bb699eb40d839446e354e6fef36bcc1.jpg" alt="Shoes" className="rounded-xl max-h-[300px]" />
                     </figure>
                     <div className="card-body text-[#FDFCF7]">
-                        <h2 className="card-title text-2xl lg:text-3xl ">Company of  One</h2>
-                        <p className="my-1 md:my-2 lg:my-4">Company of One by Paul Jarvis explores the idea of building a successful business without chasing growth for its own sake, emphasizing the value of </p>
+                        <h2 className="card-title text-2xl lg:text-3xl ">The Book Thief</h2>
+                        <p className="my-1 md:my-2 lg:my-4">A novel set in Nazi Germany narrated by Death.</p>
                         <div className="flex flex-row ">
+                        <Link href="/allBooks">
+                        <button className="text-lg font-medium pr-2">View All</button>
+                        </Link>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <g clip-path="url(#clip0_30_572)">
                                     <path d="M9 5V7H15.59L4 18.59L5.41 20L17 8.41V15H19V5H9Z" fill="#FDFCF7" />
@@ -63,15 +66,16 @@ const Arrival = () => {
                     </div>
                 </div>
                 <div className="card md:w-72 lg:w-80 xl:w-96 bg-white shadow-xl">
-                    <figure className="px-6 pt-6">
-                        <img src="https://i.ibb.co/TbkjVgH/Rectangle-20.png" alt="Shoes" className="rounded-xl" />
+                <figure className="px-6 pt-6 max-h-[350px] bg-lightWhite mx-5 mt-5 pb-6">
+                        <img src="https://i.ibb.co/BzJkQKM/TPON-Cover-LG.jpg" alt="Shoes" className="rounded-xl max-h-[300px]" />
                     </figure>
                     <div className="card-body text-[#333D2E]">
-                        <h2 className="card-title text-2xl lg:text-3xl ">Company of  One</h2>
-                        <p className="my-1 md:my-2 lg:my-4">Company of One by Paul Jarvis explores the idea of building a successful business without chasing growth for its own sake, emphasizing the value of </p>
+                        <h2 className="card-title text-2xl lg:text-3xl ">The Power of Now</h2>
+                        <p className="my-1 md:my-2 lg:my-4">A spiritual guide to living in the present moment and finding peace and fulfillment.</p>
                         <div className="flex flex-row ">
-                            <button className="text-lg font-medium pr-2">View All</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <Link href="/allBooks">
+                        <button className="text-lg font-medium pr-2">View All</button>
+                        </Link>                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <g clip-path="url(#clip0_30_584)">
                                     <path d="M9 5V7H15.59L4 18.59L5.41 20L17 8.41V15H19V5H9Z" fill="#333D2E" />
                                 </g>

@@ -12,7 +12,7 @@ import img from "../../../../public/images/location.jpg"
 
 const ContactUs = () => {
     return (
-        <div className='my-10 mb-20 '>
+        <div className='my-28 mb-36 '>
             <h1 className='text-4xl font-bold text-center'>Contact With Us </h1>
             <p className='text-center text-lg pb-10 pt-2'>You can get our contact information and send us email</p>
             <div className='bg-lightWhite mx-44 ml-80 min-h-[450px] absolute'>
