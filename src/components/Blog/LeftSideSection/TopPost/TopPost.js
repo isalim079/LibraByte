@@ -25,7 +25,7 @@ const TopPost = () => {
                 <h2 className="text-2xl font-semibold text-oliveGreen">
                     Top Post
                 </h2>
-                <div className="border-2 border-oliveGreen w-32 mt-1 mb-5"></div>
+                <div className="border-2 border-oliveGreen w-[102px] mt-1 mb-5"></div>
             </div>
             <div className="list-none">
                 <div className="">

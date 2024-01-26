@@ -13,6 +13,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import toast from "react-hot-toast";
+import useNavLinks from "./navLInks/useNavLinks";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -61,65 +62,67 @@ const Navbar = () => {
     const navMenus = theme === "dark" ? "#EFEDE1" : "#333D2E";
 
     // Navbar items
-    const navLinks = (
-        <>
-            <li>
-                <Link
-                    href="/"
-                    style={{
-                        ["fontWeight"]: isActiveLink("/") ? "bold" : "normal",
-                        // ["textDecoration"]: isActiveLink("/")
-                        //     ? "underline"
-                        //     : "",
-                        ["textDecorationColor"]: isActiveLink("/")
-                            ? `${navMenus}`
-                            : "",
-                        ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
-                    }}
-                >
-                    Home
-                </Link>
-            </li>
-            <li>
-                <Link
-                    href="/blog"
-                    style={{
-                        ["fontWeight"]: isActiveLink("/blog")
-                            ? "bold"
-                            : "normal",
-                        // ["textDecoration"]: isActiveLink("/blog")
-                        //     ? "underline"
-                        //     : "",
-                        ["textDecorationColor"]: isActiveLink("/blog")
-                            ? `${navMenus}`
-                            : "",
-                        ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
-                    }}
-                >
-                    Blog
-                </Link>
-            </li>
-            <li>
-                <Link
-                    href="/aboutUs"
-                    style={{
-                        ["fontWeight"]: isActiveLink("/aboutUs")
-                            ? "bold"
-                            : "normal",
-                        // ["textDecoration"]: isActiveLink("/aboutUs")
-                        //     ? "underline"
-                        //     : "",
-                        ["textDecorationColor"]: isActiveLink("/aboutUs")
-                            ? `${navMenus}`
-                            : "",
-                        ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
-                    }}
-                >
-                    About Us
-                </Link>
-            </li>
-        </>
-    );
+    // const navLinks = (
+    //     <>
+    //         <li>
+    //             <Link
+    //                 href="/"
+    //                 style={{
+    //                     ["fontWeight"]: isActiveLink("/") ? "bold" : "normal",
+    //                     // ["textDecoration"]: isActiveLink("/")
+    //                     //     ? "underline"
+    //                     //     : "",
+    //                     ["textDecorationColor"]: isActiveLink("/")
+    //                         ? `${navMenus}`
+    //                         : "",
+    //                     ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
+    //                 }}
+    //             >
+    //                 Home
+    //             </Link>
+    //         </li>
+    //         <li>
+    //             <Link
+    //                 href="/blog"
+    //                 style={{
+    //                     ["fontWeight"]: isActiveLink("/blog")
+    //                         ? "bold"
+    //                         : "normal",
+    //                     // ["textDecoration"]: isActiveLink("/blog")
+    //                     //     ? "underline"
+    //                     //     : "",
+    //                     ["textDecorationColor"]: isActiveLink("/blog")
+    //                         ? `${navMenus}`
+    //                         : "",
+    //                     ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
+    //                 }}
+    //             >
+    //                 Blog
+    //             </Link>
+    //         </li>
+    //         <li>
+    //             <Link
+    //                 href="/aboutUs"
+    //                 style={{
+    //                     ["fontWeight"]: isActiveLink("/aboutUs")
+    //                         ? "bold"
+    //                         : "normal",
+    //                     // ["textDecoration"]: isActiveLink("/aboutUs")
+    //                     //     ? "underline"
+    //                     //     : "",
+    //                     ["textDecorationColor"]: isActiveLink("/aboutUs")
+    //                         ? `${navMenus}`
+    //                         : "",
+    //                     ["color"]: menuToggle ? "#333D2E" : `${navMenus}`,
+    //                 }}
+    //             >
+    //                 About Us
+    //             </Link>
+    //         </li>
+    //     </>
+    // );
+
+    const navLinks = useNavLinks(isActiveLink, pathname, navMenus, menuToggle)
 
     // logout section
     const handleSignOut = () => {
@@ -295,8 +298,14 @@ const Navbar = () => {
                 <div className="flex items-center gap-4">
                     <div>
                         {user ? (
+                            // <div>
+                            //     <button onClick={handleSignOut} className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Out</button>
+                            // </div>
                             <div>
-                                <button onClick={handleSignOut} className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Sign Out</button>
+                                <Link href={"/dashboard"}><button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">Dashboard</button></Link>
+                                <button className="bg-red-500 text-white py-2 ml-2 px-3 text-sm rounded-md">
+                                        Subscribe
+                                    </button>
                             </div>
                         ) : (
                             <div>

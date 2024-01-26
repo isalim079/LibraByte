@@ -3,22 +3,27 @@ import React from 'react';
 const Faq = () => {
     return (
         <div className='mx-44 '>
+            <h1 className='text-4xl font-bold text-center'>Frequently Asked Questions </h1>
+            <p className='text-center text-lg pb-10 pt-2'>Mostly asked question of users (FAQ) </p>
             <section className=" bg-lightWhite text-darkOliveGreen rounded-xl">
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-                    <h2 className="text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
-                    <p className="mt-4 mb-8 dark:text-darkOliveGreen">Sagittis tempor donec id vestibulum viverra. Neque condimentum primis orci at lacus amet bibendum.</p>
+                    
                     <div className="space-y-4">
                         <details className="w-full border border-darkOliveGreen rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ri  font-bold">Ex orci laoreet egestas sapien magna egestas scelerisque?</summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-darkOliveGreen">Lectus iaculis orci metus vitae ligula dictum per. Nisl per nullam taciti at adipiscing est. </p>
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ri  font-bold">How do I borrow books from LibraByte?</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-darkOliveGreen">To borrow books from LibraByte, log in to your account, search for the desired book using the search bar, and click on the "Borrow" button. Follow the on-screen instructions to complete the borrowing process. Remember to check the due date to return the book on time. </p>
                         </details>
                         <details className="w-full border border-darkOliveGreen rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ri font-bold">Lorem at arcu rutrum viverra metus sapien venenatis lobortis odio?</summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-darkOliveGreen">Tincidunt ut hac condimentum rhoncus phasellus nostra. Magna porttitor egestas tincidunt neque vehicula potenti. </p>
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ri font-bold">Can I renew a borrowed book</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-darkOliveGreen">Yes, you can renew a borrowed book as long as no one else has placed a hold on it. Log in to your account, go to the "My Books" section, find the book you want to renew, and click on the "Renew" button. Please note that renewal is subject to the library's renewal policies. </p>
                         </details>
                         <details className="w-full border border-darkOliveGreen rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ri font-bold">Eleifend feugiat sollicitudin laoreet adipiscing bibendum suscipit erat?</summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-darkOliveGreen">Justo libero tellus integer tincidunt justo semper consequat venenatis aliquet imperdiet. Ultricies urna proin fusce nulla pretium sodales vel magna et massa euismod vulputate sed. </p>
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ri font-bold">How can I request a book that is currently unavailable?</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-darkOliveGreen">If the book you are looking for is currently unavailable, you can place a hold on it. Search for the book, click on the "Place Hold" button, and you will be notified when the book becomes available. Make sure your contact information is up-to-date in your account settings. </p>
+                        </details>
+                        <details className="w-full border border-darkOliveGreen rounded-lg">
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ri font-bold"> What should I do if I lose a book or it gets damaged while in my possession?</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-darkOliveGreen">If you lose a book or it gets damaged, please contact the library staff immediately. You may be required to pay for the replacement cost or repair of the book. Promptly reporting lost or damaged items helps us maintain a well-functioning library for all users. </p>
                         </details>
                     </div>
                 </div>
