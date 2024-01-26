@@ -18,15 +18,15 @@ const AdminMenu = () => {
 
                 {/* categories */}
                 <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
-                    <div className="flex px-2 py-2 items-center gap-2">
+                    <Link href="/dashboard" className="flex px-2 py-1 items-center gap-2">
                         <FaHome className="text-xl" /> Dashboard
-                    </div>
+                    </Link>
                 </li>
 
                 {/* divider */}
                 <div className="divider my-2"></div>
                 <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
-                    <Link href="dashboard/users" className="flex px-2 py-2 items-center gap-2">
+                    <Link href="/dashboard/users" className="flex px-2 py-2 items-center gap-2">
                         <FaUser className="text-xl" /> Users
                     </Link>
                 </li>
@@ -35,7 +35,7 @@ const AdminMenu = () => {
                 <div className="divider my-2"></div>
 
                 <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
-                    <Link href="dashboard/manage-book" className="flex px-2 py-2 items-center gap-2">
+                    <Link href="/dashboard/manage-books" className="flex px-2 py-2 items-center gap-2">
                         <SiPolymerproject className="text-md" /> Manage Book
                     </Link>
                 </li>

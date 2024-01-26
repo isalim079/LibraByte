@@ -4,7 +4,7 @@ import { HiOutlineBellAlert } from "react-icons/hi2";
 const Searchbar = () => {
     return (
         <div>
-            <div className='flex justify-end items-center gap-4'>
+            <div className='flex justify-end items-center gap-4 mt-2'>
                 <div>
                     <input type="text" placeholder="Search here" className="input input-bordered input-sm w-full max-w-xs" />
                 </div>
