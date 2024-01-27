@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useNavigationLInks from "./useNavigationLInks";
 import SignInOut from "./SignInOut";
 import { usePathname } from "next/navigation";
@@ -9,7 +9,10 @@ import Link from "next/link";
 const MobileNavigation = () => {
     const navLinks = useNavigationLInks();
     const pathName = usePathname();
-    const [active, setActive] = useState(pathName);
+    const [active, setActive] = useState("");
+    useEffect(() => {
+        setActive(pathName)
+    }, [])
 
     return (
         <div className="lg:hidden">
@@ -25,7 +28,7 @@ const MobileNavigation = () => {
                                             : ""
                                     }`}
                                     href={menu.link}
-                                    onClick={() => setActive(pathName)}
+                                    onClick={() => setActive(menu.link)}
                                 >
                                     <span
                                         className={`text-2xl cursor-pointer duration-500 ${

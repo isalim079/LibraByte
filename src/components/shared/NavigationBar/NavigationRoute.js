@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useNavigationLInks from "./useNavigationLInks";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -8,8 +8,12 @@ import Link from "next/link";
 const NavigationRoute = () => {
     const navLinks = useNavigationLInks();
     const pathName = usePathname();
-    const [active, setActive] = useState(pathName);
+    const [active, setActive] = useState("");
     // console.log(active);
+
+    useEffect(() => {
+        setActive(pathName)
+    }, [])
 
     return (
         <div>
@@ -23,7 +27,7 @@ const NavigationRoute = () => {
                                     : ""
                             }`}
                             href={menu.link}
-                            onClick={() => setActive(pathName)}
+                            onClick={() => setActive(menu.link)}
                         >
                             <span
                                 className={`text-2xl cursor-pointer duration-500 ${
