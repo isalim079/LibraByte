@@ -1,11 +1,12 @@
 import Footer from '@/components/shared/Footer/Footer';
-import Navbar from '@/components/shared/Navbar/Navbar';
+
+import NavigationBar from '@/components/shared/NavigationBar/NavigationBar';
 import React from 'react';
 
 const AboutUsLayout = ({children}) => {
     return (
         <div>
-            <Navbar />
+           <NavigationBar />
             {children}
             <Footer />
         </div>

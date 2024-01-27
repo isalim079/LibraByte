@@ -3,18 +3,17 @@
 import Image from "next/image";
 import logo from "../../../assets/logo/LibraByte.png";
 import NavigationRoute from "./NavigationRoute";
-
-
+import SignInOut from "./SignInOut";
+import MobileNavigation from "./MobileNavigation";
 
 const NavigationBar = () => {
-   
-
-
-
     return (
         <div className="bg-lightWhite max-h-[74px]">
-            {/* nav container */}
-            <div className="flex justify-between max-w-screen-xl mx-auto items-center">
+            {/* Mobile nav */}
+            <MobileNavigation />
+
+            {/* Pc nav */}
+            <div className="lg:flex justify-between max-w-screen-xl mx-auto items-center hidden">
                 {/* Logo */}
                 <div>
                     <Image
@@ -33,9 +32,7 @@ const NavigationBar = () => {
                 {/* sign in button */}
 
                 <div>
-                    <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md">
-                        Sign In
-                    </button>
+                    <SignInOut />
                 </div>
             </div>
         </div>
