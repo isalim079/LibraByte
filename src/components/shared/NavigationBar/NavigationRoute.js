@@ -16,7 +16,11 @@ const NavigationRoute = () => {
                 {navLinks.map((menu, index) => (
                     <li key={index} className="w-16">
                         <a
-                            className="flex flex-col items-center text-center pt-6"
+                            className={`flex flex-col items-center text-center pt-6 ${
+                                active === menu.link
+                                    ? "shadow-md rounded-md"
+                                    : ""
+                            }`}
                             href={menu.link}
                             onClick={() => setActive(index)}
                         >

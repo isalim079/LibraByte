@@ -8,12 +8,13 @@ import MobileNavigation from "./MobileNavigation";
 
 const NavigationBar = () => {
     return (
-        <div className="bg-lightWhite max-h-[74px] sticky">
+        <div className="bg-lightWhite max-h-[74px]">
             {/* Mobile nav */}
             <MobileNavigation />
 
             {/* Pc nav */}
             <div className="lg:flex justify-between max-w-screen-xl mx-auto items-center hidden">
+
                 {/* Logo */}
                 <div>
                     <Image
