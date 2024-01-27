@@ -27,9 +27,7 @@ const SignInOut = () => {
             {user ? (
                 <div className="">
                     <button
-                        className={`bg-[#333D2E] text-white py-2 px-3 rounded-md text-sm origin-left duration-200 hidden lg:flex  ${
-                            !open && "hidden"
-                        }`}
+                        className="bg-[#333D2E] text-white py-2 px-3 rounded-md text-sm origin-left duration-200 hidden lg:flex"
                         onClick={
                             user
                                 ? handleSignOut
@@ -39,9 +37,7 @@ const SignInOut = () => {
                         Logout
                     </button>
                     <button
-                        className={` lg:hidden text-2xl flex justify-center items-center ml-3 ${
-                            !open && "hidden"
-                        }`}
+                        className="lg:hidden text-2xl flex justify-center items-center ml-3"
                         onClick={
                             user
                                 ? handleSignOut
@@ -53,7 +49,7 @@ const SignInOut = () => {
                 </div>
             ) : (
                 <div>
-                    {" "}
+                   
                     <Link href={"/login"}>
                         <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md hidden lg:flex">
                             Sign In

@@ -16,14 +16,14 @@ const NavigationBar = () => {
             <div className="lg:flex justify-between max-w-screen-xl mx-auto items-center hidden">
 
                 {/* Logo */}
-                <div>
+                
                     <Image
                         src={logo}
                         height={100}
                         width={100}
                         alt="logo"
                     ></Image>
-                </div>
+                
 
                 {/* Navigation */}
                 <div className="">
