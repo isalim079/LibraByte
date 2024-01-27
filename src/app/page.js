@@ -7,11 +7,13 @@ import Navbar from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
 import TopBanner from "@/components/Home/TopBanner/TopBanner";
 import Subscription from "@/components/Subscription/Subscription";
+import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
 
 export default function Home() {
     return (
         <div className="overflow-hidden">
-            <Navbar />
+            <NavigationBar />
+            {/* <Navbar /> */}
             <TopBanner />
             <BestSelling />
             <Banner />
