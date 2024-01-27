@@ -1,12 +1,12 @@
-import Manageusers from '@/components/Dashboard/AdminDashboard/Manageusers/Manageusers';
+import ManageUserDetails from '@/components/Dashboard/AdminDashboard/Manageusers/ManageUserDetails/ManageUserDetails';
 import React from 'react';
 
-const UserInfo = () => {
+const Users = () => {
     return (
         <div>
-            <Manageusers></Manageusers>
+            <ManageUserDetails></ManageUserDetails>
         </div>
     );
 };
 
-export default UserInfo;
+export default Users;
