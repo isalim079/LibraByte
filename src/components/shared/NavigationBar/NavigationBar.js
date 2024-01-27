@@ -8,7 +8,7 @@ import MobileNavigation from "./MobileNavigation";
 
 const NavigationBar = () => {
     return (
-        <div className="bg-lightWhite max-h-[74px]">
+        <div className="bg-lightWhite max-h-[74px] sticky">
             {/* Mobile nav */}
             <MobileNavigation />
 

@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <div className="overflow-hidden">
             <NavigationBar />
-           
+
             <TopBanner />
             <BestSelling />
             <Banner />
@@ -22,7 +22,7 @@ export default function Home() {
             <Arrival />
             <Subscription />
             <Subscribe />
-            
+
             <Footer />
         </div>
     );

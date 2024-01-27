@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import useNavigationLInks from "./useNavigationLInks";
+import { usePathname } from "next/navigation";
 
 const NavigationRoute = () => {
     const navLinks = useNavigationLInks();
-    const [active, setActive] = useState(0);
+    const pathName = usePathname();
+    const [active, setActive] = useState(pathName);
     // console.log(active);
 
     return (
@@ -20,14 +22,14 @@ const NavigationRoute = () => {
                         >
                             <span
                                 className={`text-2xl cursor-pointer duration-500 ${
-                                    index === active && "-mt-3"
+                                    menu.link === active && "-mt-3"
                                 }`}
                             >
                                 {menu?.icon}
                             </span>
                             <span
                                 className={`${
-                                    active === index
+                                    active === menu.link
                                         ? "translate-y-0 duration-500 opacity-100"
                                         : "opacity-0 translate-y-10"
                                 }`}
