@@ -7,11 +7,11 @@ const Analytics = () => {
         <div className='grid mt-7 grid-cols-1 md:grid-cols-12 md:gap-2 lg:grid-cols-12 lg:gap-3'>
 
         <div className='md:col-span-12 lg:col-span-9'>
-            <AnalyticsChart></AnalyticsChart>
+            {/* <AnalyticsChart></AnalyticsChart> */}
         </div>
 
         <div className='md:col-span-12 lg:col-span-3'>
-            <TeamAnalytics></TeamAnalytics>
+            {/* <TeamAnalytics></TeamAnalytics> */}
         </div>
     </div>
     );
