@@ -84,7 +84,7 @@ const SignInOut = () => {
                 ) : (
                     <div>
                         <Lottie
-                            className="w-20"
+                            className="w-10 border-2 border-sky-600 rounded-full p-1 cursor-pointer"
                             animationData={animation}
                             loop={true}
                         />
