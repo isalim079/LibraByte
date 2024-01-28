@@ -8,6 +8,7 @@ import { CiLogin } from "react-icons/ci";
 import { TbLogout2 } from "react-icons/tb";
 import animation from "@/assets/animation/navBarUser.json";
 import Lottie from "lottie-react";
+import Image from "next/image";
 
 const SignInOut = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -75,8 +76,10 @@ const SignInOut = () => {
             <div className="hidden lg:flex">
                 {user?.photoURL ? (
                     <div>
-                        <img
+                        <Image
                             className="w-10 rounded-full"
+                            width={40}
+                            height={40}
                             src={user?.photoURL}
                             alt="profile picture"
                         />
