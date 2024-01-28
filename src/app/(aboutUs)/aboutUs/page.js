@@ -8,13 +8,13 @@ const AboutUs = () => {
     return (
         <div>
             
-            <Vision></Vision>
-            <OurValues></OurValues>
-            <Faq />
+            {/* <Vision></Vision> */}
+            {/* <OurValues></OurValues> */}
+            {/* <Faq /> */}
             <ContactUs />
 
         </div>
     );
 };
-
+ 
 export default AboutUs;

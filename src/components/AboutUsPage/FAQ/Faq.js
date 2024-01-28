@@ -2,7 +2,7 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <div className='mx-44 my-28 '>
+        <div className='mx-5 md:mx-28 md:my-28  lg:mx-44 my-28 '>
             <h1 className='text-4xl font-bold text-center'>Frequently Asked Questions </h1>
             <p className='text-center text-lg pb-10 pt-2'>Mostly asked question of users (FAQ) </p>
             <section className=" bg-lightWhite text-darkOliveGreen rounded-xl">
