@@ -7,8 +7,11 @@ import Navbar from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
 import TopBanner from "@/components/Home/TopBanner/TopBanner";
 import Subscription from "@/components/Subscription/Subscription";
+import { ChatBot } from "@/components/ChatBot/ChatBot";
+// import ChatBot from '@/components/ChatBot/ChatBot'
 
 export default function Home() {
+    
     return (
         <div className="overflow-hidden">
             <Navbar />
@@ -20,7 +23,7 @@ export default function Home() {
             <Arrival />
             <Subscription />
             <Subscribe />
-            
+            <ChatBot />
             <Footer />
         </div>
     );
