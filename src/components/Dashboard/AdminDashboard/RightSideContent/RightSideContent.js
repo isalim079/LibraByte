@@ -10,13 +10,13 @@ const RightSideContent = () => {
           
 
             {/* Dashboard Overview  */}
-            <Overview></Overview>
+            {/* <Overview></Overview> */}
 
             {/* Website Analytics  */}
             {/* <Analytics></Analytics> */}
 
             {/* Projects Details Table  */}
-            <ProjectDetsilsTable></ProjectDetsilsTable>
+            {/* <ProjectDetsilsTable></ProjectDetsilsTable> */}
 
 
         </div>

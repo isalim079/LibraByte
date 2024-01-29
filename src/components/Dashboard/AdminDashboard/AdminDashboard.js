@@ -1,11 +1,15 @@
 
-import RightSideContent from './RightSideContent/RightSideContent';
+
+import DetailsTableSearchBar from './RightSideContent/ProjectDetsilsTable/DetailsTable/DetailsTableSearchBar';
+import ProjectDetsilsTable from './RightSideContent/ProjectDetsilsTable/ProjectDetsilsTable';
+
 
 const AdminDashboard = () => {
     return (
        
         <div>
-              <RightSideContent></RightSideContent>
+            <DetailsTableSearchBar />
+              <ProjectDetsilsTable />
         </div>
     );
 };
