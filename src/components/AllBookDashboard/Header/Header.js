@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from "@/app/Context/AuthProvider";
 import { FaUserCircle } from 'react-icons/fa';
+import Image from 'next/image';
 const Header = () => {
     const { user } = useContext(AuthContext);
 
@@ -21,7 +22,7 @@ const Header = () => {
                         </button>
                         <div role="button" className="btn btn-ghost btn-circle avatar">
                             <div>{user ?
-                                <img className='rounded-full w-12 h-12' src={user?.photoURL} alt="" />
+                                <Image width={30} height={30} className='rounded-full w-8 h-8' src={user?.photoURL} alt="profile picture" />
                                 :
                                 <FaUserCircle className='text-4xl'></FaUserCircle>
                             }

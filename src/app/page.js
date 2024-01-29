@@ -1,7 +1,7 @@
-import Banner from "@/components/Banner/Banner";
-import Arrival from "@/components/Arrival/Arrival";
-import BestSelling from "@/components/BestSelling/BestSelling";
-import FeatureSection from "@/components/FeatureSection/FeatureSection";
+import Banner from "@/components/Home/Banner/Banner";
+import Arrival from "@/components/Home/Arrival/Arrival";
+import BestSelling from "@/components/Home/BestSelling/BestSelling";
+import FeatureSection from "@/components/Home/FeatureSection/FeatureSection";
 import Subscribe from "@/components/Subscribe/Subscribe";
 
 import Footer from "@/components/shared/Footer/Footer";
