@@ -9,7 +9,6 @@ const LeftSideMenu = () => {
 
                 <Logo></Logo>
                 <AdminMenu></AdminMenu>
-
         </div>
     );
 };
