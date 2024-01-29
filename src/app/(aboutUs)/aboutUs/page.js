@@ -1,8 +1,8 @@
-import Vision from '@/components/AboutUsPage/Vision/Vision';
-import OurValues from '@/components/AboutUsPage/OurValues/OurValues';
+import Vision from '@/components/Home/Vision/Vision';
+import OurValues from '@/components/Home/OurValues/OurValues';
 import React from 'react';
-import ContactUs from '@/components/AboutUsPage/ContactUs/ContactUs';
-import Faq from '@/components/AboutUsPage/FAQ/Faq';
+import ContactUs from '@/components/Home/ContactUs/ContactUs';
+import Faq from '@/components/Home/FAQ/Faq';
 
 const AboutUs = () => {
     return (
