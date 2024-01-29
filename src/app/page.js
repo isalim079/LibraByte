@@ -12,6 +12,7 @@ import Vision from "@/components/AboutUsPage/Vision/Vision";
 import OurValues from "@/components/AboutUsPage/OurValues/OurValues";
 import Faq from "@/components/AboutUsPage/FAQ/Faq";
 import ContactUs from "@/components/AboutUsPage/ContactUs/ContactUs";
+import BookCounter from "@/components/Home/BookCounter/BookCounter";
 
 export default function Home() {
     return (
@@ -24,6 +25,7 @@ export default function Home() {
             {/* <BestAuthor /> */}
             <FeatureSection />
             <Arrival />
+            <BookCounter></BookCounter>
             <Vision></Vision>
             <OurValues></OurValues>
             <Subscription />

@@ -3,6 +3,7 @@ import OurValues from '@/components/AboutUsPage/OurValues/OurValues';
 import React from 'react';
 import ContactUs from '@/components/AboutUsPage/ContactUs/ContactUs';
 import Faq from '@/components/AboutUsPage/FAQ/Faq';
+import BookCounter from '@/components/Home/BookCounter/BookCounter';
 
 const AboutUs = () => {
     return (
@@ -11,7 +12,8 @@ const AboutUs = () => {
             {/* <Vision></Vision> */}
             {/* <OurValues></OurValues> */}
             {/* <Faq /> */}
-            <ContactUs />
+            {/* <ContactUs /> */}
+            <BookCounter></BookCounter>
 
         </div>
     );
