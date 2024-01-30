@@ -36,12 +36,12 @@ const ContactUs = () => {
                 <h1 className='text-center font-bold text-white pt-7 text-2xl'>Contact Information</h1>
 
                 <div className='p-5 space-y-4'>
-                    <h1  className='flex justify-start text-white items-center gap-x-4 text-lg font-medium'><IoLocation className='text-white text-3xl' />Dhaka, Bangladesh </h1>
+                    <h1 className='flex justify-start text-white items-center gap-x-4 text-lg font-medium'><IoLocation className='text-white text-3xl' />Dhaka, Bangladesh </h1>
                     <h1 className='flex justify-start text-white items-center gap-x-4 text-lg font-medium'><BiMessageSquareDetail className='text-white text-2xl' />librabyte@gmail.com </h1>
-                    <h1  className='flex justify-start text-white items-center gap-x-4 text-lg font-medium'><FaPhoneAlt className='text-white text-xl' /> +880 1234567890 </h1>
-                    <h1  className='flex justify-start text-white items-center gap-x-4 text-lg font-medium'><BsBrowserChrome className='text-white text-xl' /> www.librabyte.com </h1>
+                    <h1 className='flex justify-start text-white items-center gap-x-4 text-lg font-medium'><FaPhoneAlt className='text-white text-xl' /> +880 1234567890 </h1>
+                    <h1 className='flex justify-start text-white items-center gap-x-4 text-lg font-medium'><BsBrowserChrome className='text-white text-xl' /> www.librabyte.com </h1>
                 </div>
-                    <Image className='max-h-36' src={img} height={200} width={400} alt='Location'/>
+                <Image className='max-h-36' src={img} height={200} width={400} alt='Location' />
 
             </div>
         </div>

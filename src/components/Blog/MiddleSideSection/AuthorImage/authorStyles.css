@@ -1,50 +1,48 @@
-
 .swiper {
-  width: 300px;
-  height: 240px;
-  /* padding: 10px; */
-
+    width: 300px;
+    height: 200px;
+    /* padding: 10px; */
 }
 
 .swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 150px;
-
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 150px;
 }
 
 .swiper-slide img {
-  display: block;
-  width: 100%;
-  
-}
-
-.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
-    content: '';
-}
-
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
-    content: '';
-}
-
-@media only screen and (max-width: 376px){
-  .swiper-slide img { 
-    margin-left: 13px;
-    width: 70%;
-  }
-  .swiper {
-
-    height: 200px;
-    /* padding: 10px; */
-  
-  }
-
-  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: var(--swiper-pagination-bottom, 8px);
-    top: var(--swiper-pagination-top, auto);
-    left: -26px;
+    display: block;
     width: 100%;
 }
 
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+    content: "";
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+    content: "";
+}
+
+@media only screen and (max-width: 376px) {
+    .swiper-slide img {
+        margin-left: 13px;
+        width: 70%;
+    }
+    .swiper {
+        height: 200px;
+        /* padding: 10px; */
+    }
+
+    .swiper-pagination-fraction,
+    .swiper-pagination-custom,
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: var(--swiper-pagination-bottom, 8px);
+        top: var(--swiper-pagination-top, auto);
+        left: -26px;
+        width: 100%;
+    }
 }

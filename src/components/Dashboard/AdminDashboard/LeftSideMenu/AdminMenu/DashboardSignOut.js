@@ -9,9 +9,12 @@ import { TbLogout2 } from "react-icons/tb";
 import animation from "@/assets/animation/navBarUser.json";
 import Lottie from "lottie-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const SignInOut = () => {
+
+const DahsBoardSignOut = () => {
     const { user, logOut } = useContext(AuthContext);
+    const router = useRouter()
 
     const handleSignOut = () => {
         logOut()
@@ -19,6 +22,9 @@ const SignInOut = () => {
                 toast.success(
                     `${user?.displayName}, you have logged out successfully`
                 );
+                setTimeout(() => {
+                    router.push('/login')
+                }, 1000)
             })
             .catch((error) => {
                 console.log(error);
@@ -26,53 +32,14 @@ const SignInOut = () => {
     };
 
     return (
-        <div className="flex justify-center items-center flex-row-reverse gap-5">
-            
-            <div className="">
-
-                {/* dropdown */}
-
-                <details className="dropdown dropdown-bottom">
-                    <summary className="m-1 btn btn-link">
-
-                    {/* User photo */}
-
-                    {user?.photoURL ? (
-                    <div>
-                        <Image
-                            className="w-10 rounded-full"
-                            width={40}
-                            height={40}
-                            src={user?.photoURL}
-                            alt="profile picture"
-                        />
-                    </div>
-                ) : (
-                    <div>
-                        <Lottie
-                            className="w-10 border-2 border-sky-600 rounded-full p-1 cursor-pointer"
-                            animationData={animation}
-                            loop={true}
-                        />
-                    </div>
-                )}
-
-                    </summary>
-
-                    {/* dropdown links */}
-
-                    <ul className="p-2 shadow menu dropdown-content z-[1]  rounded-box w-52 bg-lightWhite">
-                        <li>
-                            <a href="/dashboard">Dashboard</a>
-                        </li>
-                        <li>
-                        <div>
+        <div className=" flex-col-reverse gap-5">
+            <div>
                 {user ? (
                     <div className="">
                         {/* sign out */}
                         <div>
                             <button
-                                className="bg-[#333D2E] text-white py-2 px-3 rounded-md text-sm origin-left duration-200 hidden lg:flex"
+                                className=""
                                 onClick={
                                     user
                                         ? handleSignOut
@@ -82,7 +49,9 @@ const SignInOut = () => {
                                               )
                                 }
                             >
-                                SignOut
+                             <div className=" flex justify-center items-center">
+                             <span className=" mr-2"><TbLogout2  className="text-2xl"/> </span> <span> SignOut</span>
+                             </div>
                             </button>
                         </div>
 
@@ -112,13 +81,29 @@ const SignInOut = () => {
                     </div>
                 )}
             </div>
-                        </li>
-                    </ul>
-                </details>
-
-            </div>
+            {/* <div className="hidden lg:flex">
+                {user?.photoURL ? (
+                    <div>
+                        <Image
+                            className="w-10 rounded-full"
+                            width={40}
+                            height={40}
+                            src={user?.photoURL}
+                            alt="profile picture"
+                        />
+                    </div>
+                ) : (
+                    <div>
+                        <Lottie
+                            className="w-10 border-2 border-sky-600 rounded-full p-1 cursor-pointer"
+                            animationData={animation}
+                            loop={true}
+                        />
+                    </div>
+                )}
+            </div> */}
         </div>
     );
 };
 
-export default SignInOut;
+export default DahsBoardSignOut;

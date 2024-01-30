@@ -1,10 +1,10 @@
-import BookDetails from '@/components/BookDetailsPage/BookDetails';
+import BookDetails from '@/components/AllBookDashboard/BookDetailsPage/BookDetails';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
-            <BookDetails />
+            {/* <BookDetails /> */}
         </div>
     );
 };

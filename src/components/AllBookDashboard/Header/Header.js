@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from "@/app/Context/AuthProvider";
 import { FaUserCircle } from 'react-icons/fa';
+import Image from 'next/image';
 const Header = () => {
     const { user } = useContext(AuthContext);
 
@@ -10,7 +11,7 @@ const Header = () => {
             <div className="drop-shadow-md px-5 py-2  bg-lightWhite ">
                 <div className=" flex justify-between items-center gap-2">
                     <div className="form-control ">
-                        <input type="text" placeholder="Search your favourite books" className="input input-bordered w-24 md:w-auto" />
+                        <input type="text" placeholder="Search your favorite books" className="input input-bordered w-24 md:w-auto" />
                     </div>
                     <div className=" flex justify-center items-center">
                         <button className="btn btn-ghost btn-circle">
@@ -21,7 +22,7 @@ const Header = () => {
                         </button>
                         <div role="button" className="btn btn-ghost btn-circle avatar">
                             <div>{user ?
-                                <img className='rounded-full w-12 h-12' src={user?.photoURL} alt="" />
+                                <Image width={30} height={30} className='rounded-full w-8 h-8' src={user?.photoURL} alt="profile picture" />
                                 :
                                 <FaUserCircle className='text-4xl'></FaUserCircle>
                             }
