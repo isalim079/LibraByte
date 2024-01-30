@@ -5,6 +5,7 @@ import logo from "../../../assets/logo/LibraByte.png";
 import NavigationRoute from "./NavigationRoute";
 import SignInOut from "./SignInOut";
 import MobileNavigation from "./MobileNavigation";
+import Link from "next/link";
 
 const NavigationBar = () => {
     return (
@@ -17,12 +18,14 @@ const NavigationBar = () => {
 
                 {/* Logo */}
                 
+                    <Link href={'/'}>
                     <Image
                         src={logo}
                         height={100}
                         width={100}
                         alt="logo"
                     ></Image>
+                    </Link>
                 
 
                 {/* Navigation */}

@@ -11,6 +11,7 @@ import { RiBookMarkFill } from "react-icons/ri";
 import { TbLogout2 } from "react-icons/tb";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import toast from "react-hot-toast";
+import shortLogo from "@/assets/logo/Lblogo.png"
 
 
 const Sidebar = ({ children }) => {
@@ -40,9 +41,11 @@ const Sidebar = ({ children }) => {
           onClick={() => setOpen(!open)}
         />
         <div className={`flex flex-col items-start`}>
-          <div className=" px-3">
+          <div className="">
             <a href="/">
-              <Image src={logo} width={100} height={100} alt="logo" />
+              {
+                open ? <div className='px-3'><Image src={logo} width={100} height={100} alt="logo" /></div> : <Image className='' src={shortLogo} width={100} height={100} alt="logo" />
+              }
             </a>
           </div>
           <span className='border-b-[1px] border-gray-200 w-full p-2'></span>

@@ -27,7 +27,46 @@ const SignInOut = () => {
 
     return (
         <div className="flex justify-center items-center flex-row-reverse gap-5">
-            <div>
+            
+            <div className="">
+
+                {/* dropdown */}
+
+                <details className="dropdown dropdown-bottom">
+                    <summary className="m-1 btn btn-link">
+
+                    {/* User photo */}
+
+                    {user?.photoURL ? (
+                    <div>
+                        <Image
+                            className="w-10 rounded-full"
+                            width={40}
+                            height={40}
+                            src={user?.photoURL}
+                            alt="profile picture"
+                        />
+                    </div>
+                ) : (
+                    <div>
+                        <Lottie
+                            className="w-10 border-2 border-sky-600 rounded-full p-1 cursor-pointer"
+                            animationData={animation}
+                            loop={true}
+                        />
+                    </div>
+                )}
+
+                    </summary>
+
+                    {/* dropdown links */}
+
+                    <ul className="p-2 shadow menu dropdown-content z-[1]  rounded-box w-52 bg-lightWhite">
+                        <li>
+                            <a href="/dashboard">Dashboard</a>
+                        </li>
+                        <li>
+                        <div>
                 {user ? (
                     <div className="">
                         {/* sign out */}
@@ -73,26 +112,10 @@ const SignInOut = () => {
                     </div>
                 )}
             </div>
-            <div className="hidden lg:flex">
-                {user?.photoURL ? (
-                    <div>
-                        <Image
-                            className="w-10 rounded-full"
-                            width={40}
-                            height={40}
-                            src={user?.photoURL}
-                            alt="profile picture"
-                        />
-                    </div>
-                ) : (
-                    <div>
-                        <Lottie
-                            className="w-10 border-2 border-sky-600 rounded-full p-1 cursor-pointer"
-                            animationData={animation}
-                            loop={true}
-                        />
-                    </div>
-                )}
+                        </li>
+                    </ul>
+                </details>
+
             </div>
         </div>
     );

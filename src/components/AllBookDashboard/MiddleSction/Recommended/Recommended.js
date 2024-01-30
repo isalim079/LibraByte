@@ -1,11 +1,20 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import RightBar from "../RightBar/RightBar";
+import { IoCloseOutline } from "react-icons/io5";
+import Image from "next/image";
+import Rating from "react-rating";
+import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
+import Link from "next/link";
 
 const Recommended = () => {
     const [books, setBooks] = useState([]);
     const [showAll, setShowAll] = useState(false);
     const initialDisplayCount = 4;
+
+    const [selectedBooks, setSelectedBooks] = useState(null);
+    const drawerWidth = 300;
 
     useEffect(() => {
         axios
@@ -24,6 +33,15 @@ const Recommended = () => {
 
     const handleSeeLessClick = () => {
         setShowAll(false);
+    };
+
+    const handleBookClick = (book) => {
+        // console.log(book);
+        setSelectedBooks(book);
+    };
+
+    const closeDrawer = () => {
+        setSelectedBooks(null);
     };
 
     return (
@@ -56,6 +74,7 @@ const Recommended = () => {
                         <div
                             key={book.id}
                             className="rounded-lg max-w-[200px] md:w-[300px] shadow-lg space-y-4 mx-auto"
+                            onClick={() => handleBookClick(book)}
                         >
                             <img
                                 alt="Product Image"
@@ -73,6 +92,56 @@ const Recommended = () => {
                         </div>
                     ))}
             </div>
+
+            {selectedBooks && (
+                // <RightBar book = {selectedBooks} />
+
+                <div
+                    className="fixed top-0 right-0 bg-lightWhite w-[300px] shadow-lg p-4 overflow-y-auto border-2 border-oliveGreen rounded-md"
+                    style={{ width: drawerWidth }}
+                >
+                    <button
+                        className="absolute top-0 right-0 p-4"
+                        onClick={closeDrawer}
+                    >
+                        <IoCloseOutline className="text-3xl text-oliveGreen border-2 border-oliveGreen rounded-md shadow-md" />
+                    </button>
+                    <div className=" h-full flex justify-center items-center">
+                        <div className=" w-full flex flex-col justify-center items-center">
+                            <Image
+                                src={selectedBooks.image}
+                                alt={selectedBooks.name}
+                                width={150}
+                                height={250}
+                            />
+                            <div className="flex flex-col justify-center items-center  w-full">
+                                <h3 className="text-xl font-semibold mt-3">
+                                    {selectedBooks.name}
+                                </h3>
+                                <p className="text-base ">
+                                    {selectedBooks.author}
+                                </p>
+                                <Rating
+                                    className="text-oliveGreen"
+                                    initialRating={selectedBooks.rating}
+                                    emptySymbol={
+                                        <MdOutlineStarBorder className="text-2xl" />
+                                    }
+                                    fullSymbol={
+                                        <MdOutlineStar className="text-2xl" />
+                                    }
+                                    readonly
+                                />
+                                <button className="w-full bg-oliveGreen text-lightWhite py-2 mt-3 rounded-md">
+                                    <Link href={`/bookDetails/${selectedBooks?._id}`}>
+                                    Details
+                                    </Link>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
