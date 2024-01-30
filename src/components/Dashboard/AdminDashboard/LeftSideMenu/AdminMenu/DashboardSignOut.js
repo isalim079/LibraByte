@@ -55,7 +55,7 @@ const DahsBoardSignOut = () => {
                             </button>
                         </div>
 
-                        <button
+                        {/* <button
                             className="lg:hidden text-2xl flex justify-center items-center ml-3"
                             onClick={
                                 user
@@ -64,7 +64,7 @@ const DahsBoardSignOut = () => {
                             }
                         >
                             <TbLogout2 />
-                        </button>
+                        </button> */}
                     </div>
                 ) : (
                     <div>

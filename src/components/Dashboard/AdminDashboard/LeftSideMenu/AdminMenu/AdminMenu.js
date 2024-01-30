@@ -2,7 +2,7 @@
 
 import { FaHome } from "react-icons/fa";
 import { SiPolymerproject } from "react-icons/si";
-import { BiSolidMessage } from "react-icons/bi";
+import { BiSolidBookmarkAltPlus, BiSolidMessage } from "react-icons/bi";
 import { SlCalender } from "react-icons/sl";
 import { FaUser } from "react-icons/fa6";
 import { MdReportProblem } from "react-icons/md";
@@ -40,8 +40,6 @@ const AdminMenu = () => {
         <div className="">
             {/* <h1 className='md:mt-11 text-[17px]'>Dashboard home</h1> */}
 
-            
-
             <div className="list-none md:mt-16">
                 {/* categories */}
                 <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
@@ -71,18 +69,38 @@ const AdminMenu = () => {
                 )}
 
                 {/* divider */}
-                <div className="divider my-2"></div>
+                {findUser.role === "admin" ? (
+                    <div>
+                        <div className="divider my-2"></div>
 
-                <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
-                    <Link
-                        href="/dashboard/manage-books"
-                        className="flex px-2 py-1 items-center gap-2"
-                    >
-                        <SiPolymerproject className="text-md" /> Manage Book
-                    </Link>
-                </li>
+                        <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                            <Link
+                                href="/dashboard/addBooks"
+                                className="flex px-2 py-1 items-center gap-2"
+                            >
+                                <BiSolidBookmarkAltPlus className="text-md" />{" "}
+                                Add Books
+                            </Link>
+                        </li>
+                    </div>
+                ) : (
+                    <div>
+                        <div className="divider my-2"></div>
+
+                        <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
+                            <Link
+                                href="/dashboard/manage-books"
+                                className="flex px-2 py-1 items-center gap-2"
+                            >
+                                <SiPolymerproject className="text-md" /> Manage
+                                Book
+                            </Link>
+                        </li>
+                    </div>
+                )}
 
                 {/* divider */}
+
                 <div className="divider my-2"></div>
                 <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
                     <Link
@@ -96,8 +114,8 @@ const AdminMenu = () => {
                 {/* divider */}
                 <div className="divider my-2"></div>
                 <li className="cursor-pointer transition-all duration-300 ease-in-out  hover:bg-darkLightWhite hover:rounded-md">
-                <DahsBoardSignOut />
-            </li>
+                    <DahsBoardSignOut />
+                </li>
             </div>
         </div>
     );
