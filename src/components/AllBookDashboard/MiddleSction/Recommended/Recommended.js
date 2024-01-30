@@ -6,6 +6,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import Image from "next/image";
 import Rating from "react-rating";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
+import Link from "next/link";
 
 const Recommended = () => {
     const [books, setBooks] = useState([]);
@@ -132,7 +133,9 @@ const Recommended = () => {
                                     readonly
                                 />
                                 <button className="w-full bg-oliveGreen text-lightWhite py-2 mt-3 rounded-md">
+                                    <Link href={`/bookDetails/${selectedBooks?._id}`}>
                                     Details
+                                    </Link>
                                 </button>
                             </div>
                         </div>
