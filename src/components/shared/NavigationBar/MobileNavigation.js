@@ -10,7 +10,7 @@ import Lottie from "lottie-react";
 import animation from "@/assets/animation/navBarUser.json";
 
 import { FaAlignLeft, FaAlignRight } from "react-icons/fa";
-import { CgLogOut } from "react-icons/cg";
+import { CgLogIn, CgLogOut } from "react-icons/cg";
 
 const MobileNavigation = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -63,7 +63,8 @@ const MobileNavigation = () => {
                                         </a>
                                     </li>
                                 ))}
-                                <li onClick={handleSignOut}>
+                                {
+                                    user ? <li onClick={handleSignOut}>
                                     <a>
                                         {" "}
                                         <span>
@@ -71,7 +72,16 @@ const MobileNavigation = () => {
                                         </span>{" "}
                                         <span>Sign Out</span>
                                     </a>
+                                </li> : <li >
+                                    <a href="/login">
+                                        {" "}
+                                        <span>
+                                            <CgLogIn />
+                                        </span>{" "}
+                                        <span>Sign In</span>
+                                    </a>
                                 </li>
+                                }
                             </ul>
                         </details>
                     </div>
