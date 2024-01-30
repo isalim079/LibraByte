@@ -9,7 +9,7 @@ const useNavigationLInks = () => {
     return [
         { name: "Home", icon: <FaHome />, link: "/" },
         { name: "Blog", icon: <FaBlogger />, link: "/blog" },
-        { name: "Dashboard", icon: <MdDashboard />, link: "/dashboard" },
+        // { name: "Dashboard", icon: <MdDashboard />, link: "/dashboard" },
         { name: "Books", icon: <ImBooks />, link: "/allBooks" },
     ];
 };
