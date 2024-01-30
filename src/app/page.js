@@ -8,7 +8,6 @@ import Footer from "@/components/shared/Footer/Footer";
 import TopBanner from "@/components/Home/TopBanner/TopBanner";
 import Subscription from "@/components/Subscription/Subscription";
 import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
-import BookCounter from "@/components/Home/BookCounter/BookCounter";
 import Vision from "@/components/Home/Vision/Vision";
 import OurValues from "@/components/Home/OurValues/OurValues";
 import Faq from "@/components/Home/FAQ/Faq";
@@ -25,7 +24,6 @@ export default function Home() {
             {/* <BestAuthor /> */}
             <FeatureSection />
             <Arrival />
-            <BookCounter></BookCounter>
             <Vision></Vision>
             <OurValues></OurValues>
             <Subscription />
