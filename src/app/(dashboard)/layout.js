@@ -1,6 +1,4 @@
 import LeftSideMenu from "@/components/Dashboard/AdminDashboard/LeftSideMenu/LeftSideMenu";
-import HeaderText from "@/components/Dashboard/AdminDashboard/RightSideContent/HeaderText/HeaderText";
-import Searchbar from "@/components/Dashboard/AdminDashboard/RightSideContent/SearchBar/Searchbar";
 
 const DashboardLayout = ({ children }) => {
     return (
@@ -13,8 +11,8 @@ const DashboardLayout = ({ children }) => {
                 </div>
 
                 <div className='md:col-span-9 lg:col-span-10 px-2'>
-                    <Searchbar></Searchbar>
-                    <HeaderText></HeaderText>
+                    {/* <Searchbar></Searchbar>  */}
+        
                     
                     {children}
                 </div>

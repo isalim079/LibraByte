@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
 import { FaHome } from "react-icons/fa";
 import { FaBlogger } from "react-icons/fa";
-import { RxDashboard } from "react-icons/rx";
+import { MdDashboard } from "react-icons/md";
+import { ImBooks } from "react-icons/im";
 
 const useNavigationLInks = () => {
-    return (
-        [
-            { name: "Home", icon: <FaHome />, link: "/" },
-            { name: "Blog", icon: <FaBlogger />, link: "/blog" },
-            { name: "Dashboard", icon: <RxDashboard />, link: "/dashboard" },
-        ]
-    );
+    return [
+        { name: "Home", icon: <FaHome />, link: "/" },
+        { name: "Blog", icon: <FaBlogger />, link: "/blog" },
+        // { name: "Dashboard", icon: <MdDashboard />, link: "/dashboard" },
+        { name: "Books", icon: <ImBooks />, link: "/allBooks" },
+    ];
 };
 
 export default useNavigationLInks;

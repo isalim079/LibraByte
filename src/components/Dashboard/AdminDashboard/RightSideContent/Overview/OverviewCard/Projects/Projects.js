@@ -1,34 +1,68 @@
-import { allBooks } from '@/components/utils/AllBooks/allBooks';
-import Image from 'next/image';
-import React from 'react';
+"use client";
 
-const Projects = async () => {
+import { AuthContext } from "@/app/Context/AuthProvider";
 
-    // get all books data by all book api 
-    const allBook = await allBooks();
+import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+import useFindUser from "@/lib/hooks/useFindUser";
+
+import React, { useEffect, useState } from "react";
+import { PiBooksFill } from "react-icons/pi";
+
+const Projects = () => {
+    const axiosPublic = useAxiosPublic();
+
+    // console.log(user);
+    const [allBooks, setAllBooks] = useState([]);
+    useEffect(() => {
+        axiosPublic
+            .get("/books")
+            .then((res) => {
+                setAllBooks(res.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
+    const [findUser] = useFindUser();
 
     return (
-        <div className='bg-white drop-shadow-md rounded-md p-4'>
+        <div className="bg-white drop-shadow-md rounded-md p-4">
+            <div className="flex justify-between items-center">
+                <div>
+                    <h3 className="text-xl font-semibold">
+                        {findUser?.role === "admin"
+                            ? "All Books"
+                            : "Total Books Read"}
+                    </h3>
 
-        <div className='flex justify-between items-center'>
+                    <div className="flex py-1 items-center gap-1 lg:gap-3">
+                        <h2 className="font-bold md:text-xl">
+                            {findUser?.role === "admin"
+                                ? allBooks?.length
+                                : findUser?.totalReturns}
+                        </h2>
+                        {findUser?.role === "admin" ? (
+                            <span className="text-[#68B8A1] font-bold text-[13px]">
+                                +11.92%
+                            </span>
+                        ) : (
+                            ""
+                        )}
+                    </div>
 
-            <div>
-                <h3 className='text-xl font-semibold'>All Books</h3>
-
-                <div className='flex py-1 items-center gap-1 lg:gap-3'>
-                    <h2 className='font-bold md:text-xl'>{allBook.length}</h2>
-                    <span className='text-[#68B8A1] font-bold text-[13px]'>+11.92%</span>
+                    <p className="text-[#9da1a4] text-[13px]">
+                        {findUser?.role === "admin"
+                            ? "All Books"
+                            : "Long way to go"}
+                    </p>
                 </div>
 
-                <p className='text-[#9da1a4] text-[13px]'>All Books</p>
+                <div className="border-2 border-oliveGreen p-1 rounded-full">
+                    <PiBooksFill className="text-3xl" />
+                </div>
             </div>
-
-            <div className='md:pl-2'>
-                <Image height={40} width={40} src="https://i.ibb.co/jkgDJFx/blueprint-11594791.png"></Image>
-            </div>
-
         </div>
-    </div>
     );
 };
 
