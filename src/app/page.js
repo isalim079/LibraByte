@@ -7,6 +7,7 @@ import Subscribe from "@/components/Subscribe/Subscribe";
 import Footer from "@/components/shared/Footer/Footer";
 import TopBanner from "@/components/Home/TopBanner/TopBanner";
 import Subscription from "@/components/Subscription/Subscription";
+import ChatBot from '@/components/ChatBot/ChatBot'
 import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
 import Vision from "@/components/Home/Vision/Vision";
 import OurValues from "@/components/Home/OurValues/OurValues";
@@ -14,6 +15,7 @@ import Faq from "@/components/Home/FAQ/Faq";
 import ContactUs from "@/components/Home/ContactUs/ContactUs";
 
 export default function Home() {
+
     return (
         <div className="overflow-hidden">
             <NavigationBar />
@@ -31,6 +33,8 @@ export default function Home() {
             
             <Faq></Faq>
             <ContactUs></ContactUs>
+            <ChatBot />
+
             <Footer />
         </div>
     );
