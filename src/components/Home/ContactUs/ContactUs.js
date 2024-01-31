@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"
+import emailjs from '@emailjs/browser';
+import React, {  useRef } from 'react';
 import { FiSend } from "react-icons/fi";
 import { IoLocation } from "react-icons/io5";
 import { BiMessageSquareDetail } from "react-icons/bi";
@@ -8,9 +10,32 @@ import Image from 'next/image';
 import img from "../../../../public/images/location.jpg"
 
 
-
-
 const ContactUs = () => {
+
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const messege = e.target.message.value;
+        console.log(name, email, messege)
+
+        const templateParams = {
+            to_name: "Samin" ,
+            from_name: {email},
+            message: {messege}
+        };
+
+        emailjs.sendForm('service_1qpabdd', 'template_siyi23e', templateParams, 'PGdz_9bvjcdgFmVc9' ,form.current)
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
+
     return (
         <div className='my-28 mb-36 '>
             <h1 className='text-4xl font-bold text-center'>Contact With Us </h1>
@@ -20,13 +45,13 @@ const ContactUs = () => {
                 <h1 className='font-bold text-4xl text-darkOliveGreen pt-10 pl-10 lg:pl-56 lg:pr-[500px]'>Get In Touch </h1>
                 <p className='text-xl  py-2 pl-10 lg:pl-56'>Fell free to drop us a comment </p>
 
-                <form >
+                <form ref={form} onSubmit={sendEmail}>
                     <div className='space-y-3'>
-                        <input type="text" placeholder="Name" className="input input-bordered min-w-[300px] lg:w-full lg:max-w-xl rounded-none bg-transparent shadow-xl ml-10 lg:ml-56" />
-                        <input type="text" placeholder="Email" className="input input-bordered min-w-[300px] lg:w-full lg:max-w-xl rounded-none bg-transparent shadow-xl ml-10 lg:ml-56" />
-                        <textarea className="textarea textarea-bordered min-w-[300px] lg:min-w-[575px] min-h-28 rounded-none bg-transparent shadow-xl ml-10 lg:ml-56" placeholder="Bio"></textarea>
+                        <input type="text" placeholder="Name" className="input input-bordered min-w-[300px] lg:w-full lg:max-w-xl rounded-none bg-transparent shadow-xl ml-10 lg:ml-56" name="name" />
+                        <input type="text" placeholder="Email" className="input input-bordered min-w-[300px] lg:w-full lg:max-w-xl rounded-none bg-transparent shadow-xl ml-10 lg:ml-56 " name="email" />
+                        <textarea className="textarea textarea-bordered min-w-[300px] lg:min-w-[575px] min-h-28 rounded-none bg-transparent shadow-xl ml-10 lg:ml-56" placeholder="Messege" name="message"></textarea>
                     </div>
-                    <button className='bg-oliveGreen text-white font-bold px-5 py-2 text-lg ml-56 flex justify-center items-center gap-x-3 mt-2'>Send <FiSend className='text-lg' />
+                    <button className='bg-oliveGreen text-white font-bold px-5 py-2 text-lg ml-56 flex justify-center items-center gap-x-3 mt-2' type='submit'>Send <FiSend className='text-lg' />
                     </button>
                 </form>
 
