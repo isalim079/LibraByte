@@ -8,6 +8,10 @@ import Footer from "@/components/shared/Footer/Footer";
 import TopBanner from "@/components/Home/TopBanner/TopBanner";
 import Subscription from "@/components/Subscription/Subscription";
 import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
+import Vision from "@/components/Home/Vision/Vision";
+import OurValues from "@/components/Home/OurValues/OurValues";
+import Faq from "@/components/Home/FAQ/Faq";
+import ContactUs from "@/components/Home/ContactUs/ContactUs";
 
 export default function Home() {
     return (
@@ -20,9 +24,12 @@ export default function Home() {
             {/* <BestAuthor /> */}
             <FeatureSection />
             <Arrival />
+            <Vision></Vision>
+            <OurValues></OurValues>
             <Subscription />
-            <Subscribe />
-
+            {/* <Subscribe /> */}
+            <Faq></Faq>
+            <ContactUs></ContactUs>
             <Footer />
         </div>
     );
