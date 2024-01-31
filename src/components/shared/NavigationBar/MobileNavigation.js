@@ -1,56 +1,120 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import logo from "../../../assets/logo/LibraByte.png";
 import useNavigationLInks from "./useNavigationLInks";
-import SignInOut from "./SignInOut";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+
+import Image from "next/image";
+import { AuthContext } from "@/app/Context/AuthProvider";
+import Lottie from "lottie-react";
+import animation from "@/assets/animation/navBarUser.json";
+
+import { FaAlignLeft, FaAlignRight } from "react-icons/fa";
+import { CgLogIn, CgLogOut } from "react-icons/cg";
 
 const MobileNavigation = () => {
+    const { user, logOut } = useContext(AuthContext);
     const navLinks = useNavigationLInks();
-    const pathName = usePathname();
-    const [active, setActive] = useState("");
-    useEffect(() => {
-        setActive(pathName)
-    }, [])
+
+    const [open, setOpen] = useState(false);
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                toast.success(
+                    `${user?.displayName}, you have logged out successfully`
+                );
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
     return (
         <div className="lg:hidden">
-            <div className="flex justify-center max-w-screen-xl mx-auto items-center">
-                <div className=" flex justify-center items-center">
-                    <div className="flex items-center relative space-x-2">
-                        {navLinks.map((menu, index) => (
-                            <li key={index} className="w-16 list-none">
-                                <Link
-                                    className={`flex flex-col items-center text-center pt-6 ${
-                                        active === menu.link
-                                            ? "shadow-md rounded-md"
-                                            : ""
-                                    }`}
-                                    href={menu.link}
-                                    onClick={() => setActive(menu.link)}
-                                >
-                                    <span
-                                        className={`text-2xl cursor-pointer duration-500 ${
-                                            menu.link === active && "-mt-3"
-                                        }`}
-                                    >
-                                        {menu?.icon}
-                                    </span>
-                                    <span
-                                        className={`${
-                                            active === menu.link
-                                                ? "translate-y-0 duration-500 opacity-100"
-                                                : "opacity-0 translate-y-10"
-                                        }`}
-                                    >
-                                        {menu?.name}
-                                    </span>
-                                </Link>
-                            </li>
-                        ))}
+            <div className=" max-w-screen-xl mx-auto">
+                {/* menu container */}
+
+                <div className=" flex justify-between items-center pr-4">
+                    {/* left side dropdown */}
+
+                    <div className="">
+                        <details className="dropdown">
+                            <summary
+                                className=" btn btn-link"
+                                onClick={() => setOpen(!open)}
+                            >
+                                {open ? (
+                                    <FaAlignRight className="text-2xl text-oliveGreen" />
+                                ) : (
+                                    <FaAlignLeft className="text-2xl text-oliveGreen" />
+                                )}
+                            </summary>
+                            <ul className="p-2 shadow menu dropdown-content z-[1] bg-lightWhite rounded-box w-48">
+                                {navLinks.map((menu, index) => (
+                                    <li key={index} className=" list-none">
+                                        <a
+                                            className=""
+                                            href={menu.link}
+                                            onClick={() => setActive(menu.link)}
+                                        >
+                                            <span>{menu?.icon}</span>
+                                            <span>{menu?.name}</span>
+                                        </a>
+                                    </li>
+                                ))}
+                                {
+                                    user ? <li onClick={handleSignOut}>
+                                    <a>
+                                        {" "}
+                                        <span>
+                                            <CgLogOut />
+                                        </span>{" "}
+                                        <span>Sign Out</span>
+                                    </a>
+                                </li> : <li >
+                                    <a href="/login">
+                                        {" "}
+                                        <span>
+                                            <CgLogIn />
+                                        </span>{" "}
+                                        <span>Sign In</span>
+                                    </a>
+                                </li>
+                                }
+                            </ul>
+                        </details>
                     </div>
-                    <SignInOut />
+
+                    {/* middle side */}
+
+                    <div>
+                        <Image src={logo} width={80} height={80} alt="logo" />
+                    </div>
+
+                    {/* right side */}
+
+                    <div>
+                        {user?.photoURL ? (
+                            <div>
+                                <Image
+                                    className="w-8 rounded-full"
+                                    width={30}
+                                    height={30}
+                                    src={user?.photoURL}
+                                    alt="profile picture"
+                                />
+                            </div>
+                        ) : (
+                            <div>
+                                <Lottie
+                                    className="w-8 border-2 border-sky-600 rounded-full p-1 cursor-pointer"
+                                    animationData={animation}
+                                    loop={true}
+                                />
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
