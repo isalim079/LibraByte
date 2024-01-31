@@ -6,7 +6,7 @@ import ManageUsersPagination from './ManageUsersPagination/ManageUsersPagination
 const Manageusers = () => {
     return (
         <div className='md:w-[1200px] mx-auto'>
-            <ManageUsersHeader></ManageUsersHeader>
+            {/* <ManageUsersHeader></ManageUsersHeader> */}
 
 
             {/* user table  */}

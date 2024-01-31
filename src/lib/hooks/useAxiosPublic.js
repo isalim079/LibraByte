@@ -6,7 +6,7 @@ import axios from "axios";
 
 const useAxiosPublic = () => {
     const instance = axios.create({
-        baseURL: 'http://localhost:5000',
+        baseURL: 'https://y-kappa-sage.vercel.app',
     });
 
     return instance;

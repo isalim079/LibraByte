@@ -1,10 +1,11 @@
-import Navbar from '@/components/shared/Navbar/Navbar';
+
+import NavigationBar from '@/components/shared/NavigationBar/NavigationBar';
 import React from 'react';
 
 const BlogLayout = ({children}) => {
     return (
         <div>
-            <Navbar />
+            <NavigationBar />
             {children}
         </div>
     );
