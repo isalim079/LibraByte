@@ -4,7 +4,6 @@ import BestSelling from "@/components/Home/BestSelling/BestSelling";
 import FeatureSection from "@/components/Home/FeatureSection/FeatureSection";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import TopBanner from "@/components/Home/TopBanner/TopBanner";
-import Subscription from "@/components/Subscription/Subscription";
 import ChatBot from '@/components/ChatBot/ChatBot'
 import Vision from "@/components/Home/Vision/Vision";
 import OurValues from "@/components/Home/OurValues/OurValues";
@@ -28,9 +27,8 @@ export default function Home() {
             <Arrival />
             <Vision></Vision>
             <OurValues></OurValues>
-            {/* <Subscription /> */}
-            <Subscribe />
-            
+            <Subscription />
+            {/* <Subscribe /> */}
             <Faq></Faq>
             <ContactUs></ContactUs>
             <ChatBot />
