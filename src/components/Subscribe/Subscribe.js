@@ -9,6 +9,7 @@ const Subscribe = () => {
                 <input type="text" placeholder="Type Your Email" className="input input-bordered border-[#E855DE] text-xl text-center md:text-left rounded-b-none md:rounded-md  input-md " />
                 <Link href="/subscription"><button className="btn bg-[#312B21] rounded-t-none md:rounded-md px-24 md:px-12 mx-4 md: text-2xl text-white font-medium">Subscribe</button></Link>
             </form> */}
+            
         </div>
     );
 };

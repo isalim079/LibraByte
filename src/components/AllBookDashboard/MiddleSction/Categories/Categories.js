@@ -38,10 +38,10 @@ const Categories = () => {
       <div className="mt-3">
         <h2 className="text-lg lg:text-2xl font-semibold mb-5">Categories</h2>
         <Tabs>
-          <TabList className="grid grid-cols-3  lg:grid-cols-5 gap-3  text-sm">
+          <TabList className="grid grid-cols-3 lg:grid-cols-5 gap-4 text-sm">
             <Tab
               className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                selectedCategory === 'Mystery' ? 'bg-slate-500' : ''
+                selectedCategory === 'Mystery' ? 'bg-[#476f32]' : ''
               }`}
               onClick={() => handleCategoryChange('Mystery')}
             >
@@ -49,7 +49,7 @@ const Categories = () => {
             </Tab>
             <Tab
               className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                selectedCategory === 'Sci-Fi' ? 'bg-slate-500' : ''
+                selectedCategory === 'Sci-Fi' ? 'bg-[#476f32]' : ''
               }`}
               onClick={() => handleCategoryChange('Sci-Fi')}
             >
@@ -57,7 +57,7 @@ const Categories = () => {
             </Tab>
             <Tab
               className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                selectedCategory === 'Fantasy' ? 'bg-slate-500' : ''
+                selectedCategory === 'Fantasy' ? 'bg-[#476f32]' : ''
               }`}
               onClick={() => handleCategoryChange('Fantasy')}
             >
@@ -65,7 +65,7 @@ const Categories = () => {
             </Tab>
             <Tab
               className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                selectedCategory === 'Fiction' ? 'bg-slate-500' : ''
+                selectedCategory === 'Fiction' ? 'bg-[#476f32]' : ''
               }`}
               onClick={() => handleCategoryChange('Fiction')}
             >
@@ -73,7 +73,7 @@ const Categories = () => {
             </Tab>
             <Tab
               className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                selectedCategory === 'Self-Help' ? 'bg-slate-500' : ''
+                selectedCategory === 'Self-Help' ? 'bg-[#476f32]' : ''
               }`}
               onClick={() => handleCategoryChange('Self-Help')}
             >
