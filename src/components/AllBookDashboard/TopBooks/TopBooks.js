@@ -1,7 +1,10 @@
 "use client"
 import axios from 'axios';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import { MdOutlineStar, MdOutlineStarBorder } from 'react-icons/md';
+import Rating from 'react-rating';
 
 const TopBooks = () => {
     const [books, setBooks] = useState([]);
@@ -23,11 +26,24 @@ const TopBooks = () => {
         <h2 className="text-lg lg:text-2xl font-semibold mb-5">Top Books</h2>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center my-5 gap-2 '>
           {topRatedBooks?.map((book) =><div key={book.id}>
+          <Link href={`/bookDetails/${book?._id}`}>
                   <div className='bg-lightWhite shadow-md rounded-md mx-auto h-[380px] flex flex-col items-center'>
                     <Image className="w-[175px] h-[250px] rounded-t-md" src={book.image} width={150} height={200} alt="book_image"/>
                     <h3 className="text-lg font-semibold px-2 text-center">{book?.name}</h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400 px-2">{book?.author}</p>
+                    <Rating
+                                    className="text-oliveGreen"
+                                    initialRating={book.rating}
+                                    emptySymbol={
+                                        <MdOutlineStarBorder className="text-2xl" />
+                                    }
+                                    fullSymbol={
+                                        <MdOutlineStar className="text-2xl" />
+                                    }
+                                    readonly
+                                />
                   </div>
+                  </Link>
                 </div>
               )}
           </div>

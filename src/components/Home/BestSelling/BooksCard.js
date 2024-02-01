@@ -20,7 +20,7 @@ const BooksCard = ({ book }) => {
                         <IoMdStar></IoMdStar>
                     </p>
                     <div className="card-actions">
-                        <Link href={"allBooks"} ><button className="btn btn-wide max-w-[175px] bg-[#333D2E] hover:bg-darkOliveGreen text-white">
+                        <Link href={`/bookDetails/${book?._id}`}><button className="btn btn-wide max-w-[175px] bg-[#333D2E] hover:bg-darkOliveGreen text-white">
                             View More
                         </button></Link>
                     </div>

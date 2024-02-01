@@ -9,7 +9,10 @@
         "description": "A gripping mystery thriller involving a complex conspiracy.",
         "editor": "John Doe",
         "language": "English",
-        "paperback": true
+        "bookDescription": "Embark on a journey of mystery and intrigue with 'The Da Vinci Code' by Dan Brown. This gripping thriller involves symbologist Robert Langdon, who finds himself entangled in a complex conspiracy that spans centuries. As Langdon unravels hidden secrets, readers are taken on a roller-coaster ride filled with codes, symbols, and unexpected twists. Dan Brown's masterful storytelling keeps readers on the edge of their seats, blending history, art, and suspense into an unforgettable narrative. Join Langdon in deciphering the code that could change everything.",
+        "authorImage": "AuthorImageURL1",
+        "authorDetails": "Dan Brown is a best-selling author known for his suspenseful and intricate plots.",
+        "format": "Available in paperback format."
     },
     {
         "id": 102,
@@ -21,7 +24,10 @@
         "description": "A psychological thriller about a woman's disappearance and the secrets that unfold.",
         "editor": "Jane Smith",
         "language": "English",
-        "paperback": true
+        "bookDescription": "Dive into the dark and twisted world of 'Gone Girl' by Gillian Flynn. This psychological thriller unfolds the mysterious disappearance of a woman and the chilling secrets that emerge in its wake. Flynn's storytelling prowess weaves a tale of deception, manipulation, and unexpected turns. As the narrative takes unexpected twists and turns, readers are left questioning everything. Gillian Flynn's ability to delve into the complexities of human relationships adds depth to this riveting page-turner. Prepare for a psychological journey that challenges perceptions and keeps you guessing until the very end.",
+        "authorImage": "AuthorImageURL2",
+        "authorDetails": "Gillian Flynn is a master of psychological suspense, crafting stories that captivate readers.",
+        "format": "Available in paperback format."
     },
     {
         "id": 103,
@@ -33,7 +39,10 @@
         "description": "Classic detective stories featuring the brilliant detective Sherlock Holmes.",
         "editor": "Michael Johnson",
         "language": "English",
-        "paperback": true
+        "bookDescription": "Immerse yourself in the timeless tales of 'Sherlock Holmes' by Arthur Conan Doyle. This collection of classic detective stories features the brilliant detective Sherlock Holmes and his loyal companion, Dr. John Watson. Join Holmes as he tackles perplexing cases, applying his sharp intellect and keen powers of observation. Arthur Conan Doyle's storytelling mastery brings to life the atmospheric world of Victorian London, filled with mystery, intrigue, and suspense. Each story is a testament to the enduring appeal of the detective genre, with Holmes emerging as an iconic and beloved literary figure.",
+        "authorImage": "AuthorImageURL3",
+        "authorDetails": "Sir Arthur Conan Doyle was a Scottish writer and physician, best known for his detective fiction.",
+        "format": "Available in paperback format."
     },
     {
         "id": 104,
@@ -45,7 +54,10 @@
         "description": "A gripping mystery involving journalist Mikael Blomkvist and hacker Lisbeth Salander.",
         "editor": "Emily Davis",
         "language": "English",
-        "paperback": true
+        "bookDescription": "Embark on a thrilling journey with 'The Girl with the Dragon Tattoo' by Stieg Larsson. This gripping mystery involves journalist Mikael Blomkvist and hacker Lisbeth Salander as they delve into a complex web of corruption and intrigue. Larsson weaves a tale of suspense, conspiracy, and unexpected alliances. As Blomkvist and Salander navigate a world of danger, readers are drawn into a narrative that explores the darker corners of society. Stieg Larsson's masterful storytelling captivates audiences with its intricate plot and compelling characters.",
+        "authorImage": "AuthorImageURL4",
+        "authorDetails": "Stieg Larsson was a Swedish author and journalist, best known for his Millennium series.",
+        "format": "Available in paperback format."
     },
     {
         "id": 105,
@@ -57,8 +69,10 @@
         "description": "Professor Robert Langdon races to unravel a mystery centered around Dante's Inferno.",
         "editor": "John Doe",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Join Professor Robert Langdon in a race against time with 'Inferno' by Dan Brown. This gripping mystery unfolds in the heart of Italy as Langdon tries to unravel a mystery centered around Dante's Inferno. Brown's narrative blends art, history, and codes into a thrilling adventure that keeps readers guessing until the final revelation. As Langdon deciphers clues and faces unexpected challenges, 'Inferno' takes readers on a journey through iconic locations and hidden secrets. Dan Brown's storytelling prowess shines in this tale of symbolism, danger, and intellectual intrigue.",
+        "authorImage": "AuthorImageURL5",
+        "authorDetails": "Dan Brown is a renowned author, known for his best-selling novels that blend history and mystery.",
+        "format": "Available in paperback format."    },
     {
         "id": 106,
         "name": "Big Little Lies",
@@ -69,8 +83,10 @@
         "description": "A story of murder and intrigue in a seemingly perfect suburban community.",
         "editor": "Jane Smith",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Enter the seemingly perfect world of 'Big Little Lies' by Liane Moriarty. This compelling story unravels the lives of three women whose seemingly idyllic lives are shattered by a school trivia night. As secrets emerge and tensions rise, Moriarty skillfully explores the complexities of friendship, motherhood, and societal expectations. The narrative, filled with wit and suspense, keeps readers on the edge of their seats. Liane Moriarty's exploration of the 'big little lies' we tell ourselves and others makes this novel a thought-provoking and engaging read.",
+        "authorImage": "AuthorImageURL6",
+        "authorDetails": "Liane Moriarty is an Australian author known for her best-selling novels and engaging storytelling.",
+        "format": "Available in paperback format."    },
     {
         "id": 201,
         "name": "Dune",
@@ -81,8 +97,10 @@
         "description": "A science fiction epic set in a distant future amidst a complex political landscape.",
         "editor": "Michael Johnson",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Immerse yourself in the epic world of 'Dune' by Frank Herbert. This science fiction masterpiece is set in a distant future amidst a complex political landscape. Herbert's narrative weaves together themes of politics, religion, and environmentalism as characters navigate the desert planet of Arrakis. As the fate of noble houses and the spice melange unfold, readers are taken on a journey of power, betrayal, and survival. 'Dune' stands as a monumental work in the science fiction genre, captivating readers with its intricate world-building and philosophical depth.",
+        "authorImage": "AuthorImageURL7",
+        "authorDetails": "Frank Herbert was an American science fiction author, best known for his 'Dune' series.",
+        "format": "Available in paperback format."    },
     {
         "id": 202,
         "name": "Ender's Game",
@@ -93,8 +111,10 @@
         "description": "A military science fiction novel set in Earth's future.",
         "editor": "Emily Davis",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Embark on a thrilling space adventure with 'Ender's Game' by Orson Scott Card. This military science fiction novel is set in Earth's future, where exceptionally gifted children are trained to defend against an alien threat. Card's narrative explores themes of leadership, morality, and the consequences of war. As the young protagonist, Ender Wiggin, faces intense challenges, readers are drawn into a world of strategic brilliance and moral complexity. 'Ender's Game' remains a classic in the science fiction genre, captivating audiences with its thought-provoking plot and memorable characters.",
+        "authorImage": "AuthorImageURL8",
+        "authorDetails": "Orson Scott Card is an American author known for his contributions to science fiction and fantasy.",
+        "format": "Available in paperback format."    },
     {
         "id": 203,
         "name": "The Hunger Games",
@@ -105,8 +125,10 @@
         "description": "In a dystopian future, children fight to the death in a televised event.",
         "editor": "John Doe",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Enter the dystopian world of 'The Hunger Games' by Suzanne Collins. In a future where children are forced to participate in a televised fight to the death, Katniss Everdeen becomes an unlikely heroine. Collins' narrative explores themes of survival, rebellion, and the consequences of power. As Katniss navigates the treacherous arena, readers are immersed in a tale of sacrifice, courage, and social commentary. 'The Hunger Games' captivates audiences with its action-packed plot and thought-provoking exploration of societal issues.",
+        "authorImage": "AuthorImageURL9",
+        "authorDetails": "Suzanne Collins is an American author, best known for 'The Hunger Games' trilogy.",
+        "format": "Available in paperback format."    },
     {
         "id": 204,
         "name": "Neuromancer",
@@ -117,8 +139,10 @@
         "description": "A cyberpunk novel exploring artificial intelligence and hacking.",
         "editor": "Jane Smith",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Explore the cyberpunk world of 'Neuromancer' by William Gibson. This groundbreaking novel delves into a future where artificial intelligence, hacking, and corporate espionage shape the digital landscape. Gibson's narrative, filled with gritty realism and futuristic visions, follows the protagonist Case as he navigates a world of high-tech intrigue. 'Neuromancer' not only influenced the cyberpunk genre but also anticipated the impact of technology on society. William Gibson's visionary storytelling continues to resonate with readers, offering a glimpse into a future that feels both exhilarating and cautionary.",
+        "authorImage": "AuthorImageURL10",
+        "authorDetails": "William Gibson is an American-Canadian science fiction author credited with pioneering the cyberpunk subgenre.",
+        "format": "Available in paperback format."    },
     {
         "id": 205,
         "name": "Snow Crash",
@@ -129,8 +153,10 @@
         "description": "A satirical science fiction novel set in a futuristic America.",
         "editor": "Michael Johnson",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Enter the satirical and fast-paced world of 'Snow Crash' by Neal Stephenson. This science fiction novel is set in a futuristic America where the virtual and physical worlds collide. Stephenson's narrative follows the protagonist Hiro Protagonist as he investigates a new drug, Snow Crash, that poses a threat to both realms. Blending cyberpunk aesthetics with social commentary, 'Snow Crash' offers a wild ride through a dystopian landscape. Neal Stephenson's witty and inventive storytelling makes this novel a must-read for fans of speculative fiction.",
+        "authorImage": "AuthorImageURL11",
+        "authorDetails": "Neal Stephenson is an American author known for his works in science fiction and historical fiction.",
+        "format": "Available in paperback format."    },
     {
         "id": 206,
         "name": "The Martian",
@@ -141,8 +167,10 @@
         "description": "A survival story of an astronaut stranded on Mars.",
         "editor": "Emily Davis",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Embark on a gripping tale of survival with 'The Martian' by Andy Weir. This science fiction novel follows astronaut Mark Watney as he becomes stranded on Mars. Weir's narrative combines scientific accuracy with humor and suspense, creating a story of resilience and human ingenuity. As Watney faces the challenges of surviving on a desolate planet, readers are taken on a thrilling and often humorous journey. 'The Martian' stands as a testament to the power of human determination and the spirit of exploration.",
+        "authorImage": "AuthorImageURL12",
+        "authorDetails": "Andy Weir is an American author and computer programmer, celebrated for his debut novel 'The Martian.'",
+        "format": "Available in paperback format."    },
     {
         "id": 301,
         "name": "The Hobbit",
@@ -153,8 +181,10 @@
         "description": "A fantasy novel following the journey of Bilbo Baggins.",
         "editor": "John Doe",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Embark on a classic fantasy adventure with 'The Hobbit' by J.R.R. Tolkien. This beloved novel follows the journey of Bilbo Baggins, a hobbit who is reluctantly swept into an epic quest. Tolkien's narrative, filled with rich world-building and memorable characters, introduces readers to the enchanting land of Middle-earth. As Bilbo encounters trolls, dragons, and elves, 'The Hobbit' unfolds as a timeless tale of courage and self-discovery. J.R.R. Tolkien's storytelling has captivated generations of readers, making 'The Hobbit' a fantasy masterpiece.",
+        "authorImage": "AuthorImageURL13",
+        "authorDetails": "J.R.R. Tolkien was an English writer, poet, philologist, and academic, best known for his fantasy works.",
+        "format": "Available in paperback format."    },
     {
         "id": 302,
         "name": "Harry Potter and the Sorcerer's Stone",
@@ -165,8 +195,10 @@
         "description": "The first book in the Harry Potter series, introducing the wizarding world.",
         "editor": "Jane Smith",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Step into the magical world of 'Harry Potter and the Sorcerer's Stone' by J.K. Rowling. This enchanting novel introduces readers to the wizarding world and the young wizard Harry Potter. Rowling's narrative weaves a tale of friendship, magic, and the battle between good and evil. As Harry navigates the halls of Hogwarts School of Witchcraft and Wizardry, readers are immersed in a story of discovery and courage. 'Harry Potter' has become a cultural phenomenon, capturing the hearts of readers of all ages.",
+        "authorImage": "AuthorImageURL14",
+        "authorDetails": "J.K. Rowling is a British author, philanthropist, film producer, television producer, and screenwriter.",
+        "format": "Available in paperback format."    },
     {
         "id": 303,
         "name": "A Game of Thrones",
@@ -177,8 +209,10 @@
         "description": "The first book in the A Song of Ice and Fire series, a tale of power and intrigue.",
         "editor": "Michael Johnson",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Enter the epic and complex world of 'A Game of Thrones' by George R.R. Martin. This fantasy novel, the first in the 'A Song of Ice and Fire' series, introduces readers to the sprawling continents of Westeros and Essos. Martin's narrative weaves together political intrigue, noble houses, and the supernatural threat beyond the Wall. As characters vie for power and survival, 'A Game of Thrones' sets the stage for a series filled with twists, betrayals, and unexpected alliances. George R.R. Martin's intricate storytelling has made this series a cornerstone of modern fantasy literature.",
+        "authorImage": "AuthorImageURL15",
+        "authorDetails": "George R.R. Martin is an American author and television producer, best known for his fantasy series.",
+        "format": "Available in paperback format."    },
     {
         "id": 304,
         "name": "The Name of the Wind",
@@ -189,8 +223,10 @@
         "description": "A fantasy novel narrating the life of a gifted young man, Kvothe.",
         "editor": "Emily Davis",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Embark on a literary journey with 'The Name of the Wind' by Patrick Rothfuss. This fantasy novel narrates the life of Kvothe, a gifted young man with a mysterious past. Rothfuss's narrative, rich in detail and poetic prose, immerses readers in a world of magic, music, and ancient mysteries. As Kvothe recounts his life story, readers are drawn into a tale of ambition, love, and the pursuit of knowledge. 'The Name of the Wind' stands as a testament to Rothfuss's storytelling prowess and his ability to craft a compelling and immersive fantasy narrative.",
+        "authorImage": "AuthorImageURL16",
+        "authorDetails": "Patrick Rothfuss is an American writer of epic fantasy, known for 'The Kingkiller Chronicle' series.",
+        "format": "Available in paperback format."    },
     {
         "id": 305,
         "name": "The Lion, the Witch and the Wardrobe",
@@ -201,8 +237,10 @@
         "description": "A classic fantasy novel set in the magical land of Narnia.",
         "editor": "John Doe",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Step into the magical land of Narnia with 'The Lion, the Witch and the Wardrobe' by C.S. Lewis. This classic fantasy novel follows the adventures of the Pevensie siblings as they discover a world of talking animals, mythical creatures, and a battle between good and evil. Lewis's narrative, filled with Christian allegory, captures the imagination and leaves a lasting impact on readers of all ages. Aslan, the great lion, symbolizes courage and sacrifice in this enchanting tale that continues to be a timeless and cherished work of fantasy literature.",
+        "authorImage": "AuthorImageURL17",
+        "authorDetails": "C.S. Lewis was a British writer and scholar, best known for his fantasy and theological works.",
+        "format": "Available in paperback format."    },
     {
         "id": 306,
         "name": "Mistborn: The Final Empire",
@@ -213,8 +251,10 @@
         "description": "A fantasy novel featuring a world with a unique magic system.",
         "editor": "Jane Smith",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Enter the world of Allomancy and political intrigue with 'Mistborn: The Final Empire' by Brandon Sanderson. This fantasy novel features a unique magic system where individuals gain powers by ingesting metals. Sanderson's narrative follows Vin, a street thief, as she becomes entangled in a rebellion against the immortal Lord Ruler. As characters navigate a world of mist-covered landscapes and dark secrets, 'Mistborn' offers a compelling story of hope, rebellion, and the consequences of absolute power. Brandon Sanderson's world-building and intricate plotting make this novel a standout in the fantasy genre.",
+        "authorImage": "AuthorImageURL18",
+        "authorDetails": "Brandon Sanderson is an American author known for his contributions to the fantasy genre.",
+        "format": "Available in paperback format."    },
     {
         "id": 401,
         "name": "The Book Thief",
@@ -225,8 +265,10 @@
         "description": "A novel set in Nazi Germany narrated by Death.",
         "editor": "Michael Johnson",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Immerse yourself in the poignant narrative of 'The Book Thief' by Markus Zusak. Set in Nazi Germany, this novel is narrated by Death and follows the life of Liesel Meminger. As Liesel steals books and shares them with others, the power of words and storytelling becomes a source of solace in a time of darkness. Zusak's narrative, marked by lyrical prose, explores themes of humanity, loss, and the enduring power of literature. 'The Book Thief' stands as a testament to the resilience of the human spirit in the face of adversity.",
+        "authorImage": "AuthorImageURL19",
+        "authorDetails": "Markus Zusak is an Australian author known for his novels for young adults and adults.",
+        "format": "Available in paperback format."    },
     {
         "id": 402,
         "name": "All the Light We Cannot See",
@@ -237,8 +279,10 @@
         "description": "A novel set during World War II, intertwining the lives of a blind French girl and a German boy.",
         "editor": "Emily Davis",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Step into the beautifully crafted world of 'All the Light We Cannot See' by Anthony Doerr. Set during World War II, this novel intertwines the lives of a blind French girl, Marie-Laure, and a German boy, Werner. Doerr's narrative, filled with exquisite prose and intricate details, explores the impact of war on individuals and the enduring nature of human connections. As the characters' paths converge, readers are taken on a poignant journey that reflects the beauty and tragedy of the human experience.",
+        "authorImage": "AuthorImageURL20",
+        "authorDetails": "Anthony Doerr is an American author known for his novels, short stories, and essays.",
+        "format": "Available in paperback format."    },
     {
         "id": 403,
         "name": "The Nightingale",
@@ -249,8 +293,10 @@
         "description": "A historical novel set in France during World War II, portraying the lives of two sisters.",
         "editor": "John Doe",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Experience the emotional resonance of 'The Nightingale' by Kristin Hannah. Set in France during World War II, this historical novel portrays the lives of two sisters, Vianne and Isabelle. As they navigate the challenges of war, resistance, and sacrifice, Hannah's narrative captures the strength and resilience of women in extraordinary circumstances. 'The Nightingale' weaves a tale of love, survival, and the enduring bonds of family. Kristin Hannah's storytelling brings history to life, making this novel a powerful and unforgettable exploration of the human spirit.",
+        "authorImage": "AuthorImageURL21",
+        "authorDetails": "Kristin Hannah is an American author known for her best-selling novels, including 'The Nightingale.'",
+        "format": "Available in paperback format."    },
     {
         "id": 404,
         "name": "The Pillars of the Earth",
@@ -261,8 +307,10 @@
         "description": "A historical novel set in 12th-century England, centered around the building of a cathedral.",
         "editor": "Jane Smith",
         "language": "English",
-        "paperback": true
-
+        "bookDescription": "Step into the world of historical intrigue with 'The Pillars of the Earth' by Ken Follett. Set in 12th-century England, this novel revolves around the construction of a cathedral in the fictional town of Kingsbridge. Follett's narrative weaves together the lives of diverse characters, from nobles to craftsmen, against the backdrop of political and social upheaval. 'The Pillars of the Earth' is a sweeping epic that explores love, betrayal, and the quest for power in a medieval setting. Ken Follett's meticulous research and storytelling make this novel a captivating journey through the ages.",
+        "authorImage": "AuthorImageURL22",
+        "authorDetails": "Ken Follett is a Welsh author known for his historical novels and thrillers.",
+        "format": "Available in paperback format."
     },
     {
         "id": 405,
@@ -274,8 +322,10 @@
         "description": "Based on the real-life story of Lale Sokolov, this powerful novel recounts the experiences of a Holocaust survivor.",
         "editor": "John Editor",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Experience the poignant journey of 'The Tattooist of Auschwitz' by Heather Morris. Based on the real-life story of Lale Sokolov, this powerful novel recounts the harrowing experiences of a Holocaust survivor. Morris weaves a narrative of love, resilience, and the indomitable human spirit amid the atrocities of Auschwitz. The story unfolds as Lale, the tattooist, meets Gita, and their love blossoms in the midst of unimaginable circumstances. Heather Morris crafts a narrative that pays tribute to the strength of the human soul and the enduring power of love.",
+        "authorImage": "AuthorImageURL4",
+        "authorDetails": "Heather Morris is an Australian author and a storyteller with a deep appreciation for historical narratives.",
+        "format": "Available in paperback edition."    },
     {
         "id": 406,
         "name": "The Other Boleyn Girl",
@@ -286,8 +336,10 @@
         "description": "A historical novel that explores the life of Mary Boleyn, sister of Anne Boleyn, during the Tudor period.",
         "editor": "Jane Editor",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Step into the Tudor court with 'The Other Boleyn Girl' by Philippa Gregory. This historical novel explores the life of Mary Boleyn, sister of Anne Boleyn, during a tumultuous period in English history. Gregory's rich storytelling brings to life the intrigues, scandals, and political machinations of the Tudor era. As Mary navigates the complexities of court life, readers are immersed in a world of power, betrayal, and ambition. Philippa Gregory's masterful blend of history and fiction creates a captivating narrative that sheds light on the often-overlooked figures of the past.",
+        "authorImage": "AuthorImageURL5",
+        "authorDetails": "Philippa Gregory is a British historical novelist, known for her meticulously researched and engaging stories.",
+        "format": "Available in paperback edition."    },
     {
         "id": 501,
         "name": "The 7 Habits of Highly Effective People",
@@ -298,8 +350,10 @@
         "description": "A classic self-help book that provides insights into effective habits for personal and professional success.",
         "editor": "Sam Editor",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Discover 'The 7 Habits of Highly Effective People' by Stephen R. Covey, a classic self-help book providing valuable insights into effective habits for personal and professional success. Covey's principles empower individuals to achieve greatness by fostering positive habits and mindset. This transformative guide explores timeless principles that have inspired countless individuals worldwide. Readers will gain practical wisdom and actionable strategies to enhance their effectiveness in various aspects of life, from personal relationships to professional endeavors.",
+        "authorImage": "AuthorImageURL4",
+        "authorDetails": "Stephen R. Covey was a renowned author, speaker, and educator, known for his influential work in personal development.",
+        "format": "Available in paperback."    },
     {
         "id": 502,
         "name": "Atomic Habits",
@@ -310,8 +364,10 @@
         "description": "This book explores the science of habits and how small changes can lead to remarkable results.",
         "editor": "Alex Editor",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Dive into 'Atomic Habits' by James Clear, a groundbreaking exploration of the science of habits and their transformative power. Clear delves into the mechanics of habit formation, demonstrating how small changes can lead to remarkable results. Whether aiming for personal or professional growth, this book provides actionable insights to break bad habits and build positive ones. With practical strategies backed by research, 'Atomic Habits' guides readers on a journey of continuous improvement and lasting change.",
+        "authorImage": "AuthorImageURL5",
+        "authorDetails": "James Clear is an author, speaker, and productivity expert known for his work on habits, decision-making, and continuous improvement.",
+        "format": "Available in paperback."    },
     {
         "id": 503,
         "name": "You Are a Badass",
@@ -322,8 +378,10 @@
         "description": "A motivational guide to help readers embrace their awesomeness and create a life they love.",
         "editor": "Emma Editor",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Embrace your awesomeness with 'You Are a Badass' by Jen Sincero, a motivational guide to creating a life you love. Sincero's witty and irreverent style delivers empowering messages and practical advice to overcome self-doubt and fear. Whether you're pursuing personal or professional goals, this book inspires readers to unleash their inner badassery. With a blend of humor and wisdom, Sincero motivates readers to step into their greatness and live life unapologetically.",
+        "authorImage": "AuthorImageURL6",
+        "authorDetails": "Jen Sincero is a #1 New York Times bestselling author, success coach, and motivational speaker.",
+        "format": "Available in paperback."    },
     {
         "id": 504,
         "name": "How to Win Friends and Influence People",
@@ -334,8 +392,10 @@
         "description": "A classic guide on interpersonal skills, communication, and building positive relationships.",
         "editor": "Jack Editor",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Explore 'How to Win Friends and Influence People' by Dale Carnegie, a classic guide on interpersonal skills and building positive relationships. Carnegie's timeless principles offer insights into effective communication, leadership, and human relations. Whether in business or personal life, this book provides practical tips for creating lasting connections and achieving success. With its enduring popularity, Carnegie's wisdom continues to impact readers seeking to enhance their social and professional lives.",
+        "authorImage": "AuthorImageURL7",
+        "authorDetails": "Dale Carnegie was a renowned American writer and lecturer known for his self-improvement and interpersonal skills courses.",
+        "format": "Available in paperback."    },
     {
         "id": 505,
         "name": "Mindset: The New Psychology of Success",
@@ -346,8 +406,10 @@
         "description": "Dweck explores the concept of mindset and how it influences achievement, success, and happiness.",
         "editor": "Sophie Editor",
         "language": "English",
-        "paperback": true
-    },
+        "bookDescription": "Delve into 'Mindset: The New Psychology of Success' by Carol S. Dweck, exploring the concept of mindset and its impact on achievement. Dweck's research illuminates the power of one's mindset—whether fixed or growth-oriented—in shaping success, happiness, and resilience. This insightful book provides actionable strategies to cultivate a growth mindset and overcome challenges. With real-life examples and engaging narratives, 'Mindset' inspires readers to unlock their potential and embrace a lifelong journey of learning and development.",
+        "authorImage": "AuthorImageURL8",
+        "authorDetails": "Carol S. Dweck is a renowned psychologist and Stanford University professor known for her pioneering research on motivation and success.",
+        "format": "Available in paperback."    },
     {
         "id": 506,
         "name": "The Power of Now",
@@ -358,6 +420,8 @@
         "description": "A spiritual guide to living in the present moment and finding peace and fulfillment.",
         "editor": "Oliver Editor",
         "language": "English",
-        "paperback": true
-    }
+        "bookDescription": "Embark on a spiritual journey with 'The Power of Now' by Eckhart Tolle, a guide to living in the present moment and finding inner peace. Tolle's teachings emphasize mindfulness and the transformative power of being fully present. Through practical insights and spiritual wisdom, this book offers a path to transcending the mind's chatter and experiencing a deeper sense of fulfillment. 'The Power of Now' has become a modern spiritual classic, guiding readers toward a state of heightened awareness and awakening.",
+        "authorImage": "AuthorImageURL9",
+        "authorDetails": "Eckhart Tolle is a spiritual teacher and author, recognized for his teachings on mindfulness and the nature of consciousness.",
+        "format": "Available in paperback."    }
 ]
