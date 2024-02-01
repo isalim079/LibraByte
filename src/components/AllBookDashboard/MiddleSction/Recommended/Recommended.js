@@ -14,7 +14,7 @@ const Recommended = () => {
     const initialDisplayCount = 4;
 
     const [selectedBooks, setSelectedBooks] = useState(null);
-    const drawerWidth = 300;
+    // const drawerWidth = 300;
 
     useEffect(() => {
         axios
@@ -35,14 +35,14 @@ const Recommended = () => {
         setShowAll(false);
     };
 
-    const handleBookClick = (book) => {
-        // console.log(book);
-        setSelectedBooks(book);
-    };
+    // const handleBookClick = (book) => {
+    //     // console.log(book);
+    //     setSelectedBooks(book);
+    // };
 
-    const closeDrawer = () => {
-        setSelectedBooks(null);
-    };
+    // const closeDrawer = () => {
+    //     setSelectedBooks(null);
+    // };
 
     return (
         <div className="bg-lightWhite rounded-md drop-shadow-lg p-3 w-auto h-[300px] overflow-y-auto  md:h-auto ">
@@ -67,18 +67,18 @@ const Recommended = () => {
                     </button>
                 )}
             </div>
-            <div className="grid justify-center md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1   gap-2">
+            <div className="grid justify-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1   gap-2">
                 {books
                     .slice(0, showAll ? books.length : initialDisplayCount)
                     .map((book) => (
                         <div
                             key={book.id}
-                            className="rounded-lg max-w-[200px] md:w-[300px] shadow-lg space-y-4 mx-auto"
-                            onClick={() => handleBookClick(book)}
+                            className="rounded-lg max-w-[240px] md:w-[400px] shadow-lg space-y-4 mx-auto"
+                            // onClick={() => handleBookClick(book)}
                         >
                             <img
                                 alt="Product Image"
-                                className="w-[275px] h-[300px] rounded-t-lg"
+                                className="w-[300px] h-[300px] rounded-t-lg"
                                 src={book.image}
                             />
                             <div className="p-3">
@@ -88,12 +88,28 @@ const Recommended = () => {
                                 <p className="text-sm text-gray-500 dark:text-gray-400">
                                     {book?.author}
                                 </p>
+                                <Rating
+                                    className="text-oliveGreen"
+                                    initialRating={book.rating}
+                                    emptySymbol={
+                                        <MdOutlineStarBorder className="text-2xl" />
+                                    }
+                                    fullSymbol={
+                                        <MdOutlineStar className="text-2xl" />
+                                    }
+                                    readonly
+                                />
+                                <button className="w-full bg-oliveGreen text-lightWhite py-2 mt-3 rounded-md">
+                                    <Link href={`/bookDetails/${book?._id}`}>
+                                    Details
+                                    </Link>
+                                </button>
                             </div>
                         </div>
                     ))}
             </div>
 
-            {selectedBooks && (
+            {/* {selectedBooks && (
                 // <RightBar book = {selectedBooks} />
 
                 <div
@@ -141,7 +157,7 @@ const Recommended = () => {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
         </div>
     );
 };
