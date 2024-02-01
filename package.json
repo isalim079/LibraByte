@@ -19,6 +19,7 @@
     "apexcharts": "^3.45.2",
     "axios": "^1.6.5",
     "classnames": "^2.5.1",
+    "eslint-config-prettier": "^9.1.0",
     "firebase": "^10.7.1",
     "lottie-react": "^2.4.0",
     "moment": "^2.30.1",
@@ -34,6 +35,7 @@
     "react-tabs": "^6.0.2",
     "recharts": "^2.10.4",
     "sharp": "^0.33.2",
+    "stripe": "^14.14.0",
     "styled-components": "^6.1.8",
     "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5"

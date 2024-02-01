@@ -13,6 +13,7 @@ import ContactUs from "@/components/Home/ContactUs/ContactUs";
 import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
 import Footer from "@/components/shared/Footer/Footer";
 
+
 export default function Home() {
 
     return (
@@ -23,11 +24,13 @@ export default function Home() {
             <Banner />
             {/* <BestAuthor /> */}
             <FeatureSection />
+            {/* <NoSSRFeatureSection /> */}
             <Arrival />
             <Vision></Vision>
             <OurValues></OurValues>
-            <Subscription />
-            {/* <Subscribe /> */}
+            {/* <Subscription /> */}
+            <Subscribe />
+            
             <Faq></Faq>
             <ContactUs></ContactUs>
             <ChatBot />

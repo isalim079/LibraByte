@@ -1,5 +1,5 @@
 "use client"
-import emailjs from '@emailjs/browser';
+
 import React, {  useRef } from 'react';
 import { FiSend } from "react-icons/fi";
 import { IoLocation } from "react-icons/io5";
@@ -8,6 +8,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { BsBrowserChrome } from "react-icons/bs";
 import Image from 'next/image';
 import img from "../../../../public/images/location.jpg"
+import { EmailJSResponseStatus } from '@emailjs/browser';
 
 
 const ContactUs = () => {
@@ -28,7 +29,7 @@ const ContactUs = () => {
             message: {messege}
         };
 
-        emailjs.sendForm('service_1qpabdd', 'template_siyi23e', templateParams, 'PGdz_9bvjcdgFmVc9' ,form.current)
+        EmailJSResponseStatus.sendForm('service_1qpabdd', 'template_siyi23e', templateParams, 'PGdz_9bvjcdgFmVc9' ,form.current)
             .then((result) => {
                 console.log(result.text);
             }, (error) => {

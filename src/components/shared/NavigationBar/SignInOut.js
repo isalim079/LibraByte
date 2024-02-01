@@ -62,9 +62,11 @@ const SignInOut = () => {
                     {/* dropdown links */}
 
                     <ul className="p-2 shadow menu dropdown-content z-[1]  rounded-box w-52 bg-lightWhite">
-                        <li>
-                            <a href="/dashboard">Dashboard</a>
-                        </li>
+                       {
+                        user ?  <li>
+                        <a href="/dashboard">Dashboard</a>
+                    </li> : ""
+                       }
                         <li>
                         <div>
                 {user ? (

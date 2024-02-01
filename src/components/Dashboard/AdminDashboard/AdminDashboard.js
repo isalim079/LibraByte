@@ -1,15 +1,10 @@
-
-
-
-
+import RightSideUserContent from "../UserDashboard/RightSideContent/RightSideUserContent";
 
 const AdminDashboard = () => {
     return (
-
-        <div>
-
-
-        </div>
+    <div>
+        <RightSideUserContent />
+    </div>
     );
 };
 
