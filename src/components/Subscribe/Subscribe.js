@@ -2,14 +2,12 @@ import Link from "next/link";
 
 const Subscribe = () => {
     return (
-        <div className="text-[#312B21] bg-lightWhite text-center px-3 md:px-20 lg:px-[140px] py-8 md:py-16">
-            <h1 className="text-xl md:text-4xl font-medium">Stay Informed, Stay Inspired!</h1>
-            <p className="text-sm md:text-2xl py-6 md:px-20 ">Subscribe to Our Website for Exclusive Updates, Insights, and Enriching Publications.</p>
-            {/* <form className="mt-8 ">
-                <input type="text" placeholder="Type Your Email" className="input input-bordered border-[#E855DE] text-xl text-center md:text-left rounded-b-none md:rounded-md  input-md " />
-                <Link href="/subscription"><button className="btn bg-[#312B21] rounded-t-none md:rounded-md px-24 md:px-12 mx-4 md: text-2xl text-white font-medium">Subscribe</button></Link>
-            </form> */}
-            
+        <div className="text-[#312B21] bg-lightWhite text-center px-4 md:px-20 lg:px-[140px] py-8 md:py-16 lg:py-12 h-screen lg:h-96 ">
+            <h1 className="text-3xl md:text-4xl font-semibold">Stay Informed, Stay Inspired!</h1>
+            <p className="text-base md:text-lg py-8  ">Unlock a World of Knowledge! Subscribe to our Library Management System today and open the gateway to endless learning. With a variety of membership tiers to choose from, you can tailor your subscription to match your reading preferences. Dive into a diverse collection of books, enjoy a seamless digital experience, and access exclusive content and features. Whether you opt for the Basic, Premium, or Ultimate membership, subscribing is the key to a personalized and enriching reading journey. Visit our website, choose your plan, create your account, and immerse yourself in the joy of unlimited reading. Subscribe now and let your exploration of knowledge begin!</p>
+            <Link href="/subscription">
+                <button className="mt-6 lg:mt-0 btn btn-outline uppercase text-xl  font-semibold hover:font-extrabold border-oliveGreen border-2 px-10 bg-oliveGreen text-lightWhite hover:bg-lightWhite hover:shadow-oliveGreen hover:shadow-2xl hover:h-12 hover:text-oliveGreen transition-all duration-500">Subscribe Now!</button>
+            </Link>
         </div>
     );
 };
