@@ -5,7 +5,6 @@ import { IoIosHeartEmpty, IoMdShare } from "react-icons/io";
 import { MdOutlineInsertComment } from "react-icons/md";
 import { HiMiniUserCircle } from "react-icons/hi2";
 import useBlogPost from "@/lib/hooks/useBlogPost";
-import moment from "moment";
 
 const BlogPost = () => {
 

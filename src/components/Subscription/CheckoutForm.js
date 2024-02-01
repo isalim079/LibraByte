@@ -13,7 +13,6 @@ export default function CheckoutForm(close) {
   const { user } = useContext(AuthContext);
   // const name = await user?.displayName
 
-
   const onSubmit = async (e) => {
     e.preventDefault();
     const cardElement = elements?.getElement("card");
@@ -52,7 +51,7 @@ export default function CheckoutForm(close) {
         <input type="text" name="email" placeholder={user?.email} className="input input-bordered border-oliveGreen w-full max-w-sm" />
       </div>
       <CardElement className="text-white pt-8" />
-      <button type="submit" className="mt-6 btn flex justify-end bg-oliveGreen text-base text-lightWhite px-6">Submit</button>
+      <button type="submit" className="mt-6 btn  bg-oliveGreen text-base text-lightWhite px-6">Submit</button>
     </form>
   );
 }
