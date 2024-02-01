@@ -11,7 +11,7 @@ const MiddleSection = () => {
                    <Categories></Categories>
                 </div>
                 <div className="hidden lg:block">
-                    {/* <RightBar ></RightBar> */}
+                    {/* <RightBar></RightBar> */}
                 </div>
             </div>
         </div>
