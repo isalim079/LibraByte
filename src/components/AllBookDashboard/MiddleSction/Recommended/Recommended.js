@@ -12,9 +12,7 @@ const Recommended = () => {
     const [showAll, setShowAll] = useState(false);
     const initialDisplayCount = 5;
 
-    // const [selectedBooks, setSelectedBooks] = useState(null);
-    // const drawerWidth = 300;
-
+    
     useEffect(() => {
         axios
             .get("https://y-kappa-sage.vercel.app/books")
@@ -34,14 +32,7 @@ const Recommended = () => {
         setShowAll(false);
     };
 
-    // const handleBookClick = (book) => {
-    //     // console.log(book);
-    //     setSelectedBooks(book);
-    // };
-
-    // const closeDrawer = () => {
-    //     setSelectedBooks(null);
-    // };
+    
 
     return (
         <div className="bg-lightWhite rounded-md drop-shadow-lg py-8 px-4 w-auto h-[300px] overflow-y-auto  md:h-auto ">
