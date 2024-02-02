@@ -35,7 +35,7 @@ const Recommended = () => {
 
 
     return (
-        <div className="bg-lightWhite rounded-md drop-shadow-lg py-8 px-4 w-auto h-[300px] overflow-y-auto  md:h-auto ">
+        <div className="bg-lightWhite rounded-md drop-shadow-lg py-8 px-4 w-auto h-[450px] overflow-y-auto  md:h-auto ">
             <div className="flex flex-col lg:flex-row justify-center md:justify-between  items-center  px-0 lg:px-3">
                 <h2 className="text-lg lg:text-2xl font-semibold">
                     Recommended
