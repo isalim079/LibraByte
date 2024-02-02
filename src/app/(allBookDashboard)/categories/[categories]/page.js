@@ -3,10 +3,10 @@ import Categories from '@/components/AllBookDashboard/MiddleSction/Categories/Ca
 
 const CategoriesPage = ({params}) => {
 
-    console.log(params);
+    // console.log(params);
 
     return (
-        <div>
+        <div className='ml-5'>
             <Categories params={params} />
         </div>
     );

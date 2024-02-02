@@ -11,8 +11,8 @@ const Categories = ({ params }) => {
 
     const categories = ["Mystery", "Sci-Fi", "Fantasy", "Fiction", "Self-Help"];
 
-    const initialIndex = categories.indexOf(params.categories);
-    console.log(initialIndex);
+    const initialIndex = categories.indexOf(params?.categories);
+    // console.log(initialIndex);
 
     const [tabIndex, setTabIndex] = useState(initialIndex);
 
