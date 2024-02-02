@@ -12,7 +12,7 @@ const Recommended = () => {
     const [showAll, setShowAll] = useState(false);
     const initialDisplayCount = 5;
 
-    
+
     useEffect(() => {
         axios
             .get("https://y-kappa-sage.vercel.app/books")
@@ -32,7 +32,7 @@ const Recommended = () => {
         setShowAll(false);
     };
 
-    
+
 
     return (
         <div className="bg-lightWhite rounded-md drop-shadow-lg py-8 px-4 w-auto h-[300px] overflow-y-auto  md:h-auto ">
@@ -57,41 +57,42 @@ const Recommended = () => {
                     </button>
                 )}
             </div>
-            <div className="grid justify-center md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 grid-cols-1 py-2 px-0 lg:px-8 gap-4">
+            <div className="grid justify-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 py-2 px-0 lg:px-8 gap-4">
                 {books
                     .slice(0, showAll ? books.length : initialDisplayCount)
                     .map((book) => (
                         <div
                             key={book.id}
-                            className="rounded-lg max-w-[220px] md:w-[320px] shadow-lg space-y-4 mx-auto"
-                            onClick={() => handleBookClick(book)}
+                            className="rounded-lg max-w-[220px] md:w-[320px] shadow-xl space-y-4 mx-auto text-center"
                         >
                             <img
                                 alt="Product Image"
-                                className="w-80 h-[250px] rounded-t-lg px-4 pt-6"
+                                className="w-80 h-[260px] rounded-t-lg px-4 pt-6"
                                 src={book.image}
                             />
                             <div className="px-4 pb-6">
-                                <h1 className="text-lg font-semibold">
-                                    {book?.name}
-                                </h1>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">
-                                    {book?.author}
-                                </p>
-                                <Rating
-                                    className="text-oliveGreen"
-                                    initialRating={book.rating}
-                                    emptySymbol={
-                                        <MdOutlineStarBorder className="text-2xl" />
-                                    }
-                                    fullSymbol={
-                                        <MdOutlineStar className="text-2xl" />
-                                    }
-                                    readonly
-                                />
+                                <div className="h-28 flex flex-col items-center">
+                                    <h1 className="text-lg font-semibold">
+                                        {book?.name}
+                                    </h1>
+                                    <p className="text-sm py-1 text-gray-500 dark:text-gray-400">
+                                        {book?.author}
+                                    </p>
+                                    <Rating
+                                        className="text-oliveGreen"
+                                        initialRating={book.rating}
+                                        emptySymbol={
+                                            <MdOutlineStarBorder className="text-2xl" />
+                                        }
+                                        fullSymbol={
+                                            <MdOutlineStar className="text-2xl" />
+                                        }
+                                        readonly
+                                    />
+                                </div>
                                 <button className="w-full bg-oliveGreen text-lightWhite py-2 mt-3 rounded-md">
                                     <Link href={`/bookDetails/${book?._id}`}>
-                                    Details
+                                        Details
                                     </Link>
                                 </button>
                             </div>

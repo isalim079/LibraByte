@@ -20,7 +20,7 @@ const Arrival = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                 <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-slate-100  shadow-xl">
                     <figure className="px-6 pt-6 max-h-[350px] bg-lightWhite mx-5 mt-5 pb-6">
-                        <img src="https://i.ibb.co/rZxh8bT/714-Exofe-KJL-AC-UF1000-1000-QL80.jpg" alt="Shoes" className="rounded-xl max-h-[300px]" />
+                        <img src="https://i.ibb.co/rZxh8bT/714-Exofe-KJL-AC-UF1000-1000-QL80.jpg" alt="Upcoming" className="rounded-xl max-h-[300px]" />
                     </figure>
                     <div className="card-body text-[#333D2E]">
                         <h2 className="card-title text-2xl lg:text-3xl ">A Game of Thrones</h2>

@@ -4,7 +4,6 @@ import BestSelling from "@/components/Home/BestSelling/BestSelling";
 import FeatureSection from "@/components/Home/FeatureSection/FeatureSection";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import TopBanner from "@/components/Home/TopBanner/TopBanner";
-import Subscription from "@/components/Subscription/Subscription";
 import ChatBot from '@/components/ChatBot/ChatBot'
 import Vision from "@/components/Home/Vision/Vision";
 import OurValues from "@/components/Home/OurValues/OurValues";
@@ -12,6 +11,7 @@ import Faq from "@/components/Home/FAQ/Faq";
 import ContactUs from "@/components/Home/ContactUs/ContactUs";
 import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
 import Footer from "@/components/shared/Footer/Footer";
+
 
 export default function Home() {
 
@@ -23,11 +23,12 @@ export default function Home() {
             <Banner />
             {/* <BestAuthor /> */}
             <FeatureSection />
+            {/* <NoSSRFeatureSection /> */}
             <Arrival />
             <Vision></Vision>
             <OurValues></OurValues>
-            <Subscription />
-            {/* <Subscribe /> */}
+            {/* <Subscription /> */}
+            <Subscribe />
             <Faq></Faq>
             <ContactUs></ContactUs>
             <ChatBot />

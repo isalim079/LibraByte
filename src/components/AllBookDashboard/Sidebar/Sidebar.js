@@ -54,7 +54,7 @@ const Sidebar = ({ children }) => {
               <FaHome size={20} /> <p className={`text-sm origin-left duration-200 ${!open && "hidden"}`}>Discover</p>
             </div>
           </Link>
-          <Link href='/categories'>
+          <Link href='/categories/Mystery'>
             <div className=' hover:bg-stone-300 cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600'>
               <RxDashboard size={20} /> <p className={`text-sm origin-left duration-200 ${!open && "hidden"}`}>Category</p>
             </div>

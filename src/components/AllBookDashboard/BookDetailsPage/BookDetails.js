@@ -38,11 +38,11 @@ const BookDetails = ({params}) => {
             <div className='min-h-[100vh] 2xl:relative'>
                 <div className='flex flex-col md:flex-row justify-center items-start px-5 xl:px-36 lg:px-24 md:px-14 2xl:px-44  py-2 2xl:py-20 '>
                     <div className='w-full 2xl:w-1/2 flex flex-col 2xl:flex-row justify-center pl-0 2xl:pl-36 items-center mr-10  h-3/4 z-30'>
-                        <Image className='shadow-2xl shadow-black'
+                        <Image className='shadow-2xl shadow-black h-[500px]'
                          src={bookData?.image} alt='book image' height={400} width={300} />
                     </div>
                     <div className='w-full 2xl:w-1/2  mt-10 2xl:mt-16 mr-1 2xl:mr-16 ml-0 2xl:ml-6 pb-5 lg:pb-0'>
-                        <h1 className='text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold 2xl:font-normal 2xl:text-7xl'>{bookData?.name}</h1>
+                        <h1 className='text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold '>{bookData?.name}</h1>
                         <h1 className='text-lg lg:text-xl 2xl:text-2xl font-semibold pt-2 2xl:pt-8 pb-5'>{bookData?.author}</h1>
                         <p className='text-justify'>{bookData?.description}</p>
                     </div>

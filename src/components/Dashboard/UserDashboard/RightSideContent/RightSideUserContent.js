@@ -10,7 +10,7 @@ const RightSideUserContent = () => {
         <div className='bg-[#EEF1FF] p-10'>
            
            {/* navbar searchbar  */}
-            <Searchbar></Searchbar>
+            {/* <Searchbar></Searchbar> */}
             {/* <hr className="border-[#c8c19e] mt-2"></hr> */}
 
             {/* header text component  */}
