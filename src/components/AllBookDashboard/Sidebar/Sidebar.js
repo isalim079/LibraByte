@@ -12,6 +12,7 @@ import { TbLogout2 } from "react-icons/tb";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import toast from "react-hot-toast";
 import shortLogo from "@/assets/logo/Lblogo.png"
+import { MdLogin } from "react-icons/md";
 
 
 const Sidebar = ({ children }) => {
@@ -19,22 +20,21 @@ const Sidebar = ({ children }) => {
   const { user, logOut } = useContext(AuthContext);
   const handleSignOut = () => {
     logOut()
-        .then(() => {
-            toast.success("you have logged out successfully");
-        })
-        .catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
-        });
-};
+      .then(() => {
+        toast.success("you have logged out successfully");
+      })
+      .catch((error) => {
+        console.log(error.code);
+        console.log(error.message);
+      });
+  };
 
 
   return (
     <div className='flex overflow-x-hidden'>
-      <div className={`fixed ${
-          open ? "w-40" : "w-20 "
+      <div className={`fixed ${open ? "w-40" : "w-20 "
         } h-screen p-4 bg-lightWhite  flex flex-col justify-between`}>
-          <img
+        <img
           src="https://i.ibb.co/F8gzPTB/control.png"
           className={`absolute cursor-pointer -right-3 top-16 w-7 border-dark-purple
            border-2 rounded-full  ${!open && "rotate-180"}`}
@@ -70,11 +70,19 @@ const Sidebar = ({ children }) => {
             </div>
           </Link>
           <span className='border-b-[1px] border-gray-200 w-full p-2'></span>
-          <button>
-            <div onClick={user ? handleSignOut : () => toast.error("You are not logged in")} className=' hover:bg-stone-300 cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600'>
-              <TbLogout2 size={20} /> <p className={`text-sm origin-left duration-200 ${!open && "hidden"}`}>Logout</p>
-            </div>
-          </button>
+          {user ? (
+            <button>
+              <div onClick={handleSignOut} className='hover:bg-stone-300 cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600'>
+                <TbLogout2 size={20} /> <p className={`text-sm origin-left duration-200 ${!open && 'hidden'}`}>Logout</p>
+              </div>
+            </button>
+          ) : (
+            <Link href='/login'>
+              <div className='hover:bg-stone-300 cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600'>
+                <MdLogin></MdLogin>              <p className={`text-sm origin-left duration-200 ${!open && 'hidden'}`}>Sign In</p>
+              </div>
+            </Link>
+          )}
         </div>
       </div>
       <main className={`${open ? 'ml-40' : 'ml-20'} w-full `}>{children}</main>
