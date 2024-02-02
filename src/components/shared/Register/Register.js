@@ -11,6 +11,8 @@ import logo from "@/assets/logo/LibraByte.png";
 import Image from 'next/image';
 import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
 import RegisterLoading from './RegisterLoading';
+import animation from "../../../assets/animation/registerPageAnimation"
+import Lottie from 'lottie-react';
 
 const Register = () => {
 
@@ -93,9 +95,9 @@ const Register = () => {
 
     return (
         <section className="py-10  ">
-            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div className=" max-w-md mx-auto ">
-                    <div className="overflow-hidden  rounded-md shadow-md">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-row-reverse justify-around">
+                <div className=" max-w-md mx-auto">
+                    <div className="overflow-hidden  rounded-md shadow-md border ">
                         <div className="px-4 py-6 sm:px-8 sm:py-7">
                             <div className=' flex items-center justify-center mb-3'>
                                 <Image src={logo} width={100} height={100} alt="logo" />
@@ -196,6 +198,11 @@ const Register = () => {
                             </form>
                         </div>
                     </div>
+                </div>
+
+                {/* Animation */}
+                <div className='hidden md:flex '>
+                    <Lottie className='w-[420px] mb-20' animationData={animation} loop={true}/>
                 </div>
             </div>
         </section>
