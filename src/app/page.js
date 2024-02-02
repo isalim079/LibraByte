@@ -27,8 +27,8 @@ export default function Home() {
             <Arrival />
             <Vision></Vision>
             <OurValues></OurValues>
-            <Subscription />
-            {/* <Subscribe /> */}
+            {/* <Subscription /> */}
+            <Subscribe />
             <Faq></Faq>
             <ContactUs></ContactUs>
             <ChatBot />

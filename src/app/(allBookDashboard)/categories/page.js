@@ -5,7 +5,7 @@ import React from 'react';
 const Categorypage = () => {
     return (
         <div className='ml-5'>
-            <Categories></Categories>
+            {/* <Categories></Categories> */}
         </div>
     );
 };
