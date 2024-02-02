@@ -11,7 +11,7 @@ const Header = () => {
             <div className="drop-shadow-md px-5 py-2 bg-lightWhite ">
                 <div className=" flex justify-between items-center gap-2">
                     <div className="form-control ">
-                        <input type="text" placeholder="Search your favorite book" className="input input-bordered w-24 md:w-auto" />
+                        <input type="text" placeholder="Search your favorite book..." className="input input-bordered w-24 md:w-auto" />
                     </div>
                     <div className=" flex justify-center items-center">
                         <button className="btn btn-ghost btn-circle">

@@ -19,7 +19,7 @@ const NavigationRoute = () => {
 
     return (
         <div>
-            <div className="flex items-center relative space-x-2">
+            <div className="flex items-center relative space-x-2 h-20">
                 {navLinks.map((menu, index) => (
                     <li key={index} className="w-16 list-none">
                         <Link
@@ -37,7 +37,7 @@ const NavigationRoute = () => {
                             <span
                                 className={`${
                                     ( active === menu.link || hoveredLink === menu.link)
-                                        ? "translate-y-0 duration-500 opacity-100"
+                                        ? "translate-y-0 duration-500 opacity-100 text-sm"
                                         : "opacity-0 translate-y-10"
                                 }`}
                             >
