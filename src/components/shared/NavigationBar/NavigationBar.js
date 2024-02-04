@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const NavigationBar = () => {
     return (
-        <div className="bg-lightWhite max-h-[74px]">
+        <div className="bg-lightWhite max-h-[74px] shadow-lg">
             {/* Mobile nav */}
             <MobileNavigation />
 

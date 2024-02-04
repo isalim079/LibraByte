@@ -1,9 +1,10 @@
-import RightSideUserContent from "../UserDashboard/RightSideContent/RightSideUserContent";
+import ProfileDashBoard from "../UserDashboard/ProfileDashBoard/ProfileDashBoard";
+
 
 const AdminDashboard = () => {
     return (
     <div>
-        <RightSideUserContent />
+        <ProfileDashBoard />
     </div>
     );
 };
