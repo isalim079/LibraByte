@@ -1,16 +1,19 @@
 "use client";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import Image from "next/image";
 import Rating from "react-rating";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 import Link from "next/link";
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 const Recommended = () => {
     const [books, setBooks] = useState([]);
     const [showAll, setShowAll] = useState(false);
     const initialDisplayCount = 5;
+    const [likedBooks, setLikedBooks] = useState([]);
+  
 
 
     useEffect(() => {
@@ -31,11 +34,19 @@ const Recommended = () => {
     const handleSeeLessClick = () => {
         setShowAll(false);
     };
-
+    const handleHeartClick = (bookId) => {
+        setLikedBooks((prevLikedBooks) => {
+            if (prevLikedBooks.includes(bookId)) {
+                return prevLikedBooks.filter((id) => id !== bookId);
+            } else {
+                return [...prevLikedBooks, bookId];
+            }
+        });
+    };
 
 
     return (
-        <div className="bg-lightWhite rounded-md drop-shadow-lg py-8 px-4 w-auto h-[300px] overflow-y-auto  md:h-auto ">
+        <div className="bg-lightWhite rounded-md drop-shadow-lg py-8 px-4 w-auto h-[400px] overflow-y-auto  md:h-auto ">
             <div className="flex flex-col lg:flex-row justify-center md:justify-between  items-center  px-0 lg:px-3">
                 <h2 className="text-lg lg:text-2xl font-semibold">
                     Recommended
@@ -63,13 +74,21 @@ const Recommended = () => {
                     .map((book) => (
                         <div
                             key={book.id}
-                            className="rounded-lg max-w-[220px] md:w-[320px] shadow-xl space-y-4 mx-auto text-center"
+                            className="rounded-lg group max-w-[220px] md:w-[320px] shadow-xl space-y-4 mx-auto text-center"
                         >
                             <img
                                 alt="Product Image"
                                 className="w-80 h-[260px] rounded-t-lg px-4 pt-6"
                                 src={book.image}
                             />
+                             <div className="relative hidden group-hover:block">
+                             <span 
+                                onClick={() => handleHeartClick(book.id)}
+                                className=" opacity-100 transition-opacity duration-300 delay-1000 ease-in-out absolute -top-[240px] right-6 text-2xl text-white font-bold cursor-pointer"
+                            >
+                                {likedBooks.includes(book.id) ? <FaHeart /> : <FaRegHeart />}
+                            </span>
+                             </div>
                             <div className="px-4 pb-6">
                                 <div className="h-28 flex flex-col items-center">
                                     <h1 className="text-lg font-semibold">
