@@ -8,6 +8,8 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
 import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
 
+import { useRouter } from 'next/router';
+
 
 
 const BookDetails = ({params}) => {
@@ -29,8 +31,6 @@ const BookDetails = ({params}) => {
         })
     }, [])
     // console.log(bookData.name);
-
-    
 
 
     return (

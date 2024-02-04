@@ -3,8 +3,8 @@
 import { AuthContext } from "@/app/Context/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
-import { useRouter } from "next/navigation";
+import React, { useContext, useEffect, useState } from "react";
+import {  useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import logo from "@/assets/logo/LibraByte.png";
@@ -13,10 +13,15 @@ import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import animation from "../../../assets/animation/registerPageAnimation";
 import Lottie from "lottie-react";
 import "./login.css"
+import { getURL } from "next/dist/shared/lib/utils";
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const axiosPublic = useAxiosPublic();
+
+
+ 
     const router = useRouter();
     // import google popup function from context api
     const { googleLogInPopup, passwordLogIn, passwordReset, user } =
@@ -39,7 +44,8 @@ const Login = () => {
                 console.log(res);
                 toast.success("Login Successful");
                 reset();
-                router.push("/");
+                // router.push('/')
+                router.push(location ? location : "/")
             })
             .catch((err) => {
                 console.log(err);
@@ -73,7 +79,8 @@ const Login = () => {
                         toast.success(`Welcome to LibraByte`);
                     }
                     reset();
-                    router.push("/");
+                    router.push('/');
+                    router.push(location ? location : "/")
                 });
             })
             .catch((err) => {

@@ -1,12 +1,14 @@
+import PrivateRoute from "@/components/auth/PrivateRoute";
+import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
+import React from "react";
 
-import NavigationBar from '@/components/shared/NavigationBar/NavigationBar';
-import React from 'react';
-
-const BlogLayout = ({children}) => {
+const BlogLayout = ({ children }) => {
     return (
         <div>
+            <PrivateRoute>
             <NavigationBar />
             {children}
+            </PrivateRoute>
         </div>
     );
 };
