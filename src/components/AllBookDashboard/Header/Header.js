@@ -76,23 +76,23 @@ const Header = () => {
                     <ul className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-2 md:gap-10 p-1 md:p-10'>
                         {searchResults.map(book => (
                             <li key={book.id} className='hover:bg-lightWhite grid-cols-12'>
-                                    {/* Display book name for mobile devices */}
-                                    <div className='md:hidden'>
-                                        {book.name}
-                                    </div>
-                                    
-                                    {/* Display book image for larger devices */}
-                                    <div className='hidden md:block'>
-                                        <Link href={`/bookDetails/${book?._id}`}>
-                                            <Image
-                                                width={300}
-                                                height={500}
-                                                src={book.image}
-                                                alt="searching"
-                                                className='w-40 h-64 border-4 hover:shadow-2xl hover:border-black transition-all duration-300'
-                                            />
-                                        </Link>
-                                    </div>
+                                {/* Display book name for mobile devices */}
+                                <div className='md:hidden'>
+                                    {book.name}
+                                </div>
+
+                                {/* Display book image for larger devices */}
+                                <div className='hidden md:block'>
+                                    <Link href={`/bookDetails/${book?._id}`}>
+                                        <Image
+                                            width={300}
+                                            height={500}
+                                            src={book.image}
+                                            alt="searching"
+                                            className='w-40 h-64 border-4 hover:shadow-2xl hover:border-black transition-all duration-300'
+                                        />
+                                    </Link>
+                                </div>
                             </li>
                         ))}
                     </ul>
