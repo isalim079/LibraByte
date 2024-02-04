@@ -7,18 +7,24 @@ import { AuthContext } from "@/app/Context/AuthProvider";
 import { PiUserCirclePlusDuotone } from "react-icons/pi";
 import { IoDiamond } from "react-icons/io5";
 
-import { FaCircle } from "react-icons/fa";
+
 import { MdError } from "react-icons/md";
 import useFindUser from "@/lib/hooks/useFindUser";
+import AdminProfileDash from "./AdminProfileDash";
+
 
 const ProfileDashBoard = () => {
     const { user } = useContext(AuthContext);
     // console.log(user);
 
-    const [findUser] = useFindUser()
+    const [findUser] = useFindUser();
+    console.log(findUser);
 
     return (
-        <div className="font-serif ">
+        <div>
+            {
+                findUser.role === "user" ? 
+                <div className="font-serif ">
             <div className="relative">
                 <div className=" w-full h-[280px] mt-4 flex justify-center items-center bg-lightWhite">
                     <Image
@@ -40,7 +46,6 @@ const ProfileDashBoard = () => {
                 </div>
             </div>
             <div className="flex items-center">
-
                 {/* text container */}
                 <div>
                     {/* Name */}
@@ -81,42 +86,57 @@ const ProfileDashBoard = () => {
 
             <div className="my-16 ml-28 pr-16">
                 <div>
-                    <h3 className="text-2xl font-sans font-bold mb-4 ml-[52px]">My Application Status</h3>
+                    <h3 className="text-2xl font-sans font-bold mb-4 ml-[52px]">
+                        My Application Status
+                    </h3>
                 </div>
                 <div className="space-y-5">
                     {/* 1st status */}
                     <div className="flex items-center gap-10">
-                    <div>
-                    <MdError className="text-2xl" />
-                    </div>
-                    <div>
-                    <p className="text-lg font-sans">Your scheduled time to pick up the book is still not confirmed. The status will immediately update after your request has been approved by the library.</p>
-                    </div>
-                    
+                        <div>
+                            <MdError className="text-2xl" />
+                        </div>
+                        <div>
+                            <p className="text-lg font-sans">
+                                Your scheduled time to pick up the book is still
+                                not confirmed. The status will immediately
+                                update after your request has been approved by
+                                the library.
+                            </p>
+                        </div>
                     </div>
                     {/* 2nd status */}
                     <div className="flex items-center gap-10">
-                    <div>
-                    <MdError className="text-2xl" />
-                    </div>
-                    <div>
-                    <p className="text-lg font-sans">Thank you for your patience. We're pleased to inform you that your request to pick up the book has been approved by the library</p>
-                    </div>
-                    
+                        <div>
+                            <MdError className="text-2xl" />
+                        </div>
+                        <div>
+                            <p className="text-lg font-sans">
+                                Thank you for your patience. We're pleased to
+                                inform you that your request to pick up the book
+                                has been approved by the library
+                            </p>
+                        </div>
                     </div>
                     {/* 1st status */}
                     <div className="flex items-center gap-10">
-                    <div>
-                    <MdError className="text-2xl" />
+                        <div>
+                            <MdError className="text-2xl" />
+                        </div>
+                        <div>
+                            <p className="text-lg font-sans">
+                                The book has been delivered to you. Please, note
+                                that to avoid extra cost, return it before the
+                                return date.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                    <p className="text-lg font-sans">The book has been delivered to you. Please, note that to avoid extra cost, return it before the return date.</p>
-                    </div>
-                    
-                    </div>
-                   
                 </div>
             </div>
+        </div>
+        : 
+        <AdminProfileDash />
+            }
         </div>
     );
 };
