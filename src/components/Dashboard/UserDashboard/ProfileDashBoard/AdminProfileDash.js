@@ -4,18 +4,15 @@ import { FaClock } from "react-icons/fa";
 import useBorrowBook from "./useBorrowBook";
 import Swal from "sweetalert2";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 const AdminProfileDash = () => {
-
-    const axiosPublic = useAxiosPublic()
-
-
+    const axiosPublic = useAxiosPublic();
 
     const [borrowBooksData, refetch] = useBorrowBook();
     // console.log(borrowBooksData);
 
-    const handleBorrowStatus =  (borrow) => {
-
+    const handleBorrowStatus = (borrow) => {
         Swal.fire({
             title: "Do you want to approve?",
             showDenyButton: true,
@@ -23,30 +20,29 @@ const AdminProfileDash = () => {
             confirmButtonColor: "#333D2E",
             cancelButtonColor: "#878783",
             confirmButtonText: "Approve",
-            denyButtonText: `Don't approve`
-          }).then( async(result) => {
+            denyButtonText: `Don't approve`,
+        }).then(async (result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-
                 /* patch borrow status */
 
-               const result = await axiosPublic.patch(`/addborrow/v1/${borrow._id}`, {
-                    borrow_status: true
-                })
+                const result = await axiosPublic.patch(
+                    `/addborrow/v1/${borrow._id}`,
+                    {
+                        borrow_status: true,
+                    }
+                );
                 console.log(result.data);
+                
                 Swal.fire("Approved!", "", "success");
+                refetch()
 
                 console.log(borrow._id);
-
-            
-
             } else if (result.isDenied) {
-              Swal.fire("Cancelled", "", "info");
+                Swal.fire("Cancelled", "", "info");
             }
-          });
-
-        
-    }
+        });
+    };
 
     return (
         <div>
@@ -57,8 +53,7 @@ const AdminProfileDash = () => {
             </div>
 
             <div className="overflow-x-auto">
-               
-                    <table className="table">
+                <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
@@ -78,59 +73,64 @@ const AdminProfileDash = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        
-                       {
-                          borrowBooksData.map(borrow => (
+                        {borrowBooksData.map((borrow) => (
                             <tr key={borrow._id}>
-                            <th>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        className="checkbox"
-                                    />
-                                </label>
-                            </th>
-                            <td>
-                                <div className="flex items-center gap-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img
-                                                src={borrow?.Book_image}
-                                                alt={borrow?.Book_name}
-                                            />
+                                <th>
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            className="checkbox"
+                                        />
+                                    </label>
+                                </th>
+                                <td>
+                                    <div className="flex items-center gap-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
+                                                <img
+                                                    src={borrow?.Book_image}
+                                                    alt={borrow?.Book_name}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="font-bold">
+                                                {borrow?.Book_name}
+                                            </div>
+                                            <div className="text-sm opacity-50">
+                                                {borrow?.Book_author}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div className="font-bold">
-                                            {borrow?.Book_name}
-                                        </div>
-                                        <div className="text-sm opacity-50">
-                                        {borrow?.Book_author}
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                {borrow?.borrower_name}
-                                <br />
-                                <span className="badge badge-ghost badge-sm">
-                                {borrow?.borrower_email}
-                                </span>
-                            </td>
-                            <td>{borrow?.Date}</td>
-                            <td className="flex items-center justify-start gap-2 btn btn-ghost" onClick={() => handleBorrowStatus(borrow)}><FaClock /> Pending</td>
-                            <th>
-                                <button className="btn btn-ghost btn-xs">
-                                    details
-                                </button>
-                            </th>
-                        </tr>
-                          ))
-                       }
-                        
+                                </td>
+                                <td>
+                                    {borrow?.borrower_name}
+                                    <br />
+                                    <span className="badge badge-ghost badge-sm">
+                                        {borrow?.borrower_email}
+                                    </span>
+                                </td>
+                                <td>{borrow?.Date}</td>
+                                <td
+                                    className=""
+                                    onClick={() => handleBorrowStatus(borrow)}
+                                >
+                                    {
+                                        borrow?.borrow_status === false ? <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                        <FaClock /> Pending
+                                    </span> : <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                    <IoIosCheckmarkCircle /> Approved
+                                    </span>
+                                    }
+                                </td>
+                                <th>
+                                    <button className="btn btn-ghost btn-xs">
+                                        details
+                                    </button>
+                                </th>
+                            </tr>
+                        ))}
                     </tbody>
-                  
-                
                 </table>
             </div>
         </div>
