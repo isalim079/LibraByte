@@ -26,18 +26,18 @@ const AdminProfileDash = () => {
             if (result.isConfirmed) {
                 /* patch borrow status */
 
-                const result = await axiosPublic.patch(
+                 await axiosPublic.patch(
                     `/addborrow/v1/${borrow._id}`,
                     {
                         borrow_status: true,
                     }
                 );
-                console.log(result.data);
-                
-                Swal.fire("Approved!", "", "success");
-                refetch()
+                // console.log(result.data);
 
-                console.log(borrow._id);
+                refetch();
+                Swal.fire("Approved!", "", "success");
+
+                // console.log(borrow._id);
             } else if (result.isDenied) {
                 Swal.fire("Cancelled", "", "info");
             }
@@ -115,13 +115,15 @@ const AdminProfileDash = () => {
                                     className=""
                                     onClick={() => handleBorrowStatus(borrow)}
                                 >
-                                    {
-                                        borrow?.borrow_status === false ? <span className="flex items-center justify-start gap-2 btn btn-ghost">
-                                        <FaClock /> Pending
-                                    </span> : <span className="flex items-center justify-start gap-2 btn btn-ghost">
-                                    <IoIosCheckmarkCircle /> Approved
-                                    </span>
-                                    }
+                                    {borrow?.borrow_status === false ? (
+                                        <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                            <FaClock /> Pending
+                                        </span>
+                                    ) : (
+                                        <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                            <IoIosCheckmarkCircle /> Approved
+                                        </span>
+                                    )}
                                 </td>
                                 <th>
                                     <button className="btn btn-ghost btn-xs">
