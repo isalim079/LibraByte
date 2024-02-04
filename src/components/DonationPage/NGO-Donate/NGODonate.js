@@ -1,6 +1,7 @@
 "use client"
 
 import { AuthContext } from '@/app/Context/AuthProvider';
+import Image from 'next/image';
 // components/NGODonate.jsx
 import React, { useContext } from 'react';
 
@@ -10,14 +11,21 @@ const NGODonate = () => {
     const { user } = useContext(AuthContext);
 
 
-    
+
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const bookDetails = {
-            name: form.name.value,
+            bookname: form.bookname.value,
             author: form.author.value,
-            genre: form.genre.value,
+            description: form.description.value,
+            condition:form.condition.value,
+            category:form.category.value,
+            name:form.name.value,
+            email:form.email.value,
+            note:form.note.value,
+            photo:form.photo.value
+
             // Add more fields as needed
         };
         console.log(bookDetails);
@@ -28,14 +36,14 @@ const NGODonate = () => {
             <h1 className='text-3xl font-semibold'>Enter Your Book Details Below</h1>
             <p className='text-md text-red-700 font-medium'>All fields are required *</p>
 
-            <form  onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
                 <div className='flex justify-center items-start gap-x-5'>
                     <div className='w-1/2'>
                         <h1 className='my-5 text-lg font-semibold'>Book Information :</h1>
                         <div className="mb-4">
                             <label className=" text-sm font-medium text-gray-700">Book Name</label>
-                            <input className='w-full  border rounded-md p-2' type="text" name="name" required />
+                            <input className='w-full  border rounded-md p-2' type="text" name="bookname" required />
                         </div>
 
                         <div className="mb-4">
@@ -45,24 +53,29 @@ const NGODonate = () => {
 
                         <div className="mb-4">
                             <label className=" text-sm font-medium text-gray-700">Book Description</label>
-                            <input className='w-full  border rounded-md p-2' type="text" name="genre" required />
+                            <input className='w-full  border rounded-md p-2' type="text" name="description" required />
                         </div>
                         <div className='flex justify-center items-center gap-x-5'>
 
                             <div className="mb-4 w-1/2">
                                 <label className=" text-sm font-medium text-gray-700">Overall Condition</label>
-                                <select className="select select-bordered w-full max-w-xs" required>
+                                <select className="select select-bordered w-full max-w-xs" name='condition' required>
                                     <option disabled selected>Select one please</option>
-                                    <option>Han Solo</option>
-                                    <option>Greedo</option>
+                                    <option>Very Good</option>
+                                    <option>Good</option>
+                                    <option>Usual</option>
+                                    <option>Bad</option>
+                                    <option>Very Bad</option>
                                 </select>
                             </div>
                             <div className="mb-4 w-1/2">
                                 <label className=" text-sm font-medium text-gray-700">Book Category</label>
-                                <select className="select select-bordered w-full max-w-xs" required>
+                                <select className="select select-bordered w-full max-w-xs" name='category' required>
                                     <option disabled selected>Select one please </option>
-                                    <option>Han Solo</option>
-                                    <option>Greedo</option>
+                                    <option>Science Fiction</option>
+                                    <option>Mystry</option>
+                                    <option>Fantasy</option>
+                                    <option>Self-help</option>
                                 </select>
                             </div>
 
@@ -77,18 +90,27 @@ const NGODonate = () => {
 
                         <div className="mb-4">
                             <label className=" text-sm font-medium text-gray-700">Your Email</label>
-                            <input className='w-full  border rounded-md p-2' type="email" name="author" defaultValue={user?.email} required />
+                            <input className='w-full  border rounded-md p-2' type="email" name="email" defaultValue={user?.email} required />
                         </div>
 
                         <div className="mb-4">
                             <label className=" text-sm font-medium text-gray-700">Notes From You</label>
-                            <input className='w-full  border rounded-md p-2' type="text" name="genre" required />
+                            <input className='w-full  border rounded-md p-2' type="text" name="note" required />
+                        </div>
+
+                        <div>
+                            <label className=" text-sm font-medium text-gray-700"> Your book image </label>
+                            <input
+                                type='file'
+                                className=" file-input-bordered file-input w-full "
+                                name='photo' />
+                            <br />
                         </div>
                     </div>
                 </div>
 
 
-                <button className='bg-blue-500 text-white px-4 py-2 rounded-md' type="submit">Submit</button>
+                <button className='bg-oliveGreen text-white px-4 py-2 rounded-md' type="submit">Submit</button>
             </form>
         </div>
     );
