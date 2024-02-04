@@ -22,6 +22,8 @@ const AuthProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(true);
 
+    const [path, setPath] = useState('')
+
     const axiosPublic = useAxiosPublic();
 
     // checking is user logged in or not
@@ -95,6 +97,10 @@ const AuthProvider = ({ children }) => {
         };
     }, [user, axiosPublic]);
 
+    const getLocation = (path) => {
+        setPath(path)
+    }
+
     // passing data through context api
 
     const contextData = {
@@ -106,6 +112,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         user,
         loading,
+        getLocation,
+        path,
     };
 
     const queryClient = new QueryClient();

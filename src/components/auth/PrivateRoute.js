@@ -4,7 +4,7 @@
 import Loading from "../shared/Loading/Loading";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import { useContext } from "react";
-import { redirect, useRouter } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import { getURL } from "next/dist/shared/lib/utils";
 
 
@@ -13,7 +13,9 @@ import { getURL } from "next/dist/shared/lib/utils";
 
 const PrivateRoute = ({children}) => {
 
-    const {user, loading} = useContext(AuthContext)
+    const {user, loading, getLocation} = useContext(AuthContext)
+
+    const path = usePathname()
 
     // const location = getURL()
     // console.log(location);
@@ -32,6 +34,7 @@ const PrivateRoute = ({children}) => {
     }
     
     if(!user) {
+        getLocation(path)
         router.push("/login")
         
     }

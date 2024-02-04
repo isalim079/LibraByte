@@ -20,11 +20,10 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const axiosPublic = useAxiosPublic();
 
-
  
     const router = useRouter();
     // import google popup function from context api
-    const { googleLogInPopup, passwordLogIn, passwordReset, user } =
+    const { googleLogInPopup, passwordLogIn, passwordReset, user, path } =
         useContext(AuthContext);
 
     const {
@@ -45,7 +44,9 @@ const Login = () => {
                 toast.success("Login Successful");
                 reset();
                 // router.push('/')
-                router.push(location ? location : "/")
+                {
+                    path ? router.push(path) : router.push('/')
+                }
             })
             .catch((err) => {
                 console.log(err);
@@ -79,8 +80,10 @@ const Login = () => {
                         toast.success(`Welcome to LibraByte`);
                     }
                     reset();
-                    router.push('/');
-                    router.push(location ? location : "/")
+                    {
+                        path ? router.push(path) : router.push('/')
+                    }
+                    
                 });
             })
             .catch((err) => {

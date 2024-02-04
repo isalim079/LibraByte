@@ -1,10 +1,52 @@
 "use client";
 
+import { FaClock } from "react-icons/fa";
 import useBorrowBook from "./useBorrowBook";
+import Swal from "sweetalert2";
+import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 
 const AdminProfileDash = () => {
+
+    const axiosPublic = useAxiosPublic()
+
+
+
     const [borrowBooksData, refetch] = useBorrowBook();
     // console.log(borrowBooksData);
+
+    const handleBorrowStatus =  (borrow) => {
+
+        Swal.fire({
+            title: "Do you want to approve?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonColor: "#333D2E",
+            cancelButtonColor: "#878783",
+            confirmButtonText: "Approve",
+            denyButtonText: `Don't approve`
+          }).then( async(result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+
+                /* patch borrow status */
+
+               const result = await axiosPublic.patch(`/addborrow/v1/${borrow._id}`, {
+                    borrow_status: true
+                })
+                console.log(result.data);
+                Swal.fire("Approved!", "", "success");
+
+                console.log(borrow._id);
+
+            
+
+            } else if (result.isDenied) {
+              Swal.fire("Cancelled", "", "info");
+            }
+          });
+
+        
+    }
 
     return (
         <div>
@@ -30,7 +72,8 @@ const AdminProfileDash = () => {
                             </th>
                             <th>Book Info</th>
                             <th>User Info</th>
-                            <th>Status</th>
+                            <th>Pickup Date</th>
+                            <th>Borrow Status</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -68,13 +111,14 @@ const AdminProfileDash = () => {
                                 </div>
                             </td>
                             <td>
-                                Zemlak, Daniel and Leannon
+                                {borrow?.borrower_name}
                                 <br />
                                 <span className="badge badge-ghost badge-sm">
-                                    Desktop Support Technician
+                                {borrow?.borrower_email}
                                 </span>
                             </td>
-                            <td>Purple</td>
+                            <td>{borrow?.Date}</td>
+                            <td className="flex items-center justify-start gap-2 btn btn-ghost" onClick={() => handleBorrowStatus(borrow)}><FaClock /> Pending</td>
                             <th>
                                 <button className="btn btn-ghost btn-xs">
                                     details

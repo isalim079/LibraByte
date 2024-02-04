@@ -23,7 +23,7 @@ const Register = () => {
     const axiosPublic = useAxiosPublic();
 
 
-    const { registerUser, handleUpdateUser } = useContext(AuthContext)
+    const { registerUser, handleUpdateUser, path } = useContext(AuthContext)
 
     // import react hook form
     const {
@@ -75,7 +75,9 @@ const Register = () => {
                                     console.log(res)
                                     reset()
                                     toast.success("Register Successful")
-                                    router.push('/');
+                                    {
+                                        path ? router.push(path) : router.push('/')
+                                    }
                                 })
 
                         })
