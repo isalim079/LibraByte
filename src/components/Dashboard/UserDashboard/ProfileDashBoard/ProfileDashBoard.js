@@ -2,21 +2,56 @@
 
 import Image from "next/image";
 import libraByte from "../../../../assets/logo/LibraByte.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import { PiUserCirclePlusDuotone } from "react-icons/pi";
 import { IoDiamond } from "react-icons/io5";
 
-import { MdError } from "react-icons/md";
 import useFindUser from "@/lib/hooks/useFindUser";
 import AdminProfileDash from "./AdminProfileDash";
+import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+
+
 
 const ProfileDashBoard = () => {
     const { user } = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic()
     // console.log(user);
 
     const [findUser] = useFindUser();
     // console.log(findUser);
+
+ 
+
+    const [borrowStatusTrue, setBorrowStatusTrue] = useState([])
+    const [borrowStatusFalse, setBorrowStatusFalse] = useState([])
+
+    const [findUserBorrow, setFindUserBorrow] = useState([])
+
+    useEffect(() => {
+        axiosPublic.get('/addborrow/v1')
+        .then(res => {
+            const borrowData =  res.data
+            const filteredData =  borrowData.filter(borrow => borrow?.borrower_email === user?.email)
+            const borrowFalse = filteredData.filter(bor => bor?.borrow_status === false)
+            setBorrowStatusFalse(borrowFalse)
+
+            const borrowTrue = filteredData.filter(bor => bor?.borrow_status === true)
+            setBorrowStatusTrue(borrowTrue)
+            setFindUserBorrow(filteredData)
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }, [user])
+
+    console.log(borrowStatusFalse.length);
+    // console.log(user?.email);
+
+   console.log(borrowStatusTrue.length);
+
+
+
 
     return (
         <div>
@@ -96,13 +131,13 @@ const ProfileDashBoard = () => {
                                 My Application Status
                             </h3>
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                             {/* steps */}
-                            <div>
-                                <ul className="steps steps-vertical">
+                            <div className="">
+                                <ul className="steps steps-vertical space-y-2">
                                     <li
-                                        data-content="✕"
-                                        className="step step-neutral"
+                                        data-content={ borrowStatusTrue.length === findUserBorrow.length ? "✓" : `${borrowStatusTrue.length}/${findUserBorrow.length}`}
+                                        className="step step-neutral "
                                     ></li>
                                     <li
                                         data-content="✕"
@@ -115,7 +150,7 @@ const ProfileDashBoard = () => {
                                 </ul>
                             </div>
 
-                            <div className="">
+                            <div className="space-y-5">
                                 {/* 1st status */}
 
                                 <p className="text-lg font-sans">

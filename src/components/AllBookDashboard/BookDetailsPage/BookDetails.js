@@ -42,7 +42,7 @@ const BookDetails = ({ params }) => {
     const { name, image, author } = bookData;
     // console.log(bookData.name);
     const onSubmit = async (data) => {
-        console.log(data);
+        // console.log(data);
         const bookInfo = {
             Book_name: name,
             Book_image: image,
