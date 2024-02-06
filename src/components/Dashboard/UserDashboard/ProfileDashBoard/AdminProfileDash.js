@@ -12,6 +12,8 @@ const AdminProfileDash = () => {
     const [borrowBooksData, refetch] = useBorrowBook();
     // console.log(borrowBooksData);
 
+
+    /* handle borrow status */
     const handleBorrowStatus = (borrow) => {
         Swal.fire({
             title: "Do you want to approve?",
@@ -36,6 +38,40 @@ const AdminProfileDash = () => {
 
                 refetch();
                 Swal.fire("Approved!", "", "success");
+
+                // console.log(borrow._id);
+            } else if (result.isDenied) {
+                Swal.fire("Cancelled", "", "info");
+            }
+        });
+    };
+
+    /* handle borrow status */
+
+    const handleDeliveredStatus = (borrow) => {
+        Swal.fire({
+            title: "Do you want to approve?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonColor: "#333D2E",
+            cancelButtonColor: "#878783",
+            confirmButtonText: "Approve",
+            denyButtonText: `Don't approve`,
+        }).then(async (result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                /* patch borrow status */
+
+                 await axiosPublic.patch(
+                    `/addborrow/v1/${borrow._id}`,
+                    {
+                        delivered_status: true,
+                    }
+                );
+                // console.log(result.data);
+
+                refetch();
+                Swal.fire("Delivered!", "", "success");
 
                 // console.log(borrow._id);
             } else if (result.isDenied) {
@@ -125,7 +161,9 @@ const AdminProfileDash = () => {
                                         </span>
                                     )}
                                 </td>
-                                <th>
+                                <th
+                                onClick={() => handleDeliveredStatus(borrow)}
+                                >
                                   
                                     {borrow?.delivered_status === false ? (
                                         <span className="flex items-center justify-start gap-2 cursor-pointer underline">
