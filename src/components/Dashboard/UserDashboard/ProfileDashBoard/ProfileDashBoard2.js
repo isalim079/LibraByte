@@ -23,7 +23,7 @@ const ProfileDashBoard2 = () => {
             setLoading(false);
         }
     }, [userRole]);
-    console.log(userRole);
+    // console.log(userRole);
 
     return (
         <div>

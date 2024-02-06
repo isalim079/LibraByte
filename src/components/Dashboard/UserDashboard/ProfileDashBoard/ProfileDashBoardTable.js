@@ -96,11 +96,11 @@ const ProfileDashBoardTable = () => {
                                 <td>{borrow?.Date}</td>
                                 <td className="">
                                     {borrow?.delivered_status === false ? (
-                                        <span className="flex items-center justify-start gap-2">
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer">
                                             <FaClock /> Pending
                                         </span>
                                     ) : (
-                                        <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer">
                                             <IoIosCheckmarkCircle /> Delivered
                                         </span>
                                     )}
