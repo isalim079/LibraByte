@@ -86,6 +86,8 @@ const ApplicationStatus = ({params}) => {
                             </div>
                         </div>
                     </div>
+
+                   
         </div>
     );
 };

@@ -1,32 +1,32 @@
 [
     {
-      "bookName": "Familia",
-      "image": "https://i.ibb.co/DfTQDLF/Familia.jpg",
-      "bgImage": "https://i.ibb.co/7NW4SBn/familia-Blur.png",
-      "bookSubtitle": "A Fable About Following Your Dream",
-      "description": "The Alchemist is a novel by Brazilian author Paulo Coelho that tells the story of Santiago, a young shepherd who yearns to discover a world treasure and embarks on a journey of self-discovery and enlightenment."
+        "bookName": "The dragons",
+        "image": "https://i.ibb.co/VLNnRmP/Dragons.jpg",
+        "bgImage": "https://i.ibb.co/KGsQNF9/Dragons-Blur.png",
+        "bookSubtitle": "George Orwell's Dystopian Masterpiece",
+        "description": "Dragon is a dystopian novel by George Orwell that explores the consequences of unchecked government power, surveillance, and the manipulation of truth. It remains a classic warning against totalitarianism and censorship."
+    },
+
+    {
+        "bookName": "Where the dead wait",
+        "image": "https://i.ibb.co/x56XSBb/Dead.jpg",
+        "bgImage": "https://i.ibb.co/JdshZj2/deadBlur.png",
+        "bookSubtitle": "Harper Lee's Pulitzer Prize-winning Novel",
+        "description": "To Kill a Mockingbird is a classic novel set in the American South during the 1930s. It explores themes of racial injustice and moral growth through the eyes of a young girl, Scout Finch, and her father, lawyer Atticus Finch."
     },
     {
-      "bookName": "Where the dead wait",
-      "image": "https://i.ibb.co/x56XSBb/Dead.jpg",
-      "bgImage": "https://i.ibb.co/JdshZj2/deadBlur.png",
-      "bookSubtitle": "Harper Lee's Pulitzer Prize-winning Novel",
-      "description": "To Kill a Mockingbird is a classic novel set in the American South during the 1930s. It explores themes of racial injustice and moral growth through the eyes of a young girl, Scout Finch, and her father, lawyer Atticus Finch."
+        "bookName": "Familia",
+        "image": "https://i.ibb.co/DfTQDLF/Familia.jpg",
+        "bgImage": "https://i.ibb.co/7NW4SBn/familia-Blur.png",
+        "bookSubtitle": "A Fable About Following Your Dream",
+        "description": "The Alchemist is a novel by Brazilian author Paulo Coelho that tells the story of Santiago, a young shepherd who yearns to discover a world treasure and embarks on a journey of self-discovery and enlightenment."
     },
+
     {
-      "bookName": "The dragons",
-      "image": "https://i.ibb.co/VLNnRmP/Dragons.jpg",
-      "bgImage": "https://i.ibb.co/KGsQNF9/Dragons-Blur.png",
-      "bookSubtitle": "George Orwell's Dystopian Masterpiece",
-      "description": "Dragon is a dystopian novel by George Orwell that explores the consequences of unchecked government power, surveillance, and the manipulation of truth. It remains a classic warning against totalitarianism and censorship."
-    },
-    {
-      "bookName": "Deep friend death",
-      "image": "https://i.ibb.co/MnPbs95/Deep-fried.jpg",
-      "bgImage": "https://i.ibb.co/xJ9DVkv/Deep-Blur.png",
-      "bookSubtitle": "F. Scott Fitzgerald's Jazz Age Classic",
-      "description": "The Great Gatsby is a novel set in the Roaring Twenties, portraying the excesses and decadence of the era. It explores themes of wealth, love, and the American Dream through the eyes of the enigmatic Jay Gatsby."
+        "bookName": "Deep friend death",
+        "image": "https://i.ibb.co/MnPbs95/Deep-fried.jpg",
+        "bgImage": "https://i.ibb.co/xJ9DVkv/Deep-Blur.png",
+        "bookSubtitle": "F. Scott Fitzgerald's Jazz Age Classic",
+        "description": "The Great Gatsby is a novel set in the Roaring Twenties, portraying the excesses and decadence of the era. It explores themes of wealth, love, and the American Dream through the eyes of the enigmatic Jay Gatsby."
     }
- 
-  ]
-  
+]

@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const NavigationBar = () => {
     return (
-        <div className="bg-lightWhite max-h-[74px] shadow-lg">
+        <div className="bg-[#0C1335] max-h-[74px] shadow-lg">
             {/* Mobile nav */}
             <MobileNavigation />
 
@@ -19,12 +19,13 @@ const NavigationBar = () => {
                 {/* Logo */}
                 
                     <Link href={'/'}>
-                    <Image
+                    {/* <Image
                         src={logo}
                         height={100}
                         width={100}
                         alt="logo"
-                    ></Image>
+                    ></Image> */}
+                    <p className="text-white text-2xl">Libra<span className="text-[#ECC21C]">Byte</span></p>
                     </Link>
                 
 
