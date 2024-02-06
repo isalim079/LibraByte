@@ -33,22 +33,45 @@ const ProfileDashBoard = () => {
         .then(res => {
             const borrowData =  res.data
             const filteredData =  borrowData.filter(borrow => borrow?.borrower_email === user?.email)
+
             const borrowFalse = filteredData.filter(bor => bor?.borrow_status === false)
             setBorrowStatusFalse(borrowFalse)
 
             const borrowTrue = filteredData.filter(bor => bor?.borrow_status === true)
             setBorrowStatusTrue(borrowTrue)
-            setFindUserBorrow(filteredData)
+
+            // setFindUserBorrow(filteredData)
+
+            const currentDate = new Date().getTime()
+
+            const borrowDate = filteredData.filter(bor => {
+                // console.log(bor.Date);
+                const borrowDate = new Date(bor.Date).getTime()
+                // console.log(borrowDate);
+
+                const tenDay = (24*60*60*1000)*10
+                const findDate = borrowDate + tenDay
+                console.log(findDate);
+
+               return  findDate >= borrowDate + tenDay
+
+            })
+            console.log(borrowDate);
+
+
+
+            // console.log(currentDate);
+
         })
         .catch(error => {
             console.log(error);
         })
     }, [user])
 
-    console.log(borrowStatusFalse.length);
+    // console.log(borrowStatusFalse.length);
     // console.log(user?.email);
 
-   console.log(borrowStatusTrue.length);
+//    console.log(borrowStatusTrue.length);
 
 
 
@@ -136,12 +159,12 @@ const ProfileDashBoard = () => {
                             <div className="">
                                 <ul className="steps steps-vertical space-y-2">
                                     <li
-                                        data-content={ borrowStatusTrue.length === findUserBorrow.length ? "✓" : `${borrowStatusTrue.length}/${findUserBorrow.length}`}
-                                        className="step step-neutral "
+                                        data-content={findUserBorrow.length === 0 ? "✕" : "✓"}
+                                        className={findUserBorrow.length === 0 ? `step step-neutral` : `step step-success`}
                                     ></li>
                                     <li
-                                        data-content="✕"
-                                        className="step step-neutral"
+                                        data-content={findUserBorrow.length !== 0 ?  (borrowStatusTrue.length === findUserBorrow.length ? "✓" : `${borrowStatusTrue.length}/${findUserBorrow.length}`) : "✕"}
+                                        className={findUserBorrow.length === 0 || borrowStatusTrue.length !== findUserBorrow.length ? `step step-neutral` : `step step-success`}
                                     ></li>
                                     <li
                                         data-content="✕"
