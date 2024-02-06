@@ -8,7 +8,7 @@ import { PiUserCirclePlusDuotone } from "react-icons/pi";
 import { IoDiamond } from "react-icons/io5";
 import AdminProfileDash from "./AdminProfileDash";
 import useFindUser from "@/lib/hooks/useFindUser";
-import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+
 import ProfileDashBoardTable from "./ProfileDashBoardTable";
 
 const ProfileDashBoard2 = () => {
@@ -88,7 +88,9 @@ const ProfileDashBoard2 = () => {
 
                     {/* Application status */}
 
-                    <ProfileDashBoardTable />
+                   <div className="mt-8">
+                   <ProfileDashBoardTable />
+                   </div>
                 </div>
             )}
         </div>
