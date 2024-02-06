@@ -2,6 +2,7 @@
 
 import { AuthContext } from "@/app/Context/AuthProvider";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { FaClock } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -28,7 +29,9 @@ const ProfileDashBoardTable = () => {
                 console.log(error);
             });
     }, [user]);
-    console.log(findUserBorrow);
+    // console.log(findUserBorrow);
+
+    
 
     return (
         <div>
@@ -48,8 +51,8 @@ const ProfileDashBoardTable = () => {
                             <th>Book Info</th>
                             <th>User Info</th>
                             <th>Pickup Date</th>
-                            <th>Borrow Status</th>
-                            <th></th>
+                            <th>Delivered Status</th>
+                            <th>Application Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,19 +95,23 @@ const ProfileDashBoardTable = () => {
                                 </td>
                                 <td>{borrow?.Date}</td>
                                 <td className="">
-                                    {borrow?.borrow_status === false ? (
-                                        <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                    {borrow?.delivered_status === false ? (
+                                        <span className="flex items-center justify-start gap-2">
                                             <FaClock /> Pending
                                         </span>
                                     ) : (
                                         <span className="flex items-center justify-start gap-2 btn btn-ghost">
-                                            <IoIosCheckmarkCircle /> Approved
+                                            <IoIosCheckmarkCircle /> Delivered
                                         </span>
                                     )}
                                 </td>
                                 <th>
-                                    <button className="btn btn-ghost btn-xs">
+                                    <button className="btn btn-ghost btn-xs"
+                                    
+                                    >
+                                        <Link href={`/dashboard/${borrow?._id}`}>
                                         details
+                                        </Link>
                                     </button>
                                 </th>
                             </tr>
