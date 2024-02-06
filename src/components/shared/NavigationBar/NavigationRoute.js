@@ -23,14 +23,20 @@ const NavigationRoute = () => {
                 {navLinks.map((menu, index) => (
                     <li key={index} className="w-16 list-none">
                         <Link
-                            className={`flex flex-col items-center text-center pt-6 hover:shadow-md hover:shadow-[#ECC21C] hover:rounded-md ${active === menu.link ? `shadow-md shadow-[#ECC21C]` : ``}` }
+                            className={`flex flex-col items-center text-center pt-6 hover:shadow-md hover:shadow-[#ECC21C] hover:rounded-md ${
+                                active === menu.link
+                                    ? `shadow-md shadow-[#ECC21C] rounded-md`
+                                    : ``
+                            }`}
                             href={menu.link}
                             onClick={() => setActive(menu.link)}
                             onMouseEnter={() => setHoveredLink(menu.link)}
                             onMouseLeave={() => setHoveredLink(null)}
                         >
                             <span
-                                className={`text-2xl cursor-pointer duration-500 hover:-mt-3 text-white`}
+                                className={`text-2xl cursor-pointer duration-500 hover:-mt-3 text-white ${
+                                    active === menu.link ? `-mt-3` : ``
+                                }`}
                             >
                                 {menu?.icon}
                             </span>
@@ -38,7 +44,7 @@ const NavigationRoute = () => {
                                 className={`${
                                     active === menu.link ||
                                     hoveredLink === menu.link
-                                        ? "translate-y-0 duration-500 opacity-100 text-sm text-white"
+                                        ? "translate-y-0 duration-500 opacity-100 text-sm text-white pb-1"
                                         : "opacity-0 translate-y-10"
                                 }`}
                             >

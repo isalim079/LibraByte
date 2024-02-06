@@ -29,6 +29,7 @@ module.exports = {
                 royalBlue: "#0C1335",
                 lightBtn: "#339586",
                 darkBtn: "#207468",
+                customYellow: "#ECC21C",
             },
             
         },
