@@ -74,6 +74,8 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     };
 
+    
+
     // Watching users while state changing
 
     useEffect(() => {
@@ -101,6 +103,29 @@ const AuthProvider = ({ children }) => {
         setPath(path)
     }
 
+    const [userRole, setUserRole] = useState(null)
+
+    useEffect(() => {
+
+        axiosPublic.get("/users/v1")
+        .then(res => {
+            const userData = res.data
+            // console.log(userData);
+            const findUser = userData.find(data => data?.email === user?.email)
+
+            
+                setUserRole(findUser?.role)
+           
+            // console.log(findUser?.role);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+
+    }, [user])
+
+    // console.log(userRole);
+
     // passing data through context api
 
     const contextData = {
@@ -114,6 +139,7 @@ const AuthProvider = ({ children }) => {
         loading,
         getLocation,
         path,
+        userRole,
     };
 
     const queryClient = new QueryClient();
