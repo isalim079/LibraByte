@@ -124,7 +124,7 @@ const AuthProvider = ({ children }) => {
 
     }, [user])
 
-    // console.log(userRole);
+    console.log(userRole);
 
     // passing data through context api
 

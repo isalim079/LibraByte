@@ -12,7 +12,6 @@ const AdminProfileDash = () => {
     const [borrowBooksData, refetch] = useBorrowBook();
     // console.log(borrowBooksData);
 
-
     /* handle borrow status */
     const handleBorrowStatus = (borrow) => {
         Swal.fire({
@@ -28,16 +27,17 @@ const AdminProfileDash = () => {
             if (result.isConfirmed) {
                 /* patch borrow status */
 
-                 await axiosPublic.patch(
+                const res = await axiosPublic.patch(
                     `/addborrow/v1/${borrow._id}`,
                     {
                         borrow_status: true,
                     }
                 );
-                // console.log(result.data);
-
-                refetch();
-                Swal.fire("Approved!", "", "success");
+                // console.log(res);
+                if (res.status === 200) {
+                    refetch();
+                    Swal.fire("Approved!", "", "success");
+                }
 
                 // console.log(borrow._id);
             } else if (result.isDenied) {
@@ -46,8 +46,7 @@ const AdminProfileDash = () => {
         });
     };
 
-    /* handle borrow status */
-
+    /* handle delivered status */
     const handleDeliveredStatus = (borrow) => {
         Swal.fire({
             title: "Do you want to approve?",
@@ -62,22 +61,25 @@ const AdminProfileDash = () => {
             if (result.isConfirmed) {
                 /* patch borrow status */
 
-                 await axiosPublic.patch(
-                    `/addborrow/v1/${borrow._id}`,
+                const res = await axiosPublic.patch(
+                    `/updateDeliver/v1/${borrow._id}`,
                     {
                         delivered_status: true,
                     }
                 );
-                // console.log(result.data);
+                // console.log(res);
 
-                refetch();
-                Swal.fire("Delivered!", "", "success");
+                if (res.status === 200) {
+                    refetch();
+                    Swal.fire("Delivered!", "", "success");
+                }
 
                 // console.log(borrow._id);
             } else if (result.isDenied) {
                 Swal.fire("Cancelled", "", "info");
             }
         });
+        // console.log(borrow);
     };
 
     return (
@@ -162,9 +164,10 @@ const AdminProfileDash = () => {
                                     )}
                                 </td>
                                 <th
-                                onClick={() => handleDeliveredStatus(borrow)}
+                                    onClick={() =>
+                                        handleDeliveredStatus(borrow)
+                                    }
                                 >
-                                  
                                     {borrow?.delivered_status === false ? (
                                         <span className="flex items-center justify-start gap-2 cursor-pointer underline">
                                             <FaClock /> Pending
@@ -174,7 +177,6 @@ const AdminProfileDash = () => {
                                             <IoIosCheckmarkCircle /> Delivered
                                         </span>
                                     )}
-                                   
                                 </th>
                             </tr>
                         ))}

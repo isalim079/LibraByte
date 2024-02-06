@@ -7,7 +7,6 @@ import { AuthContext } from "@/app/Context/AuthProvider";
 import { PiUserCirclePlusDuotone } from "react-icons/pi";
 import { IoDiamond } from "react-icons/io5";
 import AdminProfileDash from "./AdminProfileDash";
-import useFindUser from "@/lib/hooks/useFindUser";
 
 import ProfileDashBoardTable from "./ProfileDashBoardTable";
 import Loading from "@/components/shared/Loading/Loading";
@@ -15,16 +14,16 @@ import Loading from "@/components/shared/Loading/Loading";
 const ProfileDashBoard2 = () => {
     const { user, userRole } = useContext(AuthContext);
 
-    const [findUser] = useFindUser();
     // console.log(userRole);
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         if (userRole) {
             setLoading(false);
         }
-    }, []);
+    }, [userRole]);
+    console.log(userRole);
 
     return (
         <div>
