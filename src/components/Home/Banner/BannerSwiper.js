@@ -59,9 +59,9 @@ export default function App() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='flex justify-between items-center mx-2 lg:mx-14 gap-x-2'>
-                        <div className='hidden lg:block lg:w-5/12 bg-white p-7 rounded-xl '>
-                            <h1 className='text-center font-bold text-oliveGreen my-3 text-2xl'>"The Great Gatsby"  </h1>
-                            <h3 className='text-lg font-semibold text-oliveGreen mb-2'> by F. Scott Fitzgerald</h3>
+                        <div className='hidden lg:block lg:w-5/12 bg-royalBlue text-white p-7 rounded-xl '>
+                            <h1 className='text-center font-bold text-white my-3 text-2xl'>"The Great Gatsby"  </h1>
+                            <h3 className='text-lg font-semibold text-white mb-2'> by F. Scott Fitzgerald</h3>
                             <p>Genre: Classic, Literary Fiction <br />
                                 Why: A timeless exploration of the American Dream and the decadence of the Jazz Age, filled with rich symbolism and memorable characters.</p>
                         </div>
@@ -78,9 +78,9 @@ export default function App() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='flex flex-row-reverse justify-between items-center mx-2 lg:mx-14 gap-x-2'>
-                        <div className='w-5/12 bg-white p-7 rounded-xl hidden md:block '>
-                            <h1 className='text-center font-bold text-oliveGreen my-3 text-2xl'>"The Shadow of the Wind" </h1>
-                            <h3 className='text-lg font-semibold text-oliveGreen mb-2'>by Carlos Ruiz Zafón</h3>
+                        <div className='w-5/12 bg-royalBlue text-white p-7 rounded-xl hidden md:block '>
+                            <h1 className='text-center font-bold text-white my-3 text-2xl'>"The Shadow of the Wind" </h1>
+                            <h3 className='text-lg font-semibold text-white mb-2'>by Carlos Ruiz Zafón</h3>
                             <p>Genre: Mystery, Historical Fiction <br />
                                 Why: A beautifully written and engaging mystery set in post-war Barcelona, blending elements of history, love, and literature.</p>
                         </div>
@@ -98,9 +98,9 @@ export default function App() {
 
                 <SwiperSlide>
                     <div className='flex justify-between items-center mx-2 lg:mx-14 gap-x-2'>
-                        <div className='w-5/12 bg-white p-7 rounded-xl hidden md:block'>
-                            <h1 className='text-center font-bold text-oliveGreen my-3 text-2xl'> "The Kite Runner"  </h1>
-                            <h3 className='text-lg font-semibold text-oliveGreen mb-2'> by Khaled Hosseini</h3>
+                        <div className='w-5/12 bg-royalBlue text-white p-7 rounded-xl hidden md:block'>
+                            <h1 className='text-center font-bold text-white my-3 text-2xl'> "The Kite Runner"  </h1>
+                            <h3 className='text-lg font-semibold text-white mb-2'> by Khaled Hosseini</h3>
                             <p>Genre: Historical Fiction, Drama <br />
                                 Why: A powerful and emotionally charged story set in Afghanistan, exploring themes of friendship, betrayal, and redemption against the backdrop of historical events.</p>
                         </div>
@@ -117,9 +117,9 @@ export default function App() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='flex flex-row-reverse justify-between items-center mx-2 lg:mx-14 gap-x-2'>
-                        <div className='hidden lg:block w-5/12 bg-white p-7 rounded-xl '>
-                            <h1 className='text-center font-bold text-oliveGreen my-3 text-2xl'>"Educated" </h1>
-                            <h3 className='text-lg font-semibold text-oliveGreen mb-2'> by Tara Westover</h3>
+                        <div className='hidden lg:block w-5/12 bg-royalBlue text-white p-7 rounded-xl '>
+                            <h1 className='text-center font-bold text-white my-3 text-2xl'>"Educated" </h1>
+                            <h3 className='text-lg font-semibold text-white mb-2'> by Tara Westover</h3>
                             <p>Genre: Memoir <br />
                                 Why: A compelling memoir about a woman who grows up in a strict and abusive household in rural Idaho but eventually escapes to learn about the wider world through education.</p>
                         </div>
