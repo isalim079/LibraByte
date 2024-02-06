@@ -116,19 +116,27 @@ const AdminProfileDash = () => {
                                     onClick={() => handleBorrowStatus(borrow)}
                                 >
                                     {borrow?.borrow_status === false ? (
-                                        <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer underline">
                                             <FaClock /> Pending
                                         </span>
                                     ) : (
-                                        <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer underline">
                                             <IoIosCheckmarkCircle /> Approved
                                         </span>
                                     )}
                                 </td>
                                 <th>
-                                    <button className="btn btn-ghost btn-xs">
-                                        details
-                                    </button>
+                                  
+                                    {borrow?.delivered_status === false ? (
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer underline">
+                                            <FaClock /> Pending
+                                        </span>
+                                    ) : (
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer underline">
+                                            <IoIosCheckmarkCircle /> Delivered
+                                        </span>
+                                    )}
+                                   
                                 </th>
                             </tr>
                         ))}

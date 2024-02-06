@@ -16,7 +16,7 @@ const useFindUser = () => {
             const result = await axiosPublic.get("/users/v1");
             const users = result.data;
 
-            const findUser = users.find((users) => users.email === user.email);
+            const findUser = await users.find((users) => users.email === user.email);
 
             return findUser;
         },

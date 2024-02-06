@@ -15,6 +15,7 @@ const ProfileDashBoard2 = () => {
     const { user } = useContext(AuthContext);
 
     const [findUser] = useFindUser();
+    // console.log(findUser?.role);
 
     return (
         <div>
