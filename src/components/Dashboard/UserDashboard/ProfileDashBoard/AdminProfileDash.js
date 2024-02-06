@@ -69,7 +69,7 @@ const AdminProfileDash = () => {
                             <th>User Info</th>
                             <th>Pickup Date</th>
                             <th>Borrow Status</th>
-                            <th></th>
+                            <th>Delivery Status</th>
                         </tr>
                     </thead>
                     <tbody>

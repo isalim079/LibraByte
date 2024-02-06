@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import libraByte from "../../../../assets/logo/LibraByte.png";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import { PiUserCirclePlusDuotone } from "react-icons/pi";
 import { IoDiamond } from "react-icons/io5";
@@ -18,7 +18,7 @@ const ProfileDashBoard2 = () => {
 
     return (
         <div>
-            {findUser.role === "admin" ? (
+            {findUser?.role === "admin" ? (
                 <AdminProfileDash />
             ) : (
                 <div className="font-serif ">
