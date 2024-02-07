@@ -81,10 +81,10 @@ const Recommended = () => {
                                 className="w-80 h-[260px] rounded-t-lg px-4 pt-6"
                                 src={book.image}
                             />
-                             <div className="relative hidden group-hover:block">
+                             <div className="relative hidden group-hover:block ">
                              <span 
                                 onClick={() => handleHeartClick(book.id)}
-                                className=" opacity-100 transition-opacity duration-300 delay-1000 ease-in-out absolute -top-[240px] right-6 text-2xl text-white font-bold cursor-pointer"
+                                className="  absolute -top-[240px] right-6 text-2xl text-white font-bold cursor-pointer"
                             >
                                 {likedBooks.includes(book.id) ? <FaHeart /> : <FaRegHeart />}
                             </span>

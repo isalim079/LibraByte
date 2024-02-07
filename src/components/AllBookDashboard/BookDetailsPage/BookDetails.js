@@ -11,14 +11,18 @@ import { useForm } from "react-hook-form"
 import { FaBusinessTime } from "react-icons/fa";
 import { AuthContext } from '@/app/Context/AuthProvider';
 import toast from 'react-hot-toast';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 
 
 const BookDetails = ({params}) => {
-
+      
     const { register, handleSubmit } = useForm()
     const [openModal, setOpenModal] = useState(false);
     const {user} =useContext(AuthContext);
+    const router = useRouter();
+
 
   
     // console.log(params.bookDetails);               // receive data by params
@@ -40,6 +44,12 @@ const BookDetails = ({params}) => {
     // console.log(bookData.name);
     const onSubmit = async (data) => 
     {
+
+        if (!user) {
+            // If user is not authenticated, redirect to login page
+            router.push('/login');
+            return;
+        }
         console.log(data);
         const bookInfo = {
                 
@@ -50,11 +60,20 @@ const BookDetails = ({params}) => {
             borrower_name:user?.displayName
 
         }
-        const BookResponse = await axiosPublic.post('/addborrow/v1', bookInfo);
+        const BookResponse = await axios.post('http://localhost:5000/addborrow/v1', bookInfo);
         console.log(BookResponse.data)
         if(BookResponse.data._id)
         {
             toast.success(`Your book are in queue`);
+        }
+        else if(BookResponse.data.error === "Product already exists")
+        {
+            toast.error(`Book is already in queue`);
+
+        }
+        else{
+            toast.loading('Waiting...');
+
         }
     }
 
