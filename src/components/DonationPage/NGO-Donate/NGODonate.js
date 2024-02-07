@@ -10,6 +10,10 @@ const NGODonate = () => {
 
     const { user } = useContext(AuthContext);
 
+    // image hosting api
+    const image_hosting_key = "a4ccb3a63f667b950886af818162e9e1";
+    const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+
 
 
     const handleSubmit = e => {
@@ -19,14 +23,14 @@ const NGODonate = () => {
             bookname: form.bookname.value,
             author: form.author.value,
             description: form.description.value,
-            condition:form.condition.value,
-            category:form.category.value,
-            name:form.name.value,
-            email:form.email.value,
-            note:form.note.value,
-            photo:form.photo.value
+            condition: form.condition.value,
+            category: form.category.value,
+            name: form.name.value,
+            email: form.email.value,
+            note: form.note.value,
+            photo: form.photo.value
 
-            // Add more fields as needed
+
         };
         console.log(bookDetails);
     }
@@ -110,7 +114,9 @@ const NGODonate = () => {
                 </div>
 
 
-                <button className='bg-oliveGreen text-white px-4 py-2 rounded-md' type="submit">Submit</button>
+                <div className="flex justify-center">
+                    <button className='bg-oliveGreen text-white px-16 py-2 rounded-md my-5 flex justify-center' type="submit">Submit</button>
+                </div>
             </form>
         </div>
     );
