@@ -5,7 +5,7 @@ const Categories = () => {
                 <h2 className="text-2xl font-semibold text-slate-400">
                     Categories
                 </h2>
-                <div className="border-2 border-slate-400 w-32 mt-1 mb-5"></div>
+                <div className="border-2 border-customYellow w-32 mt-1 mb-5"></div>
             </div>
             <div className="list-none">
 

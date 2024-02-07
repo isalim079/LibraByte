@@ -9,7 +9,7 @@ const RecommendBooks = () => {
                 <h3 className="text-2xl font-bold text-slate-200">
                     Recommended for you!
                 </h3>
-                <div className="border-2 border-slate-200 md:w-[272px] mt-1 mb-5"></div>
+                <div className="border-2 border-customYellow md:w-[272px] mt-1 mb-5"></div>
             </div>
 
             <div>
