@@ -46,14 +46,14 @@ const Recommended = () => {
 
 
     return (
-        <div className="bg-lightWhite rounded-md drop-shadow-lg py-8 px-4 w-auto h-[400px] overflow-y-auto  md:h-auto ">
+        <div className="bg-lightBtn bg-bgTexture rounded-md drop-shadow-lg py-8 px-4 w-auto h-[400px] overflow-y-auto  md:h-auto ">
             <div className="flex flex-col lg:flex-row justify-center md:justify-between  items-center  px-0 lg:px-3">
-                <h2 className="text-lg lg:text-2xl font-semibold">
+                <h2 className="text-lg lg:text-2xl font-semibold text-white">
                     Recommended
                 </h2>
                 {!showAll && books.length > initialDisplayCount && (
                     <button
-                        className="btn mr-0 mb-2 md:mr-3 bg-[#333D2E] text-white"
+                        className="btn mr-0 mb-2 md:mr-3 bg-royalBlue border-none text-white"
                         onClick={handleSeeAllClick}
                     >
                         See More
@@ -61,20 +61,20 @@ const Recommended = () => {
                 )}
                 {showAll && (
                     <button
-                        className="btn mr-0 mb-2 md:mr-3 bg-[#333D2E] text-white"
+                        className="btn mr-0 mb-2 md:mr-3 bg-royalBlue border-none text-white"
                         onClick={handleSeeLessClick}
                     >
                         See Less
                     </button>
                 )}
             </div>
-            <div className="grid justify-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 py-2 px-0 lg:px-8 gap-4">
+            <div className="grid justify-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 py-2 px-0 lg:px-8 gap-4 ">
                 {books
                     .slice(0, showAll ? books.length : initialDisplayCount)
                     .map((book) => (
                         <div
                             key={book.id}
-                            className="rounded-lg group max-w-[220px] md:w-[320px] shadow-xl space-y-4 mx-auto text-center"
+                            className="rounded-lg group max-w-[220px] md:w-[320px] space-y-4 mx-auto text-center bg-royalBlue shadow-customYellow/50 shadow-md"
                         >
                             <img
                                 alt="Product Image"
@@ -91,14 +91,14 @@ const Recommended = () => {
                              </div>
                             <div className="px-4 pb-6">
                                 <div className="h-28 flex flex-col items-center">
-                                    <h1 className="text-lg font-semibold">
+                                    <h1 className="text-lg font-semibold text-slate-200">
                                         {book?.name}
                                     </h1>
-                                    <p className="text-sm py-1 text-gray-500 dark:text-gray-400">
+                                    <p className="text-sm py-1 text-slate-200 dark:text-white">
                                         {book?.author}
                                     </p>
                                     <Rating
-                                        className="text-oliveGreen"
+                                        className="text-customYellow"
                                         initialRating={book.rating}
                                         emptySymbol={
                                             <MdOutlineStarBorder className="text-2xl" />
@@ -109,7 +109,7 @@ const Recommended = () => {
                                         readonly
                                     />
                                 </div>
-                                <button className="w-full bg-oliveGreen text-lightWhite py-2 mt-3 rounded-md">
+                                <button className="w-full bg-lightBtn text-white hover:bg-darkBtn py-2 mt-3 rounded-md">
                                     <Link href={`/bookDetails/${book?._id}`}>
                                         Details
                                     </Link>
