@@ -12,6 +12,7 @@ module.exports = {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+                    "bgTexture": "url('/loginBg.png')"
 
               
             },
@@ -25,6 +26,10 @@ module.exports = {
                 textLightWhite: "#878783",
                 darkLightWhite: "#CDCCC3",
                 darkOliveGreen: "#101B0C",
+                royalBlue: "#0C1335",
+                lightBtn: "#339586",
+                darkBtn: "#207468",
+                customYellow: "#ECC21C",
             },
             
         },

@@ -53,7 +53,7 @@ const TopBanner = () => {
 
 
     return (
-        <div className="mb-16 md:mb-14">
+        <div className="mb-16 md:mb-14 mt-12">
             <div className="relative">
                 <div
                     style={backgroundImageStyle}

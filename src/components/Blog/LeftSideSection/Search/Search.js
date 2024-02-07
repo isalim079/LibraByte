@@ -10,12 +10,12 @@ const Search = () => {
                         name="search"
                         id=""
                         placeholder="Search"
-                        className="h-12  pl-4 w-full border rounded-md focus:outline-none focus:border-2 focus:border-darkLightWhite bg-lightWhite drop-shadow-lg"
+                        className="h-12  pl-4 w-full border rounded-md focus:outline-none focus:border-2 focus:border-customYellow bg-royalBlue drop-shadow-lg text-white"
                     />
                 </div>
                 <div className="absolute top-3 right-5">
                     <button className="">
-                        <CgSearch className="text-2xl text-slate-400 hover:text-oliveGreen" />
+                        <CgSearch className="text-2xl text-slate-400 hover:text-white" />
                     </button>
                 </div>
             </div>

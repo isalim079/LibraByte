@@ -45,12 +45,12 @@ const MobileNavigation = () => {
                                 onClick={() => setOpen(!open)}
                             >
                                 {open ? (
-                                    <FaAlignRight className="text-2xl text-oliveGreen" />
+                                    <FaAlignRight className="text-2xl text-white" />
                                 ) : (
-                                    <FaAlignLeft className="text-2xl text-oliveGreen" />
+                                    <FaAlignLeft className="text-2xl text-white" />
                                 )}
                             </summary>
-                            <ul className="p-2 shadow menu dropdown-content z-[1] bg-lightWhite rounded-box w-48">
+                            <ul className="p-2 shadow menu dropdown-content z-[1] bg-royalBlue rounded-box w-48 text-white">
                                 {navLinks.map((menu, index) => (
                                     <li key={index} className=" list-none">
                                         <a
@@ -89,7 +89,10 @@ const MobileNavigation = () => {
                     {/* middle side */}
 
                     <div>
-                        <Image src={logo} width={80} height={80} alt="logo" />
+                        {/* <Image src={logo} width={80} height={80} alt="logo" /> */}
+                        <p className="text-white text-xl">
+                            Libra<span className="text-[#ECC21C]">Byte</span>
+                        </p>
                     </div>
 
                     {/* right side */}
