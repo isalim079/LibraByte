@@ -4,12 +4,12 @@ import Marquee from "react-fast-marquee";
 
 const RecommendBooks = () => {
     return (
-        <div className="mt-8 bg-lightWhite drop-shadow-lg p-8 rounded-md">
+        <div className="mt-8 bg-royalBlue drop-shadow-lg p-8 rounded-md">
             <div>
-                <h3 className="text-2xl font-bold text-oliveGreen">
+                <h3 className="text-2xl font-bold text-slate-200">
                     Recommended for you!
                 </h3>
-                <div className="border-2 border-oliveGreen md:w-[272px] mt-1 mb-5"></div>
+                <div className="border-2 border-slate-200 md:w-[272px] mt-1 mb-5"></div>
             </div>
 
             <div>
@@ -23,7 +23,7 @@ const RecommendBooks = () => {
                             alt="image"
                         ></Image>
                         <div className="mt-4">
-                            <button className="text-lightWhite bg-oliveGreen w-full py-2 rounded-md">
+                            <button className="text-white bg-lightBtn hover:bg-darkBtn w-full py-2 rounded-md">
                                 Details
                             </button>
                         </div>
@@ -37,7 +37,7 @@ const RecommendBooks = () => {
                             alt="image"
                         ></Image>
                         <div className="mt-4">
-                            <button className="text-lightWhite bg-oliveGreen w-full py-2 rounded-md">
+                            <button className="text-white bg-lightBtn hover:bg-darkBtn w-full py-2 rounded-md">
                                 Details
                             </button>
                         </div>
@@ -51,7 +51,7 @@ const RecommendBooks = () => {
                             alt="image"
                         ></Image>
                         <div className="mt-4">
-                            <button className="text-lightWhite bg-oliveGreen w-full py-2 rounded-md">
+                            <button className="text-white bg-lightBtn hover:bg-darkBtn w-full py-2 rounded-md">
                                 Details
                             </button>
                         </div>
@@ -65,7 +65,7 @@ const RecommendBooks = () => {
                             alt="image"
                         ></Image>
                         <div className="mt-4">
-                            <button className="text-lightWhite bg-oliveGreen w-full py-2 rounded-md">
+                            <button className="text-white bg-lightBtn hover:bg-darkBtn w-full py-2 rounded-md">
                                 Details
                             </button>
                         </div>
