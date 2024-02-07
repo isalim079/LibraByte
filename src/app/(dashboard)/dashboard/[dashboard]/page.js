@@ -4,7 +4,7 @@ import React from 'react';
 const DashBoardPage = ({params}) => {
     // console.log(params);
     return (
-        <div>
+        <div >
             <ApplicationStatus params = {params} />
         </div>
     );

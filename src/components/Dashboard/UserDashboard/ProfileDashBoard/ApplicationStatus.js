@@ -34,10 +34,10 @@ const ApplicationStatus = ({params}) => {
 // console.log(findDetails?.borrow_status);
 
     return (
-        <div>
-            <div className="my-16 mx-20 bg-lightWhite p-14 shadow-lg">
+        <div className=" flex justify-center items-center h-screen bg-bgTexture ">
+            <div className="h-[380px] rounded-md mx-20 bg-royalBlue bg-bgTexture p-14 shadow-lg">
                         <div>
-                            <h3 className="text-2xl font-sans font-bold mb-4 ml-[52px]">
+                            <h3 className="text-2xl font-sans font-bold mb-4 ml-[52px] text-white">
                                 My Application Status
                             </h3>
                         </div>
@@ -60,7 +60,7 @@ const ApplicationStatus = ({params}) => {
                                 </ul>
                             </div>
 
-                            <div className="space-y-5">
+                            <div className="space-y-5 text-white">
                                 {/* 1st status */}
 
                                 <p className="text-lg font-sans">
