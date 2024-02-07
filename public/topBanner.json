@@ -1,5 +1,12 @@
 [
     {
+        "bookName": "Where the dead wait",
+        "image": "https://i.ibb.co/x56XSBb/Dead.jpg",
+        "bgImage": "https://i.ibb.co/JdshZj2/deadBlur.png",
+        "bookSubtitle": "Harper Lee's Pulitzer Prize-winning Novel",
+        "description": "To Kill a Mockingbird is a classic novel set in the American South during the 1930s. It explores themes of racial injustice and moral growth through the eyes of a young girl, Scout Finch, and her father, lawyer Atticus Finch."
+    },
+    {
         "bookName": "The dragons",
         "image": "https://i.ibb.co/VLNnRmP/Dragons.jpg",
         "bgImage": "https://i.ibb.co/KGsQNF9/Dragons-Blur.png",
@@ -7,13 +14,6 @@
         "description": "Dragon is a dystopian novel by George Orwell that explores the consequences of unchecked government power, surveillance, and the manipulation of truth. It remains a classic warning against totalitarianism and censorship."
     },
 
-    {
-        "bookName": "Where the dead wait",
-        "image": "https://i.ibb.co/x56XSBb/Dead.jpg",
-        "bgImage": "https://i.ibb.co/JdshZj2/deadBlur.png",
-        "bookSubtitle": "Harper Lee's Pulitzer Prize-winning Novel",
-        "description": "To Kill a Mockingbird is a classic novel set in the American South during the 1930s. It explores themes of racial injustice and moral growth through the eyes of a young girl, Scout Finch, and her father, lawyer Atticus Finch."
-    },
     {
         "bookName": "Familia",
         "image": "https://i.ibb.co/DfTQDLF/Familia.jpg",
