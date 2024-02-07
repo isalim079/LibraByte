@@ -11,7 +11,7 @@ const Blog = () => {
             <div className="max-w-screen-xl mx-auto pt-24 md:pt-28 mb-10 overflow-x-hidden">
             {/* Full blog container */}
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 ">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 ">
                 {/* Left side section */}
 
                 <div className="p-3 lg:p-0">
