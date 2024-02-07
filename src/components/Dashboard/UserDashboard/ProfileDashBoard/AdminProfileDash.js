@@ -12,6 +12,7 @@ const AdminProfileDash = () => {
     const [borrowBooksData, refetch] = useBorrowBook();
     // console.log(borrowBooksData);
 
+    /* handle borrow status */
     const handleBorrowStatus = (borrow) => {
         Swal.fire({
             title: "Do you want to approve?",
@@ -26,22 +27,59 @@ const AdminProfileDash = () => {
             if (result.isConfirmed) {
                 /* patch borrow status */
 
-                 await axiosPublic.patch(
+                const res = await axiosPublic.patch(
                     `/addborrow/v1/${borrow._id}`,
                     {
                         borrow_status: true,
                     }
                 );
-                // console.log(result.data);
-
-                refetch();
-                Swal.fire("Approved!", "", "success");
+                // console.log(res);
+                if (res.status === 200) {
+                    refetch();
+                    Swal.fire("Approved!", "", "success");
+                }
 
                 // console.log(borrow._id);
             } else if (result.isDenied) {
                 Swal.fire("Cancelled", "", "info");
             }
         });
+    };
+
+    /* handle delivered status */
+    const handleDeliveredStatus = (borrow) => {
+        Swal.fire({
+            title: "Do you want to approve?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonColor: "#333D2E",
+            cancelButtonColor: "#878783",
+            confirmButtonText: "Approve",
+            denyButtonText: `Don't approve`,
+        }).then(async (result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                /* patch borrow status */
+
+                const res = await axiosPublic.patch(
+                    `/updateDeliver/v1/${borrow._id}`,
+                    {
+                        delivered_status: true,
+                    }
+                );
+                // console.log(res);
+
+                if (res.status === 200) {
+                    refetch();
+                    Swal.fire("Delivered!", "", "success");
+                }
+
+                // console.log(borrow._id);
+            } else if (result.isDenied) {
+                Swal.fire("Cancelled", "", "info");
+            }
+        });
+        // console.log(borrow);
     };
 
     return (
@@ -69,7 +107,7 @@ const AdminProfileDash = () => {
                             <th>User Info</th>
                             <th>Pickup Date</th>
                             <th>Borrow Status</th>
-                            <th></th>
+                            <th>Delivery Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,19 +154,29 @@ const AdminProfileDash = () => {
                                     onClick={() => handleBorrowStatus(borrow)}
                                 >
                                     {borrow?.borrow_status === false ? (
-                                        <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer underline">
                                             <FaClock /> Pending
                                         </span>
                                     ) : (
-                                        <span className="flex items-center justify-start gap-2 btn btn-ghost">
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer underline">
                                             <IoIosCheckmarkCircle /> Approved
                                         </span>
                                     )}
                                 </td>
-                                <th>
-                                    <button className="btn btn-ghost btn-xs">
-                                        details
-                                    </button>
+                                <th
+                                    onClick={() =>
+                                        handleDeliveredStatus(borrow)
+                                    }
+                                >
+                                    {borrow?.delivered_status === false ? (
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer underline">
+                                            <FaClock /> Pending
+                                        </span>
+                                    ) : (
+                                        <span className="flex items-center justify-start gap-2 cursor-pointer underline">
+                                            <IoIosCheckmarkCircle /> Delivered
+                                        </span>
+                                    )}
                                 </th>
                             </tr>
                         ))}

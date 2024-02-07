@@ -7,7 +7,8 @@ const DashboardLayout = ({ children }) => {
             <div className='grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-1'>
 
                 <div className='md:col-span-3 lg:col-span-2 bg-lightWhite'>
-                    <LeftSideMenu></LeftSideMenu>
+                    <div className="fixed"><LeftSideMenu></LeftSideMenu></div>
+                    <div></div>
                 </div>
 
                 <div className='md:col-span-9 lg:col-span-10 px-2'>

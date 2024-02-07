@@ -4,7 +4,7 @@ const Vision = () => {
     return (
         <div className="overflow-hidden">
              <header style={{ backgroundImage: "url('https://i.ibb.co/cTbbHH2/textbooks-lying-near-bookcase.jpg')" }}
-        className="flex flex-col items-center justify-center min-h-[600px]   mb-12 bg-fixed bg-center bg-cover"
+        className="flex flex-col items-center justify-center min-h-[600px]   pb-12 bg-fixed bg-center bg-cover"
       >
         <h2 className="text-4xl text-white font-bold mb-2 mt-4 lg:mt-0">Our Vision</h2>
         <p className="text-sm text-white text-center mb-3 p-2 md:p-0 ">Our goal is to create an efficient and user-friendly Library Management System that empowers <br/> librarians with advanced tools for cataloging, organizing, and tracking library resources. </p>
