@@ -69,7 +69,7 @@ const DahsBoardSignOut = () => {
                 ) : (
                     <div>
                         <Link href={"/login"}>
-                            <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md hidden lg:flex">
+                            <button className="hover:text-royalBlue text-white py-2 px-3  rounded-md hidden lg:flex">
                                 Sign In
                             </button>
                         </Link>

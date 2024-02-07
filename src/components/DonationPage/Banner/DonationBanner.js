@@ -9,7 +9,7 @@ const DonationBanner = () => {
 
     return (
         <div>
-            <div className='flex flex-col md:flex-row justify-between items-center 2xl:mx-[155px] xl:mx-[140px] lg:mx-[110px] md:mx-[80px] mx-10 my-10 lg:my-28 '>
+            <div className='flex flex-col md:flex-row justify-between items-center 2xl:mx-[155px] xl:mx-[140px] lg:mx-[110px] md:mx-[80px] mx-10 py-10 lg:py-28 bg-bgTexture'>
                 <div className='w-full md:w-1/2 '>
                     <h1 className='text-5xl font-bold '>Donate and sell your <br /></h1>
                     <h1 className=' text-5xl font-bold  mt-2 lg:mt-5'> Old books</h1>
