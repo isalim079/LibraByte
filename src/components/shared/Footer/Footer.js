@@ -8,8 +8,8 @@ import { CiLinkedin } from "react-icons/ci";
 const Footer = () => {
     return (
         <div>
-            <footer>
-                <div className="w-full h-[450px] bg-[#333D2E] flex flex-col md:flex-row justify-center md:justify-around md:items-center gap-3 md:gap-14 lg:gap-20 lg:px-[140px] md:px-[80px] px-8">
+            <footer className="bg-royalBlue">
+                <div className="w-full h-[450px] bg-bgTexture flex flex-col md:flex-row justify-center md:justify-around md:items-center gap-3 md:gap-14 lg:gap-20 lg:px-[140px] md:px-[80px] px-8">
                     <div>
                         <h3 ><span className="text-orange-300 text-3xl font-normal ">Libra</span><span className="text-stone-50 text-3xl font-bold ">Byte</span></h3>
                         <p className="w-[180px] opacity-70 text-stone-50 text-md leading-[27px] ">123 Main Street  Cityville, State 12345 Countryland</p>
