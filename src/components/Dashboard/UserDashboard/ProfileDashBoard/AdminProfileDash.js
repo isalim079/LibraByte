@@ -93,13 +93,18 @@ const AdminProfileDash = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     /* how many content you want to show in one page */
-    const [borrowInfoPerPage] = useState(5);
+    const [borrowInfoPerPage] = useState(10);
 
     // console.log(currentPage);
 
+    /* total data */
     const indexOfLastBorrowBooksData = currentPage * borrowInfoPerPage;
+
+    /* data from where it will be shown. page 2 will exclude 1st 10 data, page 3 will exclude 1st 20 data */
     const indexOfFirstBorrowBooksData =
         indexOfLastBorrowBooksData - borrowInfoPerPage;
+
+        /* splice by excluding data */
     const currentBorrowBooksData = borrowBooksData.slice(
         indexOfFirstBorrowBooksData,
         indexOfLastBorrowBooksData
@@ -109,7 +114,7 @@ const AdminProfileDash = () => {
 
     /* divide numbers will be how many pages you want to show in one page */
 
-    for (let i = 1; i <= Math.ceil(borrowBooksData.length / 5); i++) {
+    for (let i = 1; i <= Math.ceil(borrowBooksData.length / 10); i++) {
         pageNumbers.push(i);
     }
 
@@ -163,7 +168,7 @@ const AdminProfileDash = () => {
                     </thead>
                     <tbody>
                         {/* if borrowBooksData length is greater than 5, then it will map currentBooksData, otherwise it will map borrow books data */}
-                        {(borrowBooksData.length > 5
+                        {(borrowBooksData.length > 10
                             ? currentBorrowBooksData
                             : borrowBooksData
                         ).map((borrow) => (
@@ -243,7 +248,7 @@ const AdminProfileDash = () => {
 
             {/* If borrow books data is more than 5, then data will be shown. otherwise not. */}
 
-            {borrowBooksData.length > 5 ? (
+            {borrowBooksData.length > 10 ? (
                 <div>
                     <ul className="flex items-center gap-10 text-xl font-semibold justify-center mt-10">
                         {/* previous button */}
