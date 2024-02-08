@@ -12,32 +12,39 @@ const NavigationRoute = () => {
     // console.log(active);
 
     useEffect(() => {
-        setActive(pathName)
-    }, [])
+        setActive(pathName);
+    }, []);
 
-    const [hoveredLink, setHoveredLink] = useState(null)
+    const [hoveredLink, setHoveredLink] = useState(null);
 
     return (
         <div>
-            <div className="flex items-center relative space-x-2">
+            <div className="flex items-center relative space-x-2 h-20">
                 {navLinks.map((menu, index) => (
                     <li key={index} className="w-16 list-none">
                         <Link
-                            className={`flex flex-col items-center text-center pt-6 hover:shadow-md hover:rounded-md `}
+                            className={`flex flex-col items-center text-center pt-6 hover:shadow-md hover:shadow-[#ECC21C] hover:rounded-md ${
+                                active === menu.link
+                                    ? `shadow-md shadow-[#ECC21C] rounded-md`
+                                    : ``
+                            }`}
                             href={menu.link}
                             onClick={() => setActive(menu.link)}
                             onMouseEnter={() => setHoveredLink(menu.link)}
                             onMouseLeave={() => setHoveredLink(null)}
                         >
                             <span
-                                className={`text-2xl cursor-pointer duration-500 hover:-mt-3`}
+                                className={`text-2xl cursor-pointer duration-500 hover:-mt-3 text-white ${
+                                    active === menu.link ? `-mt-3` : ``
+                                }`}
                             >
                                 {menu?.icon}
                             </span>
                             <span
                                 className={`${
-                                    ( active === menu.link || hoveredLink === menu.link)
-                                        ? "translate-y-0 duration-500 opacity-100"
+                                    active === menu.link ||
+                                    hoveredLink === menu.link
+                                        ? "translate-y-0 duration-500 opacity-100 text-sm text-white pb-1"
                                         : "opacity-0 translate-y-10"
                                 }`}
                             >

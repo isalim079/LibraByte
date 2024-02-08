@@ -43,6 +43,8 @@
   height: 550px;
 }
 
+
+
 @media only screen and (max-width: 426px){
   .swiper-pagination-bullet {
     display: none;

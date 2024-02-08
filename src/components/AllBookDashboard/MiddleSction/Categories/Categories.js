@@ -91,7 +91,7 @@ const Categories = ({ params }) => {
                     <TabList className="grid grid-cols-3 lg:grid-cols-5 gap-4 text-sm">
                         <Tab
                             className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Mystery"
+                                selectedCategory === "Mystery" || initialIndex === 0
                                     ? "bg-[#476f32]"
                                     : ""
                             }`}
@@ -101,7 +101,7 @@ const Categories = ({ params }) => {
                         </Tab>
                         <Tab
                             className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Sci-Fi"
+                                selectedCategory === "Sci-Fi" || initialIndex === 1
                                     ? "bg-[#476f32]"
                                     : ""
                             }`}
@@ -111,7 +111,7 @@ const Categories = ({ params }) => {
                         </Tab>
                         <Tab
                             className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Fantasy"
+                                selectedCategory === "Fantasy" || initialIndex === 2
                                     ? "bg-[#476f32]"
                                     : ""
                             }`}
@@ -121,7 +121,7 @@ const Categories = ({ params }) => {
                         </Tab>
                         <Tab
                             className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Fiction"
+                                selectedCategory === "Fiction" || initialIndex === 3
                                     ? "bg-[#476f32]"
                                     : ""
                             }`}
@@ -131,7 +131,7 @@ const Categories = ({ params }) => {
                         </Tab>
                         <Tab
                             className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Self-Help"
+                                selectedCategory === "Self-Help" || initialIndex === 4
                                     ? "bg-[#476f32]"
                                     : ""
                             }`}

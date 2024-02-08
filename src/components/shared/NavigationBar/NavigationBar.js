@@ -9,36 +9,41 @@ import Link from "next/link";
 
 const NavigationBar = () => {
     return (
-        <div className="bg-lightWhite max-h-[74px]">
-            {/* Mobile nav */}
-            <MobileNavigation />
+        <div className=" max-h-[82px]">
+            <div className="bg-[#0C1335] shadow-lg fixed w-full z-50">
+            <div className="bg-bgTexture">
+                {/* Mobile nav */}
+                <MobileNavigation />
 
-            {/* Pc nav */}
-            <div className="lg:flex justify-between max-w-screen-xl mx-auto items-center hidden">
+                {/* Pc nav */}
+                <div className="lg:flex justify-between max-w-screen-xl mx-auto items-center hidden">
+                    {/* Logo */}
 
-                {/* Logo */}
-                
-                    <Link href={'/'}>
-                    <Image
-                        src={logo}
-                        height={100}
-                        width={100}
-                        alt="logo"
-                    ></Image>
+                    <Link href={"/"}>
+                        {/* <Image
+            src={logo}
+            height={100}
+            width={100}
+            alt="logo"
+        ></Image> */}
+                        <p className="text-white text-2xl">
+                            Libra<span className="text-[#ECC21C]">Byte</span>
+                        </p>
                     </Link>
-                
 
-                {/* Navigation */}
-                <div className="">
-                    <NavigationRoute />
-                </div>
+                    {/* Navigation */}
+                    <div className="">
+                        <NavigationRoute />
+                    </div>
 
-                {/* sign in button */}
+                    {/* sign in button */}
 
-                <div>
-                    <SignInOut />
+                    <div>
+                        <SignInOut />
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

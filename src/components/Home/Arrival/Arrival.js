@@ -6,23 +6,23 @@ import Link from "next/link";
 
 const Arrival = () => {
     return (
-        <div className="bg-lightWhite py-10 sm:py-20 px-4 sm:px-0">
+        <div className="bg-bgTexture py-10 sm:py-20 px-4 sm:px-0">
             <div className="max-w-screen-xl mx-auto">
             <div className=" flex justify-between flex-col md:flex-row items-center mb-10 ">
                     <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
                         New Arrival
                     </h1>
-                   <Link href="/allBooks"> <button className="flex bg-oliveGreen text-lightWhite px-4 py-2 rounded-md hover:bg-darkOliveGreen justify-between items-center gap-x-2 text-sm md:text-base">
+                   <Link href="/allBooks"> <button className="flex bg-lightBtn text-white px-4 py-2 rounded-md hover:bg-darkBtn justify-between items-center gap-x-2 text-sm md:text-base">
                         View All{" "}
                         <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
                     </button></Link>
                 </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-                <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-slate-100  shadow-xl">
-                    <figure className="px-6 pt-6 max-h-[350px] bg-lightWhite mx-5 mt-5 pb-6">
+                <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-lightBtn  shadow-xl">
+                    <figure className="px-6 pt-6 max-h-[350px] bg-darkBtn mx-5 mt-5 pb-6">
                         <img src="https://i.ibb.co/rZxh8bT/714-Exofe-KJL-AC-UF1000-1000-QL80.jpg" alt="Upcoming" className="rounded-xl max-h-[300px]" />
                     </figure>
-                    <div className="card-body text-[#333D2E]">
+                    <div className="card-body text-white">
                         <h2 className="card-title text-2xl lg:text-3xl ">A Game of Thrones</h2>
                         <p className="my-1 md:my-2 lg:my-4">CThe first book in the A Song of Ice and Fire series, a tale of power and intrigue. </p>
                         <div className="flex flex-row ">
@@ -41,8 +41,8 @@ const Arrival = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-[#333D2E] shadow-xl">
-                <figure className="px-6 pt-6 max-h-[350px] bg-slate-100 mx-5 mt-5 pb-6">
+                <div className="card md:w-72 lg:w-[350px] xl:w-96 bg-royalBlue shadow-xl">
+                <figure className="px-6 pt-6 max-h-[350px] bg-[#ECC21C] mx-5 mt-5 pb-6">
                         <img src="https://i.ibb.co/tpLyzm4/8bb699eb40d839446e354e6fef36bcc1.jpg" alt="Shoes" className="rounded-xl max-h-[300px]" />
                     </figure>
                     <div className="card-body text-[#FDFCF7]">
@@ -65,11 +65,11 @@ const Arrival = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card md:w-72 lg:w-80 xl:w-96 bg-white shadow-xl">
-                <figure className="px-6 pt-6 max-h-[350px] bg-lightWhite mx-5 mt-5 pb-6">
+                <div className="card md:w-72 lg:w-80 xl:w-96 bg-lightBtn shadow-xl">
+                <figure className="px-6 pt-6 max-h-[350px] bg-darkBtn mx-5 mt-5 pb-6">
                         <img src="https://i.ibb.co/BzJkQKM/TPON-Cover-LG.jpg" alt="Shoes" className="rounded-xl max-h-[300px]" />
                     </figure>
-                    <div className="card-body text-[#333D2E]">
+                    <div className="card-body text-white">
                         <h2 className="card-title text-2xl lg:text-3xl ">The Power of Now</h2>
                         <p className="my-1 md:my-2 lg:my-4">A spiritual guide to living in the present moment and finding peace and fulfillment.</p>
                         <div className="flex flex-row ">

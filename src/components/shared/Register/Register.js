@@ -11,6 +11,9 @@ import logo from "@/assets/logo/LibraByte.png";
 import Image from 'next/image';
 import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
 import RegisterLoading from './RegisterLoading';
+import animation from "../../../assets/animation/registerPageAnimation"
+import Lottie from 'lottie-react';
+import "./register.css"
 
 const Register = () => {
 
@@ -20,7 +23,7 @@ const Register = () => {
     const axiosPublic = useAxiosPublic();
 
 
-    const { registerUser, handleUpdateUser } = useContext(AuthContext)
+    const { registerUser, handleUpdateUser, path } = useContext(AuthContext)
 
     // import react hook form
     const {
@@ -72,7 +75,9 @@ const Register = () => {
                                     console.log(res)
                                     reset()
                                     toast.success("Register Successful")
-                                    router.push('/');
+                                    {
+                                        path ? router.push(path) : router.push('/')
+                                    }
                                 })
 
                         })
@@ -92,20 +97,25 @@ const Register = () => {
 
 
     return (
-        <section className="py-10  ">
-            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div className=" max-w-md mx-auto ">
-                    <div className="overflow-hidden  rounded-md shadow-md">
+        <div className='bg-lightBtn pt-20'>
+            <div id='regBg'>
+            <section className="py-10">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-row-reverse justify-around">
+                <div className=" max-w-md mx-auto">
+                    <div className="overflow-hidden  rounded-md shadow-md bg-royalBlue border-none border ">
                         <div className="px-4 py-6 sm:px-8 sm:py-7">
                             <div className=' flex items-center justify-center mb-3'>
-                                <Image src={logo} width={100} height={100} alt="logo" />
+                                {/* <Image src={logo} width={100} height={100} alt="logo" /> */}
+                                <p className="text-white text-2xl">
+                            Libra<span className="text-[#ECC21C]">Byte</span>
+                        </p>
                             </div>
-                            <h2 className="text-2xl font-bold text-center ">Welcome to LibraByte</h2>
-                            <p className="text-base  text-center text-gray-600 mt-2">Already have an account? <Link href={'/login'} className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline">Login here</Link></p>
+                            <h2 className="text-2xl font-bold text-center text-white">Welcome to LibraByte</h2>
+                            <p className="text-base  text-center text-white mt-2">Already have an account? <Link href={'/login'} className="font-medium text-customYellow transition-all duration-200  hover:underline">Login here</Link></p>
                             <form onSubmit={handleSubmit(onSubmit)} className='mt-8'>
                                 <div className="space-y-5">
                                     <div>
-                                        <label className="text-base font-medium text-gray-900"> First & Last name </label>
+                                        <label className="text-base font-medium text-white"> First & Last name </label>
                                         <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-600">
                                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                                 <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,14 +127,14 @@ const Register = () => {
                                                 {...register("name", { required: true })}
                                                 type="text"
                                                 placeholder="Enter your full name"
-                                                className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                                                className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-customYellow caret-customYellow"
                                             />
                                             {errors.name && <span className="text-red-600">Name is required</span>}
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label className="text-base font-medium text-gray-900"> Email address </label>
+                                        <label className="text-base font-medium text-white"> Email address </label>
                                         <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-600">
                                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                                 <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -136,14 +146,14 @@ const Register = () => {
                                                 type="email"
                                                 {...register("email", { required: true })}
                                                 placeholder="Enter email to get started"
-                                                className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                                                className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-customYellow caret-customYellow"
                                             />
                                             {errors.email && <span className="text-red-600">Email is required</span>}
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label className="text-base font-medium text-gray-900"> Password </label>
+                                        <label className="text-base font-medium text-white"> Password </label>
                                         <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-600">
                                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                                 <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -163,7 +173,7 @@ const Register = () => {
                                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                                                 })}
                                                 placeholder="Enter your password"
-                                                className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                                                className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-customYellow caret-customYellow"
                                             />
                                             {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                                             {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
@@ -176,7 +186,7 @@ const Register = () => {
 
 
                                     <div>
-                                        <label className="text-base font-medium text-gray-900"> Your image </label>
+                                        <label className="text-base font-medium text-white"> Your image </label>
                                         <input
                                             {...register('image', { required: true })}
                                             type="file"
@@ -186,7 +196,7 @@ const Register = () => {
                                     </div>
 
                                     <div>
-                                        <button type="submit" className="inline-flex items-center justify-center w-full py-4 text-white font-semibold  transition-all duration-200 bg-oliveGreen b  rounded-md   ">
+                                        <button type="submit" className="inline-flex items-center justify-center w-full py-4 text-white font-semibold  transition-all duration-200 bg-lightBtn hover:bg-darkBtn  rounded-md   ">
                                             {loading ? <RegisterLoading /> : "Create Account"}
                                         </button>
                                     </div>
@@ -197,8 +207,15 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Animation */}
+                <div className='hidden md:flex '>
+                    <Lottie className='w-[420px] mb-20' animationData={animation} loop={true}/>
+                </div>
             </div>
         </section>
+            </div>
+        </div>
     );
 };
 

@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import BannerBody from "./BannerBody";
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
 
-
 const TopBanner = () => {
     const [topBanner, setTopBanner] = useState([]);
     const [currentCardImage, setCurrentCardImage] = useState(0);
@@ -50,11 +49,11 @@ const TopBanner = () => {
         position: "absolute",
         width: "100%",
         backgroundColor: "rgba(0,0,0,0.9)",
-
     };
 
+
     return (
-        <div className="mb-16 md:mb-14">
+        <div className="mb-16 md:mb-14 mt-12">
             <div className="relative">
                 <div
                     style={backgroundImageStyle}
