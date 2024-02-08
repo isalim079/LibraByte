@@ -10,18 +10,18 @@ const CategoryTab = ({ category, showAll, initialDisplayCount, books }) => {
                 .map((book) => (
                     <div key={book._id}>
                         <Link href={`/bookDetails/${book?._id}`}>
-                            <div className="bg-lightWhite shadow-md rounded-md mx-auto h-[380px] flex flex-col items-center">
+                            <div className="bg-lightBtn bg-bgTexture text-white shadow-md rounded-md mx-auto h-[380px] flex flex-col items-center">
                                 <Image
-                                    className="w-[175px] h-[250px] rounded-t-md"
+                                    className="w-[175px] h-[300px] rounded-t-md pt-7"
                                     src={book.image}
                                     width={150}
                                     height={200}
                                     alt="book_image"
                                 />
-                                <h3 className="text-lg font-semibold px-2 text-center">
+                                <h3 className="text-lg font-semibold px-2 text-center mt-2">
                                     {book?.name}
                                 </h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400 px-2">
+                                <p className="text-sm text-white dark:text-gray-400 px-2">
                                     {book?.author}
                                 </p>
                             </div>

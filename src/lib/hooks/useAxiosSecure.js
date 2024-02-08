@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://librabyte-server-h5fzbgdny-isalim079.vercel.app',
 
 })
 
