@@ -102,12 +102,12 @@ const SignInOut = () => {
                 ) : (
                     <div>
                         <Link href={"/login"}>
-                            <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md hidden lg:flex">
+                            <button className="bg-lightBtn hover:bg-darkBtn text-white py-2 px-3 text-sm rounded-md hidden lg:flex">
                                 Sign In
                             </button>
                         </Link>
                         <Link href={"/login"}>
-                            <button className="text-oliveGreen text-2xl flex justify-center items-center rounded-md lg:hidden">
+                            <button className="text-white text-2xl flex justify-center items-center rounded-md lg:hidden">
                                 <CiLogin />
                             </button>
                         </Link>
