@@ -10,9 +10,9 @@ const PostField = () => {
 
 
     return (
-        <div className="p-8 bg-lightWhite drop-shadow-lg rounded-md">
+        <div className="p-8 bg-lightBtn drop-shadow-lg rounded-md">
             <div>
-                <h3 className="mb-1 font-semibold text-oliveGreen">
+                <h3 className="mb-1 font-semibold text-white">
                     Hey,{" "}
                     <span className="">
                         {user?.displayName ? user?.displayName : "buddy"}...!

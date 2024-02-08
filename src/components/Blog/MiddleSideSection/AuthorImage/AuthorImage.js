@@ -16,12 +16,12 @@ import { EffectFlip, Pagination, Navigation } from "swiper/modules";
 
 const AuthorImage = () => {
     return (
-        <div className="mt-8 p-8 bg-lightWhite rounded-md drop-shadow-lg max-h-[300px]">
+        <div className="mt-8 p-8 bg-royalBlue rounded-md drop-shadow-lg max-h-[300px]">
             <div>
-                <h3 className="text-2xl font-semibold text-oliveGreen">
+                <h3 className="text-2xl font-semibold text-slate-200">
                     Contact
                 </h3>
-                <div className="border-2 border-oliveGreen w-[95px] mt-1 mb-5"></div>
+                <div className="border-2 border-customYellow w-[95px] mt-1 mb-5"></div>
             </div>
             <div className="">
                 <Swiper

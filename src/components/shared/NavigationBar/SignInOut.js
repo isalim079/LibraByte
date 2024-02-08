@@ -61,7 +61,7 @@ const SignInOut = () => {
 
                     {/* dropdown links */}
 
-                    <ul className="p-2 shadow menu dropdown-content z-[1]  rounded-box w-52 bg-lightWhite">
+                    <ul className="p-2 shadow menu dropdown-content z-[1]  rounded-box w-52 bg-royalBlue text-white">
                        {
                         user ?  <li>
                         <a href="/dashboard">Dashboard</a>
@@ -74,7 +74,7 @@ const SignInOut = () => {
                         {/* sign out */}
                         <div>
                             <button
-                                className="bg-[#333D2E] text-white py-2 px-3 rounded-md text-sm origin-left duration-200 hidden lg:flex"
+                                className="bg-lightBtn hover:bg-darkBtn text-white py-2 px-3 rounded-md text-sm origin-left duration-200 hidden lg:flex"
                                 onClick={
                                     user
                                         ? handleSignOut
@@ -102,12 +102,12 @@ const SignInOut = () => {
                 ) : (
                     <div>
                         <Link href={"/login"}>
-                            <button className="bg-[#333D2E] text-white py-2 px-3 text-sm rounded-md hidden lg:flex">
+                            <button className="bg-lightBtn hover:bg-darkBtn text-white py-2 px-3 text-sm rounded-md hidden lg:flex">
                                 Sign In
                             </button>
                         </Link>
                         <Link href={"/login"}>
-                            <button className="text-oliveGreen text-2xl flex justify-center items-center rounded-md lg:hidden">
+                            <button className="text-white text-2xl flex justify-center items-center rounded-md lg:hidden">
                                 <CiLogin />
                             </button>
                         </Link>

@@ -11,13 +11,18 @@ import { useForm } from "react-hook-form";
 import { FaBusinessTime } from "react-icons/fa";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import toast from "react-hot-toast";
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 import { useRouter } from "next/router";
 
-const BookDetails = ({ params }) => {
-    const { register, handleSubmit } = useForm();
+const BookDetails = ({params}) => {
+
+    const { register, handleSubmit } = useForm()
     const [openModal, setOpenModal] = useState(false);
     const { user } = useContext(AuthContext);
+    const router = useRouter();
+
 
     // console.log(params.bookDetails);               // receive data by params
     const axiosPublic = useAxiosPublic();
@@ -41,8 +46,15 @@ const BookDetails = ({ params }) => {
     }, []);
     const { name, image, author } = bookData;
     // console.log(bookData.name);
-    const onSubmit = async (data) => {
-        // console.log(data);
+    const onSubmit = async (data) => 
+    {
+
+        if (!user) {
+            // If user is not authenticated, redirect to login page
+            router.push('/login');
+            return;
+        }
+        console.log(data);
         const bookInfo = {
             Book_name: name,
             Book_image: image,
@@ -58,6 +70,15 @@ const BookDetails = ({ params }) => {
         // console.log(BookResponse.data)
         if (BookResponse.data._id) {
             toast.success(`Your book are in queue`);
+        }
+        else if(BookResponse.data.error === "Product already exists")
+        {
+            toast.error(`Book is already in queue`);
+
+        }
+        else{
+            toast.loading('Waiting...');
+
         }
     };
 

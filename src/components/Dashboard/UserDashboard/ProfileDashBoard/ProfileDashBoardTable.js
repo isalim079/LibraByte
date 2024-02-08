@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { FaClock } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
+import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 
 const ProfileDashBoardTable = () => {
     const { user } = useContext(AuthContext);
@@ -31,7 +32,42 @@ const ProfileDashBoardTable = () => {
     }, [user]);
     // console.log(findUserBorrow);
 
-    
+    const [currentPage, setCurrentPage] = useState(1);
+    const [perPageContent] = useState(5);
+
+    const indexOfLastPageData = currentPage * perPageContent;
+    const indexOfFirstPageData = indexOfLastPageData - perPageContent;
+
+    const currentPageData = findUserBorrow.slice(
+        indexOfFirstPageData,
+        indexOfLastPageData
+    );
+
+    const pageNumbers = [];
+
+    for (let i = 1; i <= Math.ceil(findUserBorrow.length / 5); i++) {
+        pageNumbers.push(i);
+    }
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    /* managing previous click */
+
+    const handlePreviousClick = () => {
+        if (currentPage > 0 && currentPage - 1 !== 0) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    /* managing Next click */
+
+    const handleNextClick = () => {
+        if (currentPage > 0 && currentPage + 1 !== pageNumbers.length + 1) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
 
     return (
         <div>
@@ -56,7 +92,11 @@ const ProfileDashBoardTable = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {findUserBorrow.map((borrow) => (
+                        {/* show data dynamically */}
+                        {(findUserBorrow.length > 5
+                            ? currentPageData
+                            : findUserBorrow
+                        ).map((borrow) => (
                             <tr key={borrow._id}>
                                 <th>
                                     <label>
@@ -106,11 +146,11 @@ const ProfileDashBoardTable = () => {
                                     )}
                                 </td>
                                 <th>
-                                    <button className="btn btn-ghost btn-xs"
-                                    
-                                    >
-                                        <Link href={`/dashboard/${borrow?._id}`}>
-                                        details
+                                    <button className="btn btn-ghost btn-xs">
+                                        <Link
+                                            href={`/dashboard/${borrow?._id}`}
+                                        >
+                                            details
                                         </Link>
                                     </button>
                                 </th>
@@ -119,6 +159,105 @@ const ProfileDashBoardTable = () => {
                     </tbody>
                 </table>
             </div>
+
+            {/* pagination */}
+
+            {findUserBorrow.length > 5 ? (
+                <div className="md:mb-20 mt-16">
+                    <ul className="flex items-center gap-10 text-xl font-semibold justify-center mt-10">
+                        {/* previous button */}
+                        <button className="btn-5">
+                            <MdSkipPrevious
+                                onClick={() => handlePreviousClick()}
+                                className="text-3xl border border-royalBlue rounded-full p-[2px]  hover:bg-royalBlue hover:text-white"
+                            />
+                        </button>
+
+                        {/* This is the logic for slice. I give an example
+                
+                slice(0, 7) => shows 1 to 7
+                slice(1, 8) => shows 2 to 8
+                slice(2, 9) => shows 3 to 9
+
+                so, default current page is 1. If we minus 1 from current page. It will be 0 and if we plus 6, it will be 7. our 1st example.
+                in second, if our current page is 2, then current page - 1 will be 2 and current page + 6 will be 8. our 2nd example. 
+                
+                */}
+
+                        {/* If user clicks number 2 or other then it will show */}
+                        {currentPage !== 1 && pageNumbers.length > 7 ? (
+                            <>
+                                {pageNumbers.slice(0, 1).map((number) => (
+                                    <li key={number}>
+                                        <button
+                                            onClick={() => paginate(number)}
+                                            className={
+                                                currentPage === number
+                                                    ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
+                                                    : ""
+                                            }
+                                        >
+                                            {number}
+                                        </button>
+                                    </li>
+                                ))}
+                            </>
+                        ) : (
+                            ""
+                        )}
+
+                        {/* ... condition */}
+
+                        {currentPage !== 1 && pageNumbers.length > 7 ? (
+                            <li>...</li>
+                        ) : (
+                            ""
+                        )}
+                        {/* pages */}
+                        {pageNumbers
+                            .slice(
+                                pageNumbers.length > 7 ? currentPage - 1 : 0,
+                                currentPage + 6
+                            )
+                            .map((number) => (
+                                <li key={number}>
+                                    <button
+                                        onClick={() => paginate(number)}
+                                        className={
+                                            currentPage === number
+                                                ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
+                                                : ""
+                                        }
+                                    >
+                                        {number}
+                                    </button>
+                                </li>
+                            ))}
+
+                        {pageNumbers.length > 7 &&
+                            currentPage <= pageNumbers.length - 6 && (
+                                <li>...</li>
+                            )}
+
+                        {pageNumbers.length > 7 ? (
+                            <button>{pageNumbers.length}</button>
+                        ) : (
+                            ""
+                        )}
+
+                        {/* next button */}
+
+                        <button>
+                            <MdSkipNext
+                                onClick={() => handleNextClick()}
+                                className="text-3xl border border-royalBlue rounded-full p-[2px] hover:bg-royalBlue hover:text-white"
+                            />
+                        </button>
+                    </ul>
+                </div>
+            ) : (
+                ""
+            )}
         </div>
     );
 };

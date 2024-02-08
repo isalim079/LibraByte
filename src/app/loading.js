@@ -3,7 +3,7 @@ import Loading from "@/components/shared/Loading/Loading";
 
 const LoadingPage = () => {
     return (
-        <div>
+        <div className="bg-bgTexture">
            <Loading />
         </div>
     );

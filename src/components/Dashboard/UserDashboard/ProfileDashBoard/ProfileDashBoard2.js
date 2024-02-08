@@ -26,7 +26,7 @@ const ProfileDashBoard2 = () => {
     // console.log(userRole);
 
     return (
-        <div>
+        <div className="">
             {loading ? (
                 <Loading />
             ) : (
@@ -34,16 +34,18 @@ const ProfileDashBoard2 = () => {
                     {userRole === "admin" ? (
                         <AdminProfileDash />
                     ) : (
-                        <div className="font-serif ">
+                        <div className="font-serif">
                             <div className="relative">
-                                <div className=" w-full h-[280px] mt-4 flex justify-center items-center bg-lightWhite">
-                                    <Image
+                                <div className=" w-full h-[280px] pt-4 flex justify-center items-center bg-royalBlue bg-bgTexture">
+                                    {/* <Image
                                         className=""
                                         src={libraByte}
                                         alt="logo"
                                         width={320}
                                         height={120}
-                                    />
+                                    /> */}
+                                    <p className="text-white text-6xl">
+                            Libra<span className="text-[#ECC21C]">Byte</span> </p>
                                 </div>
                                 <div className="absolute -bottom-28 left-16">
                                     <Image

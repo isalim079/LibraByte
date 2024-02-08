@@ -59,7 +59,7 @@ const Header = () => {
 
     return (
         <div className='overflow-x-hidden '>
-            <div className="drop-shadow-md px-5 py-2 bg-lightWhite ">
+            <div className="drop-shadow-md px-5 py-2 bg-royalBlue bg-bgTexture ">
                 <div className=" flex justify-between items-center gap-2">
                     <div className="form-control relative">
                         <input
