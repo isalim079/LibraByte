@@ -20,6 +20,7 @@ const AdminMenu = () => {
     const { user } = useContext(AuthContext);
 
     const axiosPublic = useAxiosPublic();
+    
 
     const { data = [] } = useQuery({
         queryKey: ["usersData"],
@@ -27,7 +28,7 @@ const AdminMenu = () => {
             const result = await axiosPublic.get("/users/v1");
             const users = result.data;
 
-            const findUser = users.find((users) => users.email === user.email);
+            const findUser = users.find((users) => users?.email === user?.email);
 
             return findUser;
         },
@@ -52,7 +53,7 @@ const AdminMenu = () => {
                 </li>
 
                 {/* divider */}
-                {findUser.role === "admin" ? (
+                {findUser?.role === "admin" ? (
                     <>
                         <div className=" my-4 border border-customYellow"></div>
                         <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
@@ -69,7 +70,7 @@ const AdminMenu = () => {
                 )}
 
                 {/* divider */}
-                {findUser.role === "admin" ? (
+                {findUser?.role === "admin" ? (
                     <div>
                         <div className=" my-4 border border-customYellow"></div>
 

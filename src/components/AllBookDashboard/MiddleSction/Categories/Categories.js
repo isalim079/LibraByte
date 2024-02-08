@@ -61,15 +61,15 @@ const Categories = ({ params }) => {
     const selfHelp = books.filter((book) => book.category === "Self-Help");
 
     return (
-        <div className="bg-lightWhite rounded-md drop-shadow-lg my-5 p-3 w-auto h-[300px] overflow-y-auto  md:h-auto ">
+        <div className="bg-royalBlue bg-bgTexture rounded-md drop-shadow-lg my-5 p-3 w-auto h-[300px] overflow-y-auto  md:h-auto ">
             <div className="mt-3">
                 <div className="flex flex-col lg:flex-row justify-center md:justify-between  items-center  p-0 lg:p-2">
-                    <h2 className="text-lg lg:text-2xl font-semibold">
+                    <h2 className="text-lg lg:text-2xl font-semibold text-white">
                         Categories
                     </h2>
                     {!showAll && books.length > initialDisplayCount && (
                         <button
-                            className="btn mr-0 mb-2 md:mr-3 bg-[#333D2E] text-white"
+                            className="btn mr-0 mb-2 md:mr-3 bg-lightBtn hover:bg-darkBtn border-none border text-white"
                             onClick={handleSeeAllClick}
                         >
                             See All
@@ -77,7 +77,7 @@ const Categories = ({ params }) => {
                     )}
                     {showAll && (
                         <button
-                            className="btn mr-0 mb-2 md:mr-3 bg-[#333D2E] text-white"
+                            className="btn mr-0 mb-2 md:mr-3 bg-lightBtn hover:bg-darkBtn border-none border text-white"
                             onClick={handleSeeLessClick}
                         >
                             See Less
@@ -90,9 +90,9 @@ const Categories = ({ params }) => {
                 >
                     <TabList className="grid grid-cols-3 lg:grid-cols-5 gap-4 text-sm">
                         <Tab
-                            className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Mystery" || initialIndex === 0
-                                    ? "bg-[#476f32]"
+                            className={`bg-lightBtn text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-darkBtn cursor-pointer ${
+                                selectedCategory === "Mystery"
+                                    ? "bg-transparent border-2 border-customYellow"
                                     : ""
                             }`}
                             onClick={() => handleCategoryChange("Mystery")}
@@ -100,9 +100,9 @@ const Categories = ({ params }) => {
                             Mystery
                         </Tab>
                         <Tab
-                            className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Sci-Fi" || initialIndex === 1
-                                    ? "bg-[#476f32]"
+                            className={`bg-lightBtn text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-darkBtn cursor-pointer ${
+                                selectedCategory === "Sci-Fi"
+                                    ? "bg-transparent border-2 border-customYellow"
                                     : ""
                             }`}
                             onClick={() => handleCategoryChange("Sci-Fi")}
@@ -110,9 +110,9 @@ const Categories = ({ params }) => {
                             Sci-Fi
                         </Tab>
                         <Tab
-                            className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Fantasy" || initialIndex === 2
-                                    ? "bg-[#476f32]"
+                            className={`bg-lightBtn text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-darkBtn cursor-pointer ${
+                                selectedCategory === "Fantasy"
+                                    ? "bg-transparent border-2 border-customYellow"
                                     : ""
                             }`}
                             onClick={() => handleCategoryChange("Fantasy")}
@@ -120,9 +120,9 @@ const Categories = ({ params }) => {
                             Fantasy
                         </Tab>
                         <Tab
-                            className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Fiction" || initialIndex === 3
-                                    ? "bg-[#476f32]"
+                            className={`bg-lightBtn text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-darkBtn cursor-pointer ${
+                                selectedCategory === "Fiction"
+                                    ? "bg-transparent border-2 border-customYellow"
                                     : ""
                             }`}
                             onClick={() => handleCategoryChange("Fiction")}
@@ -130,9 +130,9 @@ const Categories = ({ params }) => {
                             Fiction
                         </Tab>
                         <Tab
-                            className={`bg-[#333D2E] text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-[#476f32] ${
-                                selectedCategory === "Self-Help" || initialIndex === 4
-                                    ? "bg-[#476f32]"
+                            className={`bg-lightBtn text-white flex justify-center items-center  border-none p-2 rounded-xl hover:bg-darkBtn cursor-pointer ${
+                                selectedCategory === "Self-Help"
+                                    ? "bg-transparent border-2 border-customYellow"
                                     : ""
                             }`}
                             onClick={() => handleCategoryChange("Self-Help")}
