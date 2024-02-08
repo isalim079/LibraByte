@@ -4,7 +4,7 @@ import { AuthContext } from "@/app/Context/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
-import {  useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import logo from "@/assets/logo/LibraByte.png";
@@ -12,15 +12,13 @@ import Image from "next/image";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import animation from "../../../assets/animation/registerPageAnimation";
 import Lottie from "lottie-react";
-import "./login.css"
+import "./login.css";
 import { getURL } from "next/dist/shared/lib/utils";
-
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const axiosPublic = useAxiosPublic();
 
- 
     const router = useRouter();
     // import google popup function from context api
     const { googleLogInPopup, passwordLogIn, passwordReset, user, path } =
@@ -45,7 +43,7 @@ const Login = () => {
                 reset();
                 // router.push('/')
                 {
-                    path ? router.push(path) : router.push('/')
+                    path ? router.push(path) : router.push("/");
                 }
             })
             .catch((err) => {
@@ -81,9 +79,8 @@ const Login = () => {
                     }
                     reset();
                     {
-                        path ? router.push(path) : router.push('/')
+                        path ? router.push(path) : router.push("/");
                     }
-                    
                 });
             })
             .catch((err) => {
@@ -117,11 +114,11 @@ const Login = () => {
     };
 
     return (
-        <div className="bg-lightBtn pt-20">
+        <div className="bg-lightBtn pt-14 md:pt-20">
             <div className="" id="loginBg">
                 <section className="py-12">
                     <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 flex justify-around ">
-                        <div className=" w-2/5">
+                        <div className=" md:w-2/5">
                             <div className="overflow-hidden  rounded-md shadow-lg bg-royalBlue ">
                                 <div className="px-4 py-6 sm:px-8 sm:py-7">
                                     <div className=" flex items-center justify-center mb-3">
@@ -132,8 +129,11 @@ const Login = () => {
                                             alt="logo"
                                         /> */}
                                         <p className="text-white text-2xl">
-                            Libra<span className="text-[#ECC21C]">Byte</span>
-                        </p>
+                                            Libra
+                                            <span className="text-[#ECC21C]">
+                                                Byte
+                                            </span>
+                                        </p>
                                     </div>
                                     <h2 className="text-2xl font-bold text-center text-white">
                                         Welcome to LibraByte
@@ -227,8 +227,11 @@ const Login = () => {
                                                                         alt="logo"
                                                                     /> */}
                                                                     <p className="text-royalBlue text-2xl">
-                            Libra<span className="text-[#ECC21C]">Byte</span>
-                        </p>
+                                                                        Libra
+                                                                        <span className="text-[#ECC21C]">
+                                                                            Byte
+                                                                        </span>
+                                                                    </p>
                                                                 </div>
                                                                 <p className="text-sm mb-3">
                                                                     Please enter
