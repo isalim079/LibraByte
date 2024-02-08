@@ -141,13 +141,13 @@ const AdminProfileDash = () => {
     return (
         <div className="">
             <div>
-                <h3 className="text-center text-3xl font-bold font-robotoSlab mt-10 mb-5">
+                <h3 className="text-center text-3xl font-bold font-robotoSlab pt-10 mb-5">
                     Manage borrow status
                 </h3>
             </div>
 
             <div className="overflow-x-auto">
-                <table className="table">
+                <table className="table table-xs lg:table-md">
                     {/* head */}
                     <thead>
                         <tr>
@@ -249,7 +249,7 @@ const AdminProfileDash = () => {
             {/* If borrow books data is more than 5, then data will be shown. otherwise not. */}
 
             {borrowBooksData.length > 10 ? (
-                <div>
+                <div className="pb-10">
                     <ul className="flex items-center gap-10 text-xl font-semibold justify-center mt-10">
                         {/* previous button */}
                         <button className="btn-5">

@@ -36,7 +36,7 @@ const ProfileDashBoard2 = () => {
                     ) : (
                         <div className="font-serif">
                             <div className="relative">
-                                <div className=" w-full h-[280px] mt-4 flex justify-center items-center bg-royalBlue bg-bgTexture">
+                                <div className=" w-full h-[280px] pt-4 flex justify-center items-center bg-royalBlue bg-bgTexture">
                                     {/* <Image
                                         className=""
                                         src={libraByte}

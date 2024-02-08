@@ -11,6 +11,7 @@ import animation from "@/assets/animation/navBarUser.json";
 
 import { FaAlignLeft, FaAlignRight } from "react-icons/fa";
 import { CgLogIn, CgLogOut } from "react-icons/cg";
+import { RiDashboardFill } from "react-icons/ri";
 
 const MobileNavigation = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -63,6 +64,7 @@ const MobileNavigation = () => {
                                         </a>
                                     </li>
                                 ))}
+                                <li><a className="" href="/dashboard"><span className="flex items-center gap-2"><span><RiDashboardFill /></span><span>Dashboard</span></span></a></li>
                                 {
                                     user ? <li onClick={handleSignOut}>
                                     <a>

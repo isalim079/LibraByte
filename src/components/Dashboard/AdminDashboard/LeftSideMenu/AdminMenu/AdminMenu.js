@@ -40,7 +40,7 @@ const AdminMenu = () => {
         <div className="">
             {/* <h1 className='md:mt-11 text-[17px]'>Dashboard home</h1> */}
 
-            <div className="list-none md:mt-16">
+            <div className="list-none lg:mt-16 ">
                 {/* categories */}
                 <li className="cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
                     <Link
