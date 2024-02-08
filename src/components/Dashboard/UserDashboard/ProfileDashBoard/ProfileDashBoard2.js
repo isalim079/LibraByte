@@ -26,7 +26,7 @@ const ProfileDashBoard2 = () => {
     // console.log(userRole);
 
     return (
-        <div className=" bg-bgTexture">
+        <div className="">
             {loading ? (
                 <Loading />
             ) : (

@@ -104,7 +104,7 @@ const FeatureSection = () => {
 
                 {/* thriller */}
                 <Link href={"/categories/Fiction"} className=" grid grid-cols-2 sm:grid-cols-12 lg:gap-10 md:gap-4 gap-2">
-                    <div className="p-4 sm:col-span-5 bg-[#70474A] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 sm:p-0.5 hover:bg-[#643F41]">
+                    <div className="p-4 sm:col-span-5 bg-[#EAA622] drop-shadow-lg lg:h-[280px] md:h-[210px] h-[140px]  lg:rounded-3xl md:rounded-2xl rounded-xl lg:p-10 md:p-6 sm:p-0.5 hover:bg-[#D4981E]">
                         <div className="flex justify-center items-center px-5  md:p-2 md:pb-0.5 lg:pb-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
