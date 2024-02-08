@@ -4,7 +4,7 @@ import ProfileDashBoard2 from "../UserDashboard/ProfileDashBoard/ProfileDashBoar
 
 const AdminDashboard = () => {
     return (
-    <div>
+    <div className="">
         <ProfileDashBoard2 />
     </div>
     );

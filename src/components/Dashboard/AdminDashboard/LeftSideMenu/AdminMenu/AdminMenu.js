@@ -54,7 +54,7 @@ const AdminMenu = () => {
                 {/* divider */}
                 {findUser.role === "admin" ? (
                     <>
-                        <div className="divider my-2"></div>
+                        <div className=" my-4 border border-customYellow"></div>
                         <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
                             <Link
                                 href="/dashboard/users"

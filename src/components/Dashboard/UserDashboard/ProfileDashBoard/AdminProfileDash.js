@@ -6,7 +6,13 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
+import { useState } from "react";
+
+import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
+
 const AdminProfileDash = () => {
+    // console.log(pageNumber.page);
+
     const axiosPublic = useAxiosPublic();
 
     const [borrowBooksData, refetch] = useBorrowBook();
@@ -82,8 +88,53 @@ const AdminProfileDash = () => {
         // console.log(borrow);
     };
 
+    /* Pagination */
+
+    const [currentPage, setCurrentPage] = useState(1);
+
+    /* how many content you want to show in one page */
+    const [borrowInfoPerPage] = useState(5);
+
+    // console.log(currentPage);
+
+    const indexOfLastBorrowBooksData = currentPage * borrowInfoPerPage;
+    const indexOfFirstBorrowBooksData =
+        indexOfLastBorrowBooksData - borrowInfoPerPage;
+    const currentBorrowBooksData = borrowBooksData.slice(
+        indexOfFirstBorrowBooksData,
+        indexOfLastBorrowBooksData
+    );
+
+    const pageNumbers = [];
+
+    /* divide numbers will be how many pages you want to show in one page */
+
+    for (let i = 1; i <= Math.ceil(borrowBooksData.length / 5); i++) {
+        pageNumbers.push(i);
+    }
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    /* managing previous click */
+
+    const handlePreviousClick = () => {
+        if (currentPage > 0 && currentPage - 1 !== 0) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    /* managing Next click */
+
+    const handleNextClick = () => {
+        if (currentPage > 0 && currentPage + 1 !== pageNumbers.length + 1) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
     return (
-        <div>
+        <div className="">
             <div>
                 <h3 className="text-center text-3xl font-bold font-robotoSlab mt-10 mb-5">
                     Manage borrow status
@@ -111,7 +162,11 @@ const AdminProfileDash = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {borrowBooksData.map((borrow) => (
+                        {/* if borrowBooksData length is greater than 5, then it will map currentBooksData, otherwise it will map borrow books data */}
+                        {(borrowBooksData.length > 5
+                            ? currentBorrowBooksData
+                            : borrowBooksData
+                        ).map((borrow) => (
                             <tr key={borrow._id}>
                                 <th>
                                     <label>
@@ -183,6 +238,107 @@ const AdminProfileDash = () => {
                     </tbody>
                 </table>
             </div>
+
+            {/* Pagination */}
+
+            {/* If borrow books data is more than 5, then data will be shown. otherwise not. */}
+
+            {borrowBooksData.length > 5 ? (
+                <div>
+                    <ul className="flex items-center gap-10 text-xl font-semibold justify-center mt-10">
+                        {/* previous button */}
+                        <button className="btn-5">
+                            <MdSkipPrevious
+                                onClick={() => handlePreviousClick()}
+                                className="text-3xl border border-royalBlue rounded-full p-[2px]  hover:bg-royalBlue hover:text-white"
+                            />
+                        </button>
+
+                        {/* This is the logic for slice. I give an example
+                
+                slice(0, 7) => shows 1 to 7
+                slice(1, 8) => shows 2 to 8
+                slice(2, 9) => shows 3 to 9
+
+                so, default current page is 1. If we minus 1 from current page. It will be 0 and if we plus 6, it will be 7. our 1st example.
+                in second, if our current page is 2, then current page - 1 will be 2 and current page + 6 will be 8. our 2nd example. 
+                
+                */}
+
+                        {/* If user clicks number 2 or other then it will show */}
+                        {currentPage !== 1 && pageNumbers.length > 7 ? (
+                            <>
+                                {pageNumbers.slice(0, 1).map((number) => (
+                                    <li key={number}>
+                                        <button
+                                            onClick={() => paginate(number)}
+                                            className={
+                                                currentPage === number
+                                                    ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
+                                                    : ""
+                                            }
+                                        >
+                                            {number}
+                                        </button>
+                                    </li>
+                                ))}
+                            </>
+                        ) : (
+                            ""
+                        )}
+
+                        {/* ... condition */}
+
+                        {currentPage !== 1 && pageNumbers.length > 7 ? (
+                            <li>...</li>
+                        ) : (
+                            ""
+                        )}
+                        {/* pages */}
+                        {pageNumbers
+                            .slice(
+                                pageNumbers.length > 7 ? currentPage - 1 : 0,
+                                currentPage + 6
+                            )
+                            .map((number) => (
+                                <li key={number}>
+                                    <button
+                                        onClick={() => paginate(number)}
+                                        className={
+                                            currentPage === number
+                                                ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
+                                                : ""
+                                        }
+                                    >
+                                        {number}
+                                    </button>
+                                </li>
+                            ))}
+
+                        {pageNumbers.length > 7 &&
+                            currentPage <= pageNumbers.length - 6 && (
+                                <li>...</li>
+                            )}
+
+                        {pageNumbers.length > 7 ? (
+                            <button>{pageNumbers.length}</button>
+                        ) : (
+                            ""
+                        )}
+
+                        {/* next button */}
+
+                        <button>
+                            <MdSkipNext
+                                onClick={() => handleNextClick()}
+                                className="text-3xl border border-royalBlue rounded-full p-[2px] hover:bg-royalBlue hover:text-white"
+                            />
+                        </button>
+                    </ul>
+                </div>
+            ) : (
+                ""
+            )}
         </div>
     );
 };

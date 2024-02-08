@@ -11,7 +11,7 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 const Recommended = () => {
     const [books, setBooks] = useState([]);
     const [showAll, setShowAll] = useState(false);
-    const initialDisplayCount = 5;
+    const initialDisplayCount = 10;
     const [likedBooks, setLikedBooks] = useState([]);
   
 
@@ -46,14 +46,14 @@ const Recommended = () => {
 
 
     return (
-        <div className="bg-lightBtn bg-bgTexture rounded-md drop-shadow-lg py-8 px-4 w-auto h-[400px] overflow-y-auto  md:h-auto ">
+        <div className="bg-[#C6DED8] bg-bgTexture rounded-md drop-shadow-lg py-8 px-4 w-auto h-[400px] overflow-y-auto  md:h-auto ">
             <div className="flex flex-col lg:flex-row justify-center md:justify-between  items-center  px-0 lg:px-3">
-                <h2 className="text-lg lg:text-2xl font-semibold text-white">
+                <h2 className="text-lg lg:text-2xl font-semibold text-royalBlue md:ml-7">
                     Recommended
                 </h2>
-                {!showAll && books.length > initialDisplayCount && (
+                {/* {!showAll && books.length > initialDisplayCount && (
                     <button
-                        className="btn mr-0 mb-2 md:mr-3 bg-royalBlue border-none text-white"
+                        className="btn mr-0 mb-2 md:mr-3 bg-royalBlue border-none text-white hover:bg-black"
                         onClick={handleSeeAllClick}
                     >
                         See More
@@ -66,7 +66,7 @@ const Recommended = () => {
                     >
                         See Less
                     </button>
-                )}
+                )} */}
             </div>
             <div className="grid justify-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 py-2 px-0 lg:px-8 gap-4 ">
                 {books
@@ -74,7 +74,7 @@ const Recommended = () => {
                     .map((book) => (
                         <div
                             key={book.id}
-                            className="rounded-lg group max-w-[220px] md:w-[320px] space-y-4 mx-auto text-center bg-royalBlue shadow-customYellow/50 shadow-md"
+                            className="rounded-lg group max-w-[220px] md:w-[320px] space-y-4 mx-auto text-center bg-royalBlue hover:shadow-customYellow/50 shadow-md"
                         >
                             <img
                                 alt="Product Image"
@@ -117,6 +117,24 @@ const Recommended = () => {
                             </div>
                         </div>
                     ))}
+
+{!showAll && books.length > initialDisplayCount && (
+                    <button
+                        className="btn mr-0 mb-2 md:mr-3 bg-royalBlue border-none text-white hover:bg-black md:mt-8"
+                        onClick={handleSeeAllClick}
+                    >
+                        See More
+                    </button>
+                )}
+                {showAll && (
+                    <button
+                        className="btn mr-0 mb-2 md:mr-3 bg-royalBlue border-none text-white"
+                        onClick={handleSeeLessClick}
+                    >
+                        See Less
+                    </button>
+                )}
+
             </div>
 
             {/* {selectedBooks && (
