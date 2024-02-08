@@ -162,7 +162,11 @@ const AdminProfileDash = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {currentBorrowBooksData.map((borrow) => (
+                        {/* if borrowBooksData length is greater than 5, then it will map currentBooksData, otherwise it will map borrow books data */}
+                        {(borrowBooksData.length > 5
+                            ? currentBorrowBooksData
+                            : borrowBooksData
+                        ).map((borrow) => (
                             <tr key={borrow._id}>
                                 <th>
                                     <label>
@@ -237,16 +241,20 @@ const AdminProfileDash = () => {
 
             {/* Pagination */}
 
-            <div>
-                <ul className="flex items-center gap-10 text-xl font-semibold justify-center mt-10">
-                    <button className="btn-5">
-                        <MdSkipPrevious
-                            onClick={() => handlePreviousClick()}
-                            className="text-3xl border border-royalBlue rounded-full p-[2px]  hover:bg-royalBlue hover:text-white"
-                        />
-                    </button>
+            {/* If borrow books data is more than 5, then data will be shown. otherwise not. */}
 
-                    {/* This is the logic for slice. I give an example
+            {borrowBooksData.length > 5 ? (
+                <div>
+                    <ul className="flex items-center gap-10 text-xl font-semibold justify-center mt-10">
+                        {/* previous button */}
+                        <button className="btn-5">
+                            <MdSkipPrevious
+                                onClick={() => handlePreviousClick()}
+                                className="text-3xl border border-royalBlue rounded-full p-[2px]  hover:bg-royalBlue hover:text-white"
+                            />
+                        </button>
+
+                        {/* This is the logic for slice. I give an example
                 
                 slice(0, 7) => shows 1 to 7
                 slice(1, 8) => shows 2 to 8
@@ -257,10 +265,42 @@ const AdminProfileDash = () => {
                 
                 */}
 
-                    {/* If user clicks number 2 or other then it will show */}
-                    {currentPage !== 1 && pageNumbers.length > 7 ? (
-                        <>
-                            {pageNumbers.slice(0, 1).map((number) => (
+                        {/* If user clicks number 2 or other then it will show */}
+                        {currentPage !== 1 && pageNumbers.length > 7 ? (
+                            <>
+                                {pageNumbers.slice(0, 1).map((number) => (
+                                    <li key={number}>
+                                        <button
+                                            onClick={() => paginate(number)}
+                                            className={
+                                                currentPage === number
+                                                    ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
+                                                    : ""
+                                            }
+                                        >
+                                            {number}
+                                        </button>
+                                    </li>
+                                ))}
+                            </>
+                        ) : (
+                            ""
+                        )}
+
+                        {/* ... condition */}
+
+                        {currentPage !== 1 && pageNumbers.length > 7 ? (
+                            <li>...</li>
+                        ) : (
+                            ""
+                        )}
+                        {/* pages */}
+                        {pageNumbers
+                            .slice(
+                                pageNumbers.length > 7 ? currentPage - 1 : 0,
+                                currentPage + 6
+                            )
+                            .map((number) => (
                                 <li key={number}>
                                     <button
                                         onClick={() => paginate(number)}
@@ -274,56 +314,31 @@ const AdminProfileDash = () => {
                                     </button>
                                 </li>
                             ))}
-                        </>
-                    ) : (
-                        ""
-                    )}
 
-                    {/* ... condition */}
+                        {pageNumbers.length > 7 &&
+                            currentPage <= pageNumbers.length - 6 && (
+                                <li>...</li>
+                            )}
 
-                    {currentPage !== 1 && pageNumbers.length > 7 ? (
-                        <li>...</li>
-                    ) : (
-                        ""
-                    )}
-                    {/* pages */}
-                    {pageNumbers
-                        .slice(
-                            pageNumbers.length > 7 ? currentPage - 1 : 0,
-                            currentPage + 6
-                        )
-                        .map((number) => (
-                            <li key={number}>
-                                <button
-                                    onClick={() => paginate(number)}
-                                    className={
-                                        currentPage === number
-                                            ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
-                                            : ""
-                                    }
-                                >
-                                    {number}
-                                </button>
-                            </li>
-                        ))}
+                        {pageNumbers.length > 7 ? (
+                            <button>{pageNumbers.length}</button>
+                        ) : (
+                            ""
+                        )}
 
-                    {pageNumbers.length > 7 &&
-                        currentPage <= pageNumbers.length - 6 && <li>...</li>}
+                        {/* next button */}
 
-                    {pageNumbers.length > 7 ? (
-                        <button>{pageNumbers.length}</button>
-                    ) : (
-                        ""
-                    )}
-
-                    <button>
-                        <MdSkipNext
-                            onClick={() => handleNextClick()}
-                            className="text-3xl border border-royalBlue rounded-full p-[2px] hover:bg-royalBlue hover:text-white"
-                        />
-                    </button>
-                </ul>
-            </div>
+                        <button>
+                            <MdSkipNext
+                                onClick={() => handleNextClick()}
+                                className="text-3xl border border-royalBlue rounded-full p-[2px] hover:bg-royalBlue hover:text-white"
+                            />
+                        </button>
+                    </ul>
+                </div>
+            ) : (
+                ""
+            )}
         </div>
     );
 };
