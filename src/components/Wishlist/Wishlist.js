@@ -11,21 +11,22 @@ const items = [
 ];
 const Wishlist = () => {
     return (
-        <div className='flex flex-col lg:flex-row justify-evenly'>
-            <div className="ml-0 md:ml-20 lg:ml-0 bg-gray-250 shadow-md max-w-[700px] md:w-[600px] p-8 mb-20 mt-10 space-y-6">
+       <div className='bg-bgTexture pt-24'>
+         <div className='flex flex-col lg:flex-row justify-evenly'>
+            <div className="ml-0 md:ml-20 lg:ml-0 bg-gray-250 shadow-md max-w-[700px] md:w-[600px] p-8 mb-20 mt-10 space-y-6 bg-royalBlue bg-bgTexture rounded-md">
             {/* top part  */}
             <div className="flex justify-between items-center">
-                <h4 className="text-xl font-medium text-slate-800 uppercase">Wishlist</h4>
-                <p className="text-sm font-medium text-gray-400 uppercase">Remove</p>
+                <h4 className="text-xl font-medium text-white uppercase">Wishlist</h4>
+                <p className="text-sm font-medium text-gray-200 uppercase">Remove</p>
             </div>
             <hr />
             {/*  Cart  map */}
             {items.map((item, idx) => (
                 <div key={item?.id} className="flex justify-between items-center border-b pb-6">
                     <div className="flex flex-wrap items-center gap-4">
-                        <img className="w-[85px] h-[75px] rounded-lg bg-slate-500" src={item?.imgToFetch} alt="" />
+                        <img className="w-[85px] h-[120px] rounded-lg bg-white" src={item?.imgToFetch} alt="" />
                         <div>
-                            <h5 className="text-lg font-medium">{item?.name}</h5>
+                            <h5 className="text-lg font-medium text-white">{item?.name}</h5>
                             {/* <p className="text-sm text-gray-400">Delivery {item?.deliveryDate}</p> */}
                         </div>
                     </div>
@@ -36,7 +37,7 @@ const Wishlist = () => {
                             <span className="py-1 px-2.5 border hover:bg-[#3EBFA4] hover:text-white hover:border-[#3EBFA4] duration-300 ease-in-out rounded-sm">4</span>
                             <span className="py-1 px-2 hover:text-[#3EBFA4] text-xl duration-200">+</span>
                         </div> */}
-                        <button className="text-3xl font-medium text-[#33958e]"><FaHeartCircleXmark></FaHeartCircleXmark></button>
+                        <button className="text-3xl font-medium text-lightBtn"><FaHeartCircleXmark></FaHeartCircleXmark></button>
                     </div>
                 </div>
             ))}
@@ -51,6 +52,7 @@ const Wishlist = () => {
         </div>
         <PromotionCard></PromotionCard>
         </div>
+       </div>
     );
 };
 

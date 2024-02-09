@@ -9,6 +9,7 @@ import { TbLogout2 } from "react-icons/tb";
 import animation from "@/assets/animation/navBarUser.json";
 import Lottie from "lottie-react";
 import Image from "next/image";
+import { FaHeartCirclePlus } from "react-icons/fa6";
 
 const SignInOut = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -38,7 +39,8 @@ const SignInOut = () => {
                     {/* User photo */}
 
                     {user?.photoURL ? (
-                    <div>
+                    <div className="flex justify-center items-center">
+                        <div>
                         <Image
                             className="w-10 rounded-full"
                             width={40}
@@ -46,6 +48,12 @@ const SignInOut = () => {
                             src={user?.photoURL}
                             alt="profile picture"
                         />
+                        </div>
+
+                      <div className="pl-4">
+                      <Link href="/wishlist"><FaHeartCirclePlus className="text-4xl text-white border border-white p-[5px] rounded-full"  /></Link>
+                      </div>
+                        
                     </div>
                 ) : (
                     <div>
