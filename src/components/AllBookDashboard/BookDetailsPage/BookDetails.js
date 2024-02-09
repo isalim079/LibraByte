@@ -13,9 +13,6 @@ import { AuthContext } from "@/app/Context/AuthProvider";
 import toast from "react-hot-toast";
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-
-import { useRouter } from "next/router";
-
 const BookDetails = ({params}) => {
 
     const { register, handleSubmit } = useForm()
