@@ -5,11 +5,11 @@ import React from 'react';
 const AllBookLayout = ({children}) => {
     return (
         <div className='overflow-x-hidden'>
-          <PrivateRoute>
+          {/* <PrivateRoute> */}
           <Sidebar>
             {children}
           </Sidebar>
-          </PrivateRoute>
+          {/* </PrivateRoute> */}
           
   
         </div>

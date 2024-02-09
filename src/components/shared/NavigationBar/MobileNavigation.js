@@ -12,6 +12,8 @@ import animation from "@/assets/animation/navBarUser.json";
 import { FaAlignLeft, FaAlignRight } from "react-icons/fa";
 import { CgLogIn, CgLogOut } from "react-icons/cg";
 import { RiDashboardFill } from "react-icons/ri";
+import { FaHeartCirclePlus } from "react-icons/fa6";
+import Link from "next/link";
 
 const MobileNavigation = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -67,22 +69,22 @@ const MobileNavigation = () => {
                                 <li><a className="" href="/dashboard"><span className="flex items-center gap-2"><span><RiDashboardFill /></span><span>Dashboard</span></span></a></li>
                                 {
                                     user ? <li onClick={handleSignOut}>
-                                    <a>
-                                        {" "}
-                                        <span>
-                                            <CgLogOut />
-                                        </span>{" "}
-                                        <span>Sign Out</span>
-                                    </a>
-                                </li> : <li >
-                                    <a href="/login">
-                                        {" "}
-                                        <span>
-                                            <CgLogIn />
-                                        </span>{" "}
-                                        <span>Sign In</span>
-                                    </a>
-                                </li>
+                                        <a>
+                                            {" "}
+                                            <span>
+                                                <CgLogOut />
+                                            </span>{" "}
+                                            <span>Sign Out</span>
+                                        </a>
+                                    </li> : <li >
+                                        <a href="/login">
+                                            {" "}
+                                            <span>
+                                                <CgLogIn />
+                                            </span>{" "}
+                                            <span>Sign In</span>
+                                        </a>
+                                    </li>
                                 }
                             </ul>
                         </details>
@@ -100,6 +102,7 @@ const MobileNavigation = () => {
                     {/* right side */}
 
                     <div>
+                        {/* <Link href='/wishlist' className="text-white text-2xl"><FaHeartCirclePlus></FaHeartCirclePlus></Link> */}
                         {user?.photoURL ? (
                             <div>
                                 <Image

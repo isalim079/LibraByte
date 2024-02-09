@@ -14,7 +14,6 @@ import toast from "react-hot-toast";
 import "./bookDetails.css"
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-
 const BookDetails = ({params}) => {
 
     const { register, handleSubmit } = useForm()
