@@ -15,8 +15,6 @@ import "./bookDetails.css"
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
-import { useRouter } from "next/router";
-
 const BookDetails = ({params}) => {
 
     const { register, handleSubmit } = useForm()
