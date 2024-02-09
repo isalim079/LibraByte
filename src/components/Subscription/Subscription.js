@@ -15,9 +15,9 @@ const Subscription = () => {
     }
 
     return (
-        <div className="bg-lightWhite">
+        <div className="bg-bgTexture pt-24">
             <div className="max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-xl mx-auto py-16 ">
-                <h1 className="text-oliveGreen text-4xl font-bold text-center">
+                <h1 className="text-royalBlue text-4xl font-bold text-center">
                     Subscription
                 </h1>
                 <p className="text-center text-lg mx-6 md:mx-10 lg:mx-20 mt-4 mb-16">
@@ -29,7 +29,7 @@ const Subscription = () => {
                     {subscriptions.map((subscription) => (
                         <div
                             key={subscription.id}
-                            className="rounded-tl-3xl rounded-br-3xl border-2 bg-white pt-8 mx-6 md:mx-0 hover:bg-oliveGreen border-oliveGreen hover:text-lightWhite hover:shadow-2xl hover:shadow-oliveGreen transition-all duration-500"
+                            className="rounded-tl-3xl rounded-br-3xl border-2 bg-white pt-8 mx-6 md:mx-0 hover:bg-royalBlue border-royalBlue hover:text-white hover:shadow-2xl hover:shadow-royalBlue cursor-pointer transition-all duration-500"
                         >
                             <h4 className="text-center text-2xl py-6 uppercase font-bold">
                                 {subscription.pack}
@@ -65,7 +65,7 @@ const Subscription = () => {
                                 </div>
                             </ul>
 
-                            <button className=" p-3 hover:p-2 hover:text-lg font-bold my-6 mx-8 md:mx-4 lg:mx-8 xl:mx-7 border-lightWhite hover:text-oliveGreen border-2 rounded-tl-xl rounded-br-xl text-base bg-oliveGreen hover:bg-lightWhite text-white w-64 md:w-72 lg:w-80 xl:w-64 2xl:w-64 transition-all duration-300"
+                            <button className=" p-3 hover:p-2 hover:text-lg font-bold my-6 mx-8 md:mx-4 lg:mx-8 xl:mx-7 border-darkBtn hover:text-white border-2 rounded-tl-xl rounded-br-xl text-base bg-royalBlue hover:bg-lightBtn text-white w-64 md:w-72 lg:w-80 xl:w-64 2xl:w-64 transition-all duration-300"
                                 onClick={() => document.getElementById(`my-modal-524433`).showModal()}
                             >Checkout</button>
                             <dialog id={`my-modal-524433`} className="modal modal-bottom sm:modal-middle">
