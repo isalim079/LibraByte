@@ -153,10 +153,10 @@ const AdminProfileDash = () => {
                         <tr>
                             <th>
                                 <label>
-                                    <input
+                                    {/* <input
                                         type="checkbox"
                                         className="checkbox"
-                                    />
+                                    /> */}
                                 </label>
                             </th>
                             <th>Book Info</th>
