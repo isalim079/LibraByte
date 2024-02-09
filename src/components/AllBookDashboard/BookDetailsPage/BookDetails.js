@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { FaBusinessTime } from "react-icons/fa";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import toast from "react-hot-toast";
+import "./bookDetails.css"
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 const BookDetails = ({params}) => {
@@ -80,7 +81,7 @@ const BookDetails = ({params}) => {
     };
 
     return (
-        <div className="bg-lightWhite 2xl:h-[1250px] ">
+        <div className="bg-bgTexture pt-14 md:pt-20 2xl:h-[1250px] ">
             <div className="min-h-[100vh] 2xl:relative">
                 <div className="flex flex-col md:flex-row justify-center items-start px-5 xl:px-36 lg:px-24 md:px-14 2xl:px-44  py-2 2xl:py-20 ">
                     <div className="w-full 2xl:w-1/2 flex flex-col 2xl:flex-row justify-center pl-0 2xl:pl-36 items-center mr-10  h-3/4 z-30">
@@ -102,7 +103,7 @@ const BookDetails = ({params}) => {
                         <p className="text-justify">{bookData?.description}</p>
                     </div>
                 </div>
-                <div className="bg-white mx-5 2xl:mx-44 min-h-72 2xl:absolute top-[450px] pb-5 2xl:pb-0">
+                <div className="bg-lightBtn bg-bgTexture mx-5 2xl:mx-44 min-h-72 2xl:absolute top-[450px] pb-5 2xl:pb-0">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="w-1/2 hidden md:block"></div>
                         <div className="w-full 2xl:w-1/2 ml-10 flex justify-between items-center py-8 mr-5 border-b-2">
@@ -163,14 +164,16 @@ const BookDetails = ({params}) => {
 
                     {/* Request to borrow book modal */}
 
-                    <div className="w-72 mx-auto flex items-center justify-center ">
-                        <button
+                    <div className="w-72 mx-auto flex items-center justify-center pb-10">
+                      <div className="animationContainer">
+                      <button
                             onClick={() => setOpenModal(true)}
-                            className="bg-oliveGreen text-white font-semibold text-lg px-10 py-2 rounded-3xl flex justify-between items-center gap-x-3"
+                            className="bg-royalBlue text-white font-semibold text-lg px-10 py-2 rounded-3xl flex justify-between items-center gap-x-3  buttonBorrow"
                         >
                             Requst to borrow{" "}
                             <BsFillRocketTakeoffFill className="text-xl" />
                         </button>
+                      </div>
                         <div
                             onClick={() => setOpenModal(false)}
                             className={`fixed flex justify-center items-center z-[100] ${

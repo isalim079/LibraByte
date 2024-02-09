@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 
 import "./bestSellingStyles.css";
 
+
 // import required modules
 import { Pagination } from "swiper/modules";
 
@@ -63,8 +64,10 @@ const BestSelling = () => {
                     <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold mb-2 md:mb-0">
                         Best Of Best
                     </h1>
-                   <Link href="/topBooks"> <button className="flex bg-lightBtn text-white px-4 py-2 rounded-md hover:bg-darkBtn justify-between items-center gap-x-2 text-sm md:text-base">
+                   <Link href="/topBooks"> <button className="buttonAnimation flex   px-4 py-2 rounded-md hover:bg-darkBtn  justify-between items-center gap-x-2 text-sm md:text-base">
+                        
                         View All{" "}
+                       
                         <HiOutlineExternalLink className="lg:text-[22px] text-lg" />
                     </button></Link>
                 </div>
