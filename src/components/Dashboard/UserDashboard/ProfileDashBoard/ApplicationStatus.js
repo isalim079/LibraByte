@@ -4,6 +4,7 @@ import { AuthContext } from "@/app/Context/AuthProvider";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import { useContext, useEffect, useState } from "react";
 import "./applicationStatus.css"
+import ReviewNComplain from "../ReviewNComplain/ReviewNComplain";
 
 const ApplicationStatus = ({params}) => {
 
@@ -87,7 +88,7 @@ const ApplicationStatus = ({params}) => {
                         </div>
                     </div>
 
-                   
+                   <ReviewNComplain></ReviewNComplain>
         </div>
     );
 };
