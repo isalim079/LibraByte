@@ -2,122 +2,123 @@
 
 import { FaHome } from "react-icons/fa";
 import { SiPolymerproject } from "react-icons/si";
-import { BiSolidBookmarkAltPlus, BiSolidMessage } from "react-icons/bi";
-import { SlCalender } from "react-icons/sl";
+import { BiSolidBookmarkAltPlus } from "react-icons/bi";
+
 import { FaUser } from "react-icons/fa6";
-import { MdReportProblem } from "react-icons/md";
-import { IoSettingsSharp } from "react-icons/io5";
+
 import { FaUsers } from "react-icons/fa6";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/Context/AuthProvider";
-import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
-import { useQuery } from "@tanstack/react-query";
 
 import DahsBoardSignOut from "./DashboardSignOut";
+import Loading from "@/components/shared/Loading/Loading";
 
 const AdminMenu = () => {
-    const { user } = useContext(AuthContext);
+    const { userRole } = useContext(AuthContext);
 
-    const axiosPublic = useAxiosPublic();
-    
+    const [loading, setLoading] = useState(true);
 
-    const { data = [] } = useQuery({
-        queryKey: ["usersData"],
-        queryFn: async () => {
-            const result = await axiosPublic.get("/users/v1");
-            const users = result.data;
-
-            const findUser = users.find((users) => users?.email === user?.email);
-
-            return findUser;
-        },
-    });
-    const findUser = data;
-
-    // console.log(findUser.role);
+    useEffect(() => {
+        if (userRole) {
+            setLoading(false);
+        }
+    }, [userRole]);
+    // console.log(userRole);
 
     return (
-        <div className="">
-            {/* <h1 className='md:mt-11 text-[17px]'>Dashboard home</h1> */}
+        <div>
+            {loading ? (
+                <Loading />
+            ) : (
+                <div className="">
+                    {/* <h1 className='md:mt-11 text-[17px]'>Dashboard home</h1> */}
 
-            <div className="list-none lg:mt-16 ">
-                {/* categories */}
-                <li className="cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
-                    <Link
-                        href="/dashboard"
-                        className="flex px-2 py-1 items-center gap-2"
-                    >
-                        <FaHome className="text-xl" /> Dashboard
-                    </Link>
-                </li>
-
-                {/* divider */}
-                {findUser?.role === "admin" ? (
-                    <>
-                        <div className=" my-4 border border-customYellow"></div>
-                        <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
+                    <div className="list-none lg:mt-16 ">
+                        {/* categories */}
+                        <li className="cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
                             <Link
-                                href="/dashboard/users"
+                                href="/dashboard"
                                 className="flex px-2 py-1 items-center gap-2"
                             >
-                                <FaUser className="text-xl" /> Users
+                                <FaHome className="text-xl" /> Dashboard
                             </Link>
                         </li>
-                    </>
-                ) : (
-                    ""
-                )}
 
-                {/* divider */}
-                {findUser?.role === "admin" ? (
-                    <div>
+                        {/* divider */}
+                        {userRole === "admin" ? (
+                            <>
+                                <div className=" my-4 border border-customYellow"></div>
+                                <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
+                                    <Link
+                                        href="/dashboard/users"
+                                        className="flex px-2 py-1 items-center gap-2"
+                                    >
+                                        <FaUser className="text-xl" /> Users
+                                    </Link>
+                                </li>
+                            </>
+                        ) : (
+                            ""
+                        )}
+
+                        {/* divider */}
+                        {userRole === "admin" ? (
+                            <div>
+                                <div className=" my-4 border border-customYellow"></div>
+
+                                <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
+                                    <Link
+                                        href="/dashboard/addBooks"
+                                        className="flex px-2 py-1 items-center gap-2"
+                                    >
+                                        <BiSolidBookmarkAltPlus className="text-md" />{" "}
+                                        Add Books
+                                    </Link>
+                                </li>
+                            </div>
+                        ) : (
+                            ""
+                        )}
+
+                        {userRole === "user" ? (
+                            <div>
+                                <div className=" my-4 border border-customYellow"></div>
+
+                                <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
+                                    <Link
+                                        href="/dashboard/manage-books"
+                                        className="flex px-2 py-1 items-center gap-2"
+                                    >
+                                        <SiPolymerproject className="text-md" />{" "}
+                                        Manage Book
+                                    </Link>
+                                </li>
+                            </div>
+                        ) : (
+                            ""
+                        )}
+
+                        {/* divider */}
+
                         <div className=" my-4 border border-customYellow"></div>
-
                         <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
                             <Link
-                                href="/dashboard/addBooks"
+                                href="/dashboard/subscriber"
                                 className="flex px-2 py-1 items-center gap-2"
                             >
-                                <BiSolidBookmarkAltPlus className="text-md" />{" "}
-                                Add Books
+                                <FaUsers className="text-xl" /> Subscriber
                             </Link>
+                        </li>
+
+                        {/* divider */}
+                        <div className=" my-4 border border-customYellow"></div>
+                        <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow flex  items-center hover:rounded-md">
+                            <DahsBoardSignOut />
                         </li>
                     </div>
-                ) : (
-                    <div>
-                        <div className=" my-4 border border-customYellow"></div>
-
-                        <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
-                            <Link
-                                href="/dashboard/manage-books"
-                                className="flex px-2 py-1 items-center gap-2"
-                            >
-                                <SiPolymerproject className="text-md" /> Manage
-                                Book
-                            </Link>
-                        </li>
-                    </div>
-                )}
-
-                {/* divider */}
-
-                <div className=" my-4 border border-customYellow"></div>
-                <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
-                    <Link
-                        href="/dashboard/subscriber"
-                        className="flex px-2 py-1 items-center gap-2"
-                    >
-                        <FaUsers className="text-xl" /> Subscriber
-                    </Link>
-                </li>
-
-                {/* divider */}
-                <div className=" my-4 border border-customYellow"></div>
-                <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow flex  items-center hover:rounded-md">
-                    <DahsBoardSignOut />
-                </li>
-            </div>
+                </div>
+            )}
         </div>
     );
 };
