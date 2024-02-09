@@ -114,7 +114,8 @@ const Login = () => {
     };
 
     return (
-        <div className="bg-lightBtn pt-14 md:pt-20">
+       <div className="bg-lightBtn">
+         <div className=" pt-14 md:pt-20">
             <div className="" id="loginBg">
                 <section className="py-12">
                     <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 flex justify-around ">
@@ -381,6 +382,7 @@ const Login = () => {
                 </section>
             </div>
         </div>
+       </div>
     );
 };
 
