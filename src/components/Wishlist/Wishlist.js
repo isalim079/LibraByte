@@ -11,7 +11,7 @@ const items = [
 ];
 const Wishlist = () => {
     return (
-       <div className='bg-bgTexture'>
+       <div className='bg-bgTexture pt-24'>
          <div className='flex flex-col lg:flex-row justify-evenly'>
             <div className="ml-0 md:ml-20 lg:ml-0 bg-gray-250 shadow-md max-w-[700px] md:w-[600px] p-8 mb-20 mt-10 space-y-6 bg-royalBlue bg-bgTexture rounded-md">
             {/* top part  */}
