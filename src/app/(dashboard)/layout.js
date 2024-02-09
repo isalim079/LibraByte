@@ -3,7 +3,7 @@ import FloatingProfile from "@/components/Dashboard/UserDashboard/ProfileDashBoa
 
 const DashboardLayout = ({ children }) => {
     return (
-        <div className="">
+        <div className="bg-bgTexture">
             <div className="lg:grid lg:grid-cols-12">
 
             <div className="lg:col-span-2 hidden lg:block">
@@ -21,7 +21,7 @@ const DashboardLayout = ({ children }) => {
                 
                 
                 {/* children */}
-                <div className="lg:col-span-10  bg-bgTexture">
+                <div className="lg:col-span-10">
                 {children}
                 </div>
             </div>

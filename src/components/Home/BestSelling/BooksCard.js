@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { IoMdStar } from "react-icons/io";
 
+
 const BooksCard = ({ book }) => {
     return (
         <div>
-            <div className=" w-60 bg-royalBlue text-white drop-shadow-lg ">
+            <div className=" w-60 bg-royalBlue text-white drop-shadow-lg">
                 <figure className="h-64">
                     <img src={book?.image} alt="books" className="" />
                 </figure>
