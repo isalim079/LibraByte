@@ -79,7 +79,7 @@ const ReviewNComplain = () => {
                 </div>
             </dialog>
         </div>
-    );
+    ); 
 };
 
 export default ReviewNComplain;
