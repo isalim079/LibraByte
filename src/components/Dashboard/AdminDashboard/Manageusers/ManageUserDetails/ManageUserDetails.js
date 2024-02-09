@@ -8,9 +8,9 @@ const ManageUserDetails = async () => {
     return (
         <div>
             <div className="overflow-x-auto">
-                <table className="table table-xs">
+                <table className="table table-md">
                     <thead>
-                        <tr className='bg-lightWhite text-black text-[14px] drop-shadow-md'>
+                        <tr className='bg-royalBlue text-white text-[14px] drop-shadow-md'>
                             <th>#</th>
                             <th>User Name</th>
                             <th>User Email</th>
