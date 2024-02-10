@@ -29,7 +29,7 @@ const AdminMenu = () => {
     return (
         <div>
             {loading ? (
-                <Loading />
+                <div className="hidden"><Loading  /></div>
             ) : (
                 <div className="">
                     {/* <h1 className='md:mt-11 text-[17px]'>Dashboard home</h1> */}

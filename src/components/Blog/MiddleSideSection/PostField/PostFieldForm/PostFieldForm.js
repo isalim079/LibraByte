@@ -63,7 +63,7 @@ const PostFieldForm = () => {
             <form onSubmit={handlePost} className="">
                 <input
                     type="text"
-                    className=" xl:w-[332px] w-full  my-2  h-10 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056] bg-white text-white"
+                    className=" xl:max-w-[352px] w-full  my-2  h-10 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056] bg-white text-white"
                     placeholder="Write your blog title"
                     required
                     name="postFieldTitle"
@@ -76,10 +76,10 @@ const PostFieldForm = () => {
                     cols="32"
                     rows="6"
                     required
-                    className="border-2 border-t-0 border-l-1 border-r-0 border-b-royalBlue border-l-royalBlue bg-white p-4 placeholder:text-sm focus:outline-none focus:border-2 focus:border-[#126056] text-white"
+                    className="border-2 xl:w-[352px] border-t-0 border-l-1 border-r-0 border-b-royalBlue border-l-royalBlue bg-white p-4 placeholder:text-sm focus:outline-none focus:border-2 focus:border-[#126056] text-white"
                     placeholder="Share your thoughts here..."
                 ></textarea>
-                <button className="xl:w-[332px] w-full bg-darkBtn hover:bg-[#126056] shadow-lg py-2 text-lightWhite rounded-md mt-2">
+                <button className="xl:max-w-[352px] w-full bg-darkBtn hover:bg-[#126056] shadow-lg py-2 text-lightWhite rounded-md mt-2">
                     Post
                 </button>
             </form>
