@@ -23,18 +23,20 @@ const AdminProfileDash = () => {
     /* handle borrow status */
     const handleBorrowStatus = (borrow) => {
         Swal.fire({
-            title: "Do you want to approve borrow request?",
+            title: "Do you want to update borrow request?",
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonColor: "#333D2E",
             cancelButtonColor: "#878783",
-            confirmButtonText: "Approve",
+            confirmButtonText: "Yes",
             denyButtonText: `Don't approve`,
         }).then(async (result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 /* patch borrow status */
 
+                /* making borrow status true */
+               if(borrow.borrow_status === false) {
                 const res = await axiosPublic.patch(
                     `/addborrow/v1/${borrow._id}`,
                     {
@@ -44,8 +46,24 @@ const AdminProfileDash = () => {
                 // console.log(res);
                 if (res.status === 200) {
                     refetch();
-                    Swal.fire("Approved!", "", "success");
+                    Swal.fire("updated borrow request status", "", "success");
                 }
+               }
+
+               /* making borrow status false */
+               if(borrow.borrow_status === true) {
+                const res = await axiosPublic.patch(
+                    `/addborrow/v1/${borrow._id}`,
+                    {
+                        borrow_status: false,
+                    }
+                );
+                // console.log(res);
+                if (res.status === 200) {
+                    refetch();
+                    Swal.fire("updated borrow request status", "", "success");
+                }
+               }
 
                 // console.log(borrow._id);
             } else if (result.isDenied) {
@@ -57,33 +75,55 @@ const AdminProfileDash = () => {
     /* handle delivered status */
     const handleDeliveredStatus = (borrow) => {
         Swal.fire({
-            title: "Do you want to approve delivery?",
+            title: "Do you want to update delivery status?",
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonColor: "#333D2E",
             cancelButtonColor: "#878783",
-            confirmButtonText: "Approve",
-            denyButtonText: `Didn't delivered yet`,
+            confirmButtonText: "Yes",
+            denyButtonText: `Not yet`,
         }).then(async (result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 /* patch borrow status */
 
-                const res = await axiosPublic.patch(
-                    `/updateDeliver/v1/${borrow._id}`,
-                    {
-                        delivered_status: true,
-                    }
-                );
-                // console.log(res);
 
-                if (res.status === 200) {
-                    refetch();
-                    Swal.fire("Delivered!", "", "success");
+                /* making delivered status true */
+                if(borrow.delivered_status === false) {
+                    const res = await axiosPublic.patch(
+                        `/updateDeliver/v1/${borrow._id}`,
+                        {
+                            delivered_status: true,
+                        }
+                    );
+                    // console.log(res);
+    
+                    if (res.status === 200) {
+                        refetch();
+                        Swal.fire("updated delivery status", "", "success");
+                    }
+                }
+
+                /* making delivered status false */
+                if(borrow.delivered_status === true) {
+                    const res = await axiosPublic.patch(
+                        `/updateDeliver/v1/${borrow._id}`,
+                        {
+                            delivered_status: false,
+                        }
+                    );
+                    // console.log(res);
+    
+                    if (res.status === 200) {
+                        refetch();
+                        Swal.fire("updated delivery status", "", "success");
+                    }
                 }
 
                 // console.log(borrow._id);
-            } else if (result.isDenied) {
+            } 
+            
+            else if (result.isDenied) {
                 Swal.fire("Cancelled", "", "info");
             }
         });
@@ -105,18 +145,40 @@ const AdminProfileDash = () => {
             if (result.isConfirmed) {
     //             /* patch returned status */
 
-                const res = await axiosPublic.patch(
-                    `/returnedStatus/v1/${borrow._id}`,
-                    {
-                        returned_status: true,
+                /* making returned status true */
+                if(borrow.returned_status === false) {
+                    const res = await axiosPublic.patch(
+                        `/returnedStatus/v1/${borrow._id}`,
+                        {
+                            returned_status: true
+                        }
+                    );
+
+                    if (res.status === 200) {
+                        refetch();
+                        Swal.fire("Successfully updated returned status", "", "success");
                     }
-                );
+
+                }
+
+                /* making returned status false */
+                if(borrow.returned_status === true) {
+                    const res = await axiosPublic.patch(
+                        `/returnedStatus/v1/${borrow._id}`,
+                        {
+                            returned_status: false
+                        }
+                    );
+
+                    if (res.status === 200) {
+                        refetch();
+                        Swal.fire("Successfully updated returned status", "", "success");
+                    }
+
+                }
                 // console.log(res);
 
-                if (res.status === 200) {
-                    refetch();
-                    Swal.fire("Successfully updated returned status", "", "success");
-                }
+                
 
                 // console.log(borrow._id);
             } else if (result.isDenied) {
