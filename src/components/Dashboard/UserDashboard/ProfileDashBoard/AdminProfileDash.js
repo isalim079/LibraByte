@@ -69,21 +69,43 @@ const AdminProfileDash = () => {
             if (result.isConfirmed) {
                 /* patch borrow status */
 
-                const res = await axiosPublic.patch(
-                    `/updateDeliver/v1/${borrow._id}`,
-                    {
-                        delivered_status: true,
-                    }
-                );
-                // console.log(res);
 
-                if (res.status === 200) {
-                    refetch();
-                    Swal.fire("Delivered!", "", "success");
+                /* making delivered status true */
+                if(borrow.delivered_status === false) {
+                    const res = await axiosPublic.patch(
+                        `/updateDeliver/v1/${borrow._id}`,
+                        {
+                            delivered_status: true,
+                        }
+                    );
+                    // console.log(res);
+    
+                    if (res.status === 200) {
+                        refetch();
+                        Swal.fire("Delivered!", "", "success");
+                    }
+                }
+
+                /* making delivered status false */
+                if(borrow.delivered_status === true) {
+                    const res = await axiosPublic.patch(
+                        `/updateDeliver/v1/${borrow._id}`,
+                        {
+                            delivered_status: false,
+                        }
+                    );
+                    // console.log(res);
+    
+                    if (res.status === 200) {
+                        refetch();
+                        Swal.fire("Delivered!", "", "success");
+                    }
                 }
 
                 // console.log(borrow._id);
-            } else if (result.isDenied) {
+            } 
+            
+            else if (result.isDenied) {
                 Swal.fire("Cancelled", "", "info");
             }
         });
@@ -105,18 +127,40 @@ const AdminProfileDash = () => {
             if (result.isConfirmed) {
     //             /* patch returned status */
 
-                const res = await axiosPublic.patch(
-                    `/returnedStatus/v1/${borrow._id}`,
-                    {
-                        returned_status: true,
+                /* making returned status true */
+                if(borrow.returned_status === false) {
+                    const res = await axiosPublic.patch(
+                        `/returnedStatus/v1/${borrow._id}`,
+                        {
+                            returned_status: true
+                        }
+                    );
+
+                    if (res.status === 200) {
+                        refetch();
+                        Swal.fire("Successfully updated returned status", "", "success");
                     }
-                );
+
+                }
+
+                /* making returned status false */
+                if(borrow.returned_status === true) {
+                    const res = await axiosPublic.patch(
+                        `/returnedStatus/v1/${borrow._id}`,
+                        {
+                            returned_status: false
+                        }
+                    );
+
+                    if (res.status === 200) {
+                        refetch();
+                        Swal.fire("Successfully updated returned status", "", "success");
+                    }
+
+                }
                 // console.log(res);
 
-                if (res.status === 200) {
-                    refetch();
-                    Swal.fire("Successfully updated returned status", "", "success");
-                }
+                
 
                 // console.log(borrow._id);
             } else if (result.isDenied) {
