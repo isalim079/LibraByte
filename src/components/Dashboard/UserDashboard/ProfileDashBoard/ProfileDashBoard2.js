@@ -11,7 +11,6 @@ import AdminProfileDash from "./AdminProfileDash";
 import ProfileDashBoardTable from "./ProfileDashBoardTable";
 import Loading from "@/components/shared/Loading/Loading";
 
-
 const ProfileDashBoard2 = () => {
     const { user, userRole } = useContext(AuthContext);
 
@@ -121,8 +120,6 @@ const ProfileDashBoard2 = () => {
                     )}
                 </>
             )}
-
-            
         </div>
     );
 };

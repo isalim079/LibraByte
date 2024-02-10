@@ -7,10 +7,10 @@
 }
 .content p:nth-child(1) {
     color: transparent;
-    -webkit-text-stroke: 2px #8958A4;
+    -webkit-text-stroke: 2px #207468;
 }
 .content p:nth-child(2) {
-    color: #8958A4;
+    color: #339586;
     animation: animate 4s ease-in-out infinite;
     animation-duration: 1s;
    

@@ -22,7 +22,7 @@ const Loading = () => {
                     LIBRABYTE{" "}
                 </p>
             </div>
-            <div className="-mt-32 w-80">
+            <div className="-mt-20 w-96">
             <Lottie animationData={loadingBg} loop={true} />
             </div>
            
