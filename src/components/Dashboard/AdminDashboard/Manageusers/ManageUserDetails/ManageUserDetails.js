@@ -105,56 +105,54 @@ const ManageUserDetails = async () => {
         });
     };
 
-     /* Pagination */
+    /* Pagination */
 
-     const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
 
-     /* how many content you want to show in one page */
-     const [usersDataPerPage] = useState(10);
- 
-     // console.log(currentPage);
- 
-     /* total data */
-     const indexOfLastUsersData = currentPage * usersDataPerPage;
- 
-     /* data from where it will be shown. page 2 will exclude 1st 10 data, page 3 will exclude 1st 20 data */
-     const indexOfFirstUsersData =
-         indexOfLastUsersData - usersDataPerPage;
- 
-     /* splice by excluding data */
-     const currentUsersData = usersData.slice(
-         indexOfFirstUsersData,
-         indexOfLastUsersData
-     );
- 
-     const pageNumbers = [];
- 
-     /* divide numbers will be how many pages you want to show in one page */
- 
-     for (let i = 1; i <= Math.ceil(usersData.length / 10); i++) {
-         pageNumbers.push(i);
-     }
- 
-     const paginate = (pageNumber) => {
-         setCurrentPage(pageNumber);
-     };
- 
-     /* managing previous click */
- 
-     const handlePreviousClick = () => {
-         if (currentPage > 0 && currentPage - 1 !== 0) {
-             setCurrentPage(currentPage - 1);
-         }
-     };
- 
-     /* managing Next click */
- 
-     const handleNextClick = () => {
-         if (currentPage > 0 && currentPage + 1 !== pageNumbers.length + 1) {
-             setCurrentPage(currentPage + 1);
-         }
-     };
-     
+    /* how many content you want to show in one page */
+    const [usersDataPerPage] = useState(10);
+
+    // console.log(currentPage);
+
+    /* total data */
+    const indexOfLastUsersData = currentPage * usersDataPerPage;
+
+    /* data from where it will be shown. page 2 will exclude 1st 10 data, page 3 will exclude 1st 20 data */
+    const indexOfFirstUsersData = indexOfLastUsersData - usersDataPerPage;
+
+    /* splice by excluding data */
+    const currentUsersData = usersData.slice(
+        indexOfFirstUsersData,
+        indexOfLastUsersData
+    );
+
+    const pageNumbers = [];
+
+    /* divide numbers will be how many pages you want to show in one page */
+
+    for (let i = 1; i <= Math.ceil(usersData.length / 10); i++) {
+        pageNumbers.push(i);
+    }
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    /* managing previous click */
+
+    const handlePreviousClick = () => {
+        if (currentPage > 0 && currentPage - 1 !== 0) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    /* managing Next click */
+
+    const handleNextClick = () => {
+        if (currentPage > 0 && currentPage + 1 !== pageNumbers.length + 1) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
 
     return (
         <div className="mt-7">
@@ -162,7 +160,6 @@ const ManageUserDetails = async () => {
                 <table className="table">
                     <thead>
                         <tr className="bg-royalBlue text-white text-[14px] drop-shadow-md">
-                            <th>#</th>
                             <th>User Name</th>
                             <th>User Email</th>
                             <th>Send Email</th>
@@ -177,15 +174,21 @@ const ManageUserDetails = async () => {
                         {currentUsersData.map((user, idx) => (
                             <>
                                 <tr key={user._id}>
-                                    <th>{idx + 1}</th>
-                                    <td>{user?.name}</td>
+                                    <td>
+                                        <span className="font-bold">
+                                            # {idx + 1}.
+                                        </span>{" "}
+                                        {user?.name}
+                                    </td>
                                     <td>{user?.email}</td>
                                     <td>
                                         <AiOutlineMail className="text-xl"></AiOutlineMail>{" "}
                                     </td>
-                                    <td><Moment format="DD/MM/YYYY">
-                                    {user?.date}
-                                        </Moment></td>
+                                    <td>
+                                        <Moment format="DD/MM/YYYY">
+                                            {user?.date}
+                                        </Moment>
+                                    </td>
                                     <td>{user?.subscription}</td>
                                     <td>{user?.role}</td>
                                     <td>
@@ -199,10 +202,9 @@ const ManageUserDetails = async () => {
                                                 ? "Make User"
                                                 : "Make Admin"}
                                         </button>
-                                        
                                     </td>
                                     <td>
-                                    <button
+                                        <button
                                             onClick={() =>
                                                 handleDeleteUser(user)
                                             }
@@ -216,23 +218,22 @@ const ManageUserDetails = async () => {
                         ))}
                     </tbody>
 
-                    
-                     {/* Pagination */}
+                    {/* Pagination */}
 
-            {/* If borrow books data is more than 5, then data will be shown. otherwise not. */}
+                    {/* If borrow books data is more than 5, then data will be shown. otherwise not. */}
 
-            {usersData.length > 10 ? (
-                <div className="pb-10">
-                    <ul className="flex items-center gap-10 text-xl font-semibold justify-center mt-10">
-                        {/* previous button */}
-                        <button className="btn-5">
-                            <GrFormPrevious
-                                onClick={() => handlePreviousClick()}
-                                className="text-3xl border border-royalBlue rounded-full p-[2px]  hover:bg-royalBlue hover:text-white"
-                            />
-                        </button>
+                    {usersData.length > 10 ? (
+                        <div className="pb-10">
+                            <ul className="flex items-center gap-10 text-xl font-semibold justify-center mt-10">
+                                {/* previous button */}
+                                <button className="btn-5">
+                                    <GrFormPrevious
+                                        onClick={() => handlePreviousClick()}
+                                        className="text-3xl border border-royalBlue rounded-full p-[2px]  hover:bg-royalBlue hover:text-white"
+                                    />
+                                </button>
 
-                        {/* This is the logic for slice. I give an example
+                                {/* This is the logic for slice. I give an example
                 
                 slice(0, 7) => shows 1 to 7
                 slice(1, 8) => shows 2 to 8
@@ -243,82 +244,87 @@ const ManageUserDetails = async () => {
                 
                 */}
 
-                        {/* If user clicks number 2 or other then it will show */}
-                        {currentPage !== 1 && pageNumbers.length > 7 ? (
-                            <>
-                                {pageNumbers.slice(0, 1).map((number) => (
-                                    <li key={number}>
-                                        <button
-                                            onClick={() => paginate(number)}
-                                            className={
-                                                currentPage === number
-                                                    ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
-                                                    : ""
-                                            }
-                                        >
-                                            {number}
-                                        </button>
-                                    </li>
-                                ))}
-                            </>
-                        ) : (
-                            ""
-                        )}
+                                {/* If user clicks number 2 or other then it will show */}
+                                {currentPage !== 1 && pageNumbers.length > 7 ? (
+                                    <>
+                                        {pageNumbers
+                                            .slice(0, 1)
+                                            .map((number) => (
+                                                <li key={number}>
+                                                    <button
+                                                        onClick={() =>
+                                                            paginate(number)
+                                                        }
+                                                        className={
+                                                            currentPage ===
+                                                            number
+                                                                ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
+                                                                : ""
+                                                        }
+                                                    >
+                                                        {number}
+                                                    </button>
+                                                </li>
+                                            ))}
+                                    </>
+                                ) : (
+                                    ""
+                                )}
 
-                        {/* ... condition */}
+                                {/* ... condition */}
 
-                        {currentPage !== 1 && pageNumbers.length > 7 ? (
-                            <li>...</li>
-                        ) : (
-                            ""
-                        )}
-                        {/* pages */}
-                        {pageNumbers
-                            .slice(
-                                pageNumbers.length > 7 ? currentPage - 1 : 0,
-                                currentPage + 6
-                            )
-                            .map((number) => (
-                                <li key={number}>
-                                    <button
-                                        onClick={() => paginate(number)}
-                                        className={
-                                            currentPage === number
-                                                ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
-                                                : ""
-                                        }
-                                    >
-                                        {number}
-                                    </button>
-                                </li>
-                            ))}
+                                {currentPage !== 1 && pageNumbers.length > 7 ? (
+                                    <li>...</li>
+                                ) : (
+                                    ""
+                                )}
+                                {/* pages */}
+                                {pageNumbers
+                                    .slice(
+                                        pageNumbers.length > 7
+                                            ? currentPage - 1
+                                            : 0,
+                                        currentPage + 6
+                                    )
+                                    .map((number) => (
+                                        <li key={number}>
+                                            <button
+                                                onClick={() => paginate(number)}
+                                                className={
+                                                    currentPage === number
+                                                        ? "bg-royalBlue text-white px-2 py-1 rounded-md -translate-y-1 shadow-lg transition-all duration-400 ease-in-out"
+                                                        : ""
+                                                }
+                                            >
+                                                {number}
+                                            </button>
+                                        </li>
+                                    ))}
 
-                        {pageNumbers.length > 7 &&
-                            currentPage <= pageNumbers.length - 6 && (
-                                <li>...</li>
-                            )}
+                                {pageNumbers.length > 7 &&
+                                    currentPage <= pageNumbers.length - 6 && (
+                                        <li>...</li>
+                                    )}
 
-                        {pageNumbers.length > 7 ? (
-                            <button>{pageNumbers.length}</button>
-                        ) : (
-                            ""
-                        )}
+                                {pageNumbers.length > 7 ? (
+                                    <button>{pageNumbers.length}</button>
+                                ) : (
+                                    ""
+                                )}
 
-                        {/* next button */}
+                                {/* next button */}
 
-                        <button>
-                            <GrFormNext
-                                onClick={() => handleNextClick()}
-                                className="text-3xl border border-royalBlue rounded-full p-[2px] hover:bg-royalBlue hover:text-white"
-                            />
-                        </button>
-                    </ul>
-                </div>
-            ) : (
-                ""
-            )}
-
-
+                                <button>
+                                    <GrFormNext
+                                        onClick={() => handleNextClick()}
+                                        className="text-3xl border border-royalBlue rounded-full p-[2px] hover:bg-royalBlue hover:text-white"
+                                    />
+                                </button>
+                            </ul>
+                        </div>
+                    ) : (
+                        ""
+                    )}
                 </table>
             </div>
         </div>
