@@ -3,10 +3,13 @@
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { AiOutlineMail } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import Moment from "react-moment";
+import emailjs from "@emailjs/browser";
+import emailAnimation from "../../../../../assets/animation/emailAnimation.json";
+import Lottie from "lottie-react";
+import toast from "react-hot-toast";
 
 const ManageUserDetails = async () => {
     const axiosPublic = useAxiosPublic();
@@ -154,6 +157,52 @@ const ManageUserDetails = async () => {
         }
     };
 
+    /* send email to user and admin */
+
+    const [clickedMail, setClickedMail] = useState();
+
+    const handleSendEmail = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const emailBody = form.get("emailBody");
+        const subject = form.get("subject");
+        console.log(emailBody);
+
+        // emailjs.init(process.env.EMAIL_PUBLIC_KEY)
+
+        const formData = {
+            to_email: clickedMail?.email,
+            subject: subject,
+            message: emailBody,
+            to_name: clickedMail?.name,
+        };
+
+        emailjs
+            .send(
+                "service_l4ram66",  //service id
+                "template_7ruvwad",     // template id
+                formData,
+                "NaZIhBr5-qQ34GM8B"   // public key
+            )
+            .then((res) => {
+                console.log(res.status);
+                if (res.status === 200) {
+                    const modal = document.getElementById("my_modal_2");
+                    if (modal) {
+                        modal.close();
+                    }
+
+                    toast.success("Email sent!");
+                    form.reset();
+                }
+            })
+            .catch((error) => {
+                console.log(error.text);
+            });
+    };
+
+    //   console.log(clickedMail?.name);
+
     return (
         <div className="mt-7">
             <div className="overflow-x-auto">
@@ -182,7 +231,79 @@ const ManageUserDetails = async () => {
                                     </td>
                                     <td>{user?.email}</td>
                                     <td>
-                                        <AiOutlineMail className="text-xl"></AiOutlineMail>{" "}
+                                        {/* emailJs */}
+                                        <button
+                                            className=""
+                                            onClick={() =>
+                                                document
+                                                    .getElementById(
+                                                        "my_modal_2"
+                                                    )
+                                                    .showModal()
+                                            }
+                                        >
+                                            <Lottie
+                                                onClick={() =>
+                                                    setClickedMail(user)
+                                                }
+                                                className="w-10"
+                                                animationData={emailAnimation}
+                                                loop={true}
+                                            />
+                                        </button>
+                                        <dialog
+                                            id="my_modal_2"
+                                            className="modal"
+                                        >
+                                            <div className="modal-box">
+                                                <h3 className="font-bold text-lg">
+                                                    Hello {user?.name}
+                                                </h3>
+                                                <div className="py-4">
+                                                    <form
+                                                        onSubmit={
+                                                            handleSendEmail
+                                                        }
+                                                    >
+                                                        <input
+                                                            type="email"
+                                                            name="email"
+                                                            id=""
+                                                            className="border border-green-200 rounded-md pl-4 h-8 font-normal font-comicSans w-full block focus:outline-none focus:border-2 focus:border-green-400"
+                                                            placeholder={
+                                                                clickedMail?.email
+                                                            }
+                                                            disabled
+                                                        />
+                                                        <input
+                                                            type="text"
+                                                            name="subject"
+                                                            id=""
+                                                            className="border border-green-200 mt-4 rounded-md pl-4 h-8 font-normal font-comicSans w-full block focus:outline-none focus:border-2 focus:border-green-400"
+                                                            placeholder="Enter your subject here..."
+                                                        />
+
+                                                        <textarea
+                                                            type="text"
+                                                            name="emailBody"
+                                                            id=""
+                                                            className="border border-green-200 rounded-md mt-4 pt-4 pl-4 h-[80px] font-normal font-comicSans w-full block focus:outline-none focus:border-2 focus:border-green-400"
+                                                            placeholder="Enter your message..."
+                                                        />
+
+                                                        <button className="bg-lightBtn hover:bg-darkBtn py-2 w-full text-white mt-4 rounded-md hover:shadow-md hover:shadow-lightBtn">
+                                                            Send Email
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <form
+                                                method="dialog"
+                                                className="modal-backdrop"
+                                            >
+                                                <button>close</button>
+                                            </form>
+                                        </dialog>
                                     </td>
                                     <td>
                                         <Moment format="DD/MM/YYYY">
