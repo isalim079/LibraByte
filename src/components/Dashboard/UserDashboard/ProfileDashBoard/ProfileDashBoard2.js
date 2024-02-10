@@ -21,7 +21,7 @@ const ProfileDashBoard2 = () => {
 
     useEffect(() => {
         if (userRole) {
-            setLoading(true);
+            setLoading(false);
         }
     }, [userRole]);
     // console.log(userRole);
