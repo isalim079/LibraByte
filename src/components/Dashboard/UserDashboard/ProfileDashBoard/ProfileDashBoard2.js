@@ -11,6 +11,7 @@ import AdminProfileDash from "./AdminProfileDash";
 import ProfileDashBoardTable from "./ProfileDashBoardTable";
 import Loading from "@/components/shared/Loading/Loading";
 
+
 const ProfileDashBoard2 = () => {
     const { user, userRole } = useContext(AuthContext);
 
@@ -20,7 +21,7 @@ const ProfileDashBoard2 = () => {
 
     useEffect(() => {
         if (userRole) {
-            setLoading(false);
+            setLoading(true);
         }
     }, [userRole]);
     // console.log(userRole);
@@ -45,7 +46,11 @@ const ProfileDashBoard2 = () => {
                                         height={120}
                                     /> */}
                                     <p className="text-white text-6xl">
-                            Libra<span className="text-[#ECC21C]">Byte</span> </p>
+                                        Libra
+                                        <span className="text-[#ECC21C]">
+                                            Byte
+                                        </span>{" "}
+                                    </p>
                                 </div>
                                 <div className="absolute -bottom-28 left-16">
                                     <Image
@@ -116,6 +121,8 @@ const ProfileDashBoard2 = () => {
                     )}
                 </>
             )}
+
+            
         </div>
     );
 };

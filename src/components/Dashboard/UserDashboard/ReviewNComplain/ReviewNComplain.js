@@ -32,7 +32,7 @@ const ReviewNComplain = () => {
 
     return (
         <div className='flex flex-row justify-between mx-4 md:mx-10 lg:mx-40 my-10'>
-            <button className="btn px-10 bg-teal-500 hover:bg-teal-600 hover:shadow-customYellow hover:shadow-2xl" onClick={() => document.getElementById('my_modal_1').showModal()}>Reviews</button>
+            <button className="btn px-10 bg-teal-500 hover:bg-teal-600 hover:shadow-lightBtn hover:shadow-2xl text-white" onClick={() => document.getElementById('my_modal_1').showModal()}>Reviews</button>
             <dialog id='my_modal_1' className="modal">
                 <div className="modal-box">
                     <form method="dialog">
@@ -60,7 +60,7 @@ const ReviewNComplain = () => {
 
                 </div>
             </dialog>
-            <button className="btn  px-10 bg-teal-500 hover:bg-teal-600 hover:shadow-customYellow hover:shadow-2xl" onClick={() => document.getElementById('my_modal_2').showModal()}>Complains</button>
+            <button className="btn  px-10 bg-teal-500 hover:bg-teal-600 hover:shadow-lightBtn hover:shadow-2xl text-white" onClick={() => document.getElementById('my_modal_2').showModal()}>Complains</button>
             <dialog id='my_modal_2' className="modal">
                 <div className="modal-box">
                     <form method="dialog">
