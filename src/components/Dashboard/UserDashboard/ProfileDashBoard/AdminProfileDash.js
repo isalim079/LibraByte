@@ -93,20 +93,20 @@ const AdminProfileDash = () => {
     /* handle returned status */
     const handleReturnedStatus = (borrow) => {
         Swal.fire({
-            title: "Do you want to approve?",
+            title: "Want to update return status?",
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonColor: "#333D2E",
             cancelButtonColor: "#878783",
-            confirmButtonText: "Approve",
-            denyButtonText: `Not returned`,
+            confirmButtonText: "Yes",
+            denyButtonText: `Not now`,
         }).then(async (result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                /* patch borrow status */
+    //             /* patch returned status */
 
                 const res = await axiosPublic.patch(
-                    `/updateDeliver/v1/${borrow._id}`,
+                    `/returnedStatus/v1/${borrow._id}`,
                     {
                         returned_status: true,
                     }
@@ -115,7 +115,7 @@ const AdminProfileDash = () => {
 
                 if (res.status === 200) {
                     refetch();
-                    Swal.fire("Delivered!", "", "success");
+                    Swal.fire("Successfully updated returned status", "", "success");
                 }
 
                 // console.log(borrow._id);
@@ -292,7 +292,9 @@ const AdminProfileDash = () => {
                                 <th>
                                       {/* returned status */}
 
-                                      <div onClick={() => handleReturnedStatus(borrow)}>
+                                      <div 
+                                      onClick={() => handleReturnedStatus(borrow)}
+                                      >
                                             {borrow?.returned_status ===
                                             false ? (
                                                 <span className="flex items-center font-normal text-sm justify-start gap-2 cursor-pointer underline">
