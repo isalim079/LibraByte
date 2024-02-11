@@ -124,8 +124,9 @@ const MyBlogPost = () => {
                                         </div>
                                     </div>
                                 ) : (
-                                    <div className="h-[calc(100vh-240px)] flex justify-center items-center">
+                                    <div className="h-[calc(100vh-240px)] flex flex-col justify-center items-center">
                                         <Lottie className="w-72" animationData={animation} loop={true} />
+                                        <p className="text-2xl font-bold">You haven't posted anything yet</p>
                                     </div> 
                                 )}
                             </div>
