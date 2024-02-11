@@ -30,9 +30,12 @@ const Categories = () => {
 
                 {/* divider */}
                 <div className="divider my-2"></div>
+                <Link href="/blog/authorTalks">
+                
                 <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-customYellow hover:py-2 hover:px-3 hover:rounded-md hover:text-royalBlue hover:text-center">
                     Author Talks
                 </li>
+                </Link>
 
                 {/* divider */}
                 <div className="divider my-2"></div>

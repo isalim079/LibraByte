@@ -1,24 +1,18 @@
 "use client";
 
-import axios from "axios";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import "animate.css";
 import classNames from "classnames";
+import AuthorPostFieldForm from "./AuthorPostFieldForm/AuthorPostFieldForm";
+import { AuthContext } from "@/app/Context/AuthProvider";
+
+import useAuthorTalks from "./useAuthorTalks";
 
 const AuthorTalks = () => {
-    const [userData, setUserData] = useState([]);
+    const { user } = useContext(AuthContext);
 
-    useEffect(() => {
-        axios
-            .get("/authorTalks.json")
-            .then((res) => {
-                setUserData(res.data);
-            })
-            .catch((error) => {
-                console.log("error getting topPost", error);
-            });
-    }, []);
+    const [authorTalksPostData, refetch] = useAuthorTalks();
 
     // animation
     const textAnimation = classNames(
@@ -26,43 +20,62 @@ const AuthorTalks = () => {
         "animate__backInLeft"
     );
 
-    return (
-        <div className="mt-8 p-8 bg-royalBlue rounded-md drop-shadow-lg overflow-y-auto h-[920px]">
-            {/* title section */}
-            <div>
-                <h1 className="text-2xl font-semibold text-slate-200">
-                    Author Talks
-                </h1>
-                <div className="border-2 border-customYellow w-[148px] mt-1 mb-5"></div>
-            </div>
+    // console.log(blogPostData);
 
-            {/* author section */}
-            <div>
+    return (
+        <div className="bg-bgTexture">
+            {/* Title */}
+            <div className="flex justify-center items-center flex-col pt-28">
+                <div className="fixed pt-10 shadow-md z-10 bg-royalBlue rounded-md px-6">
+                    <h2 className="text-2xl text-center  font-bold text-white ">
+                        Author Talks
+                    </h2>
+                    <div className="">
+                        <div className="border-2 border-customYellow w-44 mt-1 mb-5"></div>
+                    </div>
+                </div>
+            </div>
+            {/* --------------------------- */}
+            <div className="pt-10 p-8 max-w-screen-xl mx-auto rounded-md drop-shadow-lg overflow-y-auto ">
+                <AuthorPostFieldForm />
+
+                {/* author section */}
                 <div>
-                    {userData.map((author) => (
-                        <div key={author?.name}>
-                            <div className="mb-2">
-                                <Image
-                                    className="rounded-full h-[50px] border-2 border-customYellow"
-                                    src={author?.image}
-                                    width={50}
-                                    height={100}
-                                    alt="image"
-                                ></Image>
+                    <div>
+                        {authorTalksPostData.map((author) => (
+                            <div key={author?._id}>
+                                <div className="mb-2">
+                                    <div className="flex items-center gap-5">
+                                        <div>
+                                            <Image
+                                                className="rounded-full h-[50px] border-2 border-customYellow"
+                                                src={author?.authorImage}
+                                                width={50}
+                                                height={100}
+                                                alt="image"
+                                            ></Image>
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-royalBlue text-lg">
+                                                {author?.authorName}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className={`bg-lightBtn text-white p-3 rounded-b-2xl rounded-tr-2xl px-5 ${textAnimation}`}
+                                >
+                                    <h3 className="font-semibold">
+                                        {author?.authorTitle}
+                                    </h3>
+                                    <p className=" text-justify text-slate-200">
+                                        {author?.authorPost}
+                                    </p>
+                                </div>
+                                <span className="divider"></span>
                             </div>
-                            <div
-                                className={`bg-lightBtn text-white p-3 rounded-b-2xl rounded-tr-2xl px-5 ${textAnimation}`}
-                            >
-                                <h3 className="font-semibold">
-                                    {author?.author}
-                                </h3>
-                                <p className="text-sm text-justify text-slate-200">
-                                    {author?.review}
-                                </p>
-                            </div>
-                            <span className="divider"></span>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
