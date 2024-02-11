@@ -5,11 +5,11 @@ import { MdOutlineInsertComment } from "react-icons/md";
 import { HiMiniUserCircle } from "react-icons/hi2";
 import useBlogPost from "@/lib/hooks/useBlogPost";
 import { AiFillDelete } from "react-icons/ai";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
-import animation from "../../../../assets/animation/BlogPostAnimation.json"
+import animation from "../../../../assets/animation/BlogPostAnimation.json";
 import Lottie from "lottie-react";
 
 const MyBlogPost = () => {
@@ -47,6 +47,15 @@ const MyBlogPost = () => {
             }
         });
     };
+
+    const [blogPostLength, setBlogPostLength] = useState([]);
+
+    useEffect(() => {
+        const filterData = blogPost.filter((blog) => blog.email === user.email);
+        // console.log(filterData);
+        setBlogPostLength(filterData);
+    }, [blogPost, user]);
+    // console.log(blogPostLength.length);
 
     return (
         <div className="bg-bgTexture">
@@ -124,13 +133,25 @@ const MyBlogPost = () => {
                                         </div>
                                     </div>
                                 ) : (
-                                    <div className="h-[calc(100vh-240px)] flex flex-col justify-center items-center">
-                                        <Lottie className="w-72" animationData={animation} loop={true} />
-                                        <p className="text-2xl font-bold">You haven't posted anything yet</p>
-                                    </div> 
+                                    ""
                                 )}
                             </div>
                         ))}
+
+                        {blogPostLength.length === 0 ? (
+                            <div className="h-[calc(100vh-240px)] flex flex-col justify-center items-center">
+                                <Lottie
+                                    className="w-72"
+                                    animationData={animation}
+                                    loop={true}
+                                />
+                                <p className="text-2xl font-bold">
+                                    You haven't posted anything yet
+                                </p>
+                            </div>
+                        ) : (
+                            ""
+                        )}
                     </div>
                 </div>
             </div>
