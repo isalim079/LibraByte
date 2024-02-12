@@ -7,6 +7,7 @@ import classNames from "classnames";
 import AuthorPostFieldForm from "./AuthorPostFieldForm/AuthorPostFieldForm";
 
 import useAuthorTalks from "./useAuthorTalks";
+import { usePathname } from "next/navigation";
 
 const AuthorTalks = () => {
     const [authorTalksPostData, refetch] = useAuthorTalks();
@@ -17,6 +18,7 @@ const AuthorTalks = () => {
         "animate__backInLeft"
     );
 
+    const pathName = usePathname()
     // console.log(findUser?.author);
 
     return (
@@ -33,18 +35,24 @@ const AuthorTalks = () => {
                 </div>
             </div>
 
-            {/* BreadCumbs */}
-            <div className="text-sm breadcrumbs absolute top-24 drop-shadow-sm left-10">
-                <ul>
-                    <li>
-                        <a>Home</a>
-                    </li>
-                    <li>
-                        <a>Blog</a>
-                    </li>
-                    <li>Author Talks</li>
-                </ul>
-            </div>
+            {/* BreadCrumbs */}
+
+            {
+                pathName === "/blog" ? "" : 
+               
+                <div className="text-sm breadcrumbs absolute top-24 drop-shadow-sm left-10">
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/blog">Blog</a>
+                        </li>
+                        <li>Author Talks</li>
+                    </ul>
+                </div>
+            }
+
             {/* --------------------------- */}
             <div className="pt-10 p-8 max-w-screen-xl mx-auto rounded-md drop-shadow-lg overflow-y-auto ">
                 <AuthorPostFieldForm />

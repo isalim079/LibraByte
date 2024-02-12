@@ -170,7 +170,7 @@ const AuthorPostFieldForm = () => {
             )}
 
             {/* search function */}
-            <div>
+            <div className={`${findUser?.author ? ``: `mt-10`}`}>
                 <div className="relative">
                     <input
                         type="text"
