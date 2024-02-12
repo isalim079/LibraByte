@@ -8,10 +8,15 @@ import AuthorPostFieldForm from "./AuthorPostFieldForm/AuthorPostFieldForm";
 
 import useAuthorTalks from "./useAuthorTalks";
 import { usePathname } from "next/navigation";
+import { RiSearch2Line, RiUser4Line } from "react-icons/ri";
+import useFindUser from "@/lib/hooks/useFindUser";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "@/app/Context/AuthProvider";
 
 const AuthorTalks = () => {
     const [authorTalksPostData, refetch] = useAuthorTalks();
-
+    const {isAuthor} = useContext(AuthContext)
+    const [findUser] = useFindUser();
     // animation
     const textAnimation = classNames(
         "animate__animated",
@@ -20,6 +25,23 @@ const AuthorTalks = () => {
 
     const pathName = usePathname()
     // console.log(findUser?.author);
+
+    
+    const [tagsList, setTagList] = useState([])
+
+    const [searchTag, setSearchTag] = useState('')
+
+
+
+    useEffect(() => {
+        const tagList = authorTalksPostData.map(auth => auth.authorHashTag.tags)
+        const newTagLists = [...new Set(tagList.flatMap(innerArray => innerArray))]
+        setTagList(newTagLists);
+    }, [authorTalksPostData])
+
+    // console.log(tagsList);
+
+    // console.log(authorTalksPostData.filter(item => (item?.authorHashTag.tags.filter(item => item.toLowerCase().includes("life")))));
 
     return (
         <div className="bg-bgTexture">
@@ -53,30 +75,66 @@ const AuthorTalks = () => {
                 </div>
             }
 
+            
+
             {/* --------------------------- */}
-            <div className="pt-10 p-8 max-w-screen-xl mx-auto rounded-md drop-shadow-lg overflow-y-auto ">
+            <div className="pt-10 max-w-screen-xl mx-auto rounded-md drop-shadow-lg overflow-y-auto ">
                 <AuthorPostFieldForm />
+
+
+                    {/* Search */}
+
+              {/* search function */}
+             <div className={`${!isAuthor ? `` : `mt-14`} mb-10`}>
+             <div >
+                <div className="relative" onChange={(e) => setSearchTag(e.target.value)}>
+                    <input
+                        type="text"
+                        className="w-full max-w-[50%]  my-2  h-12 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
+                        placeholder="Search by tag..."
+                     
+                    />
+                    <div className="absolute top-[22px] left-[47%]">
+                        <button className="hover:tooltip" data-tip="search">
+                            <RiSearch2Line className="hover:shadow-md hover:shadow-royalBlue/30 hover:rounded-sm hover:p-[1px]" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+             </div>
+
+                {/* Display search  */}
+
 
                 {/* author section */}
                 <div>
                     <div>
-                        {authorTalksPostData.map((author) => (
+                        {authorTalksPostData.filter((item) => {
+                            return  item?.authorHashTag?.tags.filter(tag => tag.toLowerCase().includes(searchTag) === true)
+                           
+                            
+                        }).map((author) => (
                             <div key={author?._id}>
                                 <div className="mb-2">
                                     <div className="flex items-center gap-5">
                                         <div>
-                                            <Image
+                                            {
+                                                author?.authorImage ? <Image
                                                 className="rounded-full h-[50px] border-2 border-customYellow"
                                                 src={author?.authorImage}
                                                 width={50}
                                                 height={100}
                                                 alt="image"
-                                            ></Image>
+                                            ></Image> : <div><RiUser4Line className="text-2xl" /></div>
+                                            }
                                         </div>
                                         <div>
-                                            <p className="font-bold text-royalBlue text-lg">
+                                           <div>
+                                           <p className="font-bold text-royalBlue text-lg">
                                                 {author?.authorName}
                                             </p>
+                                            <p className="space-x-3">{(author?.authorHashTag?.tags).map((tag, index )=> <span>#{tag}</span>)}</p>
+                                           </div>
                                         </div>
                                     </div>
                                 </div>

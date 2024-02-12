@@ -103,6 +103,11 @@ const AuthProvider = ({ children }) => {
         setPath(path)
     }
 
+      /* find user by author */
+      const [isAuthor, setIsAuthor] = useState(null)
+
+    /* find user role */
+
     const [userRole, setUserRole] = useState(null)
 
     useEffect(() => {
@@ -112,9 +117,10 @@ const AuthProvider = ({ children }) => {
             const userData = res.data
             // console.log(userData);
             const findUser = userData.find(data => data?.email === user?.email)
-
             
                 setUserRole(findUser?.role)
+
+                setIsAuthor(findUser?.author && findUser?.author)
            
             // console.log(findUser?.role);
         })
@@ -124,6 +130,8 @@ const AuthProvider = ({ children }) => {
 
     }, [user])
 
+  
+    
     // console.log(userRole);
 
     // passing data through context api
@@ -140,6 +148,7 @@ const AuthProvider = ({ children }) => {
         getLocation,
         path,
         userRole,
+        isAuthor,
     };
 
     const queryClient = new QueryClient();

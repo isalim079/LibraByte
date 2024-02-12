@@ -2,7 +2,7 @@
 
 import { AuthContext } from "@/app/Context/AuthProvider";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 import { useRouter } from "next/navigation";
@@ -13,7 +13,7 @@ import { RxCrossCircled } from "react-icons/rx";
 import { RiSearch2Line } from "react-icons/ri";
 
 const AuthorPostFieldForm = () => {
-    const { user } = useContext(AuthContext);
+    const { user, isAuthor } = useContext(AuthContext);
     const [findUser] = useFindUser();
     const axiosPublic = useAxiosPublic();
     // console.log(user?.photoURL);
@@ -41,7 +41,7 @@ const AuthorPostFieldForm = () => {
         setTags(tags.filter((eachElements, i) => i !== index));
     };
 
-    const [, refetch] = useAuthorTalks();
+    const [authorTalksPostData, refetch] = useAuthorTalks();
 
     const handlePost = async (e) => {
         e.preventDefault();
@@ -93,9 +93,12 @@ const AuthorPostFieldForm = () => {
         }
     };
 
+// console.log(isAuthor);
+   
+
     return (
         <div className="">
-            {findUser?.author === true ? (
+            {isAuthor ? (
                 <div className="pt-10 flex justify-center">
                     <p className=" text-xl w-full  font-semibold text-royalBlue">
                         Post on <span className="font-bold">#AuthorTalks</span>
@@ -105,7 +108,7 @@ const AuthorPostFieldForm = () => {
                 ""
             )}
 
-            {findUser?.author === true ? (
+            {isAuthor ? (
                 <form
                     onSubmit={handlePost}
                     className="flex flex-col justify-center items-center space-y-4 mb-10 "
@@ -169,21 +172,8 @@ const AuthorPostFieldForm = () => {
                 ""
             )}
 
-            {/* search function */}
-            <div className={`${findUser?.author ? ``: `mt-10`}`}>
-                <div className="relative">
-                    <input
-                        type="text"
-                        className="w-full max-w-[50%] mb-10  my-2  h-10 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
-                        placeholder="Search by tag..."
-                    />
-                    <div className="absolute top-[18px] left-[47%]">
-                        <button className="hover:tooltip" data-tip="search">
-                            <RiSearch2Line className="hover:shadow-md hover:shadow-royalBlue/30 hover:rounded-sm hover:p-[1px]" />
-                        </button>
-                    </div>
-                </div>
-            </div>
+          
+
         </div>
     );
 };
