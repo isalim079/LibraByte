@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { IoMdStar } from "react-icons/io";
 
+
 const BooksCard = ({ book }) => {
     return (
         <div>
-            <div className=" w-60 bg-royalBlue text-white drop-shadow-lg ">
+            <div className=" w-60 bg-royalBlue text-white drop-shadow-lg">
                 <figure className="h-64">
                     <img src={book?.image} alt="books" className="" />
                 </figure>
@@ -20,7 +21,7 @@ const BooksCard = ({ book }) => {
                         <IoMdStar></IoMdStar>
                     </p>
                     <div className="card-actions">
-                        <Link href={`/bookDetails/${book?._id}`}><button className="btn btn-wide max-w-[175px] bg-lightBtn hover:bg-darkBtn border-none text-white">
+                        <Link href={`/bookDetails/${book?._id}`}><button className="btn btn-wide max-w-[175px] bg-teal-500 hover:bg-teal-600 border-none text-white">
                             View More
                         </button></Link>
                     </div>

@@ -104,7 +104,7 @@ const Sidebar = ({ children }) => {
                                 </p>
                             </div>
                         </Link>
-                        <Link href="/mylibrary">
+                        <Link href="/dashboard">
                             <div className=" hover:bg-lightBtn cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600">
                                 <IoIosBookmarks
                                     size={20}
