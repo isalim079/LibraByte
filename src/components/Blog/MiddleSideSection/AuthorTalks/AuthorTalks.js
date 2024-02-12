@@ -8,9 +8,11 @@ import AuthorPostFieldForm from "./AuthorPostFieldForm/AuthorPostFieldForm";
 import { AuthContext } from "@/app/Context/AuthProvider";
 
 import useAuthorTalks from "./useAuthorTalks";
+import useFindUser from "@/lib/hooks/useFindUser";
 
 const AuthorTalks = () => {
     const { user } = useContext(AuthContext);
+    const [findUser] = useFindUser()
 
     const [authorTalksPostData, refetch] = useAuthorTalks();
 
@@ -20,7 +22,7 @@ const AuthorTalks = () => {
         "animate__backInLeft"
     );
 
-    // console.log(blogPostData);
+    console.log(findUser?.author);
 
     return (
         <div className="bg-bgTexture">
