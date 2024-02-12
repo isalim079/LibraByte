@@ -11,11 +11,11 @@ import logo from "@/assets/logo/LibraByte.png";
 import Image from 'next/image';
 import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
 import RegisterLoading from './RegisterLoading';
-import animation from "../../../assets/animation/registerPageAnimation"
+import animation from "../../../assets/animation/authorRegister.json"
 import Lottie from 'lottie-react';
 import "./register.css"
 
-const Register = () => {
+const AuthorRegister = () => {
 
     const [loading, setLoading] = useState(false)
 
@@ -65,8 +65,8 @@ const Register = () => {
                                 name: name,
                                 email: email,
                                 role: "user",
-                                author: false,
                                 subscription: "free",
+                                author: true,
                                 date: date,
                             }
                             // server post request
@@ -220,4 +220,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default AuthorRegister;
