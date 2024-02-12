@@ -10,6 +10,7 @@ import useAuthorTalks from "../useAuthorTalks";
 import useFindUser from "@/lib/hooks/useFindUser";
 import "./authorPostField.css";
 import { RxCrossCircled } from "react-icons/rx";
+import { RiSearch2Line } from "react-icons/ri";
 
 const AuthorPostFieldForm = () => {
     const { user } = useContext(AuthContext);
@@ -94,69 +95,95 @@ const AuthorPostFieldForm = () => {
 
     return (
         <div className="">
-            <div className="pt-10 flex justify-center">
-                <p className=" text-xl w-full  font-semibold text-royalBlue">
-                    Post on <span className="font-bold">#AuthorTalks</span>
-                </p>
-            </div>
+            {findUser?.author === true ? (
+                <div className="pt-10 flex justify-center">
+                    <p className=" text-xl w-full  font-semibold text-royalBlue">
+                        Post on <span className="font-bold">#AuthorTalks</span>
+                    </p>
+                </div>
+            ) : (
+                ""
+            )}
 
-            <form
-                onSubmit={handlePost}
-                className="flex flex-col justify-center items-center space-y-4 mb-10"
-            >
-                {/* input tag */}
-                <div className="tags-input-container h-14 flex gap-4 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue w-full mt-4 py-2">
-                    {tags.map((tag, index) => (
-                        <div
-                            className="tag-item flex gap-2  h-full"
-                            key={index}
-                        >
-                            <div className=" text-sm flex items-center gap-1 bg-lightBtn text-white py-2 rounded-sm px-3 w-full">
-                                <span className="text flex">{tag}</span>
-                                <span className="close">
-                                    <RxCrossCircled
-                                        className="cursor-pointer"
-                                        onClick={() => handleRemoveTag(index)}
-                                    />
-                                </span>
+            {findUser?.author === true ? (
+                <form
+                    onSubmit={handlePost}
+                    className="flex flex-col justify-center items-center space-y-4 mb-10 "
+                >
+                    {/* input tag */}
+                    <div className="tags-input-container h-14 flex gap-4 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue w-full mt-4 py-2">
+                        {tags.map((tag, index) => (
+                            <div
+                                className="tag-item flex gap-2  h-full"
+                                key={index}
+                            >
+                                <div className=" text-sm flex items-center gap-1 bg-lightBtn text-white py-2 rounded-sm px-3 w-full">
+                                    <span className="text flex">{tag}</span>
+                                    <span className="close">
+                                        <RxCrossCircled
+                                            className="cursor-pointer"
+                                            onClick={() =>
+                                                handleRemoveTag(index)
+                                            }
+                                        />
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                        <input
+                            onKeyDown={handleKeyDown}
+                            type="text"
+                            className="tags-input bg-transparent outline-none w-full h-full"
+                            placeholder="sciFi, thriller, history, etc."
+                        />
+                    </div>
+                    {/* ------------ */}
+
                     <input
-                        onKeyDown={handleKeyDown}
                         type="text"
-                        className="tags-input bg-transparent outline-none w-full h-full"
-                        placeholder="sciFi, thriller, history, etc."
+                        className="w-full  my-2  h-14 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
+                        placeholder="Write your blog title"
+                        required
+                        name="postFieldTitle"
+                        id=""
                     />
-                </div>
-                {/* ------------ */}
 
-                <input
-                    type="text"
-                    className="w-full  my-2  h-14 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
-                    placeholder="Write your blog title"
-                    required
-                    name="postFieldTitle"
-                    id=""
-                />
+                    <textarea
+                        id="textArea"
+                        name="postField"
+                        cols="32"
+                        rows="6"
+                        required
+                        className="w-full p-4 placeholder:text-sm focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
+                        placeholder="Share your thoughts here..."
+                    ></textarea>
+                    <div className="flex justify-start w-full">
+                        <button
+                            className={`btn-wide bg-royalBlue hover:shadow-royalBlue/40 shadow-lg py-2 text-white rounded-md mt-2`}
+                        >
+                            Post
+                        </button>
+                    </div>
+                </form>
+            ) : (
+                ""
+            )}
 
-                <textarea
-                    id="textArea"
-                    name="postField"
-                    cols="32"
-                    rows="6"
-                    required
-                    className="w-full p-4 placeholder:text-sm focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
-                    placeholder="Share your thoughts here..."
-                ></textarea>
-                <div className="flex justify-start w-full">
-                    <button
-                        className={`btn-wide bg-royalBlue hover:shadow-royalBlue/40 shadow-lg py-2 text-white rounded-md mt-2`}
-                    >
-                        Post
-                    </button>
+            {/* search function */}
+            <div>
+                <div className="relative">
+                    <input
+                        type="text"
+                        className="w-full max-w-[50%] mb-10  my-2  h-10 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
+                        placeholder="Search by tag..."
+                    />
+                    <div className="absolute top-[18px] left-[47%]">
+                        <button className="hover:tooltip" data-tip="search">
+                            <RiSearch2Line className="hover:shadow-md hover:shadow-royalBlue/30 hover:rounded-sm hover:p-[1px]" />
+                        </button>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     );
 };

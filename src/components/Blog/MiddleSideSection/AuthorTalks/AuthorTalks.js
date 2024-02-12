@@ -1,19 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useContext } from "react";
+
 import "animate.css";
 import classNames from "classnames";
 import AuthorPostFieldForm from "./AuthorPostFieldForm/AuthorPostFieldForm";
-import { AuthContext } from "@/app/Context/AuthProvider";
 
 import useAuthorTalks from "./useAuthorTalks";
-import useFindUser from "@/lib/hooks/useFindUser";
 
 const AuthorTalks = () => {
-    const { user } = useContext(AuthContext);
-    const [findUser] = useFindUser()
-
     const [authorTalksPostData, refetch] = useAuthorTalks();
 
     // animation
@@ -22,7 +17,7 @@ const AuthorTalks = () => {
         "animate__backInLeft"
     );
 
-    console.log(findUser?.author);
+    // console.log(findUser?.author);
 
     return (
         <div className="bg-bgTexture">
@@ -36,6 +31,19 @@ const AuthorTalks = () => {
                         <div className="border-2 border-customYellow w-44 mt-1 mb-5"></div>
                     </div>
                 </div>
+            </div>
+
+            {/* BreadCumbs */}
+            <div className="text-sm breadcrumbs absolute top-24 drop-shadow-sm left-10">
+                <ul>
+                    <li>
+                        <a>Home</a>
+                    </li>
+                    <li>
+                        <a>Blog</a>
+                    </li>
+                    <li>Author Talks</li>
+                </ul>
             </div>
             {/* --------------------------- */}
             <div className="pt-10 p-8 max-w-screen-xl mx-auto rounded-md drop-shadow-lg overflow-y-auto ">
