@@ -41,7 +41,7 @@ const AuthorTalks = () => {
 
     // console.log(tagsList);
 
-    // console.log(authorTalksPostData.filter(item => (item?.authorHashTag.tags.filter(item => item.toLowerCase().includes("life")))));
+    console.log(authorTalksPostData.filter(item => (item?.authorHashTag.tags.filter(item => item.toLowerCase().includes("life")))));
 
     return (
         <div className="bg-bgTexture">
@@ -110,9 +110,7 @@ const AuthorTalks = () => {
                 <div>
                     <div>
                         {authorTalksPostData.filter((item) => {
-                            return  item?.authorHashTag?.tags.filter(tag => tag.toLowerCase().includes(searchTag) === true)
-                           
-                            
+                            return searchTag.toLowerCase() === '' ? item : (item?.authorHashTag?.tags.filter(tag => tag.toLowerCase().includes(searchTag)))
                         }).map((author) => (
                             <div key={author?._id}>
                                 <div className="mb-2">
