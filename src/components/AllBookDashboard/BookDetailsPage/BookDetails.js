@@ -14,7 +14,6 @@ import toast from "react-hot-toast";
 import "./bookDetails.css"
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-
 const BookDetails = ({params}) => {
 
     const { register, handleSubmit } = useForm()
@@ -53,7 +52,7 @@ const BookDetails = ({params}) => {
             router.push('/login');
             return;
         }
-        console.log(data);
+        // console.log(data);
         const bookInfo = {
             Book_name: name,
             Book_image: image,
@@ -63,6 +62,7 @@ const BookDetails = ({params}) => {
             borrower_name: user?.displayName,
             borrow_status: false,
             delivered_status: false,
+            returned_status: false,
         };
         // console.log(bookInfo);
         const BookResponse = await axiosPublic.post("/addborrow/v1", bookInfo);

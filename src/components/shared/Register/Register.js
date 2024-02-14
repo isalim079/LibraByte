@@ -65,6 +65,7 @@ const Register = () => {
                                 name: name,
                                 email: email,
                                 role: "user",
+                                author: false,
                                 subscription: "free",
                                 date: date,
                             }
