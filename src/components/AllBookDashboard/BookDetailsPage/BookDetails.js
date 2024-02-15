@@ -14,12 +14,14 @@ import toast from "react-hot-toast";
 import "./bookDetails.css"
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import useAxiosSecure from "@/lib/hooks/useAxiosSecure";
 const BookDetails = ({params}) => {
 
     const { register, handleSubmit } = useForm()
     const [openModal, setOpenModal] = useState(false);
     const { user } = useContext(AuthContext);
     const router = useRouter();
+    const axiosSecure =useAxiosSecure();
 
 
     // console.log(params.bookDetails);               // receive data by params
