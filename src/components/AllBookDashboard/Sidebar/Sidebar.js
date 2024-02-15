@@ -12,7 +12,7 @@ import { TbLogout2 } from "react-icons/tb";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import toast from "react-hot-toast";
 import shortLogo from "@/assets/logo/Lblogo.png";
-import { MdLogin } from "react-icons/md";
+import { MdLogin, MdUpcoming } from "react-icons/md";
 
 const Sidebar = ({ children }) => {
     const [open, setOpen] = useState(true);
@@ -131,6 +131,21 @@ const Sidebar = ({ children }) => {
                                     }`}
                                 >
                                     TopBooks
+                                </p>
+                            </div>
+                        </Link>
+                        <Link href="/newArrivals">
+                            <div className=" hover:bg-lightBtn cursor-pointer my-2 p-3 rounded-lg flex gap-2 text-stone-600">
+                                <MdUpcoming
+                                    size={20}
+                                    className="text-white"
+                                />{" "}
+                                <p
+                                    className={`text-sm origin-left duration-200 text-white ${
+                                        !open && "hidden"
+                                    }`}
+                                >
+                                    New Arrivals
                                 </p>
                             </div>
                         </Link>
