@@ -28,7 +28,7 @@ const TopPost = () => {
                 <div className="border-2 border-customYellow w-[102px] mt-1 mb-5"></div>
             </div>
 
-            <div className=" bg-royalBlue p-8 rounded-md h-[500px] overflow-y-auto drop-shadow-lg">
+            <div className="border-2 border-royalBlue p-8 rounded-md h-[695px] overflow-y-auto drop-shadow-lg">
             
             <div className="list-none">
                 <div className="">
@@ -42,14 +42,14 @@ const TopPost = () => {
                                     height={100}
                                     alt="image"
                                 ></Image>
-                                <p className="font-semibold text-slate-200">{topPost?.name}</p>
+                                <p className="font-semibold text-royalBlue">{topPost?.name}</p>
                             </div>
                             <div className="mt-4 mb-10">
-                                <h3 className="text-lg font-semibold text-slate-200">
+                                <h3 className="text-lg font-semibold text-royalBlue">
                                     {topPost?.blogPostTitle}
                                 </h3>
 
-                                <p className="text-justify mt-1 text-slate-400">
+                                <p className="text-justify mt-1 text-royalBlue">
                                     {topPost?.description}
                                 </p>
                             </div>

@@ -9,9 +9,13 @@ import { useContext, useState } from "react";
 import { AuthContext } from "@/app/Context/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+import { usePathname } from "next/navigation";
+import { CgSearch } from "react-icons/cg";
 
 const AllBlogPost = () => {
     const { user } = useContext(AuthContext);
+
+    const pathName = usePathname()
 
     const axiosPublic = useAxiosPublic();
 
@@ -112,6 +116,51 @@ const AllBlogPost = () => {
                     </div>
                 </div>
                 {/* --------------------------- */}
+
+                 {/* BreadCrumbs */}
+
+            {
+                pathName === "/blog" ? "" :
+
+                    <div className="text-sm breadcrumbs absolute top-24 drop-shadow-sm left-10">
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/blog">Blog</a>
+                            </li>
+                            <li>All Post</li>
+                        </ul>
+                    </div>
+            }
+
+
+
+            {/* --------------------------- */}
+
+
+            {/* Search */}
+
+            {/* <div className="relative w-full">
+                <div onChange={(e) => setSearchTag(e.target.value)}>
+                    <input
+                        type="search"
+                        name="search"
+                        placeholder="Search by keyword..."
+                        id=""
+                        className="h-12  pl-4 w-full border rounded-md focus:outline-none focus:border-2 focus:border-customYellow bg-royalBlue drop-shadow-lg text-white"
+                    />
+                </div>
+                <div className="absolute top-3 right-5">
+                    <button className="">
+                        <CgSearch className="text-2xl text-slate-400 hover:text-white" />
+                    </button>
+                </div>
+            </div> */}
+
+            {/* ---------------- */}
+
 
                 <div className=" rounded-md">
                     <div>

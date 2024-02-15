@@ -41,7 +41,7 @@ const AuthorTalks = () => {
 
     // console.log(tagsList);
 
-    console.log(authorTalksPostData.filter(item => (item?.authorHashTag.tags.filter(item => item.toLowerCase().includes("life")))));
+    // console.log(authorTalksPostData.filter(item => (item?.authorHashTag.tags.filter(item => item.toLowerCase().includes("life")))));
 
     return (
         <div className="bg-bgTexture">
