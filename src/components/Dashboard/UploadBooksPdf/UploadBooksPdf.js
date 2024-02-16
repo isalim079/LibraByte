@@ -11,15 +11,21 @@ import { useState } from "react";
 const UploadBooksPdf = () => {
     const [booksData, refetch] = useBooksData();
 
-    const [file, setFile] = useState('')
+    const [file, setFile] = useState({});
 
-    const handleUploadPdf = async (e) => {
-        e.preventDefault()
-        const form = new FormData()
-        form.append('file', file)
+    const handlePdfForm = async (e, book) => {
+        e.preventDefault();
+        const form = new FormData();
+        form.append("file", file);
 
-        
         console.log(file);
+        // console.log(book);
+    };
+
+    const handleFileChange = (e, book) => {
+        const newFileInputs = { ...file };
+        newFileInputs[book._id] = e.target.files[0];
+        setFile(newFileInputs);
     };
 
     return (
@@ -56,31 +62,34 @@ const UploadBooksPdf = () => {
 
                                 {/* Pdf upload */}
                                 <Td className="py-4">
-                                    <form onSubmit={handleUploadPdf}>
-                                    <div className="relative">
-                                        <button
-                                            // onClick={() =>
-                                            //     handleUploadPdf(book)
-                                            // }
-                                           
-                                        >
-                                            <div className="">
-                                                <div className="flex items-center gap-2">
-                                                    <IoMdCloudUpload className="text-3xl text-lightBtn hover:text-darkBtn" />
-                                                    <p className="">
-                                                        Upload Pdf
-                                                    </p>
+                                    <form
+                                        onSubmit={(e) => handlePdfForm(e, book)}
+                                        className="flex items-center"
+                                    >
+                                        <div className="relative">
+                                            <div className="bg-darkBtn py-1 rounded-l-sm px-3">
+                                                <div className="">
+                                                    <IoMdCloudUpload className="text-3xl text-white " />
                                                 </div>
                                             </div>
                                             <input
                                                 type="file"
-                                                className="absolute top-0 w-full opacity-0 cursor-pointer right-0"
+                                                className="absolute top-0 w-full cursor-pointer right-0 opacity-0"
                                                 accept="application/pdf"
-                                                onChange={(e) => setFile(e.target.files[0])}
+                                                onChange={(e) =>
+                                                    handleFileChange(e, book)
+                                                }
                                                 name="pdfFile"
                                             />
-                                        </button>
-                                    </div>
+                                        </div>
+
+                                        <div>
+                                            <button className="px-3 py-[6px] hover:bg-lightBtn hover:text-white hover:border-none transition-all ease-in-out duration-400  text-royalBlue border border-royalBlue rounded-r-sm">
+                                                {file[book?._id]
+                                                    ? file[book?._id].name
+                                                    : "upload pdf"}
+                                            </button>
+                                        </div>
                                     </form>
                                 </Td>
                                 {/* --------------- */}
