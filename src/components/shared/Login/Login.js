@@ -14,6 +14,7 @@ import animation from "../../../assets/animation/registerPageAnimation";
 import Lottie from "lottie-react";
 import "./login.css";
 import { getURL } from "next/dist/shared/lib/utils";
+import "./buttonAnimation.css"
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -148,6 +149,17 @@ const Login = () => {
                                             Sign up
                                         </Link>
                                     </p>
+                                    <Link href="/registerAuthor">
+                                       <div className="flex justify-center mt-4">
+                                       <div className="animationContainer">
+                                       <p className="font-medium text-center   text-customYellow transition-all duration-200 hover:underline  ">Author SignUp</p>
+                                        <span className="topLeftRightBottomSpan topSpan"></span>
+                                        <span className="topLeftRightBottomSpan rightSpan"></span>
+                                        <span className="topLeftRightBottomSpan bottomSpan"></span>
+                                        <span className="topLeftRightBottomSpan leftSpan"></span>
+                                       </div>
+                                       </div>
+                                    </Link>
 
                                     <form
                                         onSubmit={handleSubmit(onSubmit)}

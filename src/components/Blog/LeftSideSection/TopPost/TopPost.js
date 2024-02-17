@@ -20,13 +20,16 @@ const TopPost = () => {
     // console.log(topPostInfo);
 
     return (
-        <div className="mt-8 bg-royalBlue p-8 rounded-md h-[500px] overflow-y-auto drop-shadow-lg">
-            <div className="">
-                <h2 className="text-2xl font-semibold text-slate-200">
+        <div>
+            <div className="mt-8">
+                <h2 className="text-2xl font-semibold text-royalBlue">
                     Top Post
                 </h2>
                 <div className="border-2 border-customYellow w-[102px] mt-1 mb-5"></div>
             </div>
+
+            <div className=" bg-royalBlue p-8 rounded-md h-[500px] overflow-y-auto drop-shadow-lg">
+            
             <div className="list-none">
                 <div className="">
                     {topPostInfo.map((topPost, index) => (
@@ -55,6 +58,7 @@ const TopPost = () => {
                     ))}
                 </div>
             </div>
+        </div>
         </div>
     );
 };

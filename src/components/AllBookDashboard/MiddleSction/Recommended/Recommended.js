@@ -8,6 +8,7 @@ import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 import Link from "next/link";
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { AuthContext } from "@/app/Context/AuthProvider";
+import toast from "react-hot-toast";
 
 const Recommended = () => {
     const [books, setBooks] = useState([]);
@@ -46,16 +47,18 @@ const Recommended = () => {
         console.log(bookData)
         try {
             await axios.post("http://localhost:5000/addwish/v1",bookData);
-        } catch (error) {
-            console.error("Error posting liked book data:", error);
-            // Handle error
-        }
-        setLikedBooks((prevLikedBooks) => [...prevLikedBooks, book.id]);
+            toast("Book added to wishlist")
+            setLikedBooks((prevLikedBooks) => [...prevLikedBooks, book.id]);
             // Disable the button for the liked book
             setDisableButtons((prevDisabledButtons) => [
                 ...prevDisabledButtons,
                 book.id
             ]);
+        } catch (error) {
+            console.error("Error posting liked book data:", error);
+            // Handle error
+        }
+        
     };
 
 
