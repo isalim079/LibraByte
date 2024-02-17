@@ -7,26 +7,50 @@ import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import Image from "next/image";
 import { useState } from "react";
+import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const UploadBooksPdf = () => {
+    const axiosPublic = useAxiosPublic()
     const [booksData, refetch] = useBooksData();
 
     const [file, setFile] = useState({});
+    const [pdfFile, setPdfFile] = useState('');
 
     const handlePdfForm = async (e, book) => {
         e.preventDefault();
         const form = new FormData();
-        form.append("file", file);
+        form.append("file", pdfFile);
+        form.append("bookId", book?._id)
+        
 
-        console.log(file);
+        // const formData = {
+        //     bookPdf: file,
+        //     bookId: book?._id
+        // }
+
+        // console.log(formData);
         // console.log(book);
+
+        const res = await axiosPublic.post('/upload-files', form, {
+            headers: {'Content-Type': 'multipart/form-data'}
+        })
+        console.log(res.data.status);
+        if(res.data.status === "ok") {
+            toast.success("You have uploaded your pdf")
+        }
+        else {
+            toast.error("problem in uploading pdf")
+        }
     };
 
     const handleFileChange = (e, book) => {
+        setPdfFile(e.target.files[0]);
         const newFileInputs = { ...file };
         newFileInputs[book._id] = e.target.files[0];
         setFile(newFileInputs);
     };
+    // console.log(file);
 
     return (
         <div className="max-w-screen-xl mx-auto mt-10 overflow-x-hidden">
@@ -65,6 +89,7 @@ const UploadBooksPdf = () => {
                                     <form
                                         onSubmit={(e) => handlePdfForm(e, book)}
                                         className="flex items-center"
+                                        encType="multipart/form-data"
                                     >
                                         <div className="relative">
                                             <div className="bg-darkBtn py-1 rounded-l-sm px-3">
@@ -74,13 +99,15 @@ const UploadBooksPdf = () => {
                                             </div>
                                             <input
                                                 type="file"
+                                                name="file"
                                                 className="absolute top-0 w-full cursor-pointer right-0 opacity-0"
                                                 accept="application/pdf"
                                                 onChange={(e) =>
                                                     handleFileChange(e, book)
                                                 }
-                                                name="pdfFile"
+                                                
                                             />
+                                          
                                         </div>
 
                                         <div>
