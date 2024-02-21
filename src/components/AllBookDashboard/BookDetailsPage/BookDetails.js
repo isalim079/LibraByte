@@ -190,9 +190,9 @@ const BookDetails = ({ params }) => {
                                             <PdfBooksComponents pdfBooks={pdfBooks} />
                                         </div>
                                         <div className="modal-action">
-                                            <form method="dialog relative">
+                                            <form method="dialog">
                                                 {/* if there is a button in form, it will close the modal */}
-                                                <button className="btn">
+                                                <button className="btn ">
                                                     Close
                                                 </button>
                                             </form>
