@@ -4,8 +4,12 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import subscriptions from "../../../public/Subscription.json";
+import useSubscriptionData from "@/lib/hooks/useSubscriptionData";
 
 const Subscription = () => {
+
+    const [subscriptionData, refetch]=useSubscriptionData();
+
     const stripePromise = loadStripe(
         process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
     );
@@ -13,6 +17,8 @@ const Subscription = () => {
     const handleClose = () => {
         document.getElementById(`my-modal-524433`).close()
     }
+
+
 
     return (
         <div className="bg-bgTexture pt-24">
@@ -26,7 +32,7 @@ const Subscription = () => {
                     experience. Because your collection deserves the best.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-                    {subscriptions.map((subscription) => (
+                    {subscriptionData.map((subscription) => (
                         <div
                             key={subscription.id}
                             className="rounded-tl-3xl rounded-br-3xl border-2 bg-white pt-8 mx-6 md:mx-0 hover:bg-royalBlue border-royalBlue hover:text-white hover:shadow-2xl hover:shadow-royalBlue cursor-pointer transition-all duration-500"
@@ -75,7 +81,7 @@ const Subscription = () => {
                                     </div>
                                     <div className="my-6">
                                         <Elements stripe={stripePromise}>
-                                            <CheckoutForm></CheckoutForm>
+                                            <CheckoutForm ></CheckoutForm>
                                         </Elements>
                                     </div>
                                 </div>

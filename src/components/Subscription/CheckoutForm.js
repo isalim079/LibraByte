@@ -6,7 +6,7 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 
 
-export default function CheckoutForm(close) {
+export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
   const axiosSecure = useAxiosSecure()
@@ -35,6 +35,8 @@ export default function CheckoutForm(close) {
       console.log(error);
     }
   };
+
+ 
 
   return (
     <form onSubmit={onSubmit} className="mx-8 text-oliveGreen ">
