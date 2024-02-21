@@ -22,11 +22,11 @@ const RecommendBooks = () => {
                             height={550}
                             alt="image"
                         ></Image>
-                        <div className="mt-4">
+                        {/* <div className="mt-4">
                             <button className="text-white bg-lightBtn hover:bg-darkBtn w-full py-2 rounded-md">
                                 Details
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                     {/* image 2 */}
                     <div className="w-72 mr-10 h-full">
@@ -36,11 +36,11 @@ const RecommendBooks = () => {
                             height={500}
                             alt="image"
                         ></Image>
-                        <div className="mt-4">
+                        {/* <div className="mt-4">
                             <button className="text-white bg-lightBtn hover:bg-darkBtn w-full py-2 rounded-md">
                                 Details
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                     {/* image 3 */}
                     <div className="w-72 mr-10 ">
@@ -50,11 +50,11 @@ const RecommendBooks = () => {
                             height={500}
                             alt="image"
                         ></Image>
-                        <div className="mt-4">
+                        {/* <div className="mt-4">
                             <button className="text-white bg-lightBtn hover:bg-darkBtn w-full py-2 rounded-md">
                                 Details
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                     {/* image 4  */}
                     <div className="w-72 mr-10 ">
@@ -64,11 +64,11 @@ const RecommendBooks = () => {
                             height={500}
                             alt="image"
                         ></Image>
-                        <div className="mt-4">
+                        {/* <div className="mt-4">
                             <button className="text-white bg-lightBtn hover:bg-darkBtn w-full py-2 rounded-md">
                                 Details
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </Marquee>
             </div>

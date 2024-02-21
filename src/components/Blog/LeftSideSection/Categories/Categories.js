@@ -3,7 +3,7 @@ import Link from "next/link";
 const Categories = () => {
     return (
         <div>
-            <div className="mt-8">
+            <div className="">
                 <h2 className="text-2xl font-semibold text-royalBlue">
                     My Blog
                 </h2>
@@ -38,16 +38,18 @@ const Categories = () => {
                 </Link>
 
                 {/* divider */}
-                <div className="divider my-2"></div>
+                {/* <div className="divider my-2"></div>
                 <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-customYellow hover:py-2 hover:px-3 hover:rounded-md hover:text-royalBlue hover:text-center">
                     Top Post
-                </li>
+                </li> */}
 
                 {/* divider */}
                 <div className="divider my-2"></div>
+                <Link href="/wishlist">
                 <li className="cursor-pointer transition-all duration-300 ease-in-out hover:bg-customYellow hover:py-2 hover:px-3 hover:rounded-md hover:text-royalBlue hover:text-center">
                     WishList
                 </li>
+                </Link>
             </div>
         </div>
         </div>
