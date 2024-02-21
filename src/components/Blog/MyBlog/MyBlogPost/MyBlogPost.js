@@ -59,10 +59,10 @@ const MyBlogPost = () => {
 
     return (
         <div className="bg-bgTexture">
-            <div className=" pt-20 pb-20 md:pt-28 max-w-screen-xl mx-auto">
+            <div className=" pt-20 pb-10 md:pt-28 max-w-screen-xl mx-auto px-5 xl:px-0">
                 {/* -------------- Title -------------------- */}
                 <div className="flex justify-center items-center flex-col ">
-                    <div className="fixed pt-10 shadow-md z-10 bg-royalBlue rounded-md">
+                    <div className="fixed pt-5 sm:pt-10  sm:top-5 md:top-8 lg:top-14 shadow-md z-10 bg-royalBlue rounded-md">
                         <h2 className="text-2xl text-center  font-bold text-white ">
                             My Post
                         </h2>
