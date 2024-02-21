@@ -20,7 +20,7 @@ import { pdfjs } from 'react-pdf';
 
 import usePdfBooks from "@/lib/hooks/usePdfBooks";
 import PdfBooksComponents from "@/PdfBooksComponents";
-import Loading from "@/components/shared/Loading/Loading";
+
 
 
 
@@ -33,6 +33,8 @@ const BookDetails = ({ params }) => {
     const { user } = useContext(AuthContext);
     const router = useRouter();
     const axiosSecure = useAxiosSecure();
+
+
 
     // console.log(params.bookDetails);
 
@@ -97,38 +99,36 @@ const BookDetails = ({ params }) => {
     const [pdfBooks, setPdfBooks] = useState(null)
     const [findBooksPdf, setFindBooksPdf] = useState();
 
+    console.log(pdfBooks);
+
+    const [loading, setLoading] = useState(true)
+
 
     useEffect(() => {
-        const findBooks = booksPdf.find(
-            (books) => books?.bookId === params.bookDetails
-        );
-        setFindBooksPdf(findBooks);
-    }, [params]);
 
-    
+        const fetchData = async () => {
+            const findBooks =  booksPdf.find(
+                (books) => books?.bookId === params?.bookDetails
+            );
+            setFindBooksPdf(findBooks);
+            setLoading(false)
+        }
 
- 
+        setLoading(true)
+        fetchData()
+
+    }, [booksPdf, params]);
+
+    if(loading) {
+        return <span className="loading loading-bars loading-sm"></span>
+    }
 
     // console.log(findBooksPdf);
-    // console.log(findBooksPdf?.pdfFile);
-
-    // const showPdf = () => {
-        // window.open(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`, 'noreferrer')
-        // console.log(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`);
-
-        // if(loading) {
-        //     return <Loading />
-          
-        // }
-
-        // else {
-           
-        // }
-       
-       
-    // }
+    // console.log(params);
 
     /* --------------------------------------------------------------------------- */
+
+  
 
     return (
         <div className="bg-bgTexture pt-14 md:pt-20 2xl:h-[1250px] ">
@@ -162,14 +162,20 @@ const BookDetails = ({ params }) => {
                                 {/* Open the modal using document.getElementById('ID').showModal() method */}
                                 <button
                                     className=" bg-royalBlue text-white px-3 py-2 rounded-md"
-                                    onClick={() =>
-                                        document
-                                            .getElementById("my_modal_1")
-                                            .showModal()
-                                    }
+                                    onClick={() => {
+                                       
+                                            
+                                            setPdfBooks(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`);
+                                            document
+                                                .getElementById("my_modal_1")
+                                                .showModal()
+                                        
+                                    }}
                                 >
-                                    <span className="flex items-center gap-1" onClick={() =>  setPdfBooks(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`)}>
-                                        <span>Start Reading</span>{" "}
+                                    <span className="flex items-center gap-1" 
+                                    // onClick={() =>  setPdfBooks(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`)}
+                                    >
+                                        <span>{loading ? loading : "Start Reading"}</span>
                                         <span>
                                             <FiArrowUpRight className="text-lg" />
                                         </span>
@@ -184,7 +190,7 @@ const BookDetails = ({ params }) => {
                                             <PdfBooksComponents pdfBooks={pdfBooks} />
                                         </div>
                                         <div className="modal-action">
-                                            <form method="dialog">
+                                            <form method="dialog relative">
                                                 {/* if there is a button in form, it will close the modal */}
                                                 <button className="btn">
                                                     Close

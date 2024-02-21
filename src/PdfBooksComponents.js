@@ -18,8 +18,8 @@ export default function PdfBooksComponents(props) {
   return (
     <div>
       <Document  file=
-    //   {props?.pdfBooks} 
-    "http://localhost:5000/uploads/1708094723794CoverLetter.pdf"
+      {props?.pdfBooks} 
+    // "http://localhost:5000/uploads/1708094723794CoverLetter.pdf"
       onLoadSuccess={onDocumentLoadSuccess}>
         {Array.apply(null, Array(numPages)).map((x, i) => i + 1).map(page => {
             return (
