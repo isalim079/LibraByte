@@ -111,7 +111,7 @@ const AuthorTalks = () => {
                     <div>
                         {
                             authorTalksPostData.filter((item) => {
-                                if (searchTag.toLocaleLowerCase() === '') {
+                                if (searchTag.toLowerCase() === '') {
                                     return item;
                                 } else {
                                     const tags = item?.authorHashTag?.tags.filter(tag => tag.toLowerCase().includes(searchTag))

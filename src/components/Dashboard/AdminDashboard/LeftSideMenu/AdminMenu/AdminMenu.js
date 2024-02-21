@@ -1,6 +1,6 @@
 "use client";
 
-import { FaHome } from "react-icons/fa";
+import { FaFilePdf, FaHome } from "react-icons/fa";
 import { SiPolymerproject } from "react-icons/si";
 import { BiSolidBookmarkAltPlus } from "react-icons/bi";
 
@@ -76,6 +76,25 @@ const AdminMenu = () => {
                                     >
                                         <BiSolidBookmarkAltPlus className="text-md" />{" "}
                                         Add Books
+                                    </Link>
+                                </li>
+                            </div>
+                        ) : (
+                            ""
+                        )}
+
+                        {/* divider */}
+                        {userRole === "admin" ? (
+                            <div>
+                                <div className=" my-4 border border-customYellow"></div>
+
+                                <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
+                                    <Link
+                                        href="/dashboard/uploadBooksPdf"
+                                        className="flex px-2 py-1 items-center gap-2"
+                                    >
+                                        <FaFilePdf className="text-md" />{" "}
+                                        Upload Pdf
                                     </Link>
                                 </li>
                             </div>

@@ -1,5 +1,6 @@
+import AuthorTalksBlog from "../MyBlog/AuthorTalks/AuthorTalksBlog";
 import AuthorImage from "./AuthorImage/AuthorImage";
-import AuthorTalks from "./AuthorTalks/AuthorTalks";
+
 import PostField from "./PostField/PostField";
 
 
@@ -7,7 +8,7 @@ const MiddleSideSection = () => {
     return (
         <div>
             <PostField />
-            <AuthorTalks />
+            <AuthorTalksBlog />
             <AuthorImage />
         </div>
     );
