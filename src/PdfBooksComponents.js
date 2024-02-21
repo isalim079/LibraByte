@@ -13,7 +13,7 @@ export default function PdfBooksComponents(props) {
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
-  console.log(props?.pdfBooks);
+  // console.log(props?.pdfBooks);
 
   return (
     <div>
