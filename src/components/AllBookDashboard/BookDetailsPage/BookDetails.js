@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 import "./bookDetails.css";
 
 import { useRouter } from "next/navigation";
-import useAxiosSecure from "@/lib/hooks/useAxiosSecure";
+
 import { RxCross2 } from "react-icons/rx";
 import { pdfjs } from 'react-pdf';
 
@@ -32,7 +32,7 @@ const BookDetails = ({ params }) => {
     const [openModal, setOpenModal] = useState(false);
     const { user } = useContext(AuthContext);
     const router = useRouter();
-    const axiosSecure = useAxiosSecure();
+
 
 
 
@@ -80,7 +80,7 @@ const BookDetails = ({ params }) => {
         };
         // console.log(bookInfo);
         const BookResponse = await axiosPublic.post("/addborrow/v1", bookInfo);
-        // console.log(BookResponse.data)
+        console.log(BookResponse.data)
         if (BookResponse.data._id) {
             toast.success(`Your book are in queue`);
         } else if (BookResponse.data.error === "Product already exists") {
@@ -99,7 +99,7 @@ const BookDetails = ({ params }) => {
     const [pdfBooks, setPdfBooks] = useState(null)
     const [findBooksPdf, setFindBooksPdf] = useState();
 
-    console.log(pdfBooks);
+    // console.log(pdfBooks);
 
     const [loading, setLoading] = useState(true)
 
@@ -190,9 +190,9 @@ const BookDetails = ({ params }) => {
                                             <PdfBooksComponents pdfBooks={pdfBooks} />
                                         </div>
                                         <div className="modal-action">
-                                            <form method="dialog relative">
+                                            <form method="dialog">
                                                 {/* if there is a button in form, it will close the modal */}
-                                                <button className="btn">
+                                                <button className="btn ">
                                                     Close
                                                 </button>
                                             </form>

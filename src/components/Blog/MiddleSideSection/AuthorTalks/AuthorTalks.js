@@ -30,6 +30,7 @@ const AuthorTalks = () => {
     const [tagsList, setTagList] = useState([])
 
     const [searchTag, setSearchTag] = useState('')
+    console.log(isAuthor);
 
 
 
@@ -45,9 +46,10 @@ const AuthorTalks = () => {
 
     return (
         <div className="bg-bgTexture">
-            {/* Title */}
-            <div className="flex justify-center items-center flex-col pt-28">
-                <div className="fixed pt-10 shadow-md z-10 bg-royalBlue rounded-md px-6">
+           <div className="px-5 xl:px-0">
+             {/* Title */}
+             <div className="flex justify-center items-center flex-col pt-28">
+                <div className="fixed pt-5 top-10 sm:pt-10  sm:top-5 md:top-8 lg:top-14 shadow-md z-10 bg-royalBlue rounded-md">
                     <h2 className="text-2xl text-center  font-bold text-white ">
                         Author Talks
                     </h2>
@@ -62,7 +64,7 @@ const AuthorTalks = () => {
             {
                 pathName === "/blog" ? "" :
 
-                    <div className="text-sm breadcrumbs absolute top-24 drop-shadow-sm left-10">
+                    <div className="text-sm breadcrumbs absolute top-24 drop-shadow-sm left-10 hidden md:block">
                         <ul>
                             <li>
                                 <a href="/">Home</a>
@@ -85,16 +87,16 @@ const AuthorTalks = () => {
                 {/* Search */}
 
                 {/* search function */}
-                <div className={`${!isAuthor ? `` : `mt-14`} mb-10`}>
+                <div className={`${isAuthor ? `` : `md:mt-14`} mb-10`}>
                     <div >
                         <div className="relative" onChange={(e) => setSearchTag(e.target.value)}>
                             <input
                                 type="text"
-                                className="w-full max-w-[50%]  my-2  h-12 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
+                                className="w-full md:max-w-[50%]  my-2  h-12 text-sm pl-4 focus:outline-none focus:border-2 focus:border-[#126056]  rounded-md shadow-md shadow-royalBlue/10 border-2 border-lightBtn text-royalBlue"
                                 placeholder="Search by tag..."
 
                             />
-                            <div className="absolute top-[22px] left-[47%]">
+                            <div className="absolute top-[22px] md:left-[47%] left-[87%]">
                                 <button className="hover:tooltip" data-tip="search">
                                     <RiSearch2Line className="hover:shadow-md hover:shadow-royalBlue/30 hover:rounded-sm hover:p-[1px]" />
                                 </button>
@@ -161,6 +163,7 @@ const AuthorTalks = () => {
                     </div>
                 </div>
             </div>
+           </div>
         </div>
     );
 };
