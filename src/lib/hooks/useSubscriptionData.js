@@ -8,7 +8,7 @@ const useSubscriptionData = () => {
     const axiosPublic = useAxiosPublic()
 
     const { data = [], refetch } = useQuery({
-        queryKey: ['pdfBooksData'],
+        queryKey: ['subscriptionData'],
         queryFn: async () => {
             const result = await axiosPublic.get("/subscription/v1")
             return result.data
