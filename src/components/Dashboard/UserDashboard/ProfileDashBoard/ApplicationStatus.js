@@ -35,8 +35,8 @@ const ApplicationStatus = ({params}) => {
 // console.log(findDetails?.borrow_status);
 
     return (
-        <div className=" flex justify-center items-center h-screen bg-bgTexture ">
-            <div className="h-[380px] rounded-md mx-20 bg-royalBlue bg-bgTexture p-14 shadow-lg">
+        <div className=" flex flex-col justify-center items-center h-screen bg-bgTexture ">
+            <div className="h-[380px]rounded-md mx-20 bg-royalBlue bg-bgTexture p-14 shadow-lg">
                         <div>
                             <h3 className="text-2xl font-sans font-bold mb-4 ml-[52px] text-white">
                                 My Application Status

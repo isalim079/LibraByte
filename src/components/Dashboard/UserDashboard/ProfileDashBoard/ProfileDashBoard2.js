@@ -45,7 +45,11 @@ const ProfileDashBoard2 = () => {
                                         height={120}
                                     /> */}
                                     <p className="text-white text-6xl">
-                            Libra<span className="text-[#ECC21C]">Byte</span> </p>
+                                        Libra
+                                        <span className="text-[#ECC21C]">
+                                            Byte
+                                        </span>{" "}
+                                    </p>
                                 </div>
                                 <div className="absolute -bottom-28 left-16">
                                     <Image

@@ -1,36 +1,26 @@
-[
+[  
     {
         "id": 1,
-        "pack": "Premium",
-        "price": 150,
-        "borrow_limit": 5,
-        "return_limit": 30,
-        "book_limit": 15
+        "pack": "basic",
+        "price": "free",
+        "borrow_limit": 10     
     },
     {
         "id": 2,
-        "pack": "Basic",
-        "price": 100,
-        "borrow_limit": 4,
-        "return_limit": 21,
-        "book_limit": 12
+        "pack": "starter",
+        "price": 30,
+        "borrow_limit": 20 
     },
     {
         "id": 3,
-        "pack": "Starter",
+        "pack": "small",
         "price": 50,
-        "borrow_limit": 3,
-        "return_limit": 14,
-        "book_limit": 8
+        "borrow_limit": 40   
     },
     {
         "id": 4,
-        "pack": "Small",
-        "price": 10,
-        "borrow_limit": 2,
-        "return_limit": 7,
-        "book_limit": 5
-    }
-      
-      
+        "pack": "premium",
+        "price": 99,
+        "borrow_limit": 50  
+    }    
 ]

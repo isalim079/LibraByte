@@ -7,7 +7,7 @@ import TopPost from "./TopPost/TopPost";
 const LeftSideSection = () => {
     return (
         <div>
-            <Search />
+            {/* <Search /> */}
             <div className="hidden sm:block">
             <Categories />
             </div>
