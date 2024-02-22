@@ -1,12 +1,18 @@
 "use client";
-import { useState } from 'react';
+import { AuthContext } from '@/app/Context/AuthProvider';
+import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
+import { useRouter } from 'next/router';
+import { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import ReactStars from 'react-rating-stars-component';
+
+
 
 const ReviewNComplain = () => {
     const [rating, setRating] = useState(0);
     const [reviewText, setReviewText] = useState('');
-
+    const { user } = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic();
 
     const handleRatingChange = newRating => setRating(newRating);
 
@@ -20,15 +26,56 @@ const ReviewNComplain = () => {
         document.getElementById('my_modal_1').close();
         
     };
+
+
+
     
-    const handleComplain = () => {
+    const handleComplain =async (e) => {
 
         setReviewText('');
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = await user?.displayName;
+        const email = await user?.email;
+        const image = await user?.photoURL;
+        const complain = form.get("postComplain");
 
-        toast.success('thanks for contributing to our improvement!')
+        const complainData = {
+            name,
+            email,
+            image,
+            complain
+        };
+
+        /* if the user available then he can post */
+        if (user) {
+            axiosPublic
+                .post("/complain/v1", complainData)
+                .then((res) => {
+                    console.log(res.data);
+                    if (res.data) {
+                        toast.success("thanks for contributing to our improvement!");
+                        refetch();
+                        e.target.reset();
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        } else {
+        /* otherwise he will redirect to login page */
+            toast.error("login first!");
+            // setTimeout(() => {
+            //     router.push("/login");
+            // }, 1000);
+        }
+
+        // toast.success('thanks for contributing to our improvement!')
 
         document.getElementById('my_modal_2').close();
     }
+
+
 
     return (
         <div className='flex flex-row justify-between mx-4 md:mx-10 lg:mx-40 my-10'>
@@ -62,7 +109,7 @@ const ReviewNComplain = () => {
             </dialog>
             <button className="btn  px-10 bg-teal-500 hover:bg-teal-600 hover:shadow-lightBtn hover:shadow-2xl text-white" onClick={() => document.getElementById('my_modal_2').showModal()}>Complains</button>
             <dialog id='my_modal_2' className="modal">
-                <div className="modal-box">
+                <form onSubmit={handleComplain} className="modal-box">
                     <form method="dialog">
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-2xl text-teal-600">✕</button>
                     </form>
@@ -70,13 +117,14 @@ const ReviewNComplain = () => {
                     <textarea
                         className='w-full h-16'
                         value={reviewText}
+                        name='postComplain'
                         onChange={e => setReviewText(e.target.value)}
                         placeholder="Drop your complain here..."
                     />
                     <div className="modal-action">
-                        <button  onClick={handleComplain} type="submit" className="btn bg-teal-500 hover:bg-teal-600 text-base normal-case text-white px-4">Submit</button>
+                        <button type="submit" className="btn bg-teal-500 hover:bg-teal-600 text-base normal-case text-white px-4">Submit</button>
                     </div>
-                </div>
+                </form>
             </dialog>
         </div>
     ); 
