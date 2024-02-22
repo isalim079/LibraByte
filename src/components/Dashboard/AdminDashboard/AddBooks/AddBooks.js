@@ -6,13 +6,16 @@ const AddBooks = () => {
 
     const { register, handleSubmit, reset } = useForm();
 
-   
+    const onSubmit = async (data) => {
+        
+    }
+
 
     return (
         <div className="w-full mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
             <h1 className='text-center mb-4 md:text-4xl text-2xl font-semibold'>Add New Book</h1>
         <form 
-        // onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmit)}
         >
             <div className="mb-4">
                 <label className="block text-gray-600 text-sm font-semibold mb-2">Book Name</label>
