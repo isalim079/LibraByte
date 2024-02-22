@@ -25,7 +25,7 @@ export default function CheckoutForm({ subscription }) {
 
 
       const { paymentIntent } = await stripe.confirmCardPayment(clientSecret, { payment_method: { card: cardElement } });
-
+      const paymentDate= new Date();
       if (paymentIntent.status === "succeeded") {
         console.log(paymentIntent.id)
         toast.success('Payment successful')
@@ -33,8 +33,12 @@ export default function CheckoutForm({ subscription }) {
         document.getElementById(`my-modal-${subscription._id}`).close();
           await axios.post("http://localhost:5000/payment/v1", {
           paymentId: paymentIntent.id,
+          subscriptionId: subscription._id,
           paymentAmount:paymentIntent.amount,
-          userEmail: user?.email
+          paymentDate:paymentDate,
+          userEmail: user?.email,
+          subscription: subscription.pack,
+          borrow_limit:subscription.borrow_limit
         });
       }
 
