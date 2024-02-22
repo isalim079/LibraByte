@@ -66,18 +66,14 @@ const BookDetails = ({params}) => {
             delivered_status: false,
         };
         // console.log(bookInfo);
-        const BookResponse = await axiosPublic.post("/addborrow/v1", bookInfo);
-        // console.log(BookResponse.data)
+        const BookResponse = await axios.post("http://localhost:5000/addborrow/v1", bookInfo);
+        console.log(BookResponse.data);
         if (BookResponse.data._id) {
             toast.success(`Your book are in queue`);
         }
-        else if(BookResponse.data.error === "Product already exists")
+        else(BookResponse.data.message === "Product already exists")
         {
             toast.error(`Book is already in queue`);
-
-        }
-        else{
-            toast.loading('Waiting...');
 
         }
     };
@@ -276,7 +272,7 @@ const BookDetails = ({params}) => {
                                             Due date
                                         </label>
                                         <div className="relative">
-                                            <input
+                                            <input required
                                                 type="date"
                                                 placeholder=".............."
                                                 {...register("date")}

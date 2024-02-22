@@ -2,6 +2,7 @@
 import { AuthContext } from "@/app/Context/AuthProvider";
 import useAxiosSecure from "@/lib/hooks/useAxiosSecure";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import axios from "axios";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 
@@ -28,7 +29,12 @@ export default function CheckoutForm(close) {
       if (paymentIntent.status === "succeeded") {
         console.log(paymentIntent.id)
         toast.success('Payment successful')
-        document.getElementById(`my-modal-524433`).close()
+        document.getElementById(`my-modal-524433`).close();
+        await axios.post("http://localhost:5000/payment/v1", {
+          paymentId: paymentIntent.id,
+          paymentAmount:paymentIntent.amount,
+          userEmail: user?.email
+        });
       }
 
     } catch (error) {
