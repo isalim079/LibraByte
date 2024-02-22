@@ -79,56 +79,17 @@ const BookDetails = ({ params }) => {
             returned_status: false,
         };
         // console.log(bookInfo);
-        const BookResponse = await axiosPublic.post("/addborrow/v1", bookInfo);
-        console.log(BookResponse.data)
+        const BookResponse = await axios.post("http://localhost:5000/addborrow/v1", bookInfo);
+        console.log(BookResponse.data);
         if (BookResponse.data._id) {
             toast.success(`Your book are in queue`);
-        } else if (BookResponse.data.error === "Product already exists") {
+        }
+        else(BookResponse.data.message === "Product already exists")
+        {
             toast.error(`Book is already in queue`);
-        } else {
-            toast.loading("Waiting...");
+
         }
     };
-
-    /* -----------------pdf section -------------------------------- */
-    const [booksPdf, refetch] = usePdfBooks();
-    // console.log(booksPdf);
-
- 
-
-    const [pdfBooks, setPdfBooks] = useState(null)
-    const [findBooksPdf, setFindBooksPdf] = useState();
-
-    // console.log(pdfBooks);
-
-    const [loading, setLoading] = useState(true)
-
-
-    useEffect(() => {
-
-        const fetchData = async () => {
-            const findBooks =  booksPdf.find(
-                (books) => books?.bookId === params?.bookDetails
-            );
-            setFindBooksPdf(findBooks);
-            setLoading(false)
-        }
-
-        setLoading(true)
-        fetchData()
-
-    }, [booksPdf, params]);
-
-    if(loading) {
-        return <span className="loading loading-bars loading-sm"></span>
-    }
-
-    // console.log(findBooksPdf);
-    // console.log(params);
-
-    /* --------------------------------------------------------------------------- */
-
-  
 
     return (
         <div className="bg-bgTexture pt-14 md:pt-20 2xl:h-[1250px] ">
@@ -316,7 +277,7 @@ const BookDetails = ({ params }) => {
                                             Due date
                                         </label>
                                         <div className="relative">
-                                            <input
+                                            <input required
                                                 type="date"
                                                 placeholder=".............."
                                                 {...register("date")}
