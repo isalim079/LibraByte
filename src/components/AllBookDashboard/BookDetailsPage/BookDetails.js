@@ -20,6 +20,7 @@ import { pdfjs } from 'react-pdf';
 
 import usePdfBooks from "@/lib/hooks/usePdfBooks";
 import PdfBooksComponents from "@/PdfBooksComponents";
+import Loading from "@/components/shared/Loading/Loading";
 
 
 
@@ -32,6 +33,7 @@ const BookDetails = ({ params }) => {
     const [openModal, setOpenModal] = useState(false);
     const { user } = useContext(AuthContext);
     const router = useRouter();
+    const pdfBooks=usePdfBooks();
 
 
 
@@ -58,6 +60,10 @@ const BookDetails = ({ params }) => {
                 console.log(error);
             });
     }, []);
+           
+      
+    
+//  console.log(borrowLimit);
     const { name, image, author } = bookData;
     // console.log(bookData.name);
     const onSubmit = async (data) => {
@@ -67,28 +73,50 @@ const BookDetails = ({ params }) => {
             return;
         }
         // console.log(data);
-        const bookInfo = {
-            Book_name: name,
-            Book_image: image,
-            Book_author: author,
-            Date: data.date,
-            borrower_email: user?.email,
-            borrower_name: user?.displayName,
-            borrow_status: false,
-            delivered_status: false,
-            returned_status: false,
-        };
+        try {
+            // Fetch borrow limit
+            const borrowLimitResponse = await axiosPublic.get("/payment/v1");
+            const borrowLimit = borrowLimitResponse.data[0].borrow_limit;
+            const paymentId=borrowLimitResponse.data[0]._id;
+            console.log(borrowLimitResponse)
+            console.log(borrowLimit);
+            console.log(paymentId)
+    
+            if (borrowLimit === 0) {
+                toast.error("You have reached your borrow limit.");
+            } else {
+                // Proceed with borrowing logic
+                const bookInfo = {
+                    Book_name: name,
+                    Book_image: image,
+                    Book_author: author,
+                    Date: data.date,
+                    borrower_email: user?.email,
+                    borrower_name: user?.displayName,
+                    borrow_status: false,
+                    delivered_status: false,
+                    returned_status: false,
+                };
+    
+                const BookResponse = await axiosPublic.post("/addborrow/v1", bookInfo);
+                console.log(BookResponse.data);
+    
+                if (BookResponse.data._id) {
+                    const decreaseBorrowLimitResponse = await axiosPublic.patch(`/payment/v1/${paymentId}`, { borrow_limit: borrowLimit - 1 });
+                    console.log(decreaseBorrowLimitResponse.data);
+                    toast.success(`Your book is in the queue`);
+                } else if (BookResponse.data.message === "Product already exists") {
+                    toast.error(`Book is already in the queue`);
+                } else {
+                    toast.loading('Loading');
+                }
+            }
+        } catch (error) {
+            console.error("Error fetching borrow limit:", error);
+            toast.error("Failed to fetch borrow limit. Please try again.");
+        }
         // console.log(bookInfo);
-        const BookResponse = await axios.post("http://localhost:5000/addborrow/v1", bookInfo);
-        console.log(BookResponse.data);
-        if (BookResponse.data._id) {
-            toast.success(`Your book are in queue`);
-        }
-        else(BookResponse.data.message === "Product already exists")
-        {
-            toast.error(`Book is already in queue`);
-
-        }
+        
     };
 
     return (
@@ -136,7 +164,7 @@ const BookDetails = ({ params }) => {
                                     <span className="flex items-center gap-1" 
                                     // onClick={() =>  setPdfBooks(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`)}
                                     >
-                                        <span>{loading ? loading : "Start Reading"}</span>
+                                        <span>{Loading ? Loading : "Start Reading"}</span>
                                         <span>
                                             <FiArrowUpRight className="text-lg" />
                                         </span>
