@@ -11,6 +11,7 @@ import Faq from "@/components/Home/FAQ/Faq";
 import ContactUs from "@/components/Home/ContactUs/ContactUs";
 import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
 import Footer from "@/components/shared/Footer/Footer";
+import Testimonials from "@/components/Home/Testimonials/Testimonials";
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
             <OurValues></OurValues>
             {/* <Subscription /> */}
             <Subscribe />
+            <Testimonials />
             <Faq></Faq>
             <ContactUs></ContactUs>
             <ChatBot />
