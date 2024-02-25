@@ -1,11 +1,15 @@
 "use client"
 
+import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 const AddBooks = () => {
 
     const { register, handleSubmit, reset } = useForm();
+
+    const axiosPublic = useAxiosPublic()
 
     // const [image, setImage] = useState("")
     //     const [authorImage, setAuthorImage] = useState("")
@@ -70,7 +74,19 @@ const AddBooks = () => {
                 paperback: data.paperback,
     
             }
-            console.log(addBooksData);
+            // console.log(addBooksData);
+
+            axiosPublic.post("/books", addBooksData)
+            .then(res => {
+                console.log(res.data)
+                if(res.data) {
+                    toast.success("New books added successfully")
+                    // data.target.reset()
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
         
 
     }
