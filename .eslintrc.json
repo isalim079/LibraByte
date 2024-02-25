@@ -1,3 +1,7 @@
+
 {
-  "extends": "next/core-web-vitals"
-}
+  "extends": ["prettier", "airbnb-base", "next/babel","next/core-web-vitals", "next"],
+  "parserOptions": {
+  "ecmaVersion": 12
+  }
+  }

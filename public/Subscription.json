@@ -1,0 +1,26 @@
+[  
+    {
+        "id": 1,
+        "pack": "basic",
+        "price": "free",
+        "borrow_limit": 10     
+    },
+    {
+        "id": 2,
+        "pack": "starter",
+        "price": 30,
+        "borrow_limit": 20 
+    },
+    {
+        "id": 3,
+        "pack": "small",
+        "price": 50,
+        "borrow_limit": 40   
+    },
+    {
+        "id": 4,
+        "pack": "premium",
+        "price": 99,
+        "borrow_limit": 50  
+    }    
+]
