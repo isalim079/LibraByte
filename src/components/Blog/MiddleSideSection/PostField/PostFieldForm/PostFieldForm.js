@@ -17,7 +17,7 @@ const PostFieldForm = () => {
 
     const [, refetch] = useBlogPost();
 
-    const handlePost = async (e) => {
+     const handlePost = async (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = await user?.displayName;
