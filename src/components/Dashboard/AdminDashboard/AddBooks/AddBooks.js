@@ -1,13 +1,78 @@
 "use client"
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const AddBooks = () => {
 
     const { register, handleSubmit, reset } = useForm();
 
+    // const [image, setImage] = useState("")
+    //     const [authorImage, setAuthorImage] = useState("")
+
+
+// console.log(image);
+  
+
     const onSubmit = async (data) => {
+
+        /* converted image to base 64 */
+
         
+
+        let readerImage = new FileReader()
+        readerImage.readAsDataURL(data.image[0])
+        // readerImage.onload = () => {
+        //     // console.log(readerImage.result);
+        //     setImage(readerImage.result)
+        // }
+        // readerImage.onerror = error => {
+        //     console.log("Error in base 64 in add Books", error);
+        // }
+        // console.log(readerImage.result);
+       
+        // console.log(data.image[0].name);
+
+        let readerAuthor = new FileReader()
+        readerAuthor.readAsDataURL(data.authorImage[0])
+        readerAuthor.onload = () => {
+            // console.log(readerAuthor.result);
+            setAuthorImage(readerAuthor.result)
+        }
+        readerAuthor.onerror = error => {
+            console.log("Error in base 64 in add Books", error);
+        }
+       
+        // console.log(data.image[0].name);
+
+
+
+        
+            const addBooksData = {
+                name : data.name,
+                category: data.category,
+                image:  readerImage.onload = () => {
+                    // console.log(readerImage.result);
+                  return  readerImage.result
+                },
+                authorImage: readerAuthor.onload = () => {
+                    // console.log(readerAuthor.result);
+                    return readerAuthor.result
+                },
+                bookDetails: data.bookDetails,
+                description: data.description,
+                authorDetails: data.authorDetails,
+                rating: data.rating,
+                publishingTime: data.publishingTime,
+                authorName: data.authorName,
+                editor: data.editor,
+                language: data.language,
+                paperback: data.paperback,
+    
+            }
+            console.log(addBooksData);
+        
+
     }
 
 
@@ -23,7 +88,9 @@ const AddBooks = () => {
                     type="text"
                     name="name"
                     className="w-full p-2 border rounded-md"
-                    {...register('name', { required: true })}
+                    {...register('name', 
+                    // { required: true }
+                    )}
                 />
             </div>
 
@@ -34,7 +101,9 @@ const AddBooks = () => {
                     <select
                         name="category"
                         className="w-full p-2 border rounded-md"
-                        {...register('category', { required: true })}
+                        {...register('category', 
+                        // { required: true }
+                        )}
                     >
                         <option value="">Select</option>
                         <option value="breakfast">Mystery</option>
@@ -50,10 +119,13 @@ const AddBooks = () => {
                 <div className="mb-4  flex-1">
                     <label className=" text-gray-600 text-sm font-semibold mb-2">Book Cover</label>
                     <input
+                        
                         type="file"
                         name="image"
                         className="w-full p-2 border rounded-md"
-                        {...register('image', { required: true })}
+                        {...register('image', 
+                        // { required: true }
+                        )}
                     />
                 </div>
 
@@ -63,7 +135,9 @@ const AddBooks = () => {
                         type="file"
                         name="authorImage"
                         className="w-full p-2 border rounded-md"
-                        {...register('authorImage', { required: true })}
+                        {...register('authorImage', 
+                        // { required: true }
+                        )}
                     />
                 </div>
 
@@ -74,7 +148,9 @@ const AddBooks = () => {
                 <textarea
                     name="bookDetails"
                     className="w-full p-2 border rounded-md"
-                    {...register('bookDetails', { required: true })}
+                    {...register('bookDetails', 
+                    // { required: true }
+                    )}
                 />
             </div>
 
@@ -83,7 +159,9 @@ const AddBooks = () => {
                 <textarea
                     name="description"
                     className="w-full p-2 border rounded-md"
-                    {...register('description', { required: true })}
+                    {...register('description', 
+                    // { required: true }
+                    )}
                 />
             </div>
 
@@ -92,7 +170,9 @@ const AddBooks = () => {
                 <textarea
                     name="authorDetails"
                     className="w-full p-2 border rounded-md"
-                    {...register('authorDetails', { required: true })}
+                    {...register('authorDetails', 
+                    // { required: true }
+                    )}
                 />
             </div>
 
@@ -104,7 +184,9 @@ const AddBooks = () => {
                         type="number"
                         name="rating"
                         className="w-full p-2 border rounded-md"
-                        {...register('rating', { required: true })}
+                        {...register('rating', 
+                        // { required: true }
+                        )}
                     />
                 </div>
 
@@ -114,7 +196,9 @@ const AddBooks = () => {
                         type="datetime-local"
                         name="publishingTime"
                         className="w-full p-2 border rounded-md"
-                        {...register('publishingTime', { required: true })}
+                        {...register('publishingTime', 
+                        // { required: true }
+                        )}
                     />
                 </div>
             </div>
@@ -125,7 +209,9 @@ const AddBooks = () => {
                     type="text"
                     name="authorName"
                     className="w-full p-2 border rounded-md"
-                    {...register('authorName', { required: true })}
+                    {...register('authorName', 
+                    // { required: true }
+                    )}
                 />
             </div>
 
@@ -135,7 +221,9 @@ const AddBooks = () => {
                     type="text"
                     name="editor"
                     className="w-full p-2 border rounded-md"
-                    {...register('editor', { required: true })}
+                    {...register('editor', 
+                    // { required: true }
+                    )}
                 />
             </div>
 
@@ -145,7 +233,9 @@ const AddBooks = () => {
                     type="text"
                     name="language"
                     className="w-full p-2 border rounded-md"
-                    {...register('language', { required: true })}
+                    {...register('language', 
+                    // { required: true }
+                    )}
                 />
             </div>
 
@@ -155,7 +245,9 @@ const AddBooks = () => {
                     type="text"
                     name="paperback"
                     className="w-full p-2 border rounded-md"
-                    {...register('paperback', { required: true })}
+                    {...register('paperback', 
+                    // { required: true }
+                    )}
                 />
             </div>
 
