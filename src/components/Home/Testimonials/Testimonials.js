@@ -10,6 +10,7 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
     const sliderRef = useRef(null);
+    const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768); // Set initial state based on screen width
 
     useEffect(() => {
         axios
@@ -25,28 +26,27 @@ const Testimonials = () => {
     }, []);
 
     useEffect(() => {
-        const slider = sliderRef.current;
-        if (slider && reviews.length > 0) {
-            const interval = setInterval(() => {
-                slider.slickNext();
-            }, 5000);
+        const handleResize = () => {
+            setIsMobileView(window.innerWidth < 768); // Update isMobileView state based on screen width
+        };
 
-            return () => clearInterval(interval);
-        }
-    }, [reviews]);
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
-        slidesToScroll: 2,
+        speed: 700,
+        slidesToScroll: 1, // Change slidesToScroll to 1
         centerMode: true,
         centerPadding: "70px",
+        // slidesToShow: isMobileView ? 1 : 2, // Conditionally set slidesToShow based on isMobileView
+        slidesToShow: 1,
     };
-    
-    
-    
-    
 
     return (
         <div className="bg-bgTexture px-8 md:px-28 lg:px-[180px] pt-16">
@@ -56,16 +56,16 @@ const Testimonials = () => {
             ) : (
                 <Slider ref={sliderRef} {...settings}>
                     {reviews.map((review) => (
-                        <div key={review._id} className="slick-slide">
-                            <div className="card h-96 mx-4 px-4 bg-slate-200 rounded-box overflow-hidden">
+                        <div key={review._id} className="slick-slide flex items-center">
+                            <div className="card mx-4 px-4 bg-slate-200 rounded-box overflow-hidden">
                                 <div>
-                                <img
-                                    className="rounded-full mx-auto w-32 h-32 flex items-center justify-center -mt-16"
-                                    src={review.image}
-                                    alt="userPhoto"
-                                />
+                                    <img
+                                        className="rounded-full mx-auto w-32 h-32 flex items-center justify-center my-4"
+                                        src={review.image}
+                                        alt="userPhoto"
+                                    />
                                 </div>
-                                <h2 className="text-xl font-semibold text-center pt-3">{review.name}</h2>
+                                <h2 className="text-xl font-semibold text-center ">{review.name}</h2>
                                 <StarRatingComponent
                                     name="rating"
                                     value={review.rating}
@@ -73,7 +73,7 @@ const Testimonials = () => {
                                     editing={false} // Set to true if you want users to be able to edit the rating
                                     className="text-2xl text-center mx-auto py-3"
                                 />
-                                <h1 className=" font-medium text-xl max-w-96 mx-auto pb-10">{review.review}</h1>
+                                <h1 className=" font-medium text-base px-10 mx-auto pb-10">{review.review}</h1>
                             </div>
                         </div>
                     ))}
