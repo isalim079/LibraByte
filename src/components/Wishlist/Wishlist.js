@@ -90,7 +90,7 @@ const Wishlist = () => {
                 fetchBooks();
                 toast.success(`All books are in queue`);
             } else {
-                toast.error(`Failed to submit borrowing request`);
+                toast.error(`Product already in queue`);
             }
         } catch (error) {
             console.error("Error submitting borrowing request:", error);
