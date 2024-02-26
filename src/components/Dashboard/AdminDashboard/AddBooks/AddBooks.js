@@ -99,13 +99,13 @@ const AddBooks = () => {
                             )}
                         >
                             <option value="">Select</option>
-                            <option value="breakfast">Mystery</option>
-                            <option value="lunch">Sci-Fi</option>
-                            <option value="dinner">Fantasy</option>
-                            <option value="dinner">Fiction</option>
-                            <option value="dinner">Thriller</option>
-                            <option value="dinner">Comics</option>
-                            <option value="dinner">Others</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Sci-Fi">Sci-Fi</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Comics">Comics</option>
+                            <option value="Others">Others</option>
                         </select>
                     </div>
 
