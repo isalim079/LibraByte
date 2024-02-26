@@ -52,7 +52,7 @@ const Testimonials = () => {
     //         window.removeEventListener("resize", handleResize);
     //     };
     // }, []);
-    
+
 
     const settings = {
         dots: true,
@@ -63,9 +63,6 @@ const Testimonials = () => {
         centerMode: true,
         centerPadding: "65px",
     };
-
-
-
 
 
     return (
