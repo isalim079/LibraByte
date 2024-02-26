@@ -52,6 +52,7 @@ const Testimonials = () => {
     //         window.removeEventListener("resize", handleResize);
     //     };
     // }, []);
+    
 
     const settings = {
         dots: true,
