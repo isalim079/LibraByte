@@ -28,22 +28,26 @@
 ##### 7 Librarian Dashboard
 > The Librarian Dashboard will serve as a control center for librarians, offering insights into library statistics, user management, and book-related activities. Librarians can monitor and manage the library's operations effectively through this centralized interface.
 
-##### 8 All Books Page with Pagination
-> The All Books Page will display a comprehensive list of all available books in the library. Pagination will be implemented to facilitate easy navigation through the catalog, allowing users to search, sort, and explore the entire collection efficiently.
+##### 8 All Books Page
+> The All Books Page will display a comprehensive list of all available books in the library. The book dashboard offers users a streamlined experience with four distinct routes: Discover, Categories, Top Books, and LogOut. Users can explore personalized book recommendations, navigate through specific genres, and access top-rated books seamlessly. With responsive design elements, including a dynamic header and convenient login/logout functionality, the dashboard ensures a personalized and secure experience for all users.
+##### 9 Borrow book 
+The "Borrow Book" feature allows users to request borrowing a book from the library. Users can specify the due date for returning the book, making it convenient to manage borrowed items.
+##### 10 Add to Wishlist
+The "Add to Wishlist" feature enables users to create a personalized list of books they wish to borrow in the future. Users can easily add and remove books from their wishlist,users also also borrow multiple books at a time, making it convenient to manage their borrowing preferences.
 
-##### 9 Reviews and Ratings
+##### 11 Reviews and Ratings
 > Users will have the ability to submit reviews and ratings for books they have read. These reviews and ratings will be displayed on the home page dynamically, creating a community-driven recommendation system that enhances the overall user experience.
 
-##### 10 Stock Request
+##### 12 Stock Request
 > Users can submit requests for upcoming books they would like to see in the library. This feature engages the community in shaping the library's collection, ensuring that it aligns with user preferences and interests.
 
-##### 11 PDF Download for Subscribed Users
+##### 13 PDF Download for Subscribed Users
 > Subscribed members will have the privilege of downloading PDF versions of available books, offering an additional benefit to enhance the subscription package and encourage user retention.
 
-##### 12 Book Donation
+##### 14 Book Donation
 > Users can contribute to the library's collection by donating books. Once donated, librarians will review and confirm the acceptance of donated books, ensuring they align with the library's collection policies before adding them to the All Books section.
 
-##### 13 Login and Registration
+##### 15 Login and Registration
 > Users will access the registration page from the home page.The registration form will include fields such as full name, email, password, and any additional necessary information.Passwords will be securely hashed and stored to ensure user data security.Upon successful registration, users will receive a confirmation email to verify their email address.User accounts will be activated only after email verification.
 
 ### Research on Features
