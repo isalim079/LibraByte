@@ -31,9 +31,9 @@
 ##### 8 All Books Page
 > The All Books Page will display a comprehensive list of all available books in the library. The book dashboard offers users a streamlined experience with four distinct routes: Discover, Categories, Top Books, and LogOut. Users can explore personalized book recommendations, navigate through specific genres, and access top-rated books seamlessly. With responsive design elements, including a dynamic header and convenient login/logout functionality, the dashboard ensures a personalized and secure experience for all users.
 ##### 9 Borrow book 
-The "Borrow Book" feature allows users to request borrowing a book from the library. Users can specify the due date for returning the book, making it convenient to manage borrowed items.
+> The "Borrow Book" feature allows users to request borrowing a book from the library. Users can specify the due date for returning the book, making it convenient to manage borrowed items.
 ##### 10 Add to Wishlist
-The "Add to Wishlist" feature enables users to create a personalized list of books they wish to borrow in the future. Users can easily add and remove books from their wishlist,users also also borrow multiple books at a time, making it convenient to manage their borrowing preferences.
+> The "Add to Wishlist" feature enables users to create a personalized list of books they wish to borrow in the future. Users can easily add and remove books from their wishlist,users also also borrow multiple books at a time, making it convenient to manage their borrowing preferences.
 
 ##### 11 Reviews and Ratings
 > Users will have the ability to submit reviews and ratings for books they have read. These reviews and ratings will be displayed on the home page dynamically, creating a community-driven recommendation system that enhances the overall user experience.
