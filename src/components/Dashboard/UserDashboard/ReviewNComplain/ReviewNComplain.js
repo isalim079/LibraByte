@@ -4,18 +4,26 @@ import useAxiosPublic from '@/lib/hooks/useAxiosPublic';
 import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import ReactStars from 'react-rating-stars-component';
+import Rating from 'react-rating';
+import { BsStar, BsStarFill } from "react-icons/bs";
+// import ReactStars from 'react-rating-stars-component';
 
 
 
 const ReviewNComplain = () => {
-    const [rating, setRating] = useState(0);
+    // const [rating, setRating] = useState(0);
     const [reviewText, setReviewText] = useState('');
     const [complainText, setComplainText] = useState('');
     const { user } = useContext(AuthContext);
     const axiosPublic = useAxiosPublic();
+    const [selectedRating, setSelectedRating] = useState();
 
-    const handleRatingChange = newRating => setRating(newRating);
+    const onRatingSelected = selectedValue => {
+        setSelectedRating(selectedValue);
+      };
+
+    // const handleRatingChange = newRating => setRating(newRating);
+    console.log(selectedRating);
 
     const handleReview =async (e) => {
         // Clear the input fields
@@ -32,7 +40,7 @@ const ReviewNComplain = () => {
             name,
             email,
             image,
-            rating,
+            selectedRating,
             review
         };
 
@@ -115,15 +123,16 @@ const ReviewNComplain = () => {
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-2xl text-teal-600">✕</button>
                     </form>
                     <h3 className="font-bold text-lg text-center mt-4">Share Your Feedback</h3>
-                    <div className='flex flex-row gap-2 my-2'>
-                        <h1 className='mt-2'>Rating Us: </h1>
-                        <ReactStars
-                            count={5}
-                            onChange={handleRatingChange}
-                            size={24}
-                            value={rating}
-                            name='rating'
-                        />
+                    <div className='flex items-center gap-2 my-2'>
+                        <h1 className=''>Rating Us: </h1>
+                        <Rating
+                        className='space-x-2 text-xl text-yellow-500'
+            initialRating={selectedRating}
+            onClick={onRatingSelected}
+            stop={5}
+            emptySymbol={<BsStar className=''></BsStar>}
+            fullSymbol={<BsStarFill className=""></BsStarFill>}
+          />
                     </div>
                     <textarea
                         className='w-full h-16'

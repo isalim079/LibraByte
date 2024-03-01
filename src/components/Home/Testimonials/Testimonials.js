@@ -2,11 +2,13 @@
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 
-import StarRatingComponent from "react-star-rating-component";
+// import StarRatingComponent from "react-star-rating-component";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+import Rating from "react-rating";
+import { BsStar, BsStarFill } from "react-icons/bs";
 
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
@@ -85,13 +87,16 @@ const Testimonials = () => {
                                     </div>
                                 </div>
                                 <h2 className="text-xl font-semibold text-center py-3">{review?.name}</h2>
-                                <StarRatingComponent
-                                    name="rating"
-                                    value={review?.rating}
-                                    starCount={5}
-                                    editing={false} // Set to true if you want users to be able to edit the rating
-                                    className="text-2xl text-center mx-auto "
-                                />
+                               <div className="flex justify-center">
+                               <Rating
+                        className='space-x-2 text-xl text-yellow-500'
+            initialRating={review?.rating}
+            // onClick={onRatingSelected}
+            stop={5}
+            emptySymbol={<BsStar className=''></BsStar>}
+            fullSymbol={<BsStarFill className=""></BsStarFill>}
+          />
+                               </div>
                                 <h1 className=" text-base px-4 md:px-10 mx-auto py-3">{review?.review}</h1>
                             </div>
                         </div>

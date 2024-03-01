@@ -1,7 +1,8 @@
 "use client";
 
+import { AuthContext } from "@/app/Context/AuthProvider";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
@@ -10,8 +11,8 @@ const AddBooks = () => {
 
     const axiosPublic = useAxiosPublic();
 
-    const [image, setImage] = useState("")
-        const [authorImage, setAuthorImage] = useState("")
+    const {userRole} = useContext(AuthContext)
+    console.log(userRole);
 
     
 
@@ -57,6 +58,7 @@ const AddBooks = () => {
                 if (res.data) {
                     toast.success("New books added successfully");
                     // data.target.reset()
+                    reset()
                 }
             })
             .catch((error) => {
@@ -99,13 +101,13 @@ const AddBooks = () => {
                             )}
                         >
                             <option value="">Select</option>
-                            <option value="breakfast">Mystery</option>
-                            <option value="lunch">Sci-Fi</option>
-                            <option value="dinner">Fantasy</option>
-                            <option value="dinner">Fiction</option>
-                            <option value="dinner">Thriller</option>
-                            <option value="dinner">Comics</option>
-                            <option value="dinner">Others</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Sci-Fi">Sci-Fi</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Comics">Comics</option>
+                            <option value="Others">Others</option>
                         </select>
                     </div>
 
