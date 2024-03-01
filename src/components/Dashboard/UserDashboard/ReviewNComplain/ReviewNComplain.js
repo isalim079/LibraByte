@@ -72,18 +72,20 @@ const ReviewNComplain = () => {
         const email = await user?.email;
         const image = await user?.photoURL;
         const complain = form.get("postComplain");
+        const status = "pending";
 
         const complainData = {
             name,
             email,
             image,
-            complain
+            complain,
+            status
         };
 
         /* if the user available then he can post */
         if (user) {
             axiosPublic
-                .post("/complain/v1", complainData)
+                .post("/complains/v1", complainData)
                 .then((res) => {
                     console.log(res.data);
                     if (res.data) {
