@@ -1,9 +1,10 @@
+import Donation from '@/components/Dashboard/AdminDashboard/Donation/Donation';
 import React from 'react';
 
 const DonateBooks = () => {
     return (
-        <div>
-            <h1>This is donation route</h1>
+        <div className='p-10'>
+          <Donation></Donation>
         </div>
     );
 };

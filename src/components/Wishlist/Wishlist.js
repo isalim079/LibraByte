@@ -46,52 +46,68 @@ const Wishlist = () => {
                 router.push('/login');
                 return;
             }
+            const borrowLimitResponse = await axiosPublic.get("/payment/v1");
+            const borrowLimit = borrowLimitResponse.data[0].borrow_limit;
+            const paymentId=borrowLimitResponse.data[0]._id;
+            console.log(borrowLimitResponse)
+            console.log(borrowLimit);
+            console.log(paymentId)
     
-            console.log(data);
-            // Create an array to store all book objects
-            const booksData = [];
-    
-            // Loop through each book in the wishlist
-            books.forEach((book) => {
-                // Create book info object
-                const bookInfo = {
-                    Book_name: book.Book_name,
-                    Book_image: book.Book_image,
-                    Book_author: book.Book_author,
-                    Date: data.date,
-                    borrower_email: user?.email,
-                    borrower_name: user?.displayName,
-                    borrow_status: false,
-                    delivered_status: false,
-                };
-    
-                // Push book info object to the array
-                booksData.push(bookInfo);
-                
-            });
-            console.log(booksData)
-    
-            // Post all book borrowing requests
-            const borrowResponse = await axiosPublic.post("/addborrow/v1", booksData);
-    
-            // If the borrowing requests are successful, remove all books from wishlist
-            if (borrowResponse.status === 200) {
-                // Get all book IDs from the wishlist
-                const bookIds = books.map((book) => book._id);
-    
-                // Delete all books from wishlist
-                await Promise.all(
-                    bookIds.map(async (bookId) => {
-                        await axios.delete(`http://localhost:5000/removeWish/v1/${bookId}`);
-                    })
-                );
-    
-                // Fetch updated wishlist data
-                fetchBooks();
-                toast.success(`All books are in queue`);
-            } else {
-                toast.error(`Product already in queue`);
+            if (borrowLimit === 0) {
+                toast.error("You have reached your borrow limit.");
             }
+            else
+            {
+                console.log(data);
+                // Create an array to store all book objects
+                const booksData = [];
+        
+                // Loop through each book in the wishlist
+                books.forEach((book) => {
+                    // Create book info object
+                    const bookInfo = {
+                        Book_name: book.Book_name,
+                        Book_image: book.Book_image,
+                        Book_author: book.Book_author,
+                        Date: data.date,
+                        borrower_email: user?.email,
+                        borrower_name: user?.displayName,
+                        borrow_status: false,
+                        delivered_status: false,
+                    };
+        
+                    // Push book info object to the array
+                    booksData.push(bookInfo);
+                    
+                });
+                console.log(booksData)
+        
+                // Post all book borrowing requests
+                const borrowResponse = await axiosPublic.post("/addborrow/v1", booksData);
+        
+                // If the borrowing requests are successful, remove all books from wishlist
+                if (borrowResponse.status === 200) {
+                    // Get all book IDs from the wishlist
+                    const bookIds = books.map((book) => book._id);
+        
+                    // Delete all books from wishlist
+                    await Promise.all(
+                        bookIds.map(async (bookId) => {
+                            await axios.delete(`http://localhost:5000/removeWish/v1/${bookId}`);
+                        })
+                    );
+        
+                    // Fetch updated wishlist data
+                    fetchBooks();
+                    const decreaseBorrowLimitResponse = await axiosPublic.patch(`/payment/v1/${paymentId}`, { borrow_limit: borrowLimit - books.length });
+                        console.log(decreaseBorrowLimitResponse.data);
+                    toast.success(`All books are in queue`);
+                } else {
+                    toast.error(`Product already in queue`);
+                }
+            }
+    
+            
         } catch (error) {
             console.error("Error submitting borrowing request:", error);
             toast.error(`Failed to submit borrowing request`);
