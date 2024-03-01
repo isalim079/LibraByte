@@ -33,7 +33,7 @@ const BookDetails = ({ params }) => {
     const [openModal, setOpenModal] = useState(false);
     const { user } = useContext(AuthContext);
     const router = useRouter();
-    const pdfBooks=usePdfBooks();
+
 
 
 
@@ -60,6 +60,10 @@ const BookDetails = ({ params }) => {
                 console.log(error);
             });
     }, []);
+
+
+
+    
            
       
     
@@ -116,8 +120,46 @@ const BookDetails = ({ params }) => {
             toast.error("Failed to fetch borrow limit. Please try again.");
         }
         // console.log(bookInfo);
-        
     };
+
+
+           /* -----------------pdf section -------------------------------- */
+           const [booksPdf, refetch] = usePdfBooks();
+           // console.log(booksPdf);
+       
+       
+       
+           const [pdfBooks, setPdfBooks] = useState(null)
+           const [findBooksPdf, setFindBooksPdf] = useState();
+       
+           // console.log(pdfBooks);
+       
+           const [loading, setLoading] = useState(true)
+       
+       
+           useEffect(() => {
+       
+               const fetchData = async () => {
+                   const findBooks =  booksPdf.find(
+                       (books) => books?.bookId === params?.bookDetails
+                   );
+                   setFindBooksPdf(findBooks);
+                   setLoading(false)
+               }
+       
+               setLoading(true)
+               fetchData()
+       
+           }, [booksPdf, params]);
+       
+           if(loading) {
+               return <span className="loading loading-bars loading-sm"></span>
+           }
+       
+           // console.log(findBooksPdf);
+           // console.log(params);
+       
+           /* --------------------------------------------------------------------------- */
 
     return (
         <div className="bg-bgTexture pt-14 md:pt-20 2xl:h-[1250px] ">
