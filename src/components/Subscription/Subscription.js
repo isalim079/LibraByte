@@ -3,7 +3,6 @@ import { FaCheck } from "react-icons/fa";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
-import subscriptions from "../../../public/Subscription.json";
 import useSubscriptionData from "@/lib/hooks/useSubscriptionData";
 
 const Subscription = () => {
@@ -14,7 +13,7 @@ const Subscription = () => {
         process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
     );
 
-    
+
 
 
     return (
@@ -49,34 +48,31 @@ const Subscription = () => {
                                     <div className="flex py-2">
                                         <FaCheck className="font-extrabold pt-1 text-xl" />
                                         <p className="pl-2">
-                                            Borrow maximum{" "}
-                                            {subscription.borrow_limit} books at a
+                                            Borrow maximum {subscription.borrow_limit} books at a
                                             time
                                         </p>
                                     </div>
                                     <div className="flex py-2">
                                         <FaCheck className="font-extrabold pt-1 text-2xl" />
                                         <p className="pl-2">
-                                            Borrow each books for maximum{" "}
-                                            {subscription.return_limit} days
+                                            Borrow each books for maximum 30 days
                                         </p>
                                     </div>
                                     <div className="flex py-2">
                                         <FaCheck className="font-extrabold pt-1 text-xl" />
                                         <p className="pl-2">
-                                            Borrowed book limit{" "}
-                                            {subscription.book_limit} per month
+                                            Borrowed book limit {subscription.book_limit} per month
                                         </p>
                                     </div>
                                 </ul>
 
-                                <button disabled={subscription.price === "free"} className=" p-3 hover:p-2 hover:text-lg font-bold my-6 mx-8 md:mx-4 lg:mx-8 xl:mx-7 border-darkBtn hover:text-white border-2 rounded-tl-xl rounded-br-xl text-base bg-royalBlue hover:bg-lightBtn text-white w-64 md:w-72 lg:w-80 xl:w-64 2xl:w-64 transition-all duration-300  "
+                                <button disabled={subscription.price === "free"} className=" p-3 hover:p-2 hover:text-lg font-bold my-6 mx-8 md:mx-4 lg:mx-8 xl:mx-7 border-white hover:border-lightBtn hover:text-white border-2 rounded-tl-xl rounded-br-xl text-base bg-royalBlue hover:bg-lightBtn text-white w-64 md:w-72 lg:w-80 xl:w-64 2xl:w-64 transition-all duration-300  "
                                     onClick={() => document.getElementById(`my-modal-${subscription._id}`).showModal()}
                                 >{subscription.price === "free" ? <del>Checkout</del> : "Checkout"}</button>
                                 <dialog id={`my-modal-${subscription._id}`} className="modal modal-bottom sm:modal-middle">
                                     <div className="modal-box">
                                         <div method="dialog">
-                                            <button onClick={() => document.getElementById(`my-modal-${subscription._id}`).close()} className="btn btn-sm btn-circle btn-ghost text-oliveGreen font-extrabold text-2xl absolute right-6 top-6">✕</button>
+                                            <button onClick={() => document.getElementById(`my-modal-${subscription._id}`).close()} className="btn btn-sm btn-circle btn-ghost text-royalBlue font-extrabold text-2xl absolute right-6 top-6">✕</button>
                                         </div>
                                         <div className="my-6">
                                             <Elements stripe={stripePromise}>

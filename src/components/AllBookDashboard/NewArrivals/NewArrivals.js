@@ -11,7 +11,7 @@ const NewArrivals = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/books")
+            .get("http://localhost:5000/reversedBooks")
             .then((res) => {
                 setBooks(res.data);
             })
