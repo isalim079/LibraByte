@@ -77,7 +77,7 @@ const BookDetails = ({ params }) => {
     }, []);
            
       
-    
+    const{name,image,author}=bookData;
 //  console.log(borrowLimit);
     const handleSave=async(book)=>{
         const wishData={
@@ -85,7 +85,7 @@ const BookDetails = ({ params }) => {
             Book_image: book.image,
             Book_author:book.author,
             user_email:user?.email,
-            user_name:user?.displayName,
+            user_name:user.displayName,
 
         }
         try {
