@@ -4,6 +4,7 @@ import React from 'react';
 const Donation = () => {
     return (
         <div>
+            
             <NGODonate />
         </div>
     );
