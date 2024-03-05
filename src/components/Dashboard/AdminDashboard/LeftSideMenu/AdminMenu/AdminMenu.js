@@ -157,6 +157,24 @@ const AdminMenu = () => {
                         ) : (
                             ""
                         )}
+                         {/* divider */}
+                         {userRole === "user" ? (
+                            <div>
+                                <div className=" my-4 border border-customYellow"></div>
+
+                                <li className="cursor-pointer transition-all duration-300 ease-in-out  text-white hover:text-royalBlue  hover:bg-customYellow hover:rounded-md">
+                                    <Link
+                                        href="/dashboard/donateBooks/donation"
+                                        className="flex px-2 py-1 items-center gap-2"
+                                    >
+                                        <FaFilePdf className="text-md" />{" "}
+                                        Donate books
+                                    </Link>
+                                </li>
+                            </div>
+                        ) : (
+                            ""
+                        )}
 
                         {/* divider */}
 
