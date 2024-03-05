@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 
 const Subscribe = () => {
@@ -14,4 +15,6 @@ const Subscribe = () => {
     );
 };
 
-export default Subscribe;
+// export default Subscribe;
+
+export default dynamic(() => Promise.resolve(Subscribe), {ssr: false})

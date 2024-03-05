@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 
 const OurValues = () => {
     return (
@@ -55,4 +56,6 @@ const OurValues = () => {
     );
 };
 
-export default OurValues;
+// export default OurValues;
+
+export default dynamic(() => Promise.resolve(OurValues), {ssr: false})

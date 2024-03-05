@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import BannerBody from "./BannerBody";
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
+import dynamic from "next/dynamic";
 
 const TopBanner = () => {
     const [topBanner, setTopBanner] = useState([]);
@@ -81,4 +82,6 @@ const TopBanner = () => {
     );
 };
 
-export default TopBanner;
+// export default TopBanner;
+
+export default dynamic(() => Promise.resolve(TopBanner), {ssr: false})

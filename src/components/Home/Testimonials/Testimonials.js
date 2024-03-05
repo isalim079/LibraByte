@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import Rating from "react-rating";
 import { BsStar, BsStarFill } from "react-icons/bs";
+import dynamic from "next/dynamic";
 
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
@@ -107,4 +108,6 @@ const Testimonials = () => {
     );
 };
 
-export default Testimonials;
+// export default Testimonials;
+
+export default dynamic(() => Promise.resolve(Testimonials), {ssr: false})
