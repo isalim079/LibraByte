@@ -141,11 +141,11 @@ const BookDetails = ({ params }) => {
     }, [booksPdf, params]);
 
     if (loading) {
-        return <span className="loading loading-bars loading-sm"></span>;
+        return Loading;
     }
 
     // console.log(findBooksPdf);
-    // console.log(params);
+    // console.log(params.bookDetails);
 
     /* --------------------------------------------------------------------------- */
 
@@ -182,9 +182,9 @@ const BookDetails = ({ params }) => {
                                 <button
                                     className=" bg-royalBlue text-white px-3 py-2 rounded-md"
                                     onClick={() => {
-                                        setPdfBooks(
-                                            `http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`
-                                        );
+                                        // setPdfBooks(
+                                        //     `http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`
+                                        // );
                                         document
                                             .getElementById("my_modal_1")
                                             .showModal();
@@ -195,9 +195,7 @@ const BookDetails = ({ params }) => {
                                         // onClick={() =>  setPdfBooks(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`)}
                                     >
                                         <span>
-                                            {Loading
-                                                ? Loading
-                                                : "Start Reading"}
+                                            Start Reading
                                         </span>
                                         <span>
                                             <FiArrowUpRight className="text-lg" />
@@ -211,13 +209,13 @@ const BookDetails = ({ params }) => {
                                         </h3>
                                         <div className="py-4 ">
                                             <PdfBooksComponents
-                                                pdfBooks={pdfBooks}
+                                                pdfBooks={params.bookDetails}
                                             />
                                         </div>
                                         <div className="modal-action">
                                             <form method="dialog">
                                                 {/* if there is a button in form, it will close the modal */}
-                                                <button className="btn ">
+                                                <button className="px-4 py-2 rounded-md hover:bg-darkBtn bg-lightBtn text-white">
                                                     Close
                                                 </button>
                                             </form>

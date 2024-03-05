@@ -19,29 +19,41 @@ const UploadBooksPdf = () => {
 
     const handlePdfForm = async (e, book) => {
         e.preventDefault();
-        const form = new FormData();
-        form.append("file", pdfFile);
-        form.append("bookId", book?._id)
+      
+        const form = e.target
+
+        const pdfData = await new Promise((resolve, reject) => {
+            const readerPdf = new FileReader()
+            readerPdf.readAsDataURL(form.file.files[0])
+            readerPdf.onload = () => resolve(readerPdf.result)
+            readerPdf.onerror = error => reject(error)
+          })
+
+          const pdfFileData = {
+            bookId: book?._id,
+            pdfFile: pdfData
+          }
+
+          axiosPublic
+            .post("/booksPdf/v1", pdfFileData)
+            .then((res) => {
+                console.log(res.data);
+                if (res.data) {
+                    toast.success("PDF of this books added successfully");
+                    e.target.reset()
+                    
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
         
+        // console.log(pdfFileData);
 
-        // const formData = {
-        //     bookPdf: file,
-        //     bookId: book?._id
-        // }
 
-        // console.log(formData);
-        // console.log(book);
 
-        const res = await axiosPublic.post('/upload-files', form, {
-            headers: {'Content-Type': 'multipart/form-data'}
-        })
-        console.log(res.data.status);
-        if(res.data.status === "ok") {
-            toast.success("You have uploaded your pdf")
-        }
-        else {
-            toast.error("problem in uploading pdf")
-        }
+
     };
 
     const handleFileChange = (e, book) => {
@@ -89,7 +101,7 @@ const UploadBooksPdf = () => {
                                     <form
                                         onSubmit={(e) => handlePdfForm(e, book)}
                                         className="flex items-center"
-                                        encType="multipart/form-data"
+                                        // encType="multipart/form-data"
                                     >
                                         <div className="relative">
                                             <div className="bg-darkBtn py-1 rounded-l-sm px-3">
@@ -101,7 +113,7 @@ const UploadBooksPdf = () => {
                                                 type="file"
                                                 name="file"
                                                 className="absolute top-0 w-full cursor-pointer right-0 opacity-0"
-                                                accept="application/pdf"
+                                                // accept="application/pdf"
                                                 onChange={(e) =>
                                                     handleFileChange(e, book)
                                                 }
