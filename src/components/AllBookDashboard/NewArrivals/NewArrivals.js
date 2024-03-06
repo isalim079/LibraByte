@@ -1,4 +1,5 @@
 "use client";
+import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,11 +8,14 @@ import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 import Rating from "react-rating";
 
 const NewArrivals = () => {
+    
+    const axiosPublic = useAxiosPublic()
+
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        axios
-            .get("http://localhost:5000/books")
+        axiosPublic
+            .get("/reversedBooks")
             .then((res) => {
                 setBooks(res.data);
             })

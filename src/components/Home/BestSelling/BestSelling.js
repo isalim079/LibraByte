@@ -19,6 +19,7 @@ import { Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 const BestSelling = () => {
     const [books, setBooks] = useState([]);
@@ -98,4 +99,6 @@ const BestSelling = () => {
     );
 };
 
-export default BestSelling;
+// export default BestSelling;
+
+export default dynamic(() => Promise.resolve(BestSelling), {ssr: false})

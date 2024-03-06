@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import Rating from "react-rating";
 import { BsStar, BsStarFill } from "react-icons/bs";
+import dynamic from "next/dynamic";
 
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
@@ -69,7 +70,7 @@ const Testimonials = () => {
 
     return (
         <div className="bg-bgTexture px-8 md:px-28 lg:px-[180px] pt-16">
-            <h1 className="text-4xl font-bold text-center mb-16">Our Client's Testimonials</h1>
+            <h1 className="text-4xl font-bold text-center mb-10">Our Client's Testimonials</h1>
             {loading ? (
                 <div className="text-center">Loading testimonials...</div>
             ) : (
@@ -107,4 +108,6 @@ const Testimonials = () => {
     );
 };
 
-export default Testimonials;
+// export default Testimonials;
+
+export default dynamic(() => Promise.resolve(Testimonials), {ssr: false})

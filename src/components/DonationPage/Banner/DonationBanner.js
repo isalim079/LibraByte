@@ -9,7 +9,7 @@ const DonationBanner = () => {
 
     return (
         <div>
-            <div className='flex flex-col md:flex-row justify-between items-center 2xl:mx-[155px] xl:mx-[140px] lg:mx-[110px] md:mx-[80px] mx-10 py-10 lg:py-28 bg-bgTexture'>
+            <div className='flex flex-col md:flex-row justify-between items-center 2xl:mx-[155px] xl:mx-[140px] lg:mx-[110px] md:mx-[80px] mx-10 py-10 lg:pb-20 lg:pt-40  bg-bgTexture'>
                 <div className='w-full md:w-1/2 '>
                     <h1 className='text-5xl font-bold '>Donate and sell your <br /></h1>
                     <h1 className=' text-5xl font-bold  mt-2 lg:mt-5'> Old books</h1>
@@ -17,7 +17,7 @@ const DonationBanner = () => {
                     <p className='py-5 font-medium'>One and only stop for buyind and selling old books. You can also <br /> donate your old acdemic books to NGO, So that it can help others.</p>
 
                     <div className='flex justify-start items-center gap-x-5'>
-                        <Link href="/dashboard/donateBooks"><button className='px-6 py-2 bg-green-200 text-green-900 font-semibold text-base md:text-lg rounded-md cursor-pointer'>Donate Now</button></Link>
+                        <Link href="/dashboard/donateBooks/donation"><button className='px-6 py-2 bg-green-200 text-green-900 font-semibold text-base md:text-lg rounded-md cursor-pointer'>Donate Now</button></Link>
                         <button className='px-6 py-2 bg-blue-200 text-blue-900 font-semibold text-base md:text-lg rounded-md cursor-pointer'>Sell</button>
                     </div>
                     <Link href="/dashboard/donateBooks/ngoDonate"><button className='my-5 px-[58px] py-2  text-oliveGreen  border-oliveGreen border-4 font-semibold text-base md:text-lg rounded-md hover:bg-oliveGreen hover:text-white'> Donate to NGO</button></Link>

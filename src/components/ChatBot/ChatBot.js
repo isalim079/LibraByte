@@ -1,4 +1,5 @@
 "use client"
+import dynamic from 'next/dynamic';
 import React, { Component } from 'react'
 
 export class ChatBot extends Component {
@@ -21,4 +22,6 @@ export class ChatBot extends Component {
   }
 }
 
-export default ChatBot
+// export default ChatBot
+
+export default dynamic(() => Promise.resolve(ChatBot), {ssr: false})
