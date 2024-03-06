@@ -77,7 +77,7 @@ const Testimonials = () => {
                 <Slider ref={sliderRef} {...settings} className="my-auto flex items-center">
                     {reviews.map((review) => (
                         <div key={review._id} className="slick-slide ">
-                            <div className="card overflow-y-auto mx-2 md:mx-4 px-1 md:px-4  bg-slate-200 rounded-box py-6 ">
+                            <div className="card overflow-y-auto mx-3 md:mx-4 px-1 md:px-4  bg-slate-200 rounded-box  py-6 ">
                                 <div>
                                     <div className="">
                                         <img
@@ -87,7 +87,7 @@ const Testimonials = () => {
                                         />
                                     </div>
                                 </div>
-                                <h2 className="text-md md:text-xl font-normal  md:font-semibold text-center py-3">{review?.name}</h2>
+                                <h2 className="text-md md:text-xl font-normal  md:font-semibold text-center py-1 md:py-3">{review?.name}</h2>
                                 <div className="flex justify-center">
                                     <Rating
                                         className='space-x-2 text-md md:text-xl text-yellow-500'
@@ -98,8 +98,8 @@ const Testimonials = () => {
                                         fullSymbol={<BsStarFill className=""></BsStarFill>}
                                     />
                                 </div>
-                                <h1 className=" text-xs px-4 md:px-10 mx-auto py-3 hidden md:block">{review?.review}</h1>
-                                <h1 className=" text-base px-4 md:px-10 mx-auto py-3 md:hidden">{review?.review.slice(0, 70)}</h1>
+                                <h1 className=" text-base px-3 md:px-10 mx-auto py-1 md:py-3 hidden md:block">{review?.review}</h1>
+                                <h1 className=" text-xs px-3 md:px-10 mx-auto py-1 md:py-3 md:hidden">{review?.review.slice(0, 120)}  ....</h1>
                             </div>
                         </div>
                     ))}
