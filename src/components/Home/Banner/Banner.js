@@ -5,9 +5,9 @@ import BannerSwiper from "./BannerSwiper";
 import dynamic from "next/dynamic";
 const Banner = () => {
     return (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden hidden md:block ">
             {/* <div className="border-2 border-textLightWhite "></div> */}
-            <section className="flex  min-h-[600px]  w-full items-center justify-center  bg-bgTexture  py-5">
+            <section className="flex min-h-[600px]  w-full items-center justify-center  bg-bgTexture  py-5">
                 <div className="flex w-full  gap-10 lg:flex-row flex-col items-center justify-between lg:px-[140px] md:px-[80px] px-8">
                     <div className="max-w-lg md:w-5/12 -mb-24 sm:pb-5 ">
                         <h1 className="lg:text-5xl sm:text-4xl text-xl font-bold leading-tight text-royalBlue text-center lg:text-left">

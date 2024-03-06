@@ -73,8 +73,8 @@ const NGODonate = () => {
 
             <form onSubmit={handleSubmit}>
 
-                <div className='flex justify-center items-start gap-x-5'>
-                    <div className='w-1/2'>
+                <div className='flex flex-col lg:flex-row justify-center items-start gap-x-5'>
+                    <div className='w-full  lg:w-1/2'>
                         <h1 className='my-5 text-lg font-semibold'>Book Information :</h1>
                         <div className="mb-4">
                             <label className=" text-sm font-medium text-gray-700">Book Name</label>
@@ -92,7 +92,7 @@ const NGODonate = () => {
                         </div>
                         <div className='flex justify-center items-center gap-x-5'>
 
-                            <div className="mb-4 w-1/2">
+                            <div className="mb-4 w-full lg:w-1/2">
                                 <label className=" text-sm font-medium text-gray-700">Overall Condition</label>
                                 <select className="select select-bordered w-full max-w-xs" name='condition' required>
                                     <option disabled selected>Select one please</option>
@@ -103,7 +103,7 @@ const NGODonate = () => {
                                     <option>Very Bad</option>
                                 </select>
                             </div>
-                            <div className="mb-4 w-1/2">
+                            <div className="mb-4 w-full lg:w-1/2">
                                 <label className=" text-sm font-medium text-gray-700">Book Category</label>
                                 <select className="select select-bordered w-full max-w-xs" name='category' required>
                                     <option disabled selected>Select one please </option>
@@ -116,7 +116,7 @@ const NGODonate = () => {
 
                         </div>
                     </div>
-                    <div className='w-1/2'>
+                    <div className='w-full lg:w-1/2'>
                         <h1 className='my-5 text-lg font-semibold'>Your Parsonal Information : </h1>
                         <div className="my-4">
                             <label className=" text-sm font-medium text-gray-700">Your Name</label>
