@@ -17,7 +17,7 @@ const DonationBanner = () => {
                     <p className='py-5 font-medium'>One and only stop for buyind and selling old books. You can also <br /> donate your old acdemic books to NGO, So that it can help others.</p>
 
                     <div className='flex justify-start items-center gap-x-5'>
-                        <Link href="/dashboard/donateBooks"><button className='px-6 py-2 bg-green-200 text-green-900 font-semibold text-base md:text-lg rounded-md cursor-pointer'>Donate Now</button></Link>
+                        <Link href="/dashboard/donateBooks/donation"><button className='px-6 py-2 bg-green-200 text-green-900 font-semibold text-base md:text-lg rounded-md cursor-pointer'>Donate Now</button></Link>
                         <button className='px-6 py-2 bg-blue-200 text-blue-900 font-semibold text-base md:text-lg rounded-md cursor-pointer'>Sell</button>
                     </div>
                     <Link href="/dashboard/donateBooks/ngoDonate"><button className='my-5 px-[58px] py-2  text-oliveGreen  border-oliveGreen border-4 font-semibold text-base md:text-lg rounded-md hover:bg-oliveGreen hover:text-white'> Donate to NGO</button></Link>

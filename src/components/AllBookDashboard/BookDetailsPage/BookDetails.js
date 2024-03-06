@@ -21,6 +21,8 @@ import { pdfjs } from "react-pdf";
 import usePdfBooks from "@/lib/hooks/usePdfBooks";
 import PdfBooksComponents from "@/PdfBooksComponents";
 import Loading from "@/components/shared/Loading/Loading";
+import axios from "axios";
+const pdfFile="/preview.pdf"
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -29,6 +31,27 @@ const BookDetails = ({ params }) => {
     const [openModal, setOpenModal] = useState(false);
     const { user } = useContext(AuthContext);
     const router = useRouter();
+    // const pdfBooks=usePdfBooks();
+
+//download the preview
+ const downloadFileUrl = (url) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+  
+    aTag.addEventListener('error', (error) => {
+      console.error('Error loading PDF file:', error);
+    });
+  
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
+  const handleShare=()=>{
+    toast.success("Link copied");
+  }
+  
 
     // console.log(params.bookDetails);
 
@@ -52,9 +75,28 @@ const BookDetails = ({ params }) => {
                 console.log(error);
             });
     }, []);
+           
+      
+    const{name,image,author}=bookData;
+//  console.log(borrowLimit);
+    const handleSave=async(book)=>{
+        const wishData={
+            Book_name: book.name,
+            Book_image: book.image,
+            Book_author:book.author,
+            user_email:user?.email,
+            user_name:user.displayName,
 
-    //  console.log(borrowLimit);
-    const { name, image, author } = bookData;
+        }
+        try {
+            await axiosPublic.post("/addwish/v1",wishData);
+            toast.success("Book added to wishlist");
+        } catch (error) {
+            console.error("Error posting liked book data:", error);
+            // Handle error
+        }
+    }
+       
     // console.log(bookData.name);
     const onSubmit = async (data) => {
         if (!user) {
@@ -113,6 +155,7 @@ const BookDetails = ({ params }) => {
             console.error("Error fetching borrow limit:", error);
             toast.error("Failed to fetch borrow limit. Please try again.");
         }
+        
         // console.log(bookInfo);
     };
 
@@ -226,13 +269,13 @@ const BookDetails = ({ params }) => {
                             {/* ------------------------------------------ */}
 
                             <div className="flex justify-center items-center gap-x-5 mr-24 pl-5 md:pl-0">
-                                <div className="bg-slate-200 p-2 rounded-full cursor-pointer">
+                                <div onClick={() => handleSave(bookData)} className="bg-slate-200 p-2 rounded-full cursor-pointer">
                                     <GoBookmark className="text-2xl" />
                                 </div>
-                                <div className="bg-slate-200 p-2 rounded-full cursor-pointer">
+                                <div onClick={handleShare} className="bg-slate-200 p-2 rounded-full cursor-pointer">
                                     <IoShareSocialOutline className="text-2xl" />
                                 </div>
-                                <div className="bg-slate-200 p-2 rounded-full cursor-pointer">
+                                <div onClick={()=>{downloadFileUrl(pdfFile)}} className="bg-slate-200 p-2 rounded-full cursor-pointer">
                                     <MdOutlineFileDownload className="text-2xl" />
                                 </div>
                             </div>
