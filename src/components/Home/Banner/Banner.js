@@ -2,6 +2,7 @@
 import Link from "next/link";
 // import BannerSwipe from "./BannerSwipe";
 import BannerSwiper from "./BannerSwiper";
+import dynamic from "next/dynamic";
 const Banner = () => {
     return (
         <div className="overflow-hidden">
@@ -71,4 +72,6 @@ const Banner = () => {
         </div>
     );
 };
-export default Banner;
+// export default Banner;
+
+export default dynamic(() => Promise.resolve(Banner), {ssr: false})

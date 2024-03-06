@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 
 
 const Faq = () => {
@@ -34,4 +35,6 @@ const Faq = () => {
     );
 };
 
-export default Faq;
+// export default Faq;
+
+export default dynamic(() => Promise.resolve(Faq), {ssr: false})

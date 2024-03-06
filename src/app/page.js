@@ -12,6 +12,7 @@ import ContactUs from "@/components/Home/ContactUs/ContactUs";
 import NavigationBar from "@/components/shared/NavigationBar/NavigationBar";
 import Footer from "@/components/shared/Footer/Footer";
 import Testimonials from "@/components/Home/Testimonials/Testimonials";
+import TopBanner2 from "@/components/Home/TopBanner/TopBanner2";
 
 
 export default function Home() {
@@ -19,7 +20,8 @@ export default function Home() {
     return (
         <div className="overflow-hidden">
             <NavigationBar />
-            <TopBanner />
+            {/* <TopBanner /> */}
+            <TopBanner2 />
             <BestSelling />
             <Banner />
             {/* <BestAuthor /> */}

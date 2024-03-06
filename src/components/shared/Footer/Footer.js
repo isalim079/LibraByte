@@ -3,6 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
+import dynamic from "next/dynamic";
 
 
 const Footer = () => {
@@ -51,4 +52,6 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+// export default Footer;
+
+export default dynamic(() => Promise.resolve(Footer), {ssr: false})

@@ -8,6 +8,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { BsBrowserChrome } from "react-icons/bs";
 import Image from 'next/image';
 import img from "../../../../public/images/location.jpg"
+import dynamic from 'next/dynamic';
 // import { EmailJSResponseStatus } from '@emailjs/browser';
 
 
@@ -77,4 +78,6 @@ const ContactUs = () => {
     );
 };
 
-export default ContactUs;
+// export default ContactUs;
+
+export default dynamic(() => Promise.resolve(ContactUs), {ssr: false})
