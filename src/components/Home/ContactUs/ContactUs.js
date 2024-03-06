@@ -40,9 +40,9 @@ const ContactUs = () => {
     // };
 
     return (
-        <div className='py-28 pb-36 bg-bgTexture'>
-            <h1 className='text-4xl font-bold text-center'>Contact With Us </h1>
-            <p className='text-center text-lg pb-10 pt-2'>You can get our contact information and send us email</p>
+        <div className='py-1 md:py-28 pb-16 md:pb-36 bg-bgTexture'>
+            <h1 className='text-4xl mx-2 font-bold text-center'>Contact With Us </h1>
+            <p className='text-center mx-2 text-lg pb-10 pt-2'>You can get our contact information and send us email</p>
             <div className='bg-royalBlue lg:mx-44 lg:ml-80 min-h-[450px] lg:absolute text-white'>
 
                 <h1 className='font-bold text-4xl text-white pt-10 pl-10 lg:pl-56 lg:pr-[500px]'>Get In Touch </h1>
@@ -56,7 +56,7 @@ const ContactUs = () => {
                         <input type="text" placeholder="Email" className="input input-bordered min-w-[300px] lg:w-full lg:max-w-xl rounded-none bg-transparent shadow-xl ml-10 lg:ml-56 border border-customYellow " name="email" />
                         <textarea className="textarea textarea-bordered min-w-[300px] lg:min-w-[575px] min-h-28 rounded-none bg-transparent shadow-xl ml-10 lg:ml-56 border border-customYellow" placeholder="Message" name="message"></textarea>
                     </div>
-                    <button className='bg-lightBtn hover:bg-darkBtn text-white font-bold px-5 py-2 text-lg ml-56 flex justify-center items-center gap-x-3 mt-2' type='submit'>Send <FiSend className='text-lg' />
+                    <button className='bg-lightBtn hover:bg-darkBtn text-white font-bold px-5 py-2 text-lg ml-56 flex justify-center items-center gap-x-3 mt-2 ' type='submit'>Send <FiSend className='text-lg' />
                     </button>
                 </form>
 
