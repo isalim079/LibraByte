@@ -44,7 +44,9 @@ const NGODonate = () => {
                     name: form.name.value,
                     email: form.email.value,
                     note: form.note.value,
-                    photo: imageUrl // Use the uploaded image URL
+                    photo: imageUrl, // Use the uploaded image URL
+                    isAccept:false,
+                    isRemove:false
                 };
 
                 // Submit book details to your backend
