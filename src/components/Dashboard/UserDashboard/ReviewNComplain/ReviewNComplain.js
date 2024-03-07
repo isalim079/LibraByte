@@ -115,7 +115,7 @@ const ReviewNComplain = () => {
 
 
     return (
-        <div className='flex flex-row justify-between mx-4 md:mx-10 lg:mx-40 my-10'>
+        <div className='flex flex-row justify-between mx-4 md:mx-10 lg:mx-40 my-10 gap-8'>
             <button className="btn px-10 bg-teal-500 hover:bg-teal-600 hover:shadow-lightBtn hover:shadow-2xl text-white" onClick={() => document.getElementById('my_modal_1').showModal()}>Reviews</button>
             <dialog id='my_modal_1' className="modal">
                 <form onSubmit={handleReview} className="modal-box">
@@ -140,6 +140,7 @@ const ReviewNComplain = () => {
                         name='postReviews'
                         onChange={e => setReviewText(e.target.value)}
                         placeholder="Write your review here..."
+                        required
                     />
                     <div className="modal-action">
                         <button type="submit" className="btn bg-teal-500 hover:bg-teal-600 text-base normal-case text-white px-4">Submit</button>

@@ -1,6 +1,7 @@
 "use client";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import useComplains from "@/lib/hooks/useComplains";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FaClock } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -8,12 +9,14 @@ import Swal from "sweetalert2";
 
 const Complains = () => {
     const axiosPublic = useAxiosPublic();
+
     const [complains, refetch] = useComplains();
+    // console.log(complains);
     
     // const [complains, setComplains] = useState([]);
     // useEffect(() => {
     //     axiosPublic
-    //         .get("http://localhost:5000/complains/v1")
+    //         .get("/complain/v1")
     //         .then((res) => {
     //             setComplains(res.data);
     //         })
@@ -21,6 +24,7 @@ const Complains = () => {
     //             console.log("error getting complains", error);
     //         });
     // }, []);
+    // console.log(complains);
 
 
     const handleComplain = async (complain) => {
@@ -60,7 +64,7 @@ const Complains = () => {
                     <h1>{complain.complain}</h1>
                 </div>
             ))} */}
-            <h1 className="text-4xl text-center my-10 font-bold text-royalBlue">lains</h1>
+            <h1 className="text-4xl text-center my-10 font-bold text-royalBlue">Complains</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -83,7 +87,7 @@ const Complains = () => {
                     <tbody>
                         {/* show data dynamically */}
                         {complains.map((complain) => (
-                            <tr key={complain._id}>
+                            <tr key={complain?._id}>
                                 <th>
                                     <label>
                                         <input
