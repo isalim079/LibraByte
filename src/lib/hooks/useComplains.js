@@ -17,6 +17,8 @@ const useComplains = () => {
 
     })
 
+    // console.log(data);
+
     const Complains = data
 
     return [Complains, refetch]
