@@ -187,9 +187,9 @@ const AllBlogPost = () => {
                                     </p>
                                 </div>
                                 <div className="mt-3 flex gap-3 justify-end">
-                                    <IoIosHeartEmpty className="text-2xl" />
+                                    {/* <IoIosHeartEmpty className="text-2xl" />
                                     <IoMdShare className="text-2xl" />
-                                    <MdOutlineInsertComment className="text-2xl" />
+                                    <MdOutlineInsertComment className="text-2xl" /> */}
                                     {blogPost?.email === user?.email ? (
                                         <div>
                                             <button
