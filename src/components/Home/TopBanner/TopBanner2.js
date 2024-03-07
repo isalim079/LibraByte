@@ -60,7 +60,7 @@ const TopBanner2 = () => {
             <div className="relative">
                 <div
                     style={backgroundImageStyle}
-                    className="absolute top-0 bottom-0 brightness-[80%] -z-50 lg:h-[650px] md:h-[510px] h-[450px] "
+                    className="absolute top-0 bottom-0 brightness-[80%] -z-50 lg:h-[650px] md:h-[510px] h-[520px] "
                 ></div>
             </div>
             <div className="">
