@@ -60,7 +60,7 @@ const Complains = () => {
                     <h1>{complain.complain}</h1>
                 </div>
             ))} */}
-            <h1 className="text-4xl text-center my-10 font-bold text-royalBlue">Manage Complains</h1>
+            <h1 className="text-4xl text-center my-10 font-bold text-royalBlue">lains</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
