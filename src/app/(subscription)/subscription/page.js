@@ -5,7 +5,7 @@ const SubscriptionPage = () => {
     return (
         <div>
             <Subscription></Subscription>
-            <Complains></Complains>
+            {/* <Complains></Complains> */}
         </div>
     );
 };
