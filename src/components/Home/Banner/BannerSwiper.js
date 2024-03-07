@@ -40,10 +40,10 @@ export default function App() {
 
                 <SwiperSlide>
                     <div className='flex md:flex-row-reverse flex-col  justify-between items-center mx-2 lg:mx-14 gap-x-2'>
-                        <div className='w-full lg:w-5/12 bg-white p-7 rounded-xl md:block hidden'>
-                            <h1 className='text-center font-bold text-oliveGreen my-3 text-sm lg:text-2xl'>"The Hitchhiker's Guide to the Galaxy" </h1>
-                            <h3 className='text-xs lg:text-lg font-semibold text-oliveGreen mb-2'> by Douglas Adams</h3>
-                            <p className='text-xs md:text-base'>Genre: Science Fiction, Comedy <br />
+                        <div className='w-full lg:w-5/12 bg-royalBlue p-7 rounded-xl md:block hidden'>
+                            <h1 className='text-center font-bold text-white my-3 text-sm lg:text-2xl'>"The Hitchhiker's Guide to the Galaxy" </h1>
+                            <h3 className='text-xs lg:text-lg font-semibold text-white mb-2'> by Douglas Adams</h3>
+                            <p className='text-xs md:text-base text-white'>Genre: Science Fiction, Comedy <br />
                                 Why: A hilarious and absurd journey through space with an unwitting human and his alien friend, perfect for those who enjoy witty humor.</p>
                         </div>
                         <div className='w-full lg:w-1/2 mx-4'>
