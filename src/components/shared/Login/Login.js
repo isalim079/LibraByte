@@ -36,10 +36,10 @@ const Login = () => {
         const email = data.email;
         const password = data.password;
 
-        console.log(email, password);
+        // console.log(email, password);
         passwordLogIn(email, password)
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 toast.success("Login Successful");
                 reset();
                 // router.push('/')
@@ -97,7 +97,7 @@ const Login = () => {
 
     const handleReset = (e) => {
         e.preventDefault();
-        console.log(email);
+        // console.log(email);
         passwordReset(email)
             .then((res) => {
                 // console.log(document.getElementById('my_modal_5'))

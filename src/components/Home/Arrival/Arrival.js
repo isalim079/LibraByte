@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 const Arrival = () => {
     const [arrivals, setArrivals] = useState([]);
     const axiosPublic = useAxiosPublic();
-    console.log(arrivals);
+    // console.log(arrivals);
 
     useEffect(() => {
         axiosPublic

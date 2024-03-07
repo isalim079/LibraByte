@@ -166,7 +166,7 @@ const ManageUserDetails = async () => {
         const form = new FormData(e.currentTarget);
         const emailBody = form.get("emailBody");
         const subject = form.get("subject");
-        console.log(emailBody);
+        // console.log(emailBody);
 
         // emailjs.init(process.env.EMAIL_PUBLIC_KEY)
 
@@ -185,7 +185,7 @@ const ManageUserDetails = async () => {
                 "NaZIhBr5-qQ34GM8B"   // public key
             )
             .then((res) => {
-                console.log(res.status);
+                // console.log(res.status);
                 if (res.status === 200) {
                     const modal = document.getElementById("my_modal_2");
                     if (modal) {
