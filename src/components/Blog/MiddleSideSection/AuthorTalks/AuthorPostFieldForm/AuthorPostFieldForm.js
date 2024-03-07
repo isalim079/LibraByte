@@ -71,7 +71,7 @@ const AuthorPostFieldForm = () => {
                 axiosPublic
                     .post("/authorTalks/v1", authorPostData)
                     .then((res) => {
-                        console.log(res.data);
+                        // console.log(res.data);
                         if (res.data) {
                             toast.success("your post updated");
                             refetch();

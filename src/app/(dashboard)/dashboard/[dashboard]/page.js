@@ -2,7 +2,7 @@ import ApplicationStatus from '@/components/Dashboard/UserDashboard/ProfileDashB
 import React from 'react';
 
 const DashBoardPage = ({params}) => {
-    console.log(params);
+    // console.log(params);
     return (
         <div >
             <ApplicationStatus params = {params} />

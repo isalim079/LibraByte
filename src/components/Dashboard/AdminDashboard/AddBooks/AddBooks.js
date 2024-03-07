@@ -12,7 +12,7 @@ const AddBooks = () => {
     const axiosPublic = useAxiosPublic();
 
     const {userRole} = useContext(AuthContext)
-    console.log(userRole);
+    // console.log(userRole);
 
     
 
@@ -49,12 +49,12 @@ const AddBooks = () => {
             format: data.paperback,
             
         };
-        console.log(addBooksData);
+        // console.log(addBooksData);
 
         axiosPublic
             .post("/books", addBooksData)
             .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data) {
                     toast.success("New books added successfully");
                     // data.target.reset()

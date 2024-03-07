@@ -49,16 +49,16 @@ const Wishlist = () => {
             const borrowLimitResponse = await axiosPublic.get("/payment/v1");
             const borrowLimit = borrowLimitResponse.data[0].borrow_limit;
             const paymentId=borrowLimitResponse.data[0]._id;
-            console.log(borrowLimitResponse)
-            console.log(borrowLimit);
-            console.log(paymentId)
+            // console.log(borrowLimitResponse)
+            // console.log(borrowLimit);
+            // console.log(paymentId)
     
             if (borrowLimit === 0) {
                 toast.error("You have reached your borrow limit.");
             }
             else
             {
-                console.log(data);
+                // console.log(data);
                 // Create an array to store all book objects
                 const booksData = [];
         

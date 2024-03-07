@@ -40,19 +40,19 @@ const Register = () => {
     // on submit hook form
     const onSubmit = async (data) => {
         setLoading(true)
-        console.log(data)
+        // console.log(data)
         const name = data.name;
         const email = data.email;
         const password = data.password;
         const imageFile = { image: data.image[0] }
-        console.log(data.image)
+        // console.log(data.image)
 
         const res = await axios.post(image_hosting_api, imageFile, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
         })
-        console.log(res.data.data.display_url)
+        // console.log(res.data.data.display_url)
         const img = res.data.data.display_url;
 
         if (res.data.success) {
@@ -73,7 +73,7 @@ const Register = () => {
                             axiosPublic.post('/users/v1', userData)
                                 .then(res => {
                                     setLoading(false)
-                                    console.log(res)
+                                    // console.log(res)
                                     reset()
                                     toast.success("Register Successful")
                                     {

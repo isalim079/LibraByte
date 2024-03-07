@@ -33,7 +33,7 @@ const NGODonate = () => {
 
             if (response.data.success) {
                 const imageUrl = response.data.data.url;
-                console.log(imageUrl)
+                // console.log(imageUrl)
                 // If the image upload is successful, proceed to save book details
                 const bookDetails = {
                     bookname: form.bookname.value,
@@ -49,7 +49,7 @@ const NGODonate = () => {
 
                 // Submit book details to your backend
                 const BookResponse = await axios.post("http://localhost:5000/ngo-donate/v1", bookDetails);
-                console.log(BookResponse.data);
+                // console.log(BookResponse.data);
 
                 if (BookResponse.data._id) {
                     toast.success(`Your book is in the queue`);

@@ -59,7 +59,7 @@ export default function CheckoutForm({ subscription }) {
 
 
       if (paymentIntent.status === "succeeded") {
-        console.log(paymentIntent.id)
+        // console.log(paymentIntent.id)
         toast.success('Payment successful')
 
 
@@ -67,7 +67,7 @@ export default function CheckoutForm({ subscription }) {
         document.getElementById(`my-modal-${subscription._id}`).close();
 
 
-        await axiosSecure.post("http://localhost:5000/payment/v1", {
+        await axiosSecure.post("/payment/v1", {
           paymentId: paymentIntent.id,
           subscriptionId: subscription._id,
           paymentAmount: paymentIntent.amount,
