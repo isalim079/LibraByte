@@ -118,9 +118,9 @@ const BookDetails = ({ params }) => {
             const borrowLimitResponse = await axiosPublic.get("/payment/v1");
             const borrowLimit = borrowLimitResponse.data[0].borrow_limit;
             const paymentId = borrowLimitResponse.data[0]._id;
-            console.log(borrowLimitResponse);
-            console.log(borrowLimit);
-            console.log(paymentId);
+            // console.log(borrowLimitResponse);
+            // console.log(borrowLimit);
+            // console.log(paymentId);
 
             if (borrowLimit === 0) {
                 toast.error("You have reached your borrow limit.");
@@ -142,14 +142,14 @@ const BookDetails = ({ params }) => {
                     "/addborrow/v1",
                     bookInfo
                 );
-                console.log(BookResponse.data);
+                // console.log(BookResponse.data);
 
                 if (BookResponse.data._id) {
                     const decreaseBorrowLimitResponse = await axiosPublic.patch(
                         `/payment/v1/${paymentId}`,
                         { borrow_limit: borrowLimit - 1 }
                     );
-                    console.log(decreaseBorrowLimitResponse.data);
+                    // console.log(decreaseBorrowLimitResponse.data);
                     toast.success(`Your book is in the queue`);
                 } else if (
                     BookResponse.data.message === "Product already exists"

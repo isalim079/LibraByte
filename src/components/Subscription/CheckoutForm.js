@@ -59,7 +59,7 @@ export default function CheckoutForm({ subscription }) {
 
 
       if (paymentIntent.status === "succeeded") {
-        console.log(paymentIntent.id)
+        // console.log(paymentIntent.id)
         toast.success('Payment successful')
 
 

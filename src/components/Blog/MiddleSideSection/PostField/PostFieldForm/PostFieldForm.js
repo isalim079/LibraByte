@@ -39,7 +39,7 @@ const PostFieldForm = () => {
             axiosPublic
                 .post("/blogPost/v1", blogPostData)
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     if (res.data) {
                         toast.success("your post updated");
                         refetch();

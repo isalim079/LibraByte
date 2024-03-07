@@ -51,12 +51,12 @@ const ProfileDashBoard = () => {
 
                 const tenDay = (24*60*60*1000)*10
                 const findDate = borrowDate + tenDay
-                console.log(findDate);
+                // console.log(findDate);
 
                return  findDate >= borrowDate + tenDay
 
             })
-            console.log(borrowDate);
+            // console.log(borrowDate);
 
 
 

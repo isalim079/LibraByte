@@ -44,7 +44,7 @@ const Recommended = () => {
             user_name:user.displayName,
 
         }
-        console.log(bookData)
+        // console.log(bookData)
         try {
             await axios.post("http://localhost:5000/addwish/v1",bookData);
             toast("Book added to wishlist")

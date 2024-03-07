@@ -37,7 +37,7 @@ const UploadBooksPdf = () => {
           axiosPublic
             .post("/booksPdf/v1", pdfFileData)
             .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data) {
                     toast.success("PDF of this books added successfully");
                     e.target.reset()

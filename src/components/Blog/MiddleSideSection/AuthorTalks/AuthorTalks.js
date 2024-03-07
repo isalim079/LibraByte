@@ -30,7 +30,7 @@ const AuthorTalks = () => {
     const [tagsList, setTagList] = useState([])
 
     const [searchTag, setSearchTag] = useState('')
-    console.log(isAuthor);
+    // console.log(isAuthor);
 
 
 

@@ -23,7 +23,7 @@ const ReviewNComplain = () => {
       };
 
     // const handleRatingChange = newRating => setRating(newRating);
-    console.log(selectedRating);
+    // console.log(selectedRating);
 
     const handleReview =async (e) => {
         // Clear the input fields
@@ -48,7 +48,7 @@ const ReviewNComplain = () => {
             axiosPublic
                 .post("/reviews/v1", reviewData)
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     if (res.data) {
                         handleResetRating();
                         toast.success('Thanks for your feedback!')
@@ -95,7 +95,7 @@ const ReviewNComplain = () => {
             axiosPublic
                 .post("/complains/v1", complainData)
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     if (res.data) {
                         toast.success("thanks for contributing to our improvement!");
                         e.target.reset();
