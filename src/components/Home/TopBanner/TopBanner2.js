@@ -6,7 +6,7 @@ import BannerBody from "./BannerBody";
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
 import dynamic from "next/dynamic";
 
-const TopBanner = () => {
+const TopBanner2 = () => {
     const [topBanner, setTopBanner] = useState([]);
     const [currentCardImage, setCurrentCardImage] = useState(0);
 
@@ -44,12 +44,14 @@ const TopBanner = () => {
     // console.log(currentCard);
 
     const backgroundImageStyle = {
-        backgroundImage: `url(${currentCard?.bgImage})`,
+        backgroundImage: `url('https://i.ibb.co/kBjTCmq/bann.jpg')`,
         // height: "650px",
         backgroundSize: "cover",
         position: "absolute",
         width: "100%",
         backgroundColor: "rgba(0,0,0,0.9)",
+//         "backdrop-filter": "blur( 16px )",
+// "-webkit-backdrop-filter": "blur( 16px )"
     };
 
 
@@ -58,21 +60,21 @@ const TopBanner = () => {
             <div className="relative">
                 <div
                     style={backgroundImageStyle}
-                    className="absolute top-0 bottom-0 brightness-[40%] -z-50 lg:h-[650px] md:h-[510px] h-[450px] "
+                    className="absolute top-0 bottom-0 brightness-[80%] -z-50 lg:h-[650px] md:h-[510px] h-[520px] "
                 ></div>
             </div>
-            <div>
+            <div className="">
                 <BannerBody bannerDetails={currentCard} />
                 <div className="flex justify-center items-center">
                     <button
                         onClick={handlePreviousClick}
-                        className="bg-transparent border hover:bg-lightWhite hover:text-oliveGreen text-white px-4 py-2 mr-4"
+                        className="bg-royalBlue hover:bg-lightBtn hover:text-white text-white px-4 py-2 mr-4"
                     >
                         <MdOutlineNavigateBefore></MdOutlineNavigateBefore>
                     </button>
                     <button
                         onClick={handleNextClick}
-                        className="bg-transparent border hover:bg-lightWhite hover:text-oliveGreen text-white px-4 py-2"
+                        className="bg-royalBlue  hover:bg-lightBtn hover:text-white text-white px-4 py-2"
                     >
                         <MdOutlineNavigateNext></MdOutlineNavigateNext>
                     </button>
@@ -82,6 +84,6 @@ const TopBanner = () => {
     );
 };
 
-// export default TopBanner;
+export default TopBanner2;
 
-export default dynamic(() => Promise.resolve(TopBanner), {ssr: false})
+

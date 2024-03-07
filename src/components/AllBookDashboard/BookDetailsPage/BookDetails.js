@@ -16,15 +16,13 @@ import "./bookDetails.css";
 import { useRouter } from "next/navigation";
 
 import { RxCross2 } from "react-icons/rx";
-import { pdfjs } from 'react-pdf';
+import { pdfjs } from "react-pdf";
 
 import usePdfBooks from "@/lib/hooks/usePdfBooks";
 import PdfBooksComponents from "@/PdfBooksComponents";
 import Loading from "@/components/shared/Loading/Loading";
-
-
-
-
+import axios from "axios";
+const pdfFile = "/preview.pdf"
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -33,9 +31,34 @@ const BookDetails = ({ params }) => {
     const [openModal, setOpenModal] = useState(false);
     const { user } = useContext(AuthContext);
     const router = useRouter();
-    const pdfBooks=usePdfBooks();
+    // const pdfBooks=usePdfBooks();
+    // console.log(params.bookDetails);
+    const shareLink = `https://libra-byte.vercel.app/bookDetails/${params.bookDetails}`
+ 
+
+    //download the preview
+    const downloadFileUrl = (url) => {
+        const fileName = url.split("/").pop();
+        const aTag = document.createElement("a");
+        aTag.href = url;
+        aTag.setAttribute("download", fileName);
+
+        aTag.addEventListener('error', (error) => {
+            console.error('Error loading PDF file:', error);
+        });
+
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+    };
+    const handleShare = () => {
+        toast.success("Link copied");
 
 
+        navigator.clipboard.writeText(shareLink)
+
+
+    }
 
 
     // console.log(params.bookDetails);
@@ -60,11 +83,28 @@ const BookDetails = ({ params }) => {
                 console.log(error);
             });
     }, []);
-           
-      
-    
-//  console.log(borrowLimit);
+
+
     const { name, image, author } = bookData;
+    //  console.log(borrowLimit);
+    const handleSave = async (book) => {
+        const wishData = {
+            Book_name: book.name,
+            Book_image: book.image,
+            Book_author: book.author,
+            user_email: user?.email,
+            user_name: user.displayName,
+
+        }
+        try {
+            await axiosPublic.post("/addwish/v1", wishData);
+            toast.success("Book added to wishlist");
+        } catch (error) {
+            console.error("Error posting liked book data:", error);
+            // Handle error
+        }
+    }
+
     // console.log(bookData.name);
     const onSubmit = async (data) => {
         if (!user) {
@@ -77,11 +117,11 @@ const BookDetails = ({ params }) => {
             // Fetch borrow limit
             const borrowLimitResponse = await axiosPublic.get("/payment/v1");
             const borrowLimit = borrowLimitResponse.data[0].borrow_limit;
-            const paymentId=borrowLimitResponse.data[0]._id;
-            console.log(borrowLimitResponse)
+            const paymentId = borrowLimitResponse.data[0]._id;
+            console.log(borrowLimitResponse);
             console.log(borrowLimit);
-            console.log(paymentId)
-    
+            console.log(paymentId);
+
             if (borrowLimit === 0) {
                 toast.error("You have reached your borrow limit.");
             } else {
@@ -97,27 +137,68 @@ const BookDetails = ({ params }) => {
                     delivered_status: false,
                     returned_status: false,
                 };
-    
-                const BookResponse = await axiosPublic.post("/addborrow/v1", bookInfo);
+
+                const BookResponse = await axiosPublic.post(
+                    "/addborrow/v1",
+                    bookInfo
+                );
                 console.log(BookResponse.data);
-    
+
                 if (BookResponse.data._id) {
-                    const decreaseBorrowLimitResponse = await axiosPublic.patch(`/payment/v1/${paymentId}`, { borrow_limit: borrowLimit - 1 });
+                    const decreaseBorrowLimitResponse = await axiosPublic.patch(
+                        `/payment/v1/${paymentId}`,
+                        { borrow_limit: borrowLimit - 1 }
+                    );
                     console.log(decreaseBorrowLimitResponse.data);
                     toast.success(`Your book is in the queue`);
-                } else if (BookResponse.data.message === "Product already exists") {
+                } else if (
+                    BookResponse.data.message === "Product already exists"
+                ) {
                     toast.error(`Book is already in the queue`);
                 } else {
-                    toast.loading('Loading');
+                    toast.loading("Loading");
                 }
             }
         } catch (error) {
             console.error("Error fetching borrow limit:", error);
             toast.error("Failed to fetch borrow limit. Please try again.");
         }
+
         // console.log(bookInfo);
-        
     };
+
+    /* -----------------pdf section -------------------------------- */
+    const [booksPdf, refetch] = usePdfBooks();
+    // console.log(booksPdf);
+
+    const [pdfBooks, setPdfBooks] = useState(null);
+    const [findBooksPdf, setFindBooksPdf] = useState();
+
+    // console.log(pdfBooks);
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const findBooks = booksPdf.find(
+                (books) => books?.bookId === params?.bookDetails
+            );
+            setFindBooksPdf(findBooks);
+            setLoading(false);
+        };
+
+        setLoading(true);
+        fetchData();
+    }, [booksPdf, params]);
+
+    if (loading) {
+        return Loading;
+    }
+
+    // console.log(findBooksPdf);
+    // console.log(params.bookDetails);
+
+    /* --------------------------------------------------------------------------- */
 
     return (
         <div className="bg-bgTexture pt-14 md:pt-20 2xl:h-[1250px] ">
@@ -152,19 +233,21 @@ const BookDetails = ({ params }) => {
                                 <button
                                     className=" bg-royalBlue text-white px-3 py-2 rounded-md"
                                     onClick={() => {
-                                       
-                                            
-                                            setPdfBooks(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`);
-                                            document
-                                                .getElementById("my_modal_1")
-                                                .showModal()
-                                        
+                                        // setPdfBooks(
+                                        //     `http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`
+                                        // );
+                                        document
+                                            .getElementById("my_modal_1")
+                                            .showModal();
                                     }}
                                 >
-                                    <span className="flex items-center gap-1" 
+                                    <span
+                                        className="flex items-center gap-1"
                                     // onClick={() =>  setPdfBooks(`http://localhost:5000/uploads/${findBooksPdf?.pdfFile}`)}
                                     >
-                                        <span>{Loading ? Loading : "Start Reading"}</span>
+                                        <span>
+                                            Start Reading
+                                        </span>
                                         <span>
                                             <FiArrowUpRight className="text-lg" />
                                         </span>
@@ -176,12 +259,14 @@ const BookDetails = ({ params }) => {
                                             {bookData?.name}
                                         </h3>
                                         <div className="py-4 ">
-                                            <PdfBooksComponents pdfBooks={pdfBooks} />
+                                            <PdfBooksComponents
+                                                pdfBooks={params.bookDetails}
+                                            />
                                         </div>
                                         <div className="modal-action">
                                             <form method="dialog">
                                                 {/* if there is a button in form, it will close the modal */}
-                                                <button className="btn ">
+                                                <button className="px-4 py-2 rounded-md hover:bg-darkBtn bg-lightBtn text-white">
                                                     Close
                                                 </button>
                                             </form>
@@ -192,13 +277,14 @@ const BookDetails = ({ params }) => {
                             {/* ------------------------------------------ */}
 
                             <div className="flex justify-center items-center gap-x-5 mr-24 pl-5 md:pl-0">
-                                <div className="bg-slate-200 p-2 rounded-full cursor-pointer">
+                                <div onClick={() => handleSave(bookData)} className="bg-slate-200 p-2 rounded-full cursor-pointer">
                                     <GoBookmark className="text-2xl" />
                                 </div>
-                                <div className="bg-slate-200 p-2 rounded-full cursor-pointer">
+                                <div onClick={handleShare} className="bg-slate-200 p-2 rounded-full cursor-pointer">
                                     <IoShareSocialOutline className="text-2xl" />
+                                    {/* <input className="hidden" type="text" id="linkInput" value={shareLink} readOnly></input> */}
                                 </div>
-                                <div className="bg-slate-200 p-2 rounded-full cursor-pointer">
+                                <div onClick={() => { downloadFileUrl(pdfFile) }} className="bg-slate-200 p-2 rounded-full cursor-pointer">
                                     <MdOutlineFileDownload className="text-2xl" />
                                 </div>
                             </div>
@@ -256,19 +342,17 @@ const BookDetails = ({ params }) => {
                         </div>
                         <div
                             onClick={() => setOpenModal(false)}
-                            className={`fixed flex justify-center items-center z-[100] ${
-                                openModal
-                                    ? "visible opacity-1"
-                                    : "invisible opacity-0"
-                            } inset-0 w-full h-full backdrop-blur-sm bg-black/20 duration-100`}
+                            className={`fixed flex justify-center items-center z-[100] ${openModal
+                                ? "visible opacity-1"
+                                : "invisible opacity-0"
+                                } inset-0 w-full h-full backdrop-blur-sm bg-black/20 duration-100`}
                         >
                             <div
                                 onClick={(e_) => e_.stopPropagation()}
-                                className={`absolute w-full lg:w-[500px] bg-white drop-shadow-2xl rounded-lg ${
-                                    openModal
-                                        ? "opacity-1 duration-300 translate-y-0"
-                                        : "-translate-y-20 opacity-0 duration-150"
-                                }`}
+                                className={`absolute w-full lg:w-[500px] bg-white drop-shadow-2xl rounded-lg ${openModal
+                                    ? "opacity-1 duration-300 translate-y-0"
+                                    : "-translate-y-20 opacity-0 duration-150"
+                                    }`}
                             >
                                 <form
                                     onSubmit={handleSubmit(onSubmit)}
@@ -305,7 +389,8 @@ const BookDetails = ({ params }) => {
                                             Due date
                                         </label>
                                         <div className="relative">
-                                            <input required
+                                            <input
+                                                required
                                                 type="date"
                                                 placeholder=".............."
                                                 {...register("date")}

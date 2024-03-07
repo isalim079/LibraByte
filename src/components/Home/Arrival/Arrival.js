@@ -5,6 +5,7 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import Link from "next/link";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 const Arrival = () => {
     const [arrivals, setArrivals] = useState([]);
@@ -117,4 +118,6 @@ const Arrival = () => {
     );
 };
 
-export default Arrival;
+// export default Arrival;
+
+export default dynamic(() => Promise.resolve(Arrival), {ssr: false})

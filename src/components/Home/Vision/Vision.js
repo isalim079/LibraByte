@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 
 const Vision = () => {
@@ -53,4 +54,6 @@ const Vision = () => {
     );
 };
 
-export default Vision;
+// export default Vision;
+
+export default dynamic(() => Promise.resolve(Vision), {ssr: false})

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import "./featureSection.css"
+import dynamic from "next/dynamic";
 
 const FeatureSection = () => {
     return (
@@ -192,4 +193,6 @@ const FeatureSection = () => {
     );
 };
 
-export default FeatureSection;
+// export default FeatureSection;
+
+export default dynamic(() => Promise.resolve(FeatureSection), {ssr: false})

@@ -6,6 +6,7 @@ import NavigationRoute from "./NavigationRoute";
 import SignInOut from "./SignInOut";
 import MobileNavigation from "./MobileNavigation";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 const NavigationBar = () => {
     return (
@@ -48,4 +49,6 @@ const NavigationBar = () => {
     );
 };
 
-export default NavigationBar;
+// export default NavigationBar;
+
+export default dynamic(() => Promise.resolve(NavigationBar), {ssr: false})
