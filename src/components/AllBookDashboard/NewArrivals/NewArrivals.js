@@ -33,7 +33,7 @@ const NewArrivals = () => {
                     <div key={book.id}>
                             <div className="bg-teal-600 bg-bgTexture rounded-md mx-auto flex flex-col shadow-2xl items-center">
                                 <Image
-                                    className="w-48 h-[280px] rounded-t-md pt-5"
+                                    className="w-48 h-[280px] rounded-t-md pt-5 "
                                     src={book.image}
                                     width={150}
                                     height={220}
